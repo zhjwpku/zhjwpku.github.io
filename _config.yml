@@ -1,23 +1,30 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
 title: 极客派
 author: 赵军旺
 email: zhjwpku@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Trying to be an excellent programmer.
-  Keep looking, don't settle.
+d1: Trying to be an excellent programmer.
+d2:  Keep looking, don't settle.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: zhjwpku
 github_username:  zhjwpku
 
 # Build settings
 markdown: kramdown
 
 url: http://blog.geekpi.cc
+
+timezone: Asia/Shanghai
+
+years:
+- "2016"
+
+#main_menu:
+#- label: Home
+#  url: /index.html
+#- label: Ceph
+#  url: /ceph.html
+#- label: Docker
+#  url: /docker.html
+#- label: OpenStack
+#  url: /opensstack.html
+#- label: Tags
+#  url: /tags.html

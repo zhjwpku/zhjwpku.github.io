@@ -1,0 +1,47 @@
+<div class="sidebar">
+  <div>
+    
+    <center>
+    <form id="cse" id="searchbox_017441273926802312631:tt52stvsmwc" action="/asserts/SearchResults.html">
+      <input value="017441273926802312631:tt52stvsmwc" name="cx" type="hidden"/>
+      <input value="FORID" name="cof" type="hidden"/>
+      <input id="q" style="with:110px" name="q" size="75" type="text"/>
+      <input value="Search" name="sa" type="submit"/>
+    </form>
+    </center>
+
+    <h4>Categories</h4>
+    <ul>
+      {% for category in site.categories %}
+      <li>
+        <a href="/categories.html#{{category[0] }}">
+	{% if page.categories contains category[0] %}
+	  <b>{{ category[0] }}</b>
+	{% else %}
+	  {{category[0]}}
+	{% endif %}
+	</a>
+	<sup>[{{ category[1].size }}]</sup>
+      </li>
+      {% endfor %}
+    </ul>
+    <hr/>
+
+    <h4>Tags</h4>
+    <ul>
+      {% for tag in site.tags %}
+      <li>
+        <a href="tags.html#{{tags[0]}}">
+	{% if page.tags contains tag[0] %}
+	  <b>{{ tag[0] }}</b>
+	{% else %}
+	  {{tag[0]}}
+	{% endif %}
+	</a>
+	<sup>[{{ tag[1].size }}]</sup>
+      </li>
+      {% endfor %}
+    </ul>
+  
+  </div>
+</div>
