@@ -14,7 +14,13 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+        {{post.excerpt}}
       </li>
+      <!--
+      <div class="excerpt">
+        {{post.excerpt|strip_html|truncatewords:50|newline_to_br}}
+      </div>
+      -->
     {% endfor %}
   </ul>
 

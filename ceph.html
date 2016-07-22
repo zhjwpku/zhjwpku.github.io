@@ -1,6 +1,27 @@
 ---
 layout: page
 title: Ceph
+header: Ceph
 permalink: /ceph/
 ---
 
+<div class="ceph">
+
+  <h1 class="page-heading">Ceph Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+    {% if post.categories contains "ceph" %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        {{post.excerpt}}
+      </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+</div>

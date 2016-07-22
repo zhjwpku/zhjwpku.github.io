@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2016-07-15 10:47:53 -0400
-categories: jekyll update
+categories: ceph
 tags:
 - first
 - second
