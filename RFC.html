@@ -1,14 +1,17 @@
 ---
-layout: default
+layout: page
+title: RFC
+header: RFC
+permalink: /rfc/
 ---
 
-<div class="home">
+<div class="RFC">
 <!--
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading">RFC Posts</h1>
 -->
-
   <ul class="post-list">
     {% for post in site.posts %}
+    {% if post.categories contains "rfc" %}
       <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -25,11 +28,7 @@ layout: default
 
         {{post.excerpt}}
       </li>
-      <!--
-      <div class="excerpt">
-        {{post.excerpt|strip_html|truncatewords:50|newline_to_br}}
-      </div>
-      -->
+    {% endif %}
     {% endfor %}
   </ul>
 
