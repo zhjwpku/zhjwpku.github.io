@@ -6,11 +6,11 @@ categories: others
 tags:
 - ipinfo
 ---
-给定一个IP，我们可以从一些网站得到该IP的一些信息，如国家、运营商、地理位置等。例如[ipinfo][ipinfo]、[ipinfodb][ipinfodb]。
+给定一个IP，可以从一些网页（如[ipinfo][ipinfo]、[ipinfodb][ipinfodb]）获取该IP的信息，如国家、运营商、地理位置等。但是随着需求的变化，只使用其中一种可能并不能满足项目的需求，因而需要寻找更多的方法来适用需求。
 
 **IPInfo**
 
-最开始我们查询的IP数量并不多，使用ipinfo就能满足需求，使用http连接与网站交互，获取地址信息：
+最开始我们查询的IP数量并不多，ipinfo.io就能满足需求，使用http连接与网站交互，获取地址信息：
 
 {% highlight ruby %}
 import netaddr
@@ -50,11 +50,11 @@ def get_country_and_ISP(ip):
     print ("get_country_and_ISP ip: %s error: %s" % (ip, e))
 {% endhighlight %}
 
-[ipinfo][ipinfo]的查询效率很高，速度很快，它一个缺陷是免费用户每天只能查询1000次，虽然我会对同一个IP的信息进行记录，但是我们每天查询的IP地址极有可能超过1000次，因此在不想掏钱的前提下不得不放弃使用它。
+[ipinfo][ipinfo]查询效率高，速度快，但它一个缺陷是免费用户每天只能查询1000次，虽然对同一个IP的信息会进行记录以便面重复解析，但是我们每天查询的IP地址依然有可能超过1000次，因此在不想掏钱的前提下不得不放弃使用它。
 
 **IPInfoDB**
 
-然后改为IPInfoDB，它并不限制查询次数，但需要注册并获取一个token，使用这个token来进行相应的查询，但这个库似乎并没有提供运营商的信息，使用其提供的python库来获取国家和城市：
+之后改为IPInfoDB，它不限制查询次数，需要注册并获取一个token，使用这个token来进行查询。用其提供的python库来获取国家和城市：
 
 {% highlight ruby %}
 import pyipinfodb
@@ -109,12 +109,10 @@ def get_ISP_by_asn(asn):
     cli.request('GET', url)
     res = cli.getresponse()
     info = json.loads(res.read())
-    return info['name']
-  except Exception, e
-  print ("get_ISP_by_asn asn: %s error: %s" % (asn, e))
+    return info['as']['name']
+  except Exception, e:
+    print ("get_ISP_by_asn asn: %s error: %s" % (asn, e))
 {% endhighlight %}
-
-至此，我们可以通过IP开查询准确的国家和运营商信息了。
 
 [ipinfo]: ipinfo.io
 [ipinfodb]: ipinfodb.com
