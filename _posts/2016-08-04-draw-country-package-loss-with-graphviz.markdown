@@ -47,6 +47,8 @@ def generate_graph():
   u.view()
 {% endhighlight %}
 
+节点的颜色参照[Graphviz_color][graphviz_color]来设置。
 [Graphviz][graphviz]还提供了很多种属性来画出各种不同的图形，如设置形状`u.attr('node', shape = 'box')`、画子图等功能，在之后的工作中如果遇到会陆续添加到本文中。
 
 [graphviz]: https://pypi.python.org/pypi/graphviz
+[graphviz_color]: http://www.graphviz.org/content/crazy
