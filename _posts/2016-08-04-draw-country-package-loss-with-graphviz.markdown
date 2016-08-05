@@ -30,10 +30,11 @@ edges_loss = dict()
 def generate_graph():
   u = Digraph('love', filename = 'love.gv')
   u.body.append('size = "10, 10"')
+  u.node_attr(color='lightblue2', style='filled')
   
   # set all nodes color
   for k, v in nodes:
-    u.node(k, color = colors[v])
+    u.node(k, color = colors[v[2]])
 
   # draw all edges
   edges.sort()
