@@ -17,6 +17,11 @@ timezone: Asia/Shanghai
 years:
 - "2016"
 
+gems:
+- jekyll-paginate
+paginate: 10
+#paginate_path: "/blog/page:num/"
+
 #main_menu:
 #- label: Home
 #  url: /index.html
