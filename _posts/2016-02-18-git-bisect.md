@@ -11,7 +11,7 @@ tags:
 `SSL_library_init`的定义，于是我想知道为什么删除该文件，刚开始用笨办法——倒着查看每个patch，
 但太慢了，于是想到了`git bisect`，虽然之前知道这个工具，但一直没用过，现在终于有用武之地了。
 
-{% highlight ruby %}
+{% highlight shell %}
 //开始二分查找
 $git bisect start  
 
