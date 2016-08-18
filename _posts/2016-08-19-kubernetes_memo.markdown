@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Kubernetes学习备忘"
-date:   2016-08-17 19:30:00 +0800
+date:   2016-08-18 20:00:00 +0800
 categories: docker
 tags:
 - k8s
@@ -219,6 +219,7 @@ $kubectl get services
 $kubectl get services my-nginx
 $kubectl delete service my-nginx
 $eval $(minikube docker-env)
+$kubectl describe service my-nginx
 {% endhighlight %}
 
 <h4>Kubernetes使用</h4>
@@ -250,10 +251,13 @@ spec:
 
 {% highlight shell %}
 $kubectl create -f pod-nginx.yaml
-$kubectl get pods
 {% endhighlight %}
 
-上面的定义并没有持久化存储，下面定义一个含有volume的Redis Pod:
+容器是临时存在的，如果容器被销毁，容器中的数据将会丢失。为了能够持久化数据以及荣祥容器间的数据，Docker
+提出了数据卷（Volume）的概念。数据卷可以绕过默认的联合文件系统（Unionfs），而以正常的文件或目录的
+形式存在于宿主机上。Kubernetes对Docker的数据卷进行了扩展，支持对接第三方存储系统。另一方面，Kubernetes
+中的数据卷是Pod级别的。Pod中的容器可以访问共同的数据卷，实现容器间的数据共享。下面定义了一个含有
+volume的Redis Pod:
 {% highlight yaml %}
 apiVersion: v1
 kind: Pod
@@ -333,12 +337,18 @@ redis-master   10.0.0.123   <none>        6379/TCP   2m
 {% endhighlight %}
 
 <h4>Kubernetes服务发现</h4>
-Service用来代理Pod，即可以使用Service的虚拟IP来访问它代理的POD，但是如果只硬配置Service的虚拟IP到另外
+
+微服务架构是一种新流行的架构模式，相比于传统的单块架构模式，微服务架构提倡将应用划分成一组小的服务，每
+个服务运行在其独立的进程中，服务之间互相协调、配合，服务与服务之间采用轻量级的通信机制互相沟通。Kubernetes
+提供了强大的服务编排能力，微服务化应用的每一个组件都以Service进行抽象，组件和组件之间只需要访问Service
+即可相互通信，而无需感知组件的集群变化。
+
+Service用来代理Pod，即可以使用Service的虚拟IP来访问它代理的Pod，但是如果只硬配置Service的虚拟IP到另外
 Pod，这不能算是真正的服务发现，Kubernetes提供两种发现Service的方法:
 
 *环境变量*
 
-当Pod运行时，Kubernetes会将之前存在的Service的信息通过环境变量的写到Pod中，以Redis Master Service为例，
+当Pod被创建时，Kubernetes会将之前存在的Service的信息通过环境变量的写到Pod中，以Redis Master Service为例，
 它的信息会被写到新创建的Pod中:
 
 {% highlight shell %}
@@ -355,12 +365,53 @@ REDIS_MASTER_PORT_6379_TCP_ADDR=10.0.0.123
 
 *DNS*
 
-当有新的Service创建时，就会自动生成一条DNS记录，以Redis Master Service为例，有一条DNS记录:
+DNS服务发现方式需要Kubernetes提供Cluster DNS支持，Cluster DNS会监控Kubernetes API，为每一个Service创建DNS
+记录，用于域名解析。这样在Pod中就可以通过DNS域名获取Service的访问地址。而对于一个Service，Cluster DNS会创
+建两条DNS记录:
+
 {% highlight shell %}
-redis-master => 10.0.0.123
+[service_name].[namespace_name].[cluster_domain]
+[service_name].[namespace_name].svc.[cluster_domain]
 {% endhighlight %}
 
 Minikube安装的环境支持这两种`服务发现`方式。
+
+<h4>弹性伸缩</h4>
+
+弹性伸缩是只适应负载变化，以弹性可伸缩的方式提供资源，在虚拟化的支持下提高资源的利用率和用户满意度。
+Kubernetes根据负载的高低动态调整Pod的副本数。
+{% highlight shell %}
+$kubectl scale replicationcontroller redis-slave --replicas=3
+$kubectl scale rc redis-slave --current-replicas=2 --replicas=1
+{% endhighlight %}
+
+Kubernetes通过Horizontal Pod Autoscalar实现Pod的自动伸缩，Horizontal Pod Autoscalar定时从平台监控
+系统中获取Replication Controller关联的Pod的整体资源使用情况。当策略匹配时，通过Replication Controller
+来调整Pod的副本数，实现自动伸缩。
+
+{% highlight yaml %}
+apiVersion: extensions/v1beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx
+  namespace: default
+spec:
+  scaleRef:
+    kind: ReplicationController
+    name: nginx
+    subresource: scale
+  minReplicas: 1
+  maxReplicas: 10
+  cpuUtilization:
+    targetPercentage: 50
+{% endhighlight %}
+
+当所有关联Pod的CPU平均使用率超过50%的时候进行扩容，而少于50的时候，进行缩容。另外，可以通过`kubectl
+autoscale创建Horizontal Pod Autoscaler:
+
+{% highlight shell %}
+$kubectl atuoscale rc redis-slave --min=1 --max=10 --cpu-percent=50
+{% endhighlight %}
 
 <h4>Guestbook例子</h4>
 
@@ -412,8 +463,8 @@ spec:
 {% endhighlight %}
 
 Service的虚拟IP是由Kubernetes虚拟出来的内部网络，而外部网络是无法寻址到的，这时候就需要增加一层网络
-转发，即外网到内网的转发。实现的方式有很多种，这里采用NodePort的方式来实现，即Kubernetes会在每个Node
-上设置端口，通过NodePort端口就可以访问到Pod。
+转发，即外网到内网的转发。Kubernetes提供了NodePort Service、LoadBalancer Service和Ingress来发布Service。
+这里采用NodePort的方式来实现，即Kubernetes会在每个Node上设置端口，通过NodePort端口就可以访问到Pod。
 
 {% highlight shell %}
 $kubectl replace -f frontend-service.yaml --force
