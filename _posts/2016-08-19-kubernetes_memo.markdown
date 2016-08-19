@@ -1,15 +1,15 @@
 ---
 layout: post
 title:  "Kubernetes学习备忘"
-date:   2016-08-18 20:00:00 +0800
+date:   2016-08-19 18:00:00 +0800
 categories: docker
 tags:
 - k8s
 - docker
 ---
 
-由于项目需要，现开始研究Kubernetes。本文记录从2016.8.15日开始到2016.8.19日学习Kubernetes的要点和心得，
-希望通过一周的学习，能对Kubernetes有一个大致的了解。
+本文记录从2016.8.15日开始到2016.8.19日学习Kubernetes的要点和心得，希望通过一周的学习，能对Kubernetes
+有一个大致的了解。
 
 <h4>Kubernetes是什么</h4>
 
@@ -93,7 +93,7 @@ Kubernetes层级的虚拟转发网络（TCP和UDP流转发--round robin）。
 
 **Kubernetes Control Plane**
 
-Kubernetes Control Plane分为一组组件。目前他们都运行在一个单一的Master Node上，但是很快就会改变这种
+Kubernetes Control Plane为一系列组件。目前它们都运行在一个单一的Master Node上，但是很快就会改变这种
 现状以支持集群的高可用。这些组件相互配合来提供集群的统一视图。
 
 `etcd`: 所有持久的master状态都存储在etcd实例。这是可靠地存储配置数据的一种非常好的方式。在`watch`的
@@ -178,8 +178,7 @@ $curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.7.1/minik
 
 下载kubectl二进制文件:
 {% highlight shell %}
-// linux/amd64
-// generic download path is:
+// linux/amd64 generic download path is:
 // https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/${GOOS}/${GOARCH}/${K8S_BINARY}
 $curl -Lo kubectl http://storage.googleapis.com/kubernetes-release/release/v1.3.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
 {% endhighlight %}
@@ -253,7 +252,7 @@ spec:
 $kubectl create -f pod-nginx.yaml
 {% endhighlight %}
 
-容器是临时存在的，如果容器被销毁，容器中的数据将会丢失。为了能够持久化数据以及荣祥容器间的数据，Docker
+容器是临时存在的，如果容器被销毁，容器中的数据将会丢失。为了能够持久化数据以及共享容器间的数据，Docker
 提出了数据卷（Volume）的概念。数据卷可以绕过默认的联合文件系统（Unionfs），而以正常的文件或目录的
 形式存在于宿主机上。Kubernetes对Docker的数据卷进行了扩展，支持对接第三方存储系统。另一方面，Kubernetes
 中的数据卷是Pod级别的。Pod中的容器可以访问共同的数据卷，实现容器间的数据共享。下面定义了一个含有
