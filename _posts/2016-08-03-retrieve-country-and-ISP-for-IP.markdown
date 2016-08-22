@@ -114,6 +114,22 @@ def get_ISP_by_asn(asn):
     print ("get_ISP_by_asn asn: %s error: %s" % (asn, e))
 {% endhighlight %}
 
+**#更新2016.08.22#**
+
+今天运行脚本的时候get_ISP_by_asn报错，使用curl验证发现moocher不再支持http的查询，必须使用https，更改后的脚本:
+
+def get_ISP_by_asn(asn):
+  try:
+    url = 'https://api.moocher.io/as/num/' + asn
+    cli = httplib.HTTPSConnection('api.moocher.io', 443, timeout = 30)
+    cli.request('GET', url)
+    res = cli.getresponse()
+    info = json.loads(res.read())
+    return info['as']['name']
+  except Exception, e:
+    print ("get_ISP_by_asn asn: %s error: %s" % (asn, e))
+{% endhighlight %}
+
 [ipinfo]: ipinfo.io
 [ipinfodb]: ipinfodb.com
 [ipwhois]: https://github.com/secynic/ipwhois
