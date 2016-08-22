@@ -101,7 +101,7 @@ def get_country_and_asn(ip):
 
 使用ipwhois可以获取国家和asn，asn只是一个数字，并没有对应的名字，辨识度不好，因此我们需要把运营商的名字通过asn查询出来，使用[moocher.io][moocher]提供的API进行查询：
 
-{% highlight ruby %}
+{% highlight python %}
 def get_ISP_by_asn(asn):
   try:
     url = 'api.moocher.io/as/num/' + asn
@@ -118,6 +118,7 @@ def get_ISP_by_asn(asn):
 
 今天运行脚本的时候get_ISP_by_asn报错，使用curl验证发现moocher不再支持http的查询，必须使用https，更改后的脚本:
 
+{% highlight python %}
 def get_ISP_by_asn(asn):
   try:
     url = 'https://api.moocher.io/as/num/' + asn
