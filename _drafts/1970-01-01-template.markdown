@@ -1,0 +1,21 @@
+---
+layout: post
+title: Title
+date: 1970-01-01 00:00:00 +0800
+categories: categorie
+tags:
+- tag1
+- tag2
+---
+
+文字
+
+{% highlight shell %}
+代码，可以为不同语言显示不同的风格，如shell、ruby、python、yaml等
+{% endhighlight %}
+
+**加粗**
+
+[链接][url_name]
+
+[url_name]: url
