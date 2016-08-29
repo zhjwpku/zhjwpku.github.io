@@ -1,0 +1,259 @@
+---
+layout: post
+title: etcd ABC
+date: 2016-08-26 20:00:00 +0800
+tags:
+- etcd
+---
+
+etcd是一个分布一致性key/value存储系统，用于共享配置和服务发现。该项目由[CoreOS][coreos]开发并维护，灵感来自于ZooKeeper和Doozer。etcd用go语言实现，通过[Raft][raft]一致性算法处理高可用的多副本日志。etcd应用广泛，如[Kubernetes][kubernetes]、[fleet][fleet]、[locksmith][locksmith]、[vulcand][vulcand]、[Doorman][doorman]...
+
+其主要特性包括：
+
+- 简单：定义良好的用户API（gRPC）
+- 安全：可选的TLS用户认证机制，可对集群各节点间的数据以及用户与集群的数据进行加密
+- 快速：每秒10000次写操作【测试环境：8 vCPU, 16GB RAM, 50GB SSD GCE实例】
+- 可靠：使用Raft保证强一致性
+
+<h4>etcd基本概念</h4>
+
+**Node**: raft状态机的一个实例，如果是leader会记录其它Node的处理流程
+
+**Member**: 一个etcd实例。它主持一个Node，并对clients提供服务
+
+**Cluster**: 包含多个member。每个Member的Node根据raft一致性协议来复制日志。集群会收到member的提议，并将这些数据存储到本地
+
+**Peer**: 同一集群的另一个Member
+
+**Proposal**: 一个传递给raft协议的请求，如写请求、更改配置请求
+
+**Client**: 集群HTTP API的调用者
+
+**Machine**: 2.0版本之前Member的叫法
+
+<h4>etcd数据模型</h4>
+
+etcd被设计为用来可靠存储非频繁更新的数据并提供可靠的查询。etcd可以存储数据的多个版本，当key/value的值被新数据更改的时候，并不会在原数据结构上直接更改，而是生成一个新的数据结构来存储更新的数据。所有过去的版本都可以被获取和查看，为了防止数据无限的增长，etcd会将特别老的数据备份存储以避免影响效率。
+
+**逻辑视图**
+
+etcd的逻辑视图是一个扁平的键空间（key space）。键空间按照键的字典序进行索引，因此基于范围的查询代价并不昂贵。
+
+键空间维护多个版本（revision）。每个原子的变化操作都会在键空间创建一个新版本，而之前版本的数据比干不会改变。旧版本的键仍可以通过先前的版本访问到。
+
+**物理视图**
+
+etcd将键值对存储在b+树结构中。键值对的key是一个三元组（major, sub, type），value则包含了相对于先前版本的更改。etcd在内存中维护了一个btree索引来加速键的范围查询效率。btree中的键是暴露给用户使用的键，其值则是指向b+树的指针。
+
+**Maintenance**
+
+etcd集群需要周期性的维护来保持可靠性。根据一个etcd应用的需求，这种维护通常可以自动化进行。
+
+etcd的存储空间由quotas监控，如果etcd member空间不够了，quota会触发整个集群的报警，将系统置为`limited-operation maintance`状态。为了避免写操作空间用完，etcd的历史keyspace必须被压缩（compacted）。存储空间自身会通过碎片整理来获取更多的存储空间。周期性的etcd member状态快照备份使得操作错误后的逻辑数据丢失或故障（corruption）的恢复成为可能。
+
+通过etcd来自动压缩keyspace:
+{% highlight shell %}
+# keep one hour of history
+$ etcd --auto-compaction-retention=1
+{% endhighlight %}
+
+使用etcdctl:
+{% highlight shell %}
+# compact up to revision 3
+$ etcdctl compact 3
+$ etcdctl get --rev=2 somekey
+Error: rpc error: code = 11 desc = etcdserver: mvcc: required revision has been compacted
+{% endhighlight %}
+
+碎片整理：
+{% highlight shell %}
+$ etcdctl defrag
+Finished defragmenting etcd member[127.0.0.1:2379]
+{% endhighlight %}
+
+etcd的空间配额保证集群操作的性能。如果不设置配额，可能会由于keyspace的快速增长导致性能下降，或者将存储空间耗尽，导致不可预测的集群行为。etcd默认会设置一个保守的空间配额（可以满足大部分应用），也可以通过命令行来设置配额：
+{% highlight shell %}
+# set a very small 16MB quota
+$ etcd --quota-backend-bytes=16777216
+{% endhighlight %}
+
+快照备份
+{% highlight shell %}
+$ etcdctl snapshot save backup.db
+$ etcdctl --write-out=table snapshot status back.db
+{% endhighlight %}
+
+<h4>创建etcd集群</h4>
+创建etcd集群的方法有三种:
+
+- Static（已知集群中的每个member的IP）
+- etcd Discovery
+- DNS Discovery
+
+现有三台机器，配置如下：
+
+|---
+| Name | ADDRESS | HOSTNAME
+|:-|:-|:-
+| infra0 | 10.0.63.202/172.0.63.202 | anakin
+|---
+| infra1 | 10.0.63.203/172.0.63.203 | boba
+|---
+| infra2 | 10.0.63.204/172.0.63.204 | c3po
+
+**Static**
+
+使用Static的方式配置一个etcd集群，既然已知地址以及cluster的大小，使用如下命令创建集群：
+
+*anakin*
+{% highlight shell %}
+$ etcd --name infra0 --data-dir=data.etcd --initial-advertise-peer-urls http://10.0.63.202:2380 \
+  --listen-peer-urls http://10.0.63.202:2380 \
+  --listen-client-urls http://10.0.63.202:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.0.63.202:2379 \
+  --initial-cluster-token etcd-cluster-1 \
+  --initial-cluster infra0=http://10.0.63.202:2380,infra1=http://10.0.63.203:2380,infra2=http://10.0.63.204:2380 \
+  --initial-cluster-state new
+{% endhighlight %}
+
+*boba*
+{% highlight shell %}
+$ etcd --name infra1 --data-dir=data.etcd --initial-advertise-peer-urls http://10.0.63.203:2380 \
+  --listen-peer-urls http://10.0.63.203:2380 \
+  --listen-client-urls http://10.0.63.203:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.0.63.203:2379 \
+  --initial-cluster-token etcd-cluster-1 \
+  --initial-cluster infra0=http://10.0.63.202:2380,infra1=http://10.0.63.203:2380,infra2=http://10.0.63.204:2380 \
+  --initial-cluster-state new
+{% endhighlight %}
+
+*c3po*
+{% highlight shell %}
+$ etcd --name infra2 --data-dir=data.etcd --initial-advertise-peer-urls http://10.0.63.204:2380 \
+  --listen-peer-urls http://10.0.63.204:2380 \
+  --listen-client-urls http://10.0.63.204:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.0.63.204:2379 \
+  --initial-cluster-token etcd-cluster-1 \
+  --initial-cluster infra0=http://10.0.63.202:2380,infra1=http://10.0.63.203:2380,infra2=http://10.0.63.204:2380 \
+  --initial-cluster-state new
+{% endhighlight %}
+
+这里值得注意的一点是，由于防火墙的影响，可能会导致如下错误：
+{% highlight shell %}
+[root@anakin ~]# echo $ENDPOINTS
+10.0.63.202:2379,10.0.63.203:2379,10.0.63.204:2379
+[root@anakin ~]# etcdctl --no-sync --endpoints=$ENDPOINTS member list
+Failed to get leader:  client: etcd cluster is unavailable or misconfigured
+{% endhighlight %}
+这是由于防火墙阻止了不同节点间的通信，通过粗暴的把防火墙关闭`systemctl stop firewalled.service`可以解决问题：
+{% highlight shell %}
+[root@anakin ~]# etcdctl --endpoints=$ENDPOINTS member list
+1721f768b2adc7e1: name=infra2 peerURLs=http://10.0.63.204:2380 clientURLs=http://10.0.63.204:2379 isLeader=false
+9430ffa4abf3afd6: name=infra0 peerURLs=http://10.0.63.202:2380 clientURLs=http://10.0.63.202:2379 isLeader=true
+ef3c3256524ca49d: name=infra1 peerURLs=http://10.0.63.203:2380 clientURLs=http://10.0.63.203:2379 isLeader=false
+{% endhighlight %}
+当然，关闭防火墙是一个不安全的操作，所以通过在三台机器上设置防火墙规则（CentOS7），可以使得问题得到解决：
+{% highlight shell %}
+[root@anakin ~]# firewall-cmd --zone=public --add-port=2379/tcp --permanent
+[root@anakin ~]# firewall-cmd --zone=public --add-port=2380/tcp --permanent
+[root@anakin ~]# firewall-cmd --reload
+{% endhighlight %}
+
+**etcd Discovery**
+
+分为`Custom etcd dicovery`和`Public etcd dicovery`，第一种情况在已有一个可用集群的情况下使用，在没有可使用集群的条件下，可以使用`dicovery.etcd.io`提供的公有发现服务来创建集群：
+{% highlight shell %}
+$curl https://discovery.etcd.io/new?size=3
+https://discovery.etcd.io/1c28c8669cfe1f4018b59541d0e4bcc9
+{% endhighlight %}
+然后使用返回的值创建集群：
+
+*anakin*
+{% highlight shell %}
+$ etcd --name infra0 --initial-advertise-peer-urls http://10.0.63.202:2380 \
+  --listen-peer-urls http://10.0.63.202:2380 \
+  --listen-client-urls http://10.0.63.202:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.0.63.202:2379 \
+  --discovery https://discovery.etcd.io/1c28c8669cfe1f4018b59541d0e4bcc9
+{% endhighlight %}
+
+*boba*
+{% highlight shell %}
+$ etcd --name infra1 --initial-advertise-peer-urls http://10.0.63.203:2380 \
+  --listen-peer-urls http://10.0.63.203:2380 \
+  --listen-client-urls http://10.0.63.203:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.0.63.203:2379 \
+  --discovery https://discovery.etcd.io/1c28c8669cfe1f4018b59541d0e4bcc9
+{% endhighlight %}
+
+*c3po*
+{% highlight shell %}
+$ etcd --name infra2 --initial-advertise-peer-urls http://10.0.63.204:2380 \
+  --listen-peer-urls http://10.0.63.204:2380 \
+  --listen-client-urls http://10.0.63.204:2379,http://127.0.0.1:2379 \
+  --advertise-client-urls http://10.0.63.204:2379 \
+  --discovery https://discovery.etcd.io/1c28c8669cfe1f4018b59541d0e4bcc9
+{% endhighlight %}
+
+**DNS discover**
+
+DNS [SRV records][rfc2052]可用于发现机制。`-discovery-srv`标志用来发现解析SRV记录的DNS域名。由于笔者对rfc2052并不了解，因此不介绍此种方式。
+
+<h4>使用Docker启动etcd cluster</h4>
+用Docker来启动etcd集群与直接使用etcd命令启动非常相似，使用quay.io/coreos/etcd镜像来启动etcd cluster集群：
+
+*anakin*
+{% highlight shell %}
+$ docker run -d -v /usr/share/ca-certificates/:/etc/ssl/certs -p 4001:4001 -p 2380:2380 -p 2379:2379 \
+  --name etcd quay.io/coreos/etcd \
+  etcd \
+  -name infra0 \
+  -initial-advertise-peer-urls http://10.0.63.202:2380 \
+  -listen-peer-urls http://0.0.0.0:2380 \
+  -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:2379 \
+  -advertise-client-urls http://10.0.63.202:2379,http://10.0.63.202:4001 \
+  -initial-cluster-token etcd-cluster-1 \
+  -initial-cluster infra0=http://10.0.63.202:2380,infra1=http://10.0.63.203:2380,infra2=http://10.0.63.204:2380 \
+  -initial-cluster-state new
+{% endhighlight %}
+
+*boba*
+{% highlight shell %}
+$ docker run -d -v /usr/share/ca-certificates/:/etc/ssl/certs -p 4001:4001 -p 2380:2380 -p 2379:2379 \
+  --name etcd quay.io/coreos/etcd \
+  etcd \
+  -name infra1 \
+  -initial-advertise-peer-urls http://10.0.63.203:2380 \
+  -listen-peer-urls http://0.0.0.0:2380 \
+  -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:2379 \
+  -advertise-client-urls http://10.0.63.203:2379,http://10.0.63.203:4001 \
+  -initial-cluster-token etcd-cluster-1 \
+  -initial-cluster infra0=http://10.0.63.202:2380,infra1=http://10.0.63.203:2380,infra2=http://10.0.63.204:2380 \
+  -initial-cluster-state new
+{% endhighlight %}
+
+*c3po*
+{% highlight shell %}
+$ docker run -d -v /usr/share/ca-certificates/:/etc/ssl/certs -p 4001:4001 -p 2380:2380 -p 2379:2379 \
+  --name etcd quay.io/coreos/etcd \
+  etcd \
+  -name infra2 \
+  -initial-advertise-peer-urls http://10.0.63.204:2380 \
+  -listen-peer-urls http://0.0.0.0:2380 \
+  -listen-client-urls http://0.0.0.0:2379,http://0.0.0.0:2379 \
+  -advertise-client-urls http://10.0.63.204:2379,http://10.0.63.204:4001 \
+  -initial-cluster-token etcd-cluster-1 \
+  -initial-cluster infra0=http://10.0.63.202:2380,infra1=http://10.0.63.203:2380,infra2=http://10.0.63.204:2380 \
+  -initial-cluster-state new
+{% endhighlight %}
+
+这里有一个需要关注的点：第三行命令`etcd`。官网上给出的例子是不需要这一行的，但是笔者在进行实验的时候会提示错误：`docker: Error response from daemon: oci runtime error: exec: "-name": executable file not found in $PATH.`，加上该命令后正确运行，这可能跟docker的版本相关（Not sure）。
+
+[coreos]: https://coreos.com/
+[raft]: https://raft.github.io/
+[kubernetes]: http://kubernetes.io/
+[fleet]: https://github.com/coreos/fleet
+[locksmith]: https://github.com/coreos/locksmith
+[vulcand]: https://github.com/vulcand/vulcand
+[doorman]: https://github.com/youtube/doorman
+[rfc2052]: https://tools.ietf.org/html/rfc2052
