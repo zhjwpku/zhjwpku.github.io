@@ -8,7 +8,16 @@ tags:
 - tag2
 ---
 
-文字
+表格
+
+|---
+| Name | ADDRESS | HOSTNAME
+|:-|:-|:-
+| infra0 | 10.0.63.202/172.0.63.202 | anakin
+|---
+| infra1 | 10.0.63.203/172.0.63.203 | boba
+|---
+| infra2 | 10.0.63.204/172.0.63.204 | c3po
 
 {% highlight shell %}
 代码，可以为不同语言显示不同的风格，如shell、ruby、python、yaml等
