@@ -98,9 +98,8 @@ boba和c3po作为Kubernetes的Node，其上需要运行：
 *Kubelet*
 
 {% highlight shell %}
-[root@boba ~]# kubelet --logtostderr=true --v=0 \
---config=/etc/kubernetes/manifests --address=0.0.0.0 \
---api-servers=http://10.0.63.202:8080 \
+[root@boba ~]# kubelet --logtostderr=true --v=0 --address=0.0.0.0 \
+--api-servers=http://10.0.63.202:8080 --register-node=true\
 >> /var/log/kubelet.log 2>&1 &
 {% endhighlight %}
 
@@ -108,8 +107,10 @@ boba和c3po作为Kubernetes的Node，其上需要运行：
 
 {% highlight shell %}
 [root@boba ~]# kube-proxy --logtostderr=true --v=0 \
---master=http:10.0.63.202:8080 >> /var/log/kube-proxy.log 2>&1 &
+--master=http://10.0.63.202:8080 >> /var/log/kube-proxy.log 2>&1 &
 {% endhighlight %}
+
+在Master节点上也可以运行上述命令，让Master节点也作为运行Pod的计算资源。但这是否是一种好的方式还有待调研。
 
 <h4>查询Kubernetes的健康状态</h4>
 {% highlight shell %}
@@ -164,9 +165,9 @@ FLANNEL_IPMASQ=false
 
 另外，由于重启docker，造成了etcd容器的stop，因此需要将停止的etcd容器重新启动，由于集群中有三台etcd节点，因此这个过程不会影响etcd的健康状态。
 
-在三台机器上分别进行如上操作之后，flannel的网络模型如下图所示：
+在三台机器上分别进行如上操作之后，flannel的网络模型如下图所示（用`ip a | grep flannel`查看flanneld网络）：
 
-![flannel_model](/assets/201608/flannel_model.png){: width="700px"}
+![flannel_model](/assets/201608/flannel_model.png){: width="650px"}
 
 在各机器上可以查看docker的子网详情：
 {% highlight shell %}
@@ -267,5 +268,14 @@ rtt min/avg/max/mdev = 0.396/0.644/1.307/0.383 ms
 
 从结果可以看出，flanneld的扁平网络可正常工作。
 
+另外，CentOS自身的源已经包含Kubernetes包，并且应该是经过大量测试的，因此推荐使用yum直接进行安装，并使用systemd进行启动。
+
+推荐两篇部署文档：
+
+- Red Hat: [creating a kubernetes cluster to run docker formatted container -images][redhat_k8s]
+- CoreOS: [Kubernetes on CoreOS Documentation][k8s_on_coreos]
+
 [etcdabc]: http://zhjwpku.com/2016/08/26/etcd-abc.html
 [docker_install]: https://docs.docker.com/engine/installation/linux/centos/
+[redhat_k8s]: https://access.redhat.com/documentation/en/red-hat-enterprise-linux-atomic-host/7/paged/getting-started-with-containers/chapter-4-creating-a-kubernetes-cluster-to-run-docker-formatted-container-images
+[k8s_on_coreos]: https://coreos.com/kubernetes/docs/latest/
