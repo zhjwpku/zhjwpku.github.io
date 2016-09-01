@@ -66,7 +66,7 @@ etcd是Kubernetes依赖的一个非常重要的组件，[ectd ABC][etcdabc]一�
 
 {% highlight shell %}
 [root@anakin ~]# kube-scheduler --logtostderr=true --v=0 \
---master=http:10.0.63.202:8080 >> /var/log/kube-scheduler.log 2>&1 &
+--master=http://10.0.63.202:8080 >> /var/log/kube-scheduler.log 2>&1 &
 {% endhighlight %}
 
 *Kubernetes Proxy*
