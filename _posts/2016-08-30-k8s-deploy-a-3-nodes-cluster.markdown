@@ -59,8 +59,11 @@ etcd是Kubernetes依赖的一个非常重要的组件，[ectd ABC][etcdabc]一�
 
 {% highlight shell %}
 [root@anakin ~]# kube-controller-manager --logtostderr=true --v=0 \
+--service-account-private-key-file=/var/run/kubernetes/apiserver.key
 --master=http://10.0.63.202:8080 >> /var/log/kube-controller-manager.log 2>&1 &
 {% endhighlight %}
+
+上述的`apiserver.key`由apiserver启动时创建的，除key之外，还有一个`apiserver.crt`证书文件。
 
 *Kubernetes Schedule*
 
