@@ -49,16 +49,19 @@ etcd是Kubernetes依赖的一个非常重要的组件，[ectd ABC][etcdabc]一�
 
 由于环境中的etcd集群已经搭建好，指定--etcd-servers为本机IP:2379即可。--insecure-bind-address设置为0.0.0.0意味着在所有网卡接口都提供服务。
 {% highlight shell %}
-[root@anakin ~]# kube-apiserver --logtostderr=true --v=0 \
+[root@anakin ~]# nohup kube-apiserver --logtostderr=true --v=0 \
+--admission-control=AlwaysAdmit --allow-privileged=true \
 --etcd-servers=http://localhost:2379 --insecure-bind-address=0.0.0.0 \
 --insecure-port=8080 --service-cluster-ip-range=10.254.0.0/16 \
 >> /var/log/kube-apiserver.log 2>&1 &
 {% endhighlight %}
 
+`--allow-privileged=true`启动参数用于`DaemonSet`类型的组件。
+
 *Kubernetes Controller Manager*
 
 {% highlight shell %}
-[root@anakin ~]# kube-controller-manager --logtostderr=true --v=0 \
+[root@anakin ~]# nohup kube-controller-manager --logtostderr=true --v=0 \
 --service-account-private-key-file=/var/run/kubernetes/apiserver.key
 --master=http://10.0.63.202:8080 >> /var/log/kube-controller-manager.log 2>&1 &
 {% endhighlight %}
@@ -68,14 +71,14 @@ etcd是Kubernetes依赖的一个非常重要的组件，[ectd ABC][etcdabc]一�
 *Kubernetes Schedule*
 
 {% highlight shell %}
-[root@anakin ~]# kube-scheduler --logtostderr=true --v=0 \
+[root@anakin ~]# nohup kube-scheduler --logtostderr=true --v=0 \
 --master=http://10.0.63.202:8080 >> /var/log/kube-scheduler.log 2>&1 &
 {% endhighlight %}
 
 *Kubernetes Proxy*
 
 {% highlight shell %}
-[root@anakin ~]# kube-proxy --logtostderr=true --v=0 \
+[root@anakin ~]# nohup kube-proxy --logtostderr=true --v=0 \
 --master=http://10.0.63.202:8080 >> /var/log/kube-proxy.log 2>&1 &
 {% endhighlight %}
 
@@ -101,15 +104,18 @@ boba和c3po作为Kubernetes的Node，其上需要运行：
 *Kubelet*
 
 {% highlight shell %}
-[root@boba ~]# kubelet --logtostderr=true --v=0 --address=0.0.0.0 \
---api-servers=http://10.0.63.202:8080 --register-node=true\
+[root@boba ~]# nohup kubelet --logtostderr=true --v=0 --address=0.0.0.0 \
+--api-servers=http://10.0.63.202:8080 --register-node=true \
+--allow-privileged=true --cluster-dns=10.254.10.2 --cluster-domain=cluster.local \
 >> /var/log/kubelet.log 2>&1 &
 {% endhighlight %}
+
+`--cluster-dns`和`--cluster-domain`需要在创建DNS扩展插件之后添加上重启。
 
 *Kubernetes Proxy*
 
 {% highlight shell %}
-[root@boba ~]# kube-proxy --logtostderr=true --v=0 \
+[root@boba ~]# nohup kube-proxy --logtostderr=true --v=0 \
 --master=http://10.0.63.202:8080 >> /var/log/kube-proxy.log 2>&1 &
 {% endhighlight %}
 
