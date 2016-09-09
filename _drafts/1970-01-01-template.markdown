@@ -30,4 +30,13 @@ tags:
 
 [链接][url_name]
 
+<br>
+<span class="post-meta">
+参考文献:
+</span>
+<br>
+<span class="post-meta">
+[1] 吴龙辉. Kubernetes实战. 电子工业出版社. 2016.
+</span>
+
 [url_name]: url
