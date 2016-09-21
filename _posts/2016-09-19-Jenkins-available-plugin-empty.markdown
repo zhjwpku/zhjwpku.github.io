@@ -23,5 +23,13 @@ tags:
 
 但是在安装插件的时候，又出现了消息摘要不一致的问题，[JENKINS-38195][38195]对这个问题进行了记录，目前还没有找到解决的办法。
 
+**2016-09-21更新**
+
+2.7.2版本可用：
+{% highlight shell %}
+$ wget http://mirrors.jenkins-ci.org/war-stable/2.7.2/jenkins.war
+$ nohup java -jar jenkins.war &
+{% endhighlight %}
+
 [solution]: http://stackoverflow.com/questions/16213982/unable-to-find-plugins-in-list-of-available-plugins-in-jenkins
 [38195]: https://issues.jenkins-ci.org/browse/JENKINS-38195
