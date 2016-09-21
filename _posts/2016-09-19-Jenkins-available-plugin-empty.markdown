@@ -31,5 +31,11 @@ $ wget http://mirrors.jenkins-ci.org/war-stable/2.7.2/jenkins.war
 $ nohup java -jar jenkins.war &
 {% endhighlight %}
 
+如果想要使用不同的端口号，需要添加`--httpPort`参数：
+{% highlight shell %}
+$ nohup java -jar jenkins.war --httpPort=9090 &
+{% endhighlight %}
+
+
 [solution]: http://stackoverflow.com/questions/16213982/unable-to-find-plugins-in-list-of-available-plugins-in-jenkins
 [38195]: https://issues.jenkins-ci.org/browse/JENKINS-38195
