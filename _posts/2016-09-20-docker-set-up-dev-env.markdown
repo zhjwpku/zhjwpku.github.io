@@ -18,7 +18,7 @@ tags:
 Docker开发者一般会运行最新的稳定版Docker release，删除停止的容器以及没用的images虽然不是必要的任务，但这通常是一个好习惯。
 
 {% highlight shell %}
-$ docker rm $(docker ps -a -1)
+$ docker rm $(docker ps -a -q)
 $ docker rmi -f $(docker images -q -a dangling=true)
 {% endhighlight %}
 
