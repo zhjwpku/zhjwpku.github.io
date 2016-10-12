@@ -53,6 +53,88 @@ if ! command -v http &>/dev/null ; then
   echo "httpie not installed, 'apt-get install httpie', 'yum install httpie' or 'brew install httpie'"
   exit 1
 fi
+{% endhighlight %}
+
+**特殊变量**
+
+{% highlight shell %}
+#!/bin/bash
+
+# 当前进程的pid
+echo $$
+
+# 当前脚本名
+echo $0
+
+# 传递给脚本第n个参数，n为一个具体的数字
+echo $n
+
+# 传递给脚本的参数个数
+echo $#
+
+# 传递给脚本的所有参数，被双引号包含时，会把所有参数作为一个整体
+echo $*
+
+# 传递给脚本的所有参数，不管是否被双引号包含，都以分开的形式传递
+echo $@
+
+# 上个命令的退出状态
+echo $?
 
 {% endhighlight %}
 
+**${} / ## / %%**
+
+{% highlight shell %}
+#!/bin/bash
+
+file = /path/to/my.file.txt
+
+# 删掉第一个'/'及其左边的字符串，结果为`path/to/my.file.txt`
+echo ${file#*/}
+
+# 删掉最后一个'/'及其左边的字符串，结果为`my.file.txt`
+echo ${file##*/}
+
+# 删掉第一个'.'及其左边的字符串，结果为`file.txt`
+echo ${file#*.}
+
+# 删掉最后一个'.'及其左边的字符串，结果为`txt`
+echo ${file##*.}
+
+# 删掉最后一个'/'及其右边的字符串，结果为`path/to`
+echo ${file%/*}
+
+# 删掉第一个'/'及其右边的字符串，结果为空
+echo ${file%%/*}
+
+# 删掉最后一个'.'及其右边的字符串，结果为`/path/to/my.file`
+echo ${file%.*}
+
+# 删掉第一个'.'及其右边的字符串，结果为`/path/to/my`
+echo ${file%%.*}
+
+# 将第一个path替换为dir，结果为`/dir/to/my.file.txt`
+echo $(file/path/dir)
+
+# 将所有的path替换为dir，纯字符串替换
+echo ${file//path/dir}
+
+# 如果$file没有设定，则使用my.file.txt作为返回值，$file为空值不会处理
+echo ${file-my.file.txt}
+
+# 如果$file没有设定或为空时，则使用my.file.txt作为返回值
+echo ${file:-my.file.txt}
+
+# 如果$file没有设定，则使用my.file.txt作为返回值，$file为空值不会处理，同时为$file赋值
+echo ${file=my.file.txt}
+
+# 如果$file没有设定或为空时，则使用my.file.txt作为返回值，同时为$file赋值
+echo ${file:=my.file.txt}
+
+# 如果$file没有设定，则将my.file.txt输出至STDERR，$file为空值不会处理，同时为$file赋值
+echo ${file?my.file.txt}
+
+# 如果$file没有设定或为空时，则将my.file.txt输出至STDERR，同时为$file赋值
+echo ${file:?my.file.txt}
+{% endhighlight %}
