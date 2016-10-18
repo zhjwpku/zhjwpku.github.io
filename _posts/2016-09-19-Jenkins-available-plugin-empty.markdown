@@ -2,9 +2,9 @@
 layout: post
 title: Jenkins可选插件列表为空
 date: 2016-09-19 12:30:00 +0800
-categories: CI
 tags:
 - jenkins
+- CI
 ---
 
 安装完Jenkins之后，在浏览器进行初始化配置的时候，提示`This Jenkins instance appears to be offline`。
