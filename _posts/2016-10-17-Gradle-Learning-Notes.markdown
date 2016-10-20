@@ -368,7 +368,11 @@ $gradle init
 {% endhighlight %}
 该命令会逐一解析存在的POM文件并生成Gradle构建文件以及包含muilt-project各项目信息的settings.gradle文件。
 
-需要注意的是assemblies并不会自动转换，需要手动编写。
+需要注意的是assemblies并不会自动转换，需要手动编写。这需要借助到**[Application Plugin][applicationplugin]**。
+
+如下是我写的gradle构建文件，仅供参考。提醒一点，拷贝文件时的filter对@someParam@有效，而不是${someParam}
+
+[build.gradle][buildgradle]
 
 gradle的构建我不想写了，自己看吧...
 
@@ -385,3 +389,5 @@ Reference:
 [gradle]: https://github.com/gradle/gradle
 [sdkman]: http://sdkman.io/
 [maven-repo]: https://docs.gradle.org/current/userguide/maven_plugin.html#uploading_to_maven_repositories
+[applicationplugin]: https://docs.gradle.org/current/userguide/application_plugin.html
+[buildgradle]: https://gist.github.com/zhjwpku/a4ab0e9674432ae09206426bf2dfcf59
