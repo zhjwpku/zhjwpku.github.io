@@ -374,6 +374,37 @@ $gradle init
 
 [build.gradle][buildgradle]
 
+<h4><a href="https://docs.gradle.org/current/userguide/publishing_maven.html">Maven Publish</a></h4>
+{% highlight ruby %}
+apply plugin: 'maven-publish'
+
+def deployPassword = hasProperty("DEPLOY_PASSWORD") ? DEPLOY_PASSWORD : "your_repo_password"
+
+publishing {
+	// 上传位置
+	repositories {
+		maven {
+			// 根据包名判断上传仓库的位置
+			url "$artifactRepoBase/${project.version.endsWith('-SNAPSHOT') ? 'snapshots' : 'release'}"
+			credentials {
+				username "user_name"
+				password deployPassword
+			}
+		}
+	}
+
+	// 发布
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+			artifact distZip
+		}
+	}
+}
+{% endhighlight %}
+
+上传命令：`./gradlew publish`
+
 gradle的构建我不想写了，自己看吧...
 
 <br>
