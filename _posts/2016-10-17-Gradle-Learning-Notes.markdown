@@ -11,8 +11,8 @@ tags:
 
 Gradle提供：
 
-- 一个灵活的通用的构建工具，类似Ant
-- 可切换，build-by-convention
+- 类似Ant、灵活、通用的构建工具
+- 可切换，build-by-convention（个人理解为可通过不同的命令进行不同的构建）
 - 多项目构建（multi-project）的支持
 - 强大的依赖管理（基于Apache Ivy）
 - 支持已存在的Maven或Ivy仓库
@@ -24,7 +24,7 @@ Gradle提供：
 
 <h4>安装Gradle</h4>
 
-Gradle依赖于Java JDK或JRE，版本>=7。Gradle包含它自身的Groovy库，已安装的Groovy会被Gradle忽略。下面使用[SDKMAN][sdkman]进行安装：
+Gradle依赖于Java JDK或JRE，版本>=7。Gradle本身包含了Groovy库，已安装的Groovy会被Gradle忽略。下面使用[SDKMAN][sdkman]进行安装：
 
 {% highlight shell %}
 # 安装sdkman
@@ -133,7 +133,7 @@ Total time: 4.507 secs
 - gradle/wrapper/gradle-wrapper.jar (Wrapper JAR)
 - gradle/wrapper/gradle-wrapper.properties (Wrapper properties)
 
-我们需要将`.gradle`添加进.gitignore，因为这是一个临时的文件夹，会随着不同的环境或不同的构建而变化。构建过程中下载的依赖和生成的包都会存放到各个项目的`build`文件夹下，所以需要将它写入.gitignore。
+`.gradle`是一个临时文件夹，不同的构建环境会导致其下的内容会频繁变化，因此需要将它排除在代码管理工具中，即在.gitignore中添加.gradle。构建过程中生成的.class文件及Jar包等都会存放到各个项目的`build`文件夹下，所以也需要将它写入.gitignore。
 
 <h4><a href="https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html">依赖管理</a></h4>
 
