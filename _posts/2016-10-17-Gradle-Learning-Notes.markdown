@@ -377,17 +377,19 @@ $gradle init
 <h4><a href="https://docs.gradle.org/current/userguide/publishing_maven.html">Maven Publish</a></h4>
 {% highlight ruby %}
 apply plugin: 'maven-publish'
+apply plugin: 'application'
 
-def deployPassword = hasProperty("DEPLOY_PASSWORD") ? DEPLOY_PASSWORD : "your_repo_password"
+def deployUsername = hasProperty("MAVEN_USERNAME") ? MAVEN_USERNAME : "your_repo_username"
+def deployPassword = hasProperty("MAVEN_PASSWORD") ? MAVEN_PASSWORD : "your_repo_password"
 
 publishing {
 	// 上传位置
+
 	repositories {
 		maven {
-			// 根据包名判断上传仓库的位置
-			url "$artifactRepoBase/${project.version.endsWith('-SNAPSHOT') ? 'snapshots' : 'release'}"
+			url "$artifactRepoBase/${project.version.endsWith('-SNAPSHOT')? 'snapshots':'releases'}"
 			credentials {
-				username "user_name"
+				username deployUsername
 				password deployPassword
 			}
 		}
@@ -395,11 +397,20 @@ publishing {
 
 	// 发布
 	publications {
-		mavenJava(MavenPublication) {
-			from components.java
+		// 上传Jar包
+		//mavenJava(MavenPublication) {
+		//    from components.java
+		//}
+
+		pubZip(MavenPublication) {
+			groupId 'com.startimestv.server.upms'
+			artifactId "upms-${env}"
+			version '3.11-SNAPSHOT'
+
 			artifact distZip
 		}
 	}
+
 }
 {% endhighlight %}
 
@@ -413,7 +424,9 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Gradle User Guide][userguide]
+1. [Gradle User Guide][userguide]<br>
+2. [Building and testing with Gradle](/assets/pdf/Building_and_testing_with_Gradle.pdf)<br>
+3. [Gradle Beyond the Basics](/assets/pdf/Gradle_Beyond_the_Basics.pdf)
 </span>
 
 [userguide]: https://docs.gradle.org/current/userguide/userguide.html
