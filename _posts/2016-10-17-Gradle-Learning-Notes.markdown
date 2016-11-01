@@ -45,9 +45,9 @@ $ sdk install gradle 3.1
 ![commandLineTutorialTasks](/assets/201610/commandLineTutorialTasks.png)
 
 build.gradle文件内容如下：
-{% highlight ruby %}
+{% highlight groovy %}
 task comile << {
-	println 'compiling source'
+    println 'compiling source'
 }
 
 task compileTest(dependsOn: compile) << {
@@ -59,7 +59,7 @@ task test(dependsOn: [compile, compileTest]) << {
 }
 
 task dist(dependsOn: [compile, test]) << {
-	println 'building the distribution'
+    println 'building the distribution'
 }
 {% endhighlight %}
 
@@ -81,7 +81,7 @@ $ gradle di
 $ gradle cT
 
 # gradle默认会查找在当前文件夹下的构建文件，可以使用-b选项来选择另一个build file，这样setting.gradle不会被使用
-# -q, --quite	Log errors only
+# -q, --quite    Log errors only
 $ gradle -q -b subdir/myproject.gradle hello
 
 # -p 选择项目目录
@@ -141,38 +141,38 @@ Total time: 4.507 secs
 
 **`build.gradle文件`**
 
-{% highlight ruby %}
+{% highlight groovy %}
 apply plugin: 'java'
 apply plugin: 'maven'
 
 // maven仓库
 repositories {
-	// Use a Maven central repoitory
-	mavenCentral()
+    // Use a Maven central repoitory
+    mavenCentral()
 
-	// Use a remote maven repoitory
-	maven {
-		url 'https://repo.gradle.org/gradle/libs-releases'
-	}
+    // Use a remote maven repoitory
+    maven {
+        url 'https://repo.gradle.org/gradle/libs-releases'
+    }
 }
 
 // External dependencies
 dependencies {
-	compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
-	testCompile group: 'junit', name: 'junit', version: '4.+'
-	deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
 }
 
 // [Interacting with Maven repositories][maven-repo]
 UploadArchives {
-	repositories {
-		mavenDeployer {
-			configuration = configurations.deployerJars
-			repository(url: "scp://repos.mycompany.com/releases") {
-				authentications(userName: "me", password: "myPassword")
-			}
-		}
-	}
+    repositories {
+        mavenDeployer {
+            configuration = configurations.deployerJars
+            repository(url: "scp://repos.mycompany.com/releases") {
+                authentications(userName: "me", password: "myPassword")
+            }
+        }
+    }
 }
 {% endhighlight %}
 
@@ -222,52 +222,52 @@ println tasks['hello'].name
 
 **Some useful definition**
 
-{% highlight ruby %}
+{% highlight groovy %}
 // 定义默认任务
 defaultTasks 'clean', 'run'
 
 task clean << {
-	println 'Default Cleaning!'
+    println 'Default Cleaning!'
 }
 
 // gradle -q distribution
 task distribution << {
-	println "We build the zip with version=$version"
+    println "We build the zip with version=$version"
 }
 
 // gradle -q release
 task release(dependsOn: 'distribution') << {
-	println 'We release now'
+    println 'We release now'
 }
 
 gradle.taskGraph.whenReady { taskGraph ->
-	if (taskGraph.hasTask(release)) {
-		version = '1.0'
-	} else {
-		version = '1.0-SNAPSHOT'
-	}
+    if (taskGraph.hasTask(release)) {
+        version = '1.0'
+    } else {
+        version = '1.0-SNAPSHOT'
+    }
 }
 
 task taskX << {
-	println 'taskX'
+    println 'taskX'
 }
 
 task taskY << {
-	println 'taskY'
+    println 'taskY'
 }
 
 taskX.dependsOn taskY
 
 taskX.dependsOn {
-	tasks.findAll {task -> task.name.startsWith('libs')}
+    tasks.findAll {task -> task.name.startsWith('libs')}
 }
 
 task lib1 << {
-	println 'lib1'
+    println 'lib1'
 }
 
 task lib2 << {
-	println 'lib2'
+    println 'lib2'
 }
 
 // Ordering tasks
@@ -276,15 +276,15 @@ taskY.shouldRunAfter taskX
 
 // Multi-project
 allprojects {
-	task hello << { task -> println "I'm $task.project.name"}
+    task hello << { task -> println "I'm $task.project.name"}
 }
 
 subprojects {
-	hello << {print "- I denpend on water"}
+    hello << {print "- I denpend on water"}
 }
 
 project(':bluewhale').hello << { task ->
-	println "I'am subproject $task.project.name"
+    println "I'am subproject $task.project.name"
 }
 {% endhighlight %}
 
@@ -297,41 +297,41 @@ project(':bluewhale').hello << { task ->
 build.gradle
 {% highlight ruby %}
 class IncrementalReverseTask extends DefaultTask {
-	@InputDirectory
-	def File inputDir
+    @InputDirectory
+    def File inputDir
 
-	@OutputDirectory
-	def File outputDir
+    @OutputDirectory
+    def File outputDir
 
-	@Input
-	deff inputProperty
+    @Input
+    deff inputProperty
 
-	@TaskAction
-	void execute(IncrementalTaskInputs inputs) {
-		println inputs.incremental ? "CHANGE inputs considered out of data"
-								   : "All inputs considered out of data"
-		if (!inputs.incremental)
-			project.delete(outputDir.listFiles())
+    @TaskAction
+    void execute(IncrementalTaskInputs inputs) {
+        println inputs.incremental ? "CHANGE inputs considered out of data"
+                                   : "All inputs considered out of data"
+        if (!inputs.incremental)
+            project.delete(outputDir.listFiles())
 
-		inputs.outOfDate { change ->
-			println "out of data: ${change.file.name}"
-			def targetFile = new File(outputDir, change.file.name)
-			targetFile.text = change.file.test.reverse()
-		}
+        inputs.outOfDate { change ->
+            println "out of data: ${change.file.name}"
+            def targetFile = new File(outputDir, change.file.name)
+            targetFile.text = change.file.test.reverse()
+        }
 
-		inputs.removed { change ->
-			println "removed: ${change.file.name}"
-			def targetFile = new File(outputDir, change.file.name)
-			targetFile.delete()
-		}
-	}
+        inputs.removed { change ->
+            println "removed: ${change.file.name}"
+            def targetFile = new File(outputDir, change.file.name)
+            targetFile.delete()
+        }
+    }
 }
 
 // An incremental task in action
 task incrementalReverse(type: IncrementalReverseTask) {
-	inputDir = file('inputs')
-	outputDir = file("$buildDir/outputs")
-	inputProperty = project.properties['taskInputProperty'] ?: "original"
+    inputDir = file('inputs')
+    outputDir = file("$buildDir/outputs")
+    inputProperty = project.properties['taskInputProperty'] ?: "original"
 }
 {% endhighlight %}
 
@@ -375,7 +375,7 @@ $gradle init
 [build.gradle][buildgradle]
 
 <h4><a href="https://docs.gradle.org/current/userguide/publishing_maven.html">Maven Publish</a></h4>
-{% highlight ruby %}
+{% highlight groovy %}
 apply plugin: 'maven-publish'
 apply plugin: 'application'
 
@@ -383,33 +383,33 @@ def deployUsername = hasProperty("MAVEN_USERNAME") ? MAVEN_USERNAME : "your_repo
 def deployPassword = hasProperty("MAVEN_PASSWORD") ? MAVEN_PASSWORD : "your_repo_password"
 
 publishing {
-	// 上传位置
+    // 上传位置
 
-	repositories {
-		maven {
-			url "$artifactRepoBase/${project.version.endsWith('-SNAPSHOT')? 'snapshots':'releases'}"
-			credentials {
-				username deployUsername
-				password deployPassword
-			}
-		}
-	}
+    repositories {
+        maven {
+            url "$artifactRepoBase/${project.version.endsWith('-SNAPSHOT')? 'snapshots':'releases'}"
+            credentials {
+                username deployUsername
+                password deployPassword
+            }
+        }
+    }
 
-	// 发布
-	publications {
-		// 上传Jar包
-		//mavenJava(MavenPublication) {
-		//    from components.java
-		//}
+    // 发布
+    publications {
+        // 上传Jar包
+        //mavenJava(MavenPublication) {
+        //    from components.java
+        //}
 
-		pubZip(MavenPublication) {
-			groupId 'com.startimestv.server.upms'
-			artifactId "upms-${env}"
-			version '3.11-SNAPSHOT'
+        pubZip(MavenPublication) {
+            groupId 'com.startimestv.server.upms'
+            artifactId "upms-${env}"
+            version '3.11-SNAPSHOT'
 
-			artifact distZip
-		}
-	}
+            artifact distZip
+        }
+    }
 
 }
 {% endhighlight %}
