@@ -63,6 +63,9 @@ fi
 # 当前进程的pid
 echo $$
 
+# Shell最后运行的后台进程PID
+echo $!
+
 # 当前脚本名
 echo $0
 
