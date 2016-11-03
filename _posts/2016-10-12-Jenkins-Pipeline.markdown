@@ -71,6 +71,28 @@ node {
         }
     }
 
+    // 将构建好的包上传到Nexus仓库，其中用户名密码在Jenkins `Configure System`中添加
+    stage('Publish') {
+        timeout(time: 10, unit: 'MINUTES') {
+            input "Publish ${env.ENV} archive package to Nexus?"
+
+            env.REPO_URL = sh(returnStdout: true, script: "./gradlew -Penv=${env.ENV} publish | grep -oP -m 1 'http.*?zip'").trim()
+            echo "Publish to url: ${env.REPO_URL}"
+        }   
+    }   
+
+    // 将上传到Nexus上的包拉下来部署到运行环境，需要在Jenkins上用ssh-copy-id来设置免密码登陆
+    stage('Deploy') {
+        timeout(time: 10, unit: 'MINUTES') {
+            input "Deploy to ${env.ENV} environment?"
+                def host = map["${env.ENV}"]
+                if ("${env.ENV}" == "dev") {
+                    // -x让shell打印每一行执行的命令，-s表示从标准输入读取要运行的脚本，这里重定向了deploy.sh
+                    sh "ssh root@${host} 'bash -x -s' < ./deploy.sh " + "${env.REPO_URL}"
+                }   
+        }
+    }   
+
     //if (env.BRANCE_NAME == 'release') {
     //    stage('Tag release') {
     //        String version = readFile('Version')
@@ -79,6 +101,59 @@ node {
     //    }
     //}
 }
+
+def archiveUnitTestResults() {
+    step([$class: "JunitResultArchiver", testResults: "build/**/TEST-*.xml"])
+}
+
+def archiveCheckStyleResults() {
+    step([$class: "CheckStylePublisher",
+        canComputeNew: false,
+        defaultEncoding: "",
+        health: "",
+        pattern: "build/reports/checkstyle/main.xml",
+        unHealthy: ""
+    ])
+}
+
+{% endhighlight %}
+
+deploy.sh脚本中为远程机器上执行的命令。
+{% highlight shell %}
+#!/bin/bash
+
+WORK_DIR="/opt/startimestv"
+SERVER_DIR="$WORK_DIR/upms"
+RUN_PID="$SERVER_DIR/bin/run.pid"
+
+if [ ! -d $WORK_DIR ]; then
+    mkdir -p $WORK_DIR
+fi
+
+# 删除之前运行的进程
+if [ -f $RUN_PID ]; then
+    PID=`cat $RUN_PID`
+    echo "Killing former running progress $PID"
+    cat $RUN_PID | xargs kill -9
+    echo "Killing former running progree $PID done."
+fi
+
+yes | rm -r $WORK_DIR/*
+
+cd $WORK_DIR
+
+wget $1
+
+unzip *.zip -d $SERVER_DIR
+
+mv $SERVER_DIR/*/* $SERVER_DIR
+
+cd $SERVER_DIR/bin/
+
+nohup $SERVER_DIR/bin/xxxx-start > /dev/null 2>&1 &
+
+echo $! > $RUN_PID
+echo "SERVER started with pid `cat $RUN_PID`"
 
 {% endhighlight %}
 
