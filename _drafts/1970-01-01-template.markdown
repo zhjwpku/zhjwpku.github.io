@@ -20,7 +20,7 @@ tags:
 | infra2 | 10.0.63.204/172.0.63.204 | c3po
 
 
-![Picture](/assets/path/to/picture.png)
+![Picture](/assets/path/to/picture.png){: width="650px"}
 
 {% highlight shell %}
 代码，可以为不同语言显示不同的风格，如shell、ruby、python、yaml等
@@ -32,7 +32,7 @@ tags:
 
 <br>
 <span class="post-meta">
-参考文献:
+Reference:
 </span>
 <br>
 <span class="post-meta">
