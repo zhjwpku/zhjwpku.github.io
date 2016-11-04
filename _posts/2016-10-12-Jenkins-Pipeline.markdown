@@ -7,14 +7,21 @@ tags:
 - CI
 ---
 
-Jenkins2.0的[Pipeline][overview]允许用户定义软件项目的整个生命周期来支持持续集成。在项目根目录下创建一个[Jenkinsfile][jenkinsfile]文件，编写从构建到部署的整个生命周期，减少了复杂的Jenkins界面操作。
+Jenkins2.0的[Pipeline][overview](formerly called 'workflow')允许用户定义软件项目的整个生命周期来支持持续集成。在项目根目录下创建一个[Jenkinsfile][jenkinsfile]文件，编写从构建到部署的整个生命周期，减少了复杂的Jenkins界面操作。
 
 Pipeline特性如下：
 
-- 耐用
+- 持久性(durable)：在Jenkins master按计划和非计划的重启后，pipeline仍然能够工作，类似nohup
 - 暂停：支持任务暂停并等待手动触发
 - 灵活：Pipeline支持复杂的持续集成需求，包括fork, join, loop, work in parallel
 - 扩展：支持DSL(Domain Scripting Language)并可与其他插件集成
+
+一些跟Pipeline相关的插件：
+
+- Pipeline: 包含了核心pipeline引擎以及其从属的插件，`Pipeline: API, Pipeline: Basic Steps, Pipeline: Durable Task Step, Pipeline: Execution Support, Pipeline: Global Shared Library for CPS pipeline, Pipeline: Groovy CPS Execution, Pipeline: Job, Pipeline: SCM Step, Pipeline: Step API`
+- Pipeline Stage View: 图形化的泳道阶段图
+- Multibranch Pipeline: 自动构建包含`Jenkinsfile的分支`
+- Docker Pipeline: 在Jenkinsfile脚本中使用Docker containers进行构建
 
 ![real world pipeline flow](/assets/201610/realworld-pipeline-flow.png)
 
@@ -48,6 +55,7 @@ node {
 
     stage('build') {
         try {
+            // 目前这种写法不好，因为在node里使用input将使得node本身和workspace被lock，不能够被别的job使用
             def userInput = input(
                 id: 'userInput', message: 'Choose the build Environment', ok: 'Submit', parameters[
                     //[$class: 'TextParameterDefinition', defaultValue: '', description: 'Data Sufix', name: 'snapshot'],
@@ -157,6 +165,10 @@ echo "SERVER started with pid `cat $RUN_PID`"
 
 {% endhighlight %}
 
+Stage View
+
+![pipeline stage view](/assets/201610/pipeline_stage_view.png)
+
 <br>
 <span class="post-meta">
 Reference:
@@ -165,8 +177,18 @@ Reference:
 <span class="post-meta">
 1. Jenkins1.0版本的Workflow插件介绍: [Continuous Delivery With Jenkins Workflow](/assets/pdf/jenkins-workflow.pdf)<br>
 2. Pipeline Overview: [https://jenkins.io/doc/book/pipeline/overview/][overview]<br>
-3. Jenkinsfile: [https://jenkins.io/doc/book/pipeline/jenkinsfile/][jenkinsfile]
+3. Jenkinsfile: [https://jenkins.io/doc/book/pipeline/jenkinsfile/][jenkinsfile]<br>
+4. Pipeline Steps Reference: [https://jenkins.io/doc/pipeline/steps/][stepRef]<br>
+5. [Top 10 Best Practices for Jenkins Pipeline Plugin][top10]<br>
+6. [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 1][part1]<br>
+7. [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 2][part2]<br>
+8. [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 3][part3]
 </span>
 
 [overview]: https://jenkins.io/doc/book/pipeline/overview/
 [jenkinsfile]: https://jenkins.io/doc/book/pipeline/jenkinsfile/
+[stepRef]: https://jenkins.io/doc/pipeline/steps/
+[top10]: https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin
+[part1]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-1
+[part2]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-2
+[part3]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-3
