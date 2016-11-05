@@ -110,17 +110,17 @@ Scheduler是插件化的，意味着可以很方便地替换成其他调度器�
 
 控制器 | 说明
 ------ | ----
-Replication Controller | 关联Replication Controller和Pod，保证ReplicationController<br>定义的副本数量与实际运行Pod的数量是一致的
+Replication Controller | 关联Replication Controller和Pod，保证ReplicationController定义的副本数量与实际运行Pod的数量是一致的
 Node Controller | 定期检查Node的健康状态，标识出实效的Node
-Namespace Controller | 定期清理无效的Namespace，包括Namespace下的API对象，<br>如Pod、Service和Secret
+Namespace Controller | 定期清理无效的Namespace，包括Namespace下的API对象，如Pod、Service和Secret
 Service Controller | 为Loadbalancer类型的Service创建管理负载均衡器
-Endpoints Controller | 关联Service和Pod，创建Endpoints作为Service的后端，<br>当Pod发生变化时，实时刷新Endpoints
-Service Account Controller | 为每个Namespace创建默认Service Account，同时为<br>Service Account创建Service Account Secret
-Persistent Volume Controller | 管理维护Persistent Volume和Persistent Volume Claim，<br>为新的Persistent Volume Claim分配Persistent Volume进行绑定，<br>为释放的Persistent执行清理回收
+Endpoints Controller | 关联Service和Pod，创建Endpoints作为Service的后端，当Pod发生变化时，实时刷新Endpoints
+Service Account Controller | 为每个Namespace创建默认Service Account，同时为Service Account创建Service Account Secret
+Persistent Volume Controller | 管理维护Persistent Volume和Persistent Volume Claim，为新的Persistent Volume Claim分配Persistent Volume进行绑定，为释放的Persistent执行清理回收
 Daemon Set Controller | 负责创建Daemon Pod，保证指定的Node上正常运行Daemon Pod
-Deployment Controller | 关联Deployment和Replication Controller，保证运行指定数目的Pod。<br>当Deployment更新时，控制实现Replication Controller和Pod的更新
+Deployment Controller | 关联Deployment和Replication Controller，保证运行指定数目的Pod。当Deployment更新时，控制实现Replication Controller和Pod的更新
 Job Controller | 为Job创建一次性任务Pod，保证完成Job指定的任务数目
-Pod Autoscaler Controller | 实现Pod的自动伸缩，定时获取监控数据，进行策略匹配，<br>当满足条件时执行Pod的伸缩动作
+Pod Autoscaler Controller | 实现Pod的自动伸缩，定时获取监控数据，进行策略匹配，当满足条件时执行Pod的伸缩动作
 
 <h6></h6>
 在CoreOS Fest 2015的[A Technical Overview of Kubernetes][k8s_overview]中，Brendan Burns多次提到

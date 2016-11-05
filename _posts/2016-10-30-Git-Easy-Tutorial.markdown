@@ -28,6 +28,8 @@ git config --global push.default simple
 # use less pager by default
 git config --global --replace-all core.pager "less -+S"
 
+git config --global --color.ui auto
+
 # alias
 git config --global alias.dt difftool
 git config --global alias.mt "mergetool -y"

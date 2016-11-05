@@ -197,3 +197,26 @@ pre {
         }
     }
 }
+
+/**
+ * Table
+ */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+}
+
+th {
+    padding: 15px 0px 12px 0px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+}
+
+td {
+    padding: 5px 10px 5px 10px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+}
