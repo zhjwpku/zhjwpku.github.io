@@ -29,31 +29,31 @@ git config --global push.default simple
 git config --global --replace-all core.pager "less -+S"
 
 # alias
-git config --glabal alias.dt difftool
-git config --glabal alias.mt "mergetool -y"
-git config --glabal alias.br "branch -vv"
-git config --glabal alias.co checkout
-git config --glabal alias.cob "checkout -b"
-git config --glabal alias.ci commit
-git config --glabal alias.cp cherry-pick
+git config --global alias.dt difftool
+git config --global alias.mt "mergetool -y"
+git config --global alias.br "branch -vv"
+git config --global alias.co checkout
+git config --global alias.cob "checkout -b"
+git config --global alias.ci commit
+git config --global alias.cp cherry-pick
 
 #  去掉默认的前缀'a b'
-git config --glabal alias.df "diff --no-prefix"
+git config --global alias.df "diff --no-prefix"
 
 #  按单词diff，而不是行
-git config --glabal alias.dw "diff --no-prefix --color-words"
+git config --global alias.dw "diff --no-prefix --color-words"
 
 #  与HEAD^进行diff
-git config --glabal alias.dh "diff --no-prefix HEAD^"
-git config --glabal alias.st status
-git config --glabal alias.pl "pull --ff-only"
-git config --glabal alias.ps push
+git config --global alias.dh "diff --no-prefix HEAD^"
+git config --global alias.st status
+git config --global alias.pl "pull --ff-only"
+git config --global alias.ps push
 
-git config --glabal alias.lg "log --graph --format='%C(auto)%h%C(reset) %C(dim white)%an%C(reset) %C(green)%ai%C(reset) %C(auto)%d%C(reset)%n   %s'"
-git config --glabal alias.lg10 "log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset' -10"
-git config --glabal alias.lg20 "log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset' -20"
-git config --glabal alias.lg30 "log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset' -30"
-git config --glabal alias.fp "format-patch --stdout --no-prefix"
+git config --global alias.lg "log --graph --format='%C(auto)%h%C(reset) %C(dim white)%an%C(reset) %C(green)%ai%C(reset) %C(auto)%d%C(reset)%n   %s'"
+git config --global alias.lg10 "log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset' -10"
+git config --global alias.lg20 "log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset' -20"
+git config --global alias.lg30 "log --graph --pretty=format:'%C(yellow)%h%C(auto)%d%Creset %s %C(white)- %an, %ar%Creset' -30"
+git config --global alias.fp "format-patch --stdout --no-prefix"
 
 {% endhighlight %}
 
@@ -79,7 +79,7 @@ Prompt可以修改命令提示符，而Completion用于自动补全。
 
 {% highlight shell %}
 # git
-[[ -f ~/.git-completion.bash ]] && . ~/.git-completion.bash
+# [[ -f ~/.git-completion.bash ]] && . ~/.git-completion.bash
 [[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e[1;36m\]→\[\e[m\] \[\e[0;32m\]\w\[\e[0;35m\]$(__git_ps1)\[\e[1;32m\] \$\[\e[m\] '
