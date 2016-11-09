@@ -93,11 +93,14 @@ export PS1='\[\e[1;36m\]→\[\e[m\] \[\e[0;32m\]\w\[\e[0;35m\]$(__git_ps1)\[\e[1
 
 Git中的文件可以分为三种状态：Commited，Modified和Staging。Commited为已经安全保存在本地仓库的数据，Modified为有改动但是并没有提交到本地仓库的文件，而Staged是将改动过的文件标记为可以进入下次commit snapshot的状态。
 
+git本地由三个部分组成：工作区（working directory），暂存区（snapshot/stage/index）和本地库（local repo）。.git目录是仓库的灵魂，.git目录里边包括暂存区和本地库，.git目录外的地方是工作区。git中包含四类对象：commit提交对象，tree目录，blob文件，tag标记。
+
 基本的Git工作流为：
 
-- 修改working directory中的文件
-- 标记修改过的文件为Stage状态，将它们的Snapshot加入到staging区
-- 提交，将staging区的文件存储到本地Git仓库
+- 修改工作区中的文件
+- 标记修改过的文件为Stage状态，将它们的Snapshot加入到暂存区
+- 提交，将暂存区的文件存储到本地Git仓库
+
 
 <h4>Git Branching</h4>
 
@@ -127,6 +130,79 @@ $ git checkout develop
 $ git pull  # 将merge的bug-feature更新到develop分支
 $ git branch -d bug-feature
 $ git push --delete origin bug-feature # 或者在网页上删除，由Reviewer或自己删除
+{% endhighlight %}
+
+<h4>命令解释</h4>
+
+{% highlight shell %}
+$ git push origin master # 上传master分支
+$ git fetch # 从远程仓库下载更新代码到本地仓库，工作区和暂存区不变
+$ git pull  # = git fetch + git checkout 下载到本地仓库，并更新到暂存区和工作区
+$ git add -i # 进入交互式add
+$ git format-patch -n # 格式化生成patch
+$ git blame <file> # 显示文件的每行的版本以及最后更改的人员
+$ git am [<mbox>|<Maildir>] # Apply a series of patches from a mailbox
+$ git apply <patch> # Apply a patch to files and/or to the index
+
+# git diff
+$ git diff # 比较工作目录和暂存区的差异
+$ git diff --cached # 比较暂存区和HEAD的差异
+$ git diff --name-only # 只列出不同文件的名字，而不显示具体的差异之处
+$ git diff --stat # 显示diff变更的数据，--numstat会显示增加的行数和删除的行数
+
+# git checkout 恢复工作区的内容
+$ git checkout test.txt # 从暂存区恢复到工作区，相当于撤销test.txt文件未add的修改
+$ git checkout -f # 从本地库恢复到暂存区和工作区，强制修改工作区的内容，一般对于当前修改不满意，放弃修改后重新开始
+$ git checkout HEAD test.txt # 从本地库恢复到暂存区和工作区，取HEAD中的test.txt文件
+$ git checkout $(git rev-list master -n -1 --first-parent --before=2016-10-30) # 恢复到2016-10-30号前的最后一个版本
+
+# git reset
+$ git reset --soft <commit> # 暂存区和工作区中的内容不作任何改变，仅把HEAD指向<commit>。这个模式下可以在不改动当前工作环境的情况下，改变head指针，即切换到任意commit
+$ git reset --mixed <commit> # reset的默认模式。暂存区中的内容会发生变化（恢复到工作区），但工作区中的内容不变
+$ git reset --hard <commit> # 暂存区和工作区都会发生变化，还原到<commit>
+
+# git revert
+$ git revert <commit> # 撤销到<commit>，且撤销会作为一次提交进行保存
+$ git revert -n master~5..master~2 # 丢弃从最近第五个commit（含）到第二个（不含），但是不自动生成commit，仅修改工作区和暂存区
+
+# git tag
+$ git tag # list all tag
+$ git tag -a 3.10.1 -m "Release 3.10.1" # 打标签，最好在Pull Request合并之后
+$ git show <tag> # 显示tag详情
+$ git tag -d 3.10.1 # 删除标签
+$ git push origin --tags # 上传本地标签
+$ git checkout <tag> # 切换到tag，同切换分支一样
+
+# git stash
+# case.1 工作空间与upstream冲突，导致pull失败
+$ git stash
+$ git pull
+$ git stash pop
+
+# case.2 当你正处于某个任务之中的时候，老板突然让你去修复一个不相干的bug
+# 一般你会这样操作
+# ... hack hack hack ...
+$ git checkout -b my_wip
+$ git commit -a -m "WIP"
+$ git checkout master
+$ edit emergency fix # 紧急修复
+$ git commit -a -m "Fix in a hurry"
+$ git checkout my_wip
+$ git reset --soft HEAD^
+# ... continue hacking ...
+
+# 可以使用stash简化操作
+# ... hack hack hack ...
+$ git stash
+$ edit emergency fix
+$ git commit -a -m "Fix in a hurry"
+$ git stash pop
+# ... continue hacking ...
+
+# 可能存在多个Stash的内容，使用栈来管理，pop会从最近一个stash中读取内容并恢复
+$ git stash list # 显示Git栈内的所有备份
+$ git stash clear # 清空Git栈
+$ git stash apply <版本号> # 取出特定的版本号对应的工作空间
 {% endhighlight %}
 
 <br>
