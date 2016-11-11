@@ -416,6 +416,10 @@ publishing {
 
 上传命令：`./gradlew publish`
 
+<h4>Another Gradle project</h4>
+
+[https://github.com/zhjwpku/ijkplayer/tree/master/android/ijkplayer][gradle_project]
+
 gradle的构建我不想写了，自己看吧...
 
 <br>
@@ -435,3 +439,4 @@ Reference:
 [maven-repo]: https://docs.gradle.org/current/userguide/maven_plugin.html#uploading_to_maven_repositories
 [applicationplugin]: https://docs.gradle.org/current/userguide/application_plugin.html
 [buildgradle]: https://gist.github.com/zhjwpku/a4ab0e9674432ae09206426bf2dfcf59
+[gradle_project]: https://github.com/zhjwpku/ijkplayer/tree/master/android/ijkplayer
