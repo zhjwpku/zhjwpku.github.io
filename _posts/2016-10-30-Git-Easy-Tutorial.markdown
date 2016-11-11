@@ -144,6 +144,9 @@ $ git blame <file> # 显示文件的每行的版本以及最后更改的人员
 $ git am [<mbox>|<Maildir>] # Apply a series of patches from a mailbox
 $ git apply <patch> # Apply a patch to files and/or to the index
 
+# clone时提供用户名、密码
+$ git clone https://username:password@github.com/username/repository.git
+
 # git diff
 $ git diff # 比较工作目录和暂存区的差异
 $ git diff --cached # 比较暂存区和HEAD的差异
