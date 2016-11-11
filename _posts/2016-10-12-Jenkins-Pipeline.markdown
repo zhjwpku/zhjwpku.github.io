@@ -169,6 +169,10 @@ Stage View
 
 ![pipeline stage view](/assets/201610/pipeline_stage_view.png)
 
+<h4>Another Jenkinsfile</h4>
+
+[https://github.com/zhjwpku/ijkplayer/blob/master/Jenkinsfile][jenkinsfile2]
+
 <br>
 <span class="post-meta">
 Reference:
@@ -192,3 +196,4 @@ Reference:
 [part1]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-1
 [part2]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-2
 [part3]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-3
+[jenkinsfile2]: https://github.com/zhjwpku/ijkplayer/blob/master/Jenkinsfile
