@@ -1,4 +1,5 @@
-title: 各个击破
+#title: 各个击破
+title: 赵四方的技术博客
 author: 赵军旺
 email: zhjwpku@gmail.com
 d1: Trying to be an excellent programmer.
@@ -36,3 +37,5 @@ google_analytics: UA-86852184-1
 #  url: /opensstack.html
 #- label: Tags
 #  url: /tags.html
+
+host: 0.0.0.0

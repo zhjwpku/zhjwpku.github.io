@@ -3,10 +3,8 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>{{ site.author }}
-            {% include icon-github.html username=site.github_username %}
-	  </li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{% include icon-github.html username=site.github_username %}</li>
+          <li><a href="mailto:{{ site.email }}"><span class="icon icon--envelope">{% include e-mail-envelope.svg %}</span><span class="email">{{ site.email }}</span></a></li>
         </ul>
       </div>
 
