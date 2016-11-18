@@ -304,7 +304,7 @@ class IncrementalReverseTask extends DefaultTask {
     def File outputDir
 
     @Input
-    deff inputProperty
+    def inputProperty
 
     @TaskAction
     void execute(IncrementalTaskInputs inputs) {
