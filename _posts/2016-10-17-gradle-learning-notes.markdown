@@ -422,6 +422,11 @@ publishing {
 
 gradle的构建我不想写了，自己看吧...
 
+-- Updated 2016-11-21 --<br>
+**Build C/C++**<br>
+> [Gradle and C/C++ Workshop Part 1][part1]<br>
+> [Gradle and C/C++ Workshop Part 2][part2]
+
 <br>
 <span class="post-meta">
 Reference:
@@ -440,3 +445,5 @@ Reference:
 [applicationplugin]: https://docs.gradle.org/current/userguide/application_plugin.html
 [buildgradle]: https://gist.github.com/zhjwpku/a4ab0e9674432ae09206426bf2dfcf59
 [gradle_project]: https://github.com/zhjwpku/ijkplayer/tree/master/android/ijkplayer
+[part1]: https://www.youtube.com/watch?v=m3t4JKHrGAk
+[part2]: https://www.youtube.com/watch?v=Z4QuY-PFC3Y
