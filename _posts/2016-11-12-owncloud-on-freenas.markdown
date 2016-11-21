@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ownCloud on Freenas
+title: ownCloud on FreeNAS
 date: 2016-11-12 20:00:00 +0800
 tags:
 - freenas
@@ -91,7 +91,7 @@ Android本身对SMB有很好的支持，iOS推荐一个APP -> `FileExplorer`，S
 
 其实ownCloud插件的安装也是比较简单的操作，安装后配置一下挂载的Dataset，然后启动服务即可。但是在一次升级的过程中遇到了问题，在这做个记录。
 
-第一次使用上传PBI的方式安装ownCloud，版本为9.1.1，用了一段时间后提示有新的版本进行更新。更新之后遇到问题了，登陆ownCloud界面出现了一条提示，大致意思是`你的ownCloud实例太大了，请在控制台进行更新`，于是乎我按照提示，进行更新，提示找不到PDO类：
+第一次用上传PBI的方式安装ownCloud，版本为9.1.1，用了一段时间后提示有新版本可更新。更新之后遇到问题了，登陆ownCloud界面出现提示，大致意思是`你的ownCloud实例太大了，请在控制台进行命令行更新`，于是我按照提示，进行更新，提示找不到PDO类：
 
 ![php_pdoerr](/assets/201611/php_pdoerr.png)
 
@@ -118,7 +118,7 @@ No lucky：
 
 ![jexec](/assets/201611/jexec.png)
 
-看着像权限的问题，于是我将jail的Dataset权限改为root:root，运行之后竟然更新成功了。然后打开浏览器输入ownCloud的地址，出现如下提示：
+看着像权限的问题，于是将jail的Dataset权限改为root:wheel，运行之后竟然更新成功了。然后打开浏览器输入ownCloud的地址，出现如下提示：
 
 ![maintainance](/assets/201611/maintainance_mode.png)
 
