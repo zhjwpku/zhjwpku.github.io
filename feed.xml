@@ -1,5 +1,5 @@
 ---
-layout: none
+Title: RSS
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -11,6 +11,13 @@ layout: none
     {% for post in site.posts  %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
+        <tags>
+        {% if post.tags %}
+          {% for tag in post.tags%}
+          <tag>{{tag}}</tag>
+          {% endfor %}
+        {% endif %} 
+        </tags>
         <description>{{ post.content | xml_escape }}</description>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <link>{{ site.url }}/{{ post.url }}</link>
