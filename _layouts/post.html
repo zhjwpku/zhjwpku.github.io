@@ -19,8 +19,27 @@ layout: default
     <span style="font-size: 13px; color: #eee">Copyleft © 2016 {{ site.author }}</span>
   </div>
 
+
   {% include duoshuo.html %}
 </article>
+  <a href="#" class="scrollToTop">Scroll To Top</a>
 <script>
   anchors.add('h4');
+
+  $(document).ready(function(){
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+     
+    //Click event to scroll to top
+    $('.scrollToTop').click(function(){
+        $('html, body').animate({scrollTop : 0},400);
+            return false;
+        });
+    });
 </script>

@@ -281,3 +281,35 @@ td {
 .tag:hover::after {
     border-left-color: crimson; 
 }
+
+/**
+ * Scroll To Top
+ */
+.scrollToTop {
+    bottom: 20px;
+    right: 20px;
+    background-color: #108ac6;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    line-height: 1.2;
+    text-decoration: none;
+    opacity: 0.8;
+    padding: 11px 0 9px; 
+    width: 140px; 
+    text-align: center; 
+    webkit-backface-visibility: hidden;
+    webkit-transition: background .2s ease;
+    border-radius: 17px;
+    position: fixed;
+    transition: background .2s ease;
+    display: none;
+    z-index: 2147483647;
+}
+.scrollToTop:hover{
+    text-decoration: none;
+    background-color: #111;
+    color: #fff;
+}
