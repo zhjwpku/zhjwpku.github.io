@@ -24,6 +24,18 @@
     }
 }
 
+.site-logo {
+    float: left;
+    top: 7px;
+    height: 43px;
+    width: 43px;
+    position: relative;
+
+    @include media-query($on-palm) {
+        top: 7px;
+    }
+}
+
 .site-nav {
     float: right;
     line-height: 56px;
@@ -92,8 +104,6 @@
         }
     }
 }
-
-
 
 /**
  * Site footer
@@ -248,88 +258,89 @@ Author: Kushagra Gour (http://kushagragour.in)
 MIT Licensed
 */
 .super-search-btn {
-	position: fixed;
-	right: 10px;
-	top: 10px;
-	fill: #DDD;
-    z-index: 1;
+    position: relative;
+    float: right;
+    right: 10px;
+    top: 6px;
+    height: 45px;
+    fill: #DDD;
+    z-index: 0;
 
     @include media-query($on-palm) {
-        right: 50px;
+        right: 40px;
     }
 }
 .super-search-btn:hover {
-	fill: #BBB;
+    fill: #BBB;
 }
 
 .super-search {
-	position: fixed;
-	background-color: rgba(0, 191, 255, 0.85);
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 1;
-	transition: 0.2s ease;
-	visibility: hidden;
-	opacity: 0;
+    position: fixed;
+    background-color: rgba(0, 191, 255, 0.85);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: 0.2s ease;
+    visibility: hidden;
+    opacity: 0;
 }
 .super-search__close-btn {
-	fill: #DDD;
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	z-index: 1;
+    fill: #DDD;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
 
     @include media-query($on-palm) {
         top: 2px;
     }
 }
 .super-search__input {
-	border: 0;
-	font-size: 40px;
-	border-left: none;
-	border-right: none;
-	color: #999;
-	width: 100%;
-	//padding: 10px 31px;
-	padding: 10px 0;
-	text-align: center;
-	transform: translateY(-100%);
-	transition: 0.15s ease-out 150ms;
+    border: 0;
+    font-size: 40px;
+    border-left: none;
+    border-right: none;
+    color: #999;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: 0.15s ease-out 150ms;
 
     @include media-query($on-palm) {
         font-size: 25px;
     }
 }
 .is-active .super-search__input {
-	transform: translateY(0);
+    transform: translateY(0);
 }
 .super-search__results {
-	text-align: center;
-	list-style: none;
-	padding: 0;
-	overflow-x: hidden;
-	height: calc(100% - 110px);
-	transition: 0.2s ease;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    overflow-x: hidden;
+    height: calc(100% - 110px);
+    transition: 0.2s ease;
     
     @include media-query($on-palm) {
         margin-left: 0px;
     }
 }
 .super-search__results.is-hidden {
-	opacity: 0;
-	transform: translateY(-1vh);
+    opacity: 0;
+    transform: translateY(-1vh);
 }
 
 .super-search__results > li > a {
-	display: block;
-	position: relative;
-	background-color: #f9f9f9;
-	color: #666;
-	padding: 17px;
-	margin: 12px 14px;
-	box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+    display: block;
+    position: relative;
+    background-color: #f9f9f9;
+    color: #666;
+    padding: 17px;
+    margin: 12px 14px;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.1);
 
     @include media-query($on-palm) {
         padding: 10px;
@@ -337,11 +348,11 @@ MIT Licensed
     }
 }
 .super-search__result-date {
-	color: #BBB;
-	position: absolute;
-	right: 12px;
+    color: #BBB;
+    position: absolute;
+    right: 12px;
 }
 .super-search.is-active {
-	opacity: 1;
-	visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
