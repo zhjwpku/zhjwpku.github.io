@@ -12,7 +12,7 @@ Title: RSS
       <item>
         <title>{{ post.title | xml_escape }}</title>
         <description>
-        {{ post.content | xml_escape }} {{ post.tags | xml_escape }}
+        {{ post.excerpt | xml_escape }} {% if post.categories[0] %} {{ post.categories | xml_escape }} {% endif %} {{ post.tags | xml_escape }}
         </description>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
