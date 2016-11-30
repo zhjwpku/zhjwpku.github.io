@@ -20,13 +20,11 @@ tags:
 | infra2 | 10.0.63.204/172.0.63.204 | c3po
 
 
-![Picture](/assets/path/to/picture.png){: width="650px"}
+![Picture](/assets/201611/picture.jpg){: width="700px" style="padding-left: 45px"}
 
 {% highlight shell %}
 代码，可以为不同语言显示不同的风格，如shell、ruby、python、yaml等
 {% endhighlight %}
-
-**加粗**
 
 [链接][url_name]
 
@@ -36,7 +34,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-[1] 吴龙辉. Kubernetes实战. 电子工业出版社. 2016.
+1. 吴龙辉. Kubernetes实战. 电子工业出版社. 2016.<br>
+2. [helloworld][url_name]
 </span>
 
 [url_name]: url

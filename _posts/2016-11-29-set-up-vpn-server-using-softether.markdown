@@ -242,6 +242,9 @@ VPN Server> OpenVpnMakeConfig ~/my_openvpn_config.zip
 
 ![connetion](/assets/201611/connection.gif)
 
+**Tips:**
+
+SoftEther命令行可以说非常强大，本文只介绍了它的冰山一角，可以使用`?`或`help`来查看其所有命令。AWS Free Tier提供的流量完全够自己使用，如果多人使用可能会超流量，这时候就会从你的信用卡上扣钱了。如果怀疑有恶意连接，则可以使用[iftop][iftop]来监控机器的带宽使用情况，并将恶意ip使用EC2的安全策略过滤掉。<br>
 另外，可以使用docker的方式来部署SoftEther VPN Server，这个我还没有试过，想玩的请参考[2]。
 
 <br>
@@ -260,3 +263,4 @@ Reference:
 [softethergit]: https://github.com/SoftEtherVPN/SoftEtherVPN
 [docker-softether]: https://github.com/cnf/docker-softether
 [lynx]: http://lynx.browser.org/
+[iftop]: http://www.ex-parrot.com/pdw/iftop/
