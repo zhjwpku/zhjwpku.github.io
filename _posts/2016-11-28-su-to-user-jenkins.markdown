@@ -5,6 +5,7 @@ date: 2016-11-28 16:50:00 +0800
 tags:
 - su
 - jenkins
+- id
 ---
 
 安装完Jenkins后，Jenkins服务是用Jenkins用户启动的。由于想在Jenkinsfile中配置CD，ssh-agent插件用的又不好，所以想了一个比较trick的方法——在命令行配置无密码登陆，也就是使用`ssh-copy-id`命令。可是用jenkins用户进行登陆的时候出现了问题。
@@ -52,6 +53,35 @@ zabbix:x:1000:1000::/home/zabbix:/sbin/nologin
 可以看到不同于`root`用户，好多用户条目的最后都有个`/sbin/nologin`命令，`jenkins`用户则为`/bin/false`，这意味着这些用户在设计上没有shell交互，可以如下命令进行login：
 
 ![su-s-bin-bash](/assets/201611/su-s-bin-bash.png)
+
+`/etc/passwd`中每个用户的各个域（以`:`隔开）的含义如下：
+{% highlight shell %}
+operator:x:11:0:operator:/root:/sbin/nologin
+   |     |  | |    |       |        |
+   1     2  3 4    5       6        7
+{% endhighlight %}
+
+1. Username: 用来登陆的ID
+2. Password: x说明加密过的密码存储在`/etc/shadow`中
+3. User ID (UID): 每个账户必须指定一个UID，UID `0` 为root用户，UID `1-99`用于其它预定账户，UID `100-999`则由系统为管理和系统账户/组保留
+4. Group ID (GID): 组ID（存储在/etc/group文件中）
+5. Full name of the user
+6. User home directory
+7. Login shell
+
+可以使用`id`命令来查看账户的uid和gid
+{% highlight shell %}
+# 不加账户名给出当前登录账户的uid
+$ id -u
+0
+$ id -u operator
+11
+
+$ id -G
+0
+$ id -G operator
+0
+{% endhighlight %}
 
 <br>
 <span class="post-meta">
