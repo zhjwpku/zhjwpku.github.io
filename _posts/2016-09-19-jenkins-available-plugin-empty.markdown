@@ -36,6 +36,10 @@ $ nohup java -jar jenkins.war &
 $ nohup java -jar jenkins.war --httpPort=9090 &
 {% endhighlight %}
 
+**2016-12-05更新**
+
+更新Jenkins的过程很简单，下载新的版本包，Kill正在运行的Jenkins进程，重新启动即可。一个值得注意的问题是要对插件升级，否则有些任务会失败。
+
 
 [solution]: http://stackoverflow.com/questions/16213982/unable-to-find-plugins-in-list-of-available-plugins-in-jenkins
 [38195]: https://issues.jenkins-ci.org/browse/JENKINS-38195
