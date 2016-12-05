@@ -2,7 +2,7 @@
 layout: post
 title: Title
 date: 1970-01-01 00:00:00 +0800
-categories: categorie
+categories: category
 tags:
 - tag1
 - tag2
@@ -20,7 +20,7 @@ tags:
 | infra2 | 10.0.63.204/172.0.63.204 | c3po
 
 
-![Picture](/assets/201611/picture.jpg){: width="700px" style="padding-left: 45px"}
+![Picture](/assets/201611/picture.png){: width="700px" style="padding-left: 45px"}
 
 {% highlight shell %}
 代码，可以为不同语言显示不同的风格，如shell、ruby、python、yaml等

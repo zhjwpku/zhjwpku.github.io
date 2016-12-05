@@ -20,7 +20,7 @@ years:
 
 gems:
 - jekyll-paginate
-paginate: 10
+paginate: 12
 #paginate_path: "/blog/page:num/"
 
 # Google analytics
