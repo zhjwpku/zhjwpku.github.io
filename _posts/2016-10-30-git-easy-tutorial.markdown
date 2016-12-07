@@ -208,6 +208,12 @@ $ git stash clear # 清空Git栈
 $ git stash apply <版本号> # 取出特定的版本号对应的工作空间
 {% endhighlight %}
 
+**2016-12-07 更新**
+
+`git reset`往往是个危险的命令，假如使用了`git reset --hard`，又没有记下`reset`前的`commit id`，那么该如何挽救呢？这时`reflog`应该能够帮你一把。
+
+![gitreflog](/assets/201612/gitreflog.png)
+
 <br>
 <span class="post-meta">
 Reference:
@@ -217,7 +223,8 @@ Reference:
 1. Git Basics: [https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][gitbasics]<br>
 2. [http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/][gitmagic]<br>
 3. [https://www.atlassian.com/git/tutorials/][atlassiangit]<br>
-4. Comparing Workflows: [https://www.atlassian.com/git/tutorials/comparing-workflows][workflow]
+4. Comparing Workflows: [https://www.atlassian.com/git/tutorials/comparing-workflows][workflow]<br>
+5. 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
 </span>
 
 [installgit]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
