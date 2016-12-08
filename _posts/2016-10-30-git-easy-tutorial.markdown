@@ -130,6 +130,8 @@ $ git checkout develop
 $ git pull  # 将merge的bug-feature更新到develop分支
 $ git branch -d bug-feature
 $ git push --delete origin bug-feature # 或者在网页上删除，由Reviewer或自己删除
+# 或用空值替换某个分支来达到删除远程分支的目的
+$ git push origin :bug-feature
 {% endhighlight %}
 
 <h4>命令解释</h4>
@@ -206,6 +208,25 @@ $ git stash pop
 $ git stash list # 显示Git栈内的所有备份
 $ git stash clear # 清空Git栈
 $ git stash apply <版本号> # 取出特定的版本号对应的工作空间
+
+# Describe a commit using the most recent tag reachable from it
+$ git describe
+3.12.2-76-g5c51e1b
+# |     |    |
+# 1     2    3
+# 1->最近的里程碑，2->离上次里程碑提交的此处，3->g+最新的commit ID简写
+
+# rev-parse是git的一个底层命令，功能丰富，很多Git脚本或工具都会用到这条命令
+# 显示版本库.git的位置
+$ git rev-parse --gitdir
+# 显示当前工作区的目录深度
+$ git rev-parse --show-cdup
+# 显示分支
+$ git rev-parse --symbolic --branches
+# 显示里程碑
+$ git rev-parse --symbolic --tags
+# 将一个git对象表示为一个SHA1哈希值
+$ git rev-parse HEAD
 {% endhighlight %}
 
 **2016-12-07 更新**
