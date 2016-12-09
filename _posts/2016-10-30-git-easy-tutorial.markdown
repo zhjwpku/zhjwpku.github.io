@@ -24,6 +24,7 @@ git config --global user.name "Zhao Junwang"
 git config --global core.editor vim 
 git config --global credential.helper store
 git config --global push.default simple
+#git config --global core.autocrlf true
 
 # use less pager by default
 git config --global --replace-all core.pager "less -+S"
@@ -235,6 +236,18 @@ $ git rev-parse HEAD
 
 ![gitreflog](/assets/201612/gitreflog.png)
 
+**2016-12-09 更新**
+
+一个项目仓库可能会引用其他项目，被引用的项目通常以独立的仓库存在。[Ceph][ceph]项目包含了多个子项目，可以查看项目根目录下的`.gitmodules`文件来获取子项目的`url`、子项目在父项目的位置等信息。
+
+命令`git submodule status`可以参看各个子项目的状态：
+
+![gitsubmodule](/assets/201612/gitsubmodule.png)
+
+上图中的`-`的含义是该子项目未检出到父项目中，`+`的含义为对子项目进行了新的提交更改。
+
+如果想要克隆子项目到父项目，首先要执行`git submodule init`将子项目注册到`.git/config`文件中，然后执行`git submodule update`进行代码检出。
+
 <br>
 <span class="post-meta">
 Reference:
@@ -256,3 +269,4 @@ Reference:
 [gitmagic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/
 [atlassiangit]: https://www.atlassian.com/git/tutorials/
 [workflow]: https://www.atlassian.com/git/tutorials/comparing-workflows
+[ceph]: https://github.com/ceph/ceph
