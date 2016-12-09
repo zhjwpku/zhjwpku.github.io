@@ -10,6 +10,12 @@ tags:
 
 [LDAP][ldap-wiki]（Lightweight Directory Access Protocol，轻量目录访问协议）是一个开放的，供应商中立的行业应用协议，用于通过Internet协议访问并维护分布式目录信息服务。目录服务对于内部网络应用及因特网应用有重要的作用，它允许在整个网络中共享关于用户、系统、网络、服务和应用的信息。本文对 Michael Donnelly 的 [An Introdution to LDAP][introdution] 一文进行了翻译，希望对大家有所帮助。
 
+**2016-12-09 更新**
+
+推荐一个Windows平台LDAP管理工具：[Softerra LDAP Administrator][ldaptool]。
+
+下载链接：[Download][ldapdownload]
+
 <h6>------ 下面是翻译正文 ------</h6>
 
 如果你在计算机行业工作，现在听说过[LDAP][ldap-wiki]是一个大好机遇。想知道令人兴奋的是什么？想了解关于LDAP更多的底层技术？你来对地方了。这篇介绍——也是系列文章的第一篇，描述了如何在贵公司设计、实施并集成LDAP环境——会让你熟悉LDAP背后的概念，而忽略核心细节供以后讨论。本文探讨的主题包括：
@@ -322,3 +328,5 @@ That's it for now. I hope you've found this article useful. If you have comments
 [ldap_rfcs]: http://www.ldapman.org/ldap_rfcs.html
 [ldif]: https://en.wikipedia.org/wiki/LDAP_Data_Interchange_Format
 [article]: http://www.ldapman.org/articles
+[ldaptool]: http://www.ldapbrowser.com/
+[ldapdownload]: https://pan.baidu.com/s/1qYIr4Qg
