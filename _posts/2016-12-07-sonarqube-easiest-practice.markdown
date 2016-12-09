@@ -111,6 +111,45 @@ systemProp.sonar.login=admin
 systemProp.sonar.password=admin
 {% endhighlight %}
 
+<h4>LDAP 认证配置</h4>
+
+在 Update Center 下载下载 LDAP 插件并配置`/usr/share/sonar-5.6.3/conf/sonar.properties`，添加如下内容：
+
+{% highlight shell %}
+# LDAP Configuration
+sonar.security.realm=LDAP
+sonar.security.savePassword=true
+sonar.security.localUsers=admin
+ldap.url=ldap://xxx.xxx.xxx.xxx:389
+ldap.bindDn=uid=root,cn=users,dc=example,dc=com
+ldap.bindPassword=secret
+
+# User Configuration
+ldap.user.baseDn=cn=users,dc=startimes,dc=me
+# shodowExpire=-1 用来禁止失效用户登陆
+ldap.user.request=(&(uid={login})(memberof=cn=gitlab-users,cn=groups,dc=example,dc=com)(shadowExpire=-1))
+# sAMAccountName 用于 AD登陆
+#ldap.user.request=(&(sAMAccountName={login})(memberof=cn=gitlab-users,cn=groups,dc=example,dc=com))
+ldap.user.realNameAttribute=cn
+ldap.user.emailAttribute=mail
+
+# Group Configuration
+#ldap.group.baseDn=cn=groups,dc=example,dc=com
+#ldap.group.request=(&(memberUid={uid}))
+#ldap.group.idAttribute=cn
+{% endhighlight %}
+
+<h4>Email 配置</h4>
+
+Administration => General Settings => Email
+
+几个值得注意的问题：
+
+- `SMTP username`需要与`From address`相同
+- `User secure connection`可能是`plaintext`
+
+以上问题都可通过设置`sonar.log.level=DEBUG`来查看，日志在 /usr/share/sonar-5.6.3/logs/sonar.log 中。
+
 <br>
 <span class="post-meta">
 Reference:
@@ -118,10 +157,12 @@ Reference:
 <br>
 <span class="post-meta">
 1. [Analyzing with SonarQube Scanner for Gradle][analyzesonar]<br>
-2. [Sonar Examples][sonar-examples]
+2. [Sonar Examples][sonar-examples]<br>
+3. [LDAP Plugin][ldap]
 </span>
 
 [analyzesonar]: http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Gradle
 [sonarqube]: http://www.sonarqube.org/
 [sonar-examples]: https://github.com/SonarSource/sonar-examples
 [diffjava]: http://zhjwpku.com/2016/12/03/different-java-version-on-same-os.html
+[ldap]: http://docs.sonarqube.org/display/SONARQUBE45/LDAP+Plugin
