@@ -18,4 +18,7 @@ def details = versionDetails()
 version = details.commitDistance ? details.lastTag + '-SNAPSHOT' : details.lastTag
 {% endhighlight %}
 
+版本管理参照：[语义化版本][SemanticVersioning]
+
 [gradle-git-version]: https://github.com/palantir/gradle-git-version
+[SemanticVersioning]: http://semver.org/lang/zh-CN/
