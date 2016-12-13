@@ -248,6 +248,11 @@ $ git rev-parse HEAD
 
 如果想要克隆子项目到父项目，首先要执行`git submodule init`将子项目注册到`.git/config`文件中，然后执行`git submodule update`进行代码检出。
 
+Example:
+{% highlight shell %}
+$ git submodule update --init --recursive
+{% endhighlight %}
+
 <br>
 <span class="post-meta">
 Reference:
