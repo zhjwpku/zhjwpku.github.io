@@ -52,6 +52,33 @@ flyway.placeholders.keyABC=valueXYZ
 flyway.placeholders.otherplaceholder=value123
 {% endhighlight %}
 
+<h4><a href="https://flywaydb.org/documentation/existing">Existing database setup</a></h4>
+
+对于一个已经运行了很长时间的数据库，如何对其设置 Flyway Migration 呢？以MySQL为例，首先运行：
+
+{% highlight shell %}
+# mysql export schema without data
+$ mysqldump -u root -p --no-data dbname > schema.sql
+# or
+$ mysqldump -u root -p -d dbname > schema.sql
+{% endhighlight %}
+
+将数据库所有表结构导出到 schema.sql ，然后修改 schema.sql 中各表创建的顺序，使得被依赖（外键）表的位置放在前面，并命名为V1__schema.sql，将此作为 Flyway 的Baseline。
+
+添加参数：
+
+{% highlight shell %}
+# Only migrations above baselineVersion will then be applied.
+flyway.baselineVersion=1
+flyway.baselineOnMigration=true
+{% endhighlight %}
+
+执行（以 Flyway Command Line 方式为例）：
+{% highlight shell %}
+./flyway baseline
+./flyway migrate
+{% endhighlight %}
+
 数据库表管理工具还有一个 [MyBatis Migrations][mybatis_migrations]，在 Gradle 中集成可使用 [Gradle Migrations Plugin][gradle-migrations-plugin]。
 
 [flyway]: https://flywaydb.org/
