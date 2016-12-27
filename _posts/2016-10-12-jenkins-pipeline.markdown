@@ -130,9 +130,10 @@ deploy.sh脚本中为远程机器上执行的命令。
 {% highlight shell %}
 #!/bin/bash
 
-WORK_DIR="/opt/startimestv"
-SERVER_DIR="$WORK_DIR/upms"
-RUN_PID="$SERVER_DIR/bin/run.pid"
+WORK_DIR="/opt/workdir"
+PRJ_DIR="$WORK_DIR/prj1"
+PRJ_TMP="$WORK_DIR/tmp"
+RUN_PID="$PRJ_DIR/bin/run.pid"
 
 if [ ! -d $WORK_DIR ]; then
     mkdir -p $WORK_DIR
@@ -146,19 +147,23 @@ if [ -f $RUN_PID ]; then
     echo "Killing former running progree $PID done."
 fi
 
-yes | rm -r $WORK_DIR/*
+yes | rm -r $PRJ_DIR
 
 cd $WORK_DIR
+mkdir -p $UPMS_DIR
 
 wget $1
 
-unzip *.zip -d $SERVER_DIR
+url=$1
 
-mv $SERVER_DIR/*/* $SERVER_DIR
+unzip ${url##*/} -d $PRJ_TMP
+yes | rm ${url##*/}
 
-cd $SERVER_DIR/bin/
+mv $PRO_TMP/*/* $PRO_DIR
 
-nohup $SERVER_DIR/bin/xxxx-start > /dev/null 2>&1 &
+cd $PRO_DIR/bin/
+
+nohup $PRO_DIR/bin/xxxx-start > /dev/null 2>&1 &
 
 echo $! > $RUN_PID
 echo "SERVER started with pid `cat $RUN_PID`"
