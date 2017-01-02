@@ -86,6 +86,9 @@ Prompt可以修改命令提示符，而Completion用于自动补全。
 [[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\e[1;36m\]→\[\e[m\] \[\e[0;32m\]\w\[\e[0;35m\]$(__git_ps1)\[\e[1;32m\] \$\[\e[m\] '
+
+# fix big repo slow problem
+export GIT_PS1_SHOWUNTRACKEDFILES=
 {% endhighlight %}
 
 <h4><a href="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#The-Three-States">Git Three States</a></h4>
