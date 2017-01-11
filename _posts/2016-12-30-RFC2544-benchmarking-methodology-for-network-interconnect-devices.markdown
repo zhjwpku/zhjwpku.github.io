@@ -4,7 +4,7 @@ title: RFC2544 网络互联设备的基准测试方法论
 date: 2016-12-30 10:00:00 +0800
 categories: rfc
 tags:
-- rfc2544
+- rfc
 - translation
 ---
 
