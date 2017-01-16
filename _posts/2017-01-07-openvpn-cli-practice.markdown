@@ -8,6 +8,10 @@ tags:
 
 本文记录使用 OpenVPN 建立虚拟通道的命令行实践，不涉及 OpenVPN 原理及图形界面相关的配置。文中的所有操作均在 CentOS 7 上实验通过。
 
+**---Update 2017-01-16---**
+
+推荐一个 OpenVPN 管理工具 [pritunl][pritunl]，对 OpenVPN 进行了封装，提供 Web 访问接口，方便使用。公司在用，找时间亲自搭建测试一下。
+
 <h4>安装</h4>
 
 {% highlight shell %}
@@ -575,3 +579,5 @@ Reference:
 1. Markus Feilner, Norbert Graf. [Beginning OpenVPN 2.0.9](/assets/pdf/BeginningOpenVPN2.0.9.pdf). PACKT PUBLISHING. 2009.<br>
 2. Jan Just Keijser. [OpenVPN 2 Cookbook](/assets/pdf/openvpn-2-cookbook.pdf). PACKT PUBLISHING. 2011.
 </span>
+
+[pritunl]: https://github.com/pritunl/pritunl
