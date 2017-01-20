@@ -10,7 +10,7 @@ tags:
 
 **---Update 2017-01-16---**
 
-推荐一个 OpenVPN 管理工具 [pritunl][pritunl]，对 OpenVPN 进行了封装，提供 Web 访问接口，方便使用。公司在用，找时间亲自搭建测试一下。
+推荐一个 OpenVPN 管理工具 [pritunl][pritunl]，对 OpenVPN 进行了封装，提供 Web 访问接口，方便使用。搭建配置都也比较容易，只不过免费版的只支持单台Server，Site-to-Site 不免费。
 
 <h4>安装</h4>
 
