@@ -1,0 +1,35 @@
+---
+layout: post
+title: lrzsz
+date: 2017-02-04 19:00:00 +0800
+tags:
+- lrzsz
+---
+
+[lrzsz][lrzsz] 是一个提供 [XMODEM][xmodem] / [YMODEM][ymodem] / [ZMODEM][zmodem] 文件传输协议的 UNIX 通信包。可用于替换 ftp 来传输文件。
+
+Xshell 是 Windows 下一个易用的管理远程登录会话的工具，会话两端互传文件（get/put）须在特定的目录下进行。Xftp 可能会使这个过程简单很多（没用过），但更通用的方式是使用 `rz` 和 `sz` 命令。
+
+**安装**
+
+{% highlight shell %}
+# CentOS 7
+[root@anakin ~]# yum install lrzsz -y
+{% endhighlight %}
+
+**上传**
+
+{% highlight shell %}
+[root@anakin ~]# rz
+{% endhighlight %}
+
+**下载**
+
+{% highlight shell %}
+[root@anakin ~]# sz <file_name>
+{% endhighlight %}
+
+[lrzsz]: http://freecode.com/projects/lrzsz/
+[xmodem]: https://en.wikipedia.org/wiki/XMODEM
+[ymodem]: https://en.wikipedia.org/wiki/YMODEM
+[zmodem]: https://en.wikipedia.org/wiki/ZMODEM
