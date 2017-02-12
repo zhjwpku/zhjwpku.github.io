@@ -78,16 +78,20 @@ $ lynx http://www.softether-download.com/files/softether/
 ![lynx](/assets/201611/lynx.png)
 
 选择平台
+
 ![platform](/assets/201611/platform.png)
 
 选择服务端软件
+
 ![vpnserver](/assets/201611/softether_vpn_server.png)
 
 选择机器位数
+
 ![64bit](/assets/201611/64bit.png)
 ![package](/assets/201611/softether-package.png)
 
 下载
+
 ![download](/assets/201611/download.png)
 
 SoftEther客户端也可以使用这种方式下载，之后通过前边的scp将其拷贝到本地。
@@ -104,6 +108,7 @@ $ make
 {% endhighlight %}
 
 编译的过程中会多次提示License Agreement的选择，想用就选Yes（type '1'）。
+
 ![lisence](/assets/201611/lisence_agreement.png)
 
 **配置**
@@ -172,6 +177,7 @@ $ sudo chkconfig --add vpnserver
 $ cd /var/local/vpnserver/
 $ ./vpncmd    # 选择1 "Management of VPN Server or VPN Bridge"
 
+# 在提示输入的地方直接按空格，设置服务密码
 VPN Server> ServerPasswordSet
 {% endhighlight %}
 
@@ -212,6 +218,7 @@ VPN Server/VPN> UserPasswordSet zhjwpku
 <h4>Step 8: Setup L2TP/IPsec</h4>
 
 运行该命令需要Admin Mode。
+
 ![ipsec](/assets/201611/IPsecEnable.png)
 
 <h4>Step 9: Setup SSTP/OpenVPN</h4>
