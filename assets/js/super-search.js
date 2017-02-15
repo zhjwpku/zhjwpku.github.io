@@ -84,7 +84,9 @@ MIT Licensed
 
 		var matchingPosts = posts.filter(function (post) {
 			// Search `description` and `content` both to support 1.0 and 2.0 formats.
-			if ((post.title + '').toLowerCase().indexOf(currentInputValue) !== -1 || ((post.description || post.content) + '').toLowerCase().indexOf(currentInputValue) !== -1) {
+            // I have delete post.content from feed.xml
+            // if ((post.title + '').toLowerCase().indexOf(currentInputValue) !== -1 || ((post.description || post.content) + '').toLowerCase().indexOf(currentInputValue) !== -1) {
+			if ((post.title + '').toLowerCase().indexOf(currentInputValue) !== -1 || ((post.description) + '').replace(/<a href=".*">/ig, "").indexOf(currentInputValue) !== -1) {
 				return true;
 			}
 		});
