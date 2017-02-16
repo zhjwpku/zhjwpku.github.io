@@ -52,7 +52,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-[How do I provide URL access to the latest snapshot of an artifact in Nexus?][url]
+1 [How do I provide URL access to the latest snapshot of an artifact in Nexus?][url]
 </span>
 
 [url]: http://stackoverflow.com/questions/9280447/how-do-i-provide-url-access-to-the-latest-snapshot-of-an-artifact-in-nexus

@@ -25,7 +25,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Bash syntax error: unexpected end of file][ref]
+1 [Bash syntax error: unexpected end of file][ref]
 </span>
 
 [ref]: http://stackoverflow.com/questions/6366530/bash-syntax-error-unexpected-end-of-file

@@ -576,8 +576,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. Markus Feilner, Norbert Graf. [Beginning OpenVPN 2.0.9](/assets/pdf/BeginningOpenVPN2.0.9.pdf). PACKT PUBLISHING. 2009.<br>
-2. Jan Just Keijser. [OpenVPN 2 Cookbook](/assets/pdf/openvpn-2-cookbook.pdf). PACKT PUBLISHING. 2011.
+1 Markus Feilner, Norbert Graf. [Beginning OpenVPN 2.0.9](/assets/pdf/BeginningOpenVPN2.0.9.pdf). PACKT PUBLISHING. 2009.<br>
+2 Jan Just Keijser. [OpenVPN 2 Cookbook](/assets/pdf/openvpn-2-cookbook.pdf). PACKT PUBLISHING. 2011.
 </span>
 
 [pritunl]: https://github.com/pritunl/pritunl

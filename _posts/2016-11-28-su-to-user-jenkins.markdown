@@ -89,7 +89,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Can't su to user jenkins after installing Jenkins][ref1]
+1 [Can't su to user jenkins after installing Jenkins][ref1]
 </span>
 
 [ref1]: http://stackoverflow.com/questions/18068358/cant-su-to-user-jenkins-after-installing-jenkins

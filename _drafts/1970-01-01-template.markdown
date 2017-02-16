@@ -34,9 +34,9 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. 吴龙辉. Kubernetes实战. 电子工业出版社. 2016.<br>
-2. 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
-3. [helloworld][url_name]
+1 吴龙辉. Kubernetes实战. 电子工业出版社. 2016.<br>
+2 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
+3 [helloworld][url_name]
 </span>
 
 [url_name]: url

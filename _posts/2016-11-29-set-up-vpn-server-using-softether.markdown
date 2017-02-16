@@ -260,8 +260,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [How to Setup a Multi-Protocol VPN Server Using SoftEther][howto]<br>
-2. [https://github.com/cnf/docker-softether][docker-softether]
+1 [How to Setup a Multi-Protocol VPN Server Using SoftEther][howto]<br>
+2 [https://github.com/cnf/docker-softether][docker-softether]
 </span>
 
 [softether]: http://www.softether.org/

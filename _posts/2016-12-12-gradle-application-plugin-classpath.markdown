@@ -55,8 +55,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Adding classpath entries using Gradle's Application plugin][ref1]<br>
-2. [Classpath in Application plugin is building always relative to %APP_HOME%/lib directory][ref2]
+1 [Adding classpath entries using Gradle's Application plugin][ref1]<br>
+2 [Classpath in Application plugin is building always relative to %APP_HOME%/lib directory][ref2]
 </span>
 
 [application_plugin]: https://docs.gradle.org/current/userguide/application_plugin.html

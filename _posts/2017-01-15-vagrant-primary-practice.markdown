@@ -138,8 +138,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Installing and using VirtualBox on CentOS][vb]<br>
-2. Mitchell Hashimoto. [Vagrant: Up and Running][uprunning]. O'REILLY. 2013.
+1 [Installing and using VirtualBox on CentOS][vb]<br>
+2 Mitchell Hashimoto. [Vagrant: Up and Running][uprunning]. O'REILLY. 2013.
 </span>
 
 [vagrant]: https://github.com/mitchellh/vagrant

@@ -258,7 +258,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Testing firewall rules with Hping3 - examples][hping3example].<br>
+1 [Testing firewall rules with Hping3 - examples][hping3example].<br>
 </span>
 
 [tcpping]: https://github.com/jwyllie83/tcpping

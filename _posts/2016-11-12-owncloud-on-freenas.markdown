@@ -134,8 +134,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [https://bugs.freenas.org/issues/18949][issue18949]<br>
-2. [Blocked in maintenance mode after upgrade 8.0.4 to 8.1][issue17440]
+1 [https://bugs.freenas.org/issues/18949][issue18949]<br>
+2 [Blocked in maintenance mode after upgrade 8.0.4 to 8.1][issue17440]
 </span>
 
 [freenas]: http://www.freenas.org/

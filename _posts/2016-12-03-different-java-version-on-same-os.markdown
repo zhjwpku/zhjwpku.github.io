@@ -37,7 +37,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [How to install java on CentOS and Fedora][ref]
+1 [How to install java on CentOS and Fedora][ref]
 </span>
 
 [ref]: https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora

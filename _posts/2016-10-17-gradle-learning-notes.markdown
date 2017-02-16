@@ -433,9 +433,9 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Gradle User Guide][userguide]<br>
-2. [Building and testing with Gradle](/assets/pdf/Building_and_testing_with_Gradle.pdf)<br>
-3. [Gradle Beyond the Basics](/assets/pdf/Gradle_Beyond_the_Basics.pdf)
+1 [Gradle User Guide][userguide]<br>
+2 [Building and testing with Gradle](/assets/pdf/Building_and_testing_with_Gradle.pdf)<br>
+3 [Gradle Beyond the Basics](/assets/pdf/Gradle_Beyond_the_Basics.pdf)
 </span>
 
 [userguide]: https://docs.gradle.org/current/userguide/userguide.html

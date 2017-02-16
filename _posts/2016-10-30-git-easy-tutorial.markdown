@@ -262,11 +262,11 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. Git Basics: [https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][gitbasics]<br>
-2. [http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/][gitmagic]<br>
-3. [https://www.atlassian.com/git/tutorials/][atlassiangit]<br>
-4. Comparing Workflows: [https://www.atlassian.com/git/tutorials/comparing-workflows][workflow]<br>
-5. 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
+1 Git Basics: [https://git-scm.com/book/en/v2/Getting-Started-Git-Basics][gitbasics]<br>
+2 [http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/][gitmagic]<br>
+3 [https://www.atlassian.com/git/tutorials/][atlassiangit]<br>
+4 Comparing Workflows: [https://www.atlassian.com/git/tutorials/comparing-workflows][workflow]<br>
+5 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
 </span>
 
 [installgit]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git

@@ -72,10 +72,10 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [命令行安装 Android SDK Build Tools][ref1]<br>
-2. [Automatically accept all SDK licences][ref2]<br>
-3. [what is SDK Patch Applier in android SDK Tool?][ref3]<br>
-4. [Travis Ci build error caused by Android SDK license agreements][ref4]
+1 [命令行安装 Android SDK Build Tools][ref1]<br>
+2 [Automatically accept all SDK licences][ref2]<br>
+3 [what is SDK Patch Applier in android SDK Tool?][ref3]<br>
+4 [Travis Ci build error caused by Android SDK license agreements][ref4]
 </span>
 
 [ref1]: http://zhjwpku.com/2016/12/11/install-android-sdk-build-tools.html

@@ -43,7 +43,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [uploadArchives does nothing. What am I missing?][ref]
+1 [uploadArchives does nothing. What am I missing?][ref]
 </span>
 
 [ref]: https://github.com/Codearte/gradle-nexus-staging-plugin/issues/20

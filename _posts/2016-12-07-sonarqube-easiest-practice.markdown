@@ -156,9 +156,9 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Analyzing with SonarQube Scanner for Gradle][analyzesonar]<br>
-2. [Sonar Examples][sonar-examples]<br>
-3. [LDAP Plugin][ldap]
+1 [Analyzing with SonarQube Scanner for Gradle][analyzesonar]<br>
+2 [Sonar Examples][sonar-examples]<br>
+3 [LDAP Plugin][ldap]
 </span>
 
 [analyzesonar]: http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Gradle

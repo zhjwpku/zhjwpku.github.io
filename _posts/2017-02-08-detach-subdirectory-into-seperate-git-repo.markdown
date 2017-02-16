@@ -61,7 +61,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Detach (move) subdirectory into separate Git repository][url_name]
+1 [Detach (move) subdirectory into separate Git repository][url_name]
 </span>
 
 [url_name]: http://stackoverflow.com/questions/359424/detach-move-subdirectory-into-separate-git-repository/17864475#17864475

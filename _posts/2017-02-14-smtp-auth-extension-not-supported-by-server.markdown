@@ -150,9 +150,9 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [SMTP AUTH extension not supported by server][ref1]<br>
-2. [25, 465, 587... What port should I use?][ref2]
+1 [SMTP AUTH extension not supported by server][ref1]<br>
+2 [25, 465, 587... What port should I use?][ref2]
 </span>
 
-[ref1]: https://www.pythonanywhere.com/forums/topic/1961/?winzoom=1
+[ref1]: https://www.pythonanywhere.com/forums/topic/1961/
 [ref2]: http://blog.mailgun.com/25-465-587-what-port-should-i-use/

@@ -134,7 +134,7 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [How to install Android SDK Build Tools on the command line?][ref1]
+1 [How to install Android SDK Build Tools on the command line?][ref1]
 </span>
 
 [countly-sdk-android]: https://github.com/Countly/countly-sdk-android

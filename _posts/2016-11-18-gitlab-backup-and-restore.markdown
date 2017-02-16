@@ -69,8 +69,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [https://docs.gitlab.com/omnibus/update/README.html][updatereadme]<br>
-2. [https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/raketasks/backup_restore.md][backup_restore]
+1 [https://docs.gitlab.com/omnibus/update/README.html][updatereadme]<br>
+2 [https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/raketasks/backup_restore.md][backup_restore]
 </span>
 
 [packagecloud]: https://packages.gitlab.com/gitlab/gitlab-ce?filter=rpms

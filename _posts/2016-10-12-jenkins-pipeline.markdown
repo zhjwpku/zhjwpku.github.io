@@ -184,14 +184,14 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. Jenkins1.0版本的Workflow插件介绍: [Continuous Delivery With Jenkins Workflow](/assets/pdf/jenkins-workflow.pdf)<br>
-2. Pipeline Overview: [https://jenkins.io/doc/book/pipeline/overview/][overview]<br>
-3. Jenkinsfile: [https://jenkins.io/doc/book/pipeline/jenkinsfile/][jenkinsfile]<br>
-4. Pipeline Steps Reference: [https://jenkins.io/doc/pipeline/steps/][stepRef]<br>
-5. [Top 10 Best Practices for Jenkins Pipeline Plugin][top10]<br>
-6. [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 1][part1]<br>
-7. [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 2][part2]<br>
-8. [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 3][part3]
+1 Jenkins1.0版本的Workflow插件介绍: [Continuous Delivery With Jenkins Workflow](/assets/pdf/jenkins-workflow.pdf)<br>
+2 Pipeline Overview: [https://jenkins.io/doc/book/pipeline/overview/][overview]<br>
+3 Jenkinsfile: [https://jenkins.io/doc/book/pipeline/jenkinsfile/][jenkinsfile]<br>
+4 Pipeline Steps Reference: [https://jenkins.io/doc/pipeline/steps/][stepRef]<br>
+5 [Top 10 Best Practices for Jenkins Pipeline Plugin][top10]<br>
+6 [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 1][part1]<br>
+7 [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 2][part2]<br>
+8 [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 3][part3]
 </span>
 
 [overview]: https://jenkins.io/doc/book/pipeline/overview/

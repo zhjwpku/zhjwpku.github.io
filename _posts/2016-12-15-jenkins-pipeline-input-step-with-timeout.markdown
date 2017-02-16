@@ -90,8 +90,8 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1. [Pipeline: How to add an input step, with timeout, that continues if timeout is reached, using a default value][ref1]<br>
-2. [Jenkins CI Pipeline Scripts not permitted to use method groovy.lang.GroovyObject][ref2]
+1 [Pipeline: How to add an input step, with timeout, that continues if timeout is reached, using a default value][ref1]<br>
+2 [Jenkins CI Pipeline Scripts not permitted to use method groovy.lang.GroovyObject][ref2]
 </span>
 
 [ref1]: https://support.cloudbees.com/hc/en-us/articles/226554067-Pipeline-How-to-add-an-input-step-with-timeout-that-continues-if-timeout-is-reached-using-a-default-value
