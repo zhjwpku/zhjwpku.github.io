@@ -65,6 +65,7 @@ MIT Licensed
 		} else {
 			// while closing
 			searchResultsEl.classList.add('is-hidden');
+            searchResultsEl.innerHTML = '';
 		}
 		setTimeout(function () {
 			searchInputEl.focus();
@@ -78,6 +79,7 @@ MIT Licensed
 		if (!currentInputValue || currentInputValue.length < 3) {
 			lastSearchResultHash = '';
 			searchResultsEl.classList.add('is-hidden');
+            searchResultsEl.innerHTML = '';
 			return;
 		}
 		searchResultsEl.style.offsetWidth;
