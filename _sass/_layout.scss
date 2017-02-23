@@ -203,7 +203,11 @@
 
 .post-link {
     display: block;
-    font-size: 23.25px;
+    font-size: 22.5px;
+
+    @include media-query($on-laptop) {
+        font-size: 20px;
+    }
 }
 
 
@@ -213,6 +217,14 @@
  */
 .post-header {
     margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 22.5px;
+
+        @include media-query($on-laptop) {
+            font-size: 20px;
+        }
+    }
 }
 
 .post-title {
