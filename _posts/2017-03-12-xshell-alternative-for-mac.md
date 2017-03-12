@@ -6,7 +6,7 @@ tags:
 - storm
 ---
 
-Xshell 绝对称得上 Windows 平台最让人留恋的工具之一。笔者最近从 *Win7 + Ubuntu 虚拟机* 切换到了 Mac 工作平台，在寻找像 Xshell 这样的工具时遇到了一些麻烦，好在最终找到了，并且体验不亚于 Xshell。 => [Storm][storm]。
+Xshell 绝对称得上 Windows 平台最让人留恋的工具之一。笔者最近从 *Win7 + Ubuntu 虚拟机* 切换到了 Mac 工作平台 (开发环境的配置见 [Mac OS X Setup Guide][ref1])，在寻找像 Xshell 这样的工具时遇到了一些麻烦，好在最终找到了，并且体验不亚于 Xshell。 => [Storm][storm]。
 
 **安装**
 
@@ -44,3 +44,4 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 如此这样将自己管理或使用的机器都以 entry 的形式添加到 Storm 中，在需要的时候使用 `list` 或 `search` 查看机器，然后用 *ssh host-entry* 便就可以直接登录到远程机器。
 
 [storm]: https://github.com/emre/storm
+[ref1]: http://sourabhbajaj.com/mac-setup/
