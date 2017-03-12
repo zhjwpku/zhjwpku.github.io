@@ -9,6 +9,10 @@ tags:
 
 写gradle脚本的时候，除了mavenCentral ( 位置 [https://repo1.maven.org/maven2/][ref1] )，还会添加一些其它仓库，如*mavenLocal()*, *maven { url 'http://repo.spring.io/plugins-release' }*，甚至自己搭建的nexus仓库。但有时构建的过程中某些构件的下载异常缓慢，本文介绍笔者加速该过程的一些技巧。
 
+**2017-03-12 更新**
+
+**要将私有仓库放置在 repositories 的前边，因为构建时是按顺序在各个仓库查找需要的构件，如果将私有仓库置于后边，即使含有相应的构件，也会优先从公有仓库中下载，这样自己的仓库就起不到代理的作用了。**
+
 请注意区分：构建 > build; 构件 > artifact
 
 假如构建卡在了下面而你又不想死等。
