@@ -29,7 +29,13 @@ Xshell 是 Windows 下一个易用的管理远程登录会话的工具，会话�
 [root@anakin ~]# sz <file_name>
 {% endhighlight %}
 
+**On MacOS**
+
+在 Mac 上直接使用 `brew install lrzsz` 并不能让其正常工作，原因大致是因为 Terminal 或 iTerm2 不支持 ZModem。参照 [ZModem integration for iTerm2][ref1] 来配置 iTerm2 可让其正常工作。
+
+
 [lrzsz]: http://freecode.com/projects/lrzsz/
 [xmodem]: https://en.wikipedia.org/wiki/XMODEM
 [ymodem]: https://en.wikipedia.org/wiki/YMODEM
 [zmodem]: https://en.wikipedia.org/wiki/ZMODEM
+[ref1]: https://github.com/mmastrac/iterm2-zmodem
