@@ -43,5 +43,22 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 
 如此这样将自己管理或使用的机器都以 entry 的形式添加到 Storm 中，在需要的时候使用 `list` 或 `search` 查看机器，然后用 *ssh host-entry* 便就可以直接登录到远程机器。
 
+**Alias**
+
+给子命令一个别名能让 storm 用起来更加方便。
+
+{% highlight shell %}
+→ ~ $ mkdir -p ~/.stormssh
+# 创建配置文件并添加相应的别名
+→ ~ $ vim ~/.stormssh/config
+# 如下为config文件中的内容
+{
+    "aliases": {
+        "list": ["ls", "ll"],
+        "delete": ["rm"]
+    }
+}
+{% endhighlight %}
+
 [storm]: https://github.com/emre/storm
 [ref1]: http://sourabhbajaj.com/mac-setup/
