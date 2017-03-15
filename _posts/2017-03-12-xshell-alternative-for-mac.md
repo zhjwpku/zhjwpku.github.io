@@ -4,9 +4,12 @@ title: Xshell alternative for Mac
 date: 2017-03-12 13:00:00 +0800
 tags:
 - storm
+- tmux
 ---
 
-Xshell 绝对称得上 Windows 平台最让人留恋的工具之一。笔者最近从 *Win7 + Ubuntu 虚拟机* 切换到了 Mac 工作平台 (开发环境的配置见 [Mac OS X Setup Guide][ref1])，在寻找像 Xshell 这样的工具时遇到了一些麻烦，好在最终找到了，并且体验不亚于 Xshell。 => [Storm][storm]。
+Xshell 绝对称得上 Windows 平台最让人留恋的工具之一。笔者最近从 *Win7 + Ubuntu 虚拟机* 切换到了 Mac 工作平台 (开发环境的配置见 [Mac OS X Setup Guide][ref1])，在寻找像 Xshell 这样的工具时遇到了一些麻烦，好在最终找到了，并且体验不亚于 Xshell。 => [Storm][storm] + [Tmux][tmux]。
+
+<h4>Storm</h4>
 
 **安装**
 
@@ -60,5 +63,32 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 }
 {% endhighlight %}
 
+<h4>Tmux</h4>
+
+**安装**
+
+{% highlight shell %}
+→ ~ $ brew install tmux
+{% endhighlight %}
+
+**基本使用方法**
+
+{% highlight shell %}
+→ ~ $ tmux  # 进入Tmux模式
+
+# 键入Ctrl+b后松开，% 将 Window 垂直切分
+# 键入Ctrl+b后松开，" 将 Window 水平切分
+# 键入Ctrl+b后松开，? 显示帮助菜单
+# 键入Ctrl+b后松开，方向键在各窗口中切换光标
+# 键入Ctrl+b后松开，空格键重新排列多窗口的布局
+# 键入Ctrl+b后松开, d 或 :detach 将当前Session分离
+
+→ ~ $ tmux attach -t 0 # 将Session 0恢复
+{% endhighlight %}
+
+Tmux 跟 Screen 很相似，它们的命令对比可以参考 [tmux & screen cheat-sheet][ref2]。
+
 [storm]: https://github.com/emre/storm
+[tmux]: https://github.com/tmux/tmux
 [ref1]: http://sourabhbajaj.com/mac-setup/
+[ref2]: http://www.dayid.org/comp/tm.html
