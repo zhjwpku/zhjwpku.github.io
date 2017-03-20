@@ -132,6 +132,8 @@ vagrant@vagrant-ubuntu-trusty-64:~$
 
 git 已经成功安装进 vbox1 这台 Ubuntu 14.04 的虚机。
 
+如果对 Vagrantfile 进行了编辑，可以使用 vagrant reload 进行重新加载，reload 相当于 halt + up。
+
 <br>
 <span class="post-meta">
 Reference:
