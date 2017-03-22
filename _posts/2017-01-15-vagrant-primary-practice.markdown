@@ -10,6 +10,17 @@ tags:
 
 Vagrant 宣称支持各种虚拟化平台，VirtualBox、VMware、AWS、OpenStack，甚至是 Docker 容器及原生的 LXC，但笔者认为其最常用的使用场景是结合 VirtualBox 来快速构建虚拟机，适用于开发环境而非部署大量的生产环境，本文仅介绍 Vagrant 最基本的使用方法。
 
+**2017-03-22 更新**
+
+如果使用的provider为VirtualBox并且有配置`config.vm.synced_folder "data", "/data"`，会出现*mount: unknown filesystem type 'vboxsf'* 错误，安装vgrant-vbguest插件可以解决这个问题。
+
+{% highlight shell %}
+[root@c3po ~]# vagrant plugin install vagrant-vbguest
+[root@c3po ~]# vagrant destroy && vagrant up
+{% endhighlight %}
+
+**--end--**
+
 Vagrant 和 Docker 的区别可阅读以下链接：
 
 [What is the difference between Docker and Vagrant? When should you use each one?][diff]
