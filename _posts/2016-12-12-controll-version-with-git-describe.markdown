@@ -20,5 +20,73 @@ version = details.commitDistance ? details.lastTag + '-SNAPSHOT' : details.lastT
 
 版本管理参照：[语义化版本][SemanticVersioning]
 
+**The Maven way**
+
+{% highlight shell %}
+1.0-SNAPSHOT   =>   1.0
+      |              |
+ during dev      when released
+{% endhighlight %}
+
+插件: Maven Release plugin
+
+**The Continuous Delivery way**
+
+{% highlight shell %}
+   1.0.134   =>   1.0.134
+      |              |
+ during dev      when released
+{% endhighlight %}
+
+Every commit can be a release
+
+**implemented with Gradle**
+
+*gradle/versioning.gradle*
+
+{% highlight java %}
+ext.buildTimestamp = new Date().format('yyyy-MM-dd HH:mm:ss')
+
+def ciBuildNumber = System.env.SOURCE_BUILD_NUMBER      // Jenkins Build Number
+version = (ciBuildNumber) ? new ProjectVersion(1, 0, Integer.parseInt(ciBuildNumber)) :
+        new ProjectVersion(1, 0, 0)
+
+class ProjectVersion {
+
+    Integer major
+    Integer minor
+    Integer build
+
+    ProjectVersion(Integer major, Integer minor, Integer build) {
+        this.major = major
+        this.minor = minor
+        this.build = build
+    }
+
+    @Override
+    String toString() {     // Builds version String representation
+        "$major.$minor.$build"
+    }
+}
+{% endhighlight %}
+
+在根项目的build.gradle中包含以下内容：
+
+{% highlight java %}
+allprojects {
+    apply from: "$rootDir/gradle/versioning.gradle"
+}
+{% endhighlight %}
+
+<br>
+<span class="post-meta">
+Reference:
+</span>
+<br>
+<span class="post-meta">
+1 [Building a Continuous Delivery Pipeline with Gradle and Jenkins][ref1]
+</span>
+
 [gradle-git-version]: https://github.com/palantir/gradle-git-version
 [SemanticVersioning]: http://semver.org/lang/zh-CN/
+[ref1]: https://www.youtube.com/watch?v=V0FpbDkKYtA
