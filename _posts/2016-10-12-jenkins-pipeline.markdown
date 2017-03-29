@@ -191,7 +191,8 @@ Reference:
 5 [Top 10 Best Practices for Jenkins Pipeline Plugin][top10]<br>
 6 [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 1][part1]<br>
 7 [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 2][part2]<br>
-8 [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 3][part3]
+8 [Using the Pipeline Plugin to Accelerate Continuous Delivery — Part 3][part3]<br>
+9 [Building a Continuous Delivery Pipeline with Gradle and Jenkins][ref9]
 </span>
 
 [overview]: https://jenkins.io/doc/book/pipeline/overview/
@@ -202,3 +203,4 @@ Reference:
 [part2]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-2
 [part3]: https://www.cloudbees.com/blog/using-pipeline-plugin-accelerate-continuous-delivery-part-3
 [jenkinsfile2]: https://github.com/zhjwpku/ijkplayer/blob/master/Jenkinsfile
+[ref9]: https://www.youtube.com/watch?v=V0FpbDkKYtA
