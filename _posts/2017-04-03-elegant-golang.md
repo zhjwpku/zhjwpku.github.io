@@ -8,6 +8,12 @@ tags:
 
 云计算领域的开源项目中，绝大多数使用 golang 作为开发语言。本文记录 golang 一些实用的语言特性。
 
+<h4>Init function</h4>
+
+有一个特殊的函数叫做init(), 这个函数不能被调用，会在 main 函数执行之前自动调用，另外，当含有 init() 函数的 package 被 import 时，其 init() 函数也会被自动调用。
+
+more to read: [When is the init() function in Go (Golang) run?][ref3]
+
 <h4>Elegant Contants</h4>
 
 {% highlight go %}
@@ -74,3 +80,4 @@ Reference:
 
 [ref1]: https://splice.com/blog/iota-elegant-constants-golang/
 [ref2]: https://github.com/golang/go/wiki/Iota
+[ref3]: http://stackoverflow.com/questions/24790175/when-is-the-init-function-in-go-golang-run
