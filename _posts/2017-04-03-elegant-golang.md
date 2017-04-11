@@ -8,6 +8,18 @@ tags:
 
 云计算领域的开源项目中，绝大多数使用 golang 作为开发语言。本文记录 golang 一些实用的语言特性。
 
+<h4>++ and --</h4>
+
+golang 中的 ++ 和 -- 只有后缀操作符，并且只能在声明的时候用，不能用作表达式。
+
+{% highlight go %}
+n = i++         // validate
+f(i++)          // 在golang中不允许
+a[i] = b[i++]   // 在golang中不允许
+{% endhighlight %}
+
+这样的设计真是比 C/C++/Java 清爽了很多啊！
+
 <h4>Init function</h4>
 
 有一个特殊的函数叫做init(), 这个函数不能被调用，会在 main 函数执行之前自动调用，另外，当含有 init() 函数的 package 被 import 时，其 init() 函数也会被自动调用。
