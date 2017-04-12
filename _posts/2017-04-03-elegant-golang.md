@@ -8,6 +8,42 @@ tags:
 
 云计算领域的开源项目中，绝大多数使用 golang 作为开发语言。本文记录 golang 一些实用的语言特性。
 
+<h4>switch</h4>
+
+{% highlight go %}
+switch key: {
+case val1: fallthrough 
+case val2, val3:
+    // do something
+default:
+    // do something
+}
+
+switch {
+case condition1:
+    ...
+case condition2:
+    ...
+default:
+    ...
+}
+
+switch initialization {
+case val1:
+    ...
+case val2:
+    ...
+default:
+    ...
+}
+{% endhighlight %}
+
+上面的 `key` 可以是任意类型，但 val1, val2, val3 必须是同一类型。与 Java/C/C++ 不一样的是，golang switch 的 break 是隐式的，如果想要穿透效果，需要使用 `fallthrough`。
+
+`switch` 后面如果没有变量，第一个为真的 case 将被执行。
+
+`switch` 后面还可以包含初始化语句。
+
 <h4>++ and --</h4>
 
 golang 中的 ++ 和 -- 只有后缀操作符，并且只能在声明的时候用，不能用作表达式。
