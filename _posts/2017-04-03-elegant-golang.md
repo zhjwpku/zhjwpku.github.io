@@ -8,6 +8,72 @@ tags:
 
 云计算领域的开源项目中，绝大多数使用 golang 作为开发语言。本文记录 golang 一些实用的语言特性。
 
+<h4>函数 function</h4>
+
+golang 不允许函数重载，函数重载在运行时进行类型匹配，这会造成性能损失。
+
+golang 函数可以赋值给变量，变量获取函数的引用，并且知道函数的 signature, 如果两个变量保存同一个函数的引用，那么两个变量相等。
+
+和许多其他语言一样，golang 也分传值（pass by value）和传引用（pass by reference），类型 slices、maps、interfaces、channels 默认为传引用。
+
+使用命名返回值(named return)可以是代码更简洁:
+
+{% highlight go %}
+func getX2AndX3_2(input int) (x2 int, x3 int) {
+	x2 = 2 * input
+	x3 = 3 * input
+	// return x2, x3
+	return
+}
+{% endhighlight %}
+
+<h4>defer</h4>
+
+将函数推迟到 return 或函数出差之后、 `}` 之前执行，类似 Java 或 C++ 的 finally，常用于释放资源。
+
+带有参数的 defer 函数在执行执行的时候，参数值为 defer 当前行的变量值。多个 defer 执行的顺序满足 LIFO。
+
+{% highlight go %}
+func a() {
+	i := 0
+	defer fmt.Println(i)    // 打印0
+	i++
+	return
+}
+
+func f() {
+	for i := 0; i < 5; i++ {
+		defer fmt.Printf("%d ", i)  // 打印4 3 2 1 0
+	}
+}
+{% endhighlight %}
+
+defer 常见用法：
+
+*关闭文件流*
+{% highlight go %}
+// open a file
+defer file.Close()
+{% endhighlight %}
+
+*Unlock*
+{% highlight go %}
+mu.Lock()
+defer mu.Unlock()
+{% endhighlight %}
+
+*打印 footer*
+{% highlight go %}
+printHeader()
+defer printFooter()
+{% endhighlight %}
+
+*关闭数据库连接*
+{% highlight go %}
+// open a database connection
+defer disconnectFromDB()
+{% endhighlight %}
+
 <h4>switch</h4>
 
 {% highlight go %}
