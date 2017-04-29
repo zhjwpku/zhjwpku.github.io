@@ -30,11 +30,21 @@ tags:
 
 11. [界面之下：还原真实的MV*模式][mvc]. 介绍了 MVC => MVP => MVVM 的演进过程，做网站开发的都应该看看。
 
+12. [ReactJS For Stupid People][ref12]. React is ONLY THE VIEW LAYER.
+
+13. [Flux For Stupid People][ref13].
+
+14. [Extremely simple flux demo][ref14] by 阮一峰.
+
 **[React][react] 官方文档：**
 
 1. [Thinking in React][ref8].
 
 2. [Tutorial: Intro To React][ref9].
+
+3. [React - Basic Theoretical Concepts][ref10]. 中文译文：[React 设计思想][ref11]。
+
+4. [flux-concepts](https://github.com/facebook/flux/tree/master/examples/flux-concepts).
 
 [react]: https://github.com/facebook/react
 [ryf]: http://www.ruanyifeng.com/blog/2015/03/react.html
@@ -54,3 +64,8 @@ tags:
 [ref7]: https://blog.risingstack.com/react-js-best-practices-for-2016/
 [ref8]: http://facebook.github.io/react/docs/thinking-in-react.html
 [ref9]: https://facebook.github.io/react/tutorial/tutorial.html
+[ref10]: https://github.com/reactjs/react-basic
+[ref11]: https://github.com/react-guide/react-basic
+[ref12]: http://blog.andrewray.me/reactjs-for-stupid-people/
+[ref13]: http://blog.andrewray.me/flux-for-stupid-people/
+[ref14]: https://github.com/ruanyf/extremely-simple-flux-demo
