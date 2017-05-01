@@ -46,6 +46,12 @@ tags:
 
 4. [flux-concepts](https://github.com/facebook/flux/tree/master/examples/flux-concepts).
 
+5. [Getting Started with Redux][ref15] by [Dan Abramov](https://github.com/gaearon).
+
+6. [Building React Applications with Idiomatic Redux][ref16] by [Dan Abramov](https://github.com/gaearon).
+
+7. [Redux doc][ref17].
+
 [react]: https://github.com/facebook/react
 [ryf]: http://www.ruanyifeng.com/blog/2015/03/react.html
 [react-demos]: https://github.com/ruanyf/react-demos
@@ -69,3 +75,6 @@ tags:
 [ref12]: http://blog.andrewray.me/reactjs-for-stupid-people/
 [ref13]: http://blog.andrewray.me/flux-for-stupid-people/
 [ref14]: https://github.com/ruanyf/extremely-simple-flux-demo
+[ref15]: https://egghead.io/courses/getting-started-with-redux
+[ref16]: https://egghead.io/courses/building-react-applications-with-idiomatic-redux
+[ref17]: http://redux.js.org/
