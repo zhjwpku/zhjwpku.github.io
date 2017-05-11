@@ -33,6 +33,8 @@ func getX2AndX3_2(input int) (x2 int, x3 int) {
 
 带有参数的 defer 函数在执行执行的时候，参数值为 defer 当前行的变量值。多个 defer 执行的顺序满足 LIFO。
 
+*Defer is only executed at the return of a function, not at the end of a loop or some other limited scope.*
+
 {% highlight go %}
 func a() {
 	i := 0
@@ -189,7 +191,8 @@ Reference:
 <br>
 <span class="post-meta">
 1 [iota: Elegant Constants in Golang][ref1]<br>
-2 [Iota][ref2]
+2 [Iota][ref2]<br>
+3 Ivo Balbaert. The Way To Go: A Thorough Introduction To The Go Programming Language. iUniverse. 2012.
 </span>
 
 [ref1]: https://splice.com/blog/iota-elegant-constants-golang/
