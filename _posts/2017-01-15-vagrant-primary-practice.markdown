@@ -21,6 +21,16 @@ Vagrant 宣称支持各种虚拟化平台，VirtualBox、VMware、AWS、OpenStac
 
 **--end--**
 
+**2017-05-11 更新**
+
+VirtualBox 的默认 Machine Folder 为 `~/VirtualBox\ VMs`，由于虚拟机会占用很多空间，人们希望将其存储在一个更大的可控的存储空间，使用如下命令进行更改：
+
+```shell
+[root@alice ~]# vboxmanage setproperty machinefolder /home/zhjwpku/vboxvms
+```
+
+**--end--**
+
 Vagrant 和 Docker 的区别可阅读以下链接：
 
 [What is the difference between Docker and Vagrant? When should you use each one?][diff]
