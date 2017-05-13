@@ -7,8 +7,7 @@ tags:
 - ceph
 ---
 
-从某种程度上该文章是ceph.com[快速安装](http://docs.ceph.com/docs/master/start/)文档的翻译，不过在跑不通
-的情况下我会以自己的方法进行处理。本文的所有内容均在CentOS环境下运行。
+从某种程度上该文章是 [ceph.com 快速安装](http://docs.ceph.com/docs/master/start/)文档的翻译，在跑不通的情况下我会以自己的方法进行处理。本文的所有内容均在 CentOS 环境下运行。
 
 <h4>架构</h4>
 
@@ -16,7 +15,7 @@ tags:
 
 ![ceph-deploy](http://img.blog.csdn.net/20160113090921137)
 
-使用VMware WorkStation来创建4个虚拟机，我用的是CentOS 7作为安装镜像，安装过程我就不赘述了。分别将主机名命名为admin-node, node1, node2, node3, 如果安装时未设置hostname，可以参照[CentOS 7修改主机名【hostnamectl】](http://blog.csdn.net/zhjwpku/article/details/50506760)来配置。
+使用 VMware WorkStation 来创建4个虚拟机，使用是CentOS 7作为安装镜像，安装过程不赘述了。分别将主机名命名为admin-node, node1, node2, node3, 如果安装时未设置hostname，可以参照[CentOS 7修改主机名【hostnamectl】](http://blog.csdn.net/zhjwpku/article/details/50506760)来配置。
 
 为了方便主机间使用hostname进行通信，对每台机器的hosts进行配置，编辑/etc/hosts，在末尾添加：
 
@@ -49,7 +48,7 @@ gpgkey=https://download.ceph.com/keys/release.asc
 $sudo yum update && sudo yum install ceph-deploy
 {% endhighlight %}
 
-*注：在后面的操作中会出现[ceph_deploy][ERROR ] RuntimeError: NoSectionError: No section: 'Ceph'这样的错误提示，可以将ceph.repo改名为ceph-deploy.repo来解决这个问题，我是在http://www.virtualtothecore.com/en/adventures-with-ceph-storage-part-5-install-ceph-in-the-lab/ 中看到评论里边有人这样做（搜Ben Town），尝试了一下真的OK。*
+*注：在后面的操作中会出现[ceph_deploy][ERROR ] RuntimeError: NoSectionError: No section: 'Ceph'这样的错误提示，可以将ceph.repo改名为ceph-deploy.repo来解决这个问题，我是在 [adventures-with-ceph-storage-part-5-install-ceph-in-the-lab](http://www.virtualtothecore.com/en/adventures-with-ceph-storage-part-5-install-ceph-in-the-lab/) 中看到评论里边有人这样做（搜Ben Town），尝试了一下真的OK。*
 
 <h4>CEPH NODE SETUP</h4>
 
@@ -71,7 +70,7 @@ $systemctl enble sshd.service //开机自启动sshd服务
 
 **创建一个Ceph Deploy User**
 
-`ceph-deploy`必须登录进入一个Ceph节点并拥有免输密码的sudo权限。虽然并不建议使用root，但由于只是做实验，并不是生产环境，我还是用了root，如果不想使用root，参照http://docs.ceph.com/docs/master/start/quick-start-preflight/#create-a-ceph-deploy-user 来设置用户并更改其权限。
+`ceph-deploy`必须登录进入一个Ceph节点并拥有免输密码的sudo权限。虽然并不建议使用root，但由于只是做实验，并不是生产环境，我还是用了root，如果不想使用root，参照 [create-a-ceph-deploy-user](http://docs.ceph.com/docs/master/start/quick-start-preflight/#create-a-ceph-deploy-user) 来设置用户并更改其权限。
 
 **PASSWORD-LESS SSH**
 
@@ -158,12 +157,12 @@ $ssh node2
 $sudo mkdir /var/local/osd0
 $sudo chmod 777 /var/local/osd0  //防止后文osd activate操作被拒绝
 $exit
- 
+
 $ssh node3
 $sudo mkdir /var/local/osd1
 $sudo chmod 777 /var/local/osd1
 $exit
- 
+
 $ceph-deploy osd prepare node2:/var/local/osd0 node3:/var/local/osd0
 $ceph-deploy osd activate node2:/var/local/osd0 node3:/var/local/osd1
 {% endhighlight %}
