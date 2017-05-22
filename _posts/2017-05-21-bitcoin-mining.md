@@ -50,11 +50,54 @@ Solo 需要自己安装 [Bitcoin Core](https://bitcoin.org/en/download)，启动
 
 ![slushpool](/assets/201705/slushpool.png)
 
-**关于LiteCoin**
+**LiteCoin**
 
 [LiteCoin](https://github.com/litecoin-project/litecoin) fork 自 bitcoin，所以基本理念是一样的，使用的 Hash 算法为 scrypt，计算难度更大，本文使用的 CPU 每线程的算力只有不到 6KH/s，因此没有专用硬件就别去挖了。
 
 ![litecoinpool](/assets/201705/litecoinpool.png)
+
+**Zcash**
+
+[Zcash](https://z.cash/) 也是 bitcoin 的一个变种币，使用 zcashd 并设置 gen=1 就可以挖矿。本文使用 [nheqminer](https://github.com/nicehash/nheqminer) 连接到 Antpool 的 Zcash 矿池进行挖矿，创建 worker 的过程跟上面 bitcoin 一样，这里介绍编译 [nheqminer](https://github.com/nicehash/nheqminer) 及如何启动挖矿程序。
+
+```bash
+# opt 目录下构建 boost_1_62_0
+[root@alice opt]# wget http://downloads.sourceforge.net/project/boost/boost/1.62.0/boost_1_62_0.tar.gz
+[root@alice opt]# tar xmf boost_1_62_0.tar.gz
+[root@alice opt]# cd boost_1_62_0/
+[root@alice boost_1_62_0]# ./bootstrap.sh
+[root@alice boost_1_62_0]# ./b2
+[root@alice boost_1_62_0]# cd ..
+# 安装 CMake
+[root@alice opt]# wget https://cmake.org/files/v3.7/cmake-3.7.2-Linux-x86_64.sh
+[root@alice opt]# bash cmake-3.7.2-Linux-x86_64.sh
+[root@alice opt]# ln -s /opt/cmake-3.7.2-Linux-x86_64/bin/cmake /usr/local/bin/
+# 构建 nheqminer
+[root@alice opt]# git clone https://github.com/nicehash/nheqminer.git
+[root@alice opt]# cd nheqminer/cpu_xenoncat/asm_linux/
+[root@alice asm_linux]# chmod +x fasm
+[root@alice asm_linux]# sh assemble.sh
+[root@alice asm_linux]# cd ../../
+[root@alice nheqminer]# vim CMakeLists.txt   ## 将option(USE_CUDA_DJEZO "USE CUDA_DJEZO" ON) 改为 OFF
+[root@alice nheqminer]# cd ..
+[root@alice opt]# mkdir build && cd build
+[root@alice build]# cmake ../nheqminer/ -DBOOST_ROOT=/opt/boost_1_62_0 -DBOOST_LIBRARYDIR=/opt/boost_1_62_0/libs
+[root@alice build]# make -j $(nproc)
+```
+
+如上构建好的二进制包就可以拿到相同架构的机器上运行了。
+
+启动命令：
+
+```
+[root@alice ~]# ./nheqminer -l stratum-zec.antpool.com:8899 -u zhjwpku.alice -t 32
+```
+
+测试一天的结果：
+
+![zcash](/assets/201705/zcash.png)
+
+*注：Zcash 相比于 bitcoin 和 litecoin 还是可以用CPU/GPU挖一挖的* 🙂
 
 **总结**
 
