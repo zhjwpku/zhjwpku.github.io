@@ -9,6 +9,18 @@ tags:
 
 [Gradle][gradle]堪称Java（JVM）世界构建技术的一个量子跃迁。本文介绍了Gradle的常用概念，并通过对Gradle项目（使用Gradle）自身构建过程的分析进一步了解Gradle。
 
+**2017-05-22 更新**
+
+*The --refresh-dependencies option tells Gradle to ignore all cached entries for resolved modules and artifacts. A fresh resolve will be performed against all configured repositories, with dynamic versions recalculated, modules refreshed, and artifacts downloaded.*
+
+当开发团队更新了API包却没有变更 artifact version，使用 `--refresh-dependencies` 参数来重新下载依赖包。
+
+```shell
+→ ~/work/test-proj (master) $ ./gradlew clean -Penv=testing distz --refresh-dependencies
+```
+
+**--end--**
+
 Gradle提供：
 
 - 类似Ant、灵活、通用的构建工具
