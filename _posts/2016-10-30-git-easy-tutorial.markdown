@@ -21,7 +21,7 @@ git的配置分为系统（System）、全局（Global）和本地（Local）三
 {% highlight shell %}
 git config --global user.email zhjwpku@gmail.com
 git config --global user.name "Zhao Junwang"
-git config --global core.editor vim 
+git config --global core.editor vim
 git config --global credential.helper store
 git config --global push.default simple
 #git config --global core.autocrlf true
@@ -267,6 +267,7 @@ Reference:
 3 [https://www.atlassian.com/git/tutorials/][atlassiangit]<br>
 4 Comparing Workflows: [https://www.atlassian.com/git/tutorials/comparing-workflows][workflow]<br>
 5 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
+6 蒋鑫. [GotGitHub](http://www.worldhello.net/gotgithub/index.html).<br> 
 </span>
 
 [installgit]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
