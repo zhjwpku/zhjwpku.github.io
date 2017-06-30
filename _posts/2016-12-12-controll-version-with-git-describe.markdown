@@ -16,6 +16,9 @@ plugins {
 
 def details = versionDetails()
 version = details.commitDistance ? details.lastTag + '-SNAPSHOT' : details.lastTag
+
+// 或使用如下方式将 git describe 信息作为 version
+version = gitVersion()
 {% endhighlight %}
 
 版本管理参照：[语义化版本][SemanticVersioning]
