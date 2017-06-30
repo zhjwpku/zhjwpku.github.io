@@ -181,6 +181,8 @@ $ git show <tag> # 显示tag详情
 $ git tag -d 3.10.1 # 删除标签
 $ git push origin --tags # 上传本地标签
 $ git checkout <tag> # 切换到tag，同切换分支一样
+$ git tag -l | xargs git tag -d && git fetch -t  # 同步远程tag
+$ git fetch -p -t # 同步远程tag，不确定是否可用
 
 # git stash
 # case.1 工作空间与upstream冲突，导致pull失败
