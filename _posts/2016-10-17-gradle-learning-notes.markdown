@@ -9,6 +9,15 @@ tags:
 
 [Gradle][gradle]堪称Java（JVM）世界构建技术的一个量子跃迁。本文介绍了Gradle的常用概念，并通过对Gradle项目（使用Gradle）自身构建过程的分析进一步了解Gradle。
 
+**2017-07-05 更新**
+
+显示项目的依赖树：
+
+```shell
+# 只显示某个子项目的某一个scope的依赖
+→ ~/work/test-proj (master) $ ./gradlew :subproject:dependencies --configuration compile
+```
+
 **2017-05-22 更新**
 
 *The --refresh-dependencies option tells Gradle to ignore all cached entries for resolved modules and artifacts. A fresh resolve will be performed against all configured repositories, with dynamic versions recalculated, modules refreshed, and artifacts downloaded.*
