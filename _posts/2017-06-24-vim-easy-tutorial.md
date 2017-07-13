@@ -255,6 +255,25 @@ q/ 显示搜索历史
 :tabprevious 转到上一个标签
 ```
 
+<h4>fold & unfold</h4>
+
+```
+:help fold
+zo              Open one fold under the cursor.  When a count is given, that
+                many folds deep will be opened.  In Visual mode one level of
+                folds is opened for all lines in the selected area.
+
+zc              Close one fold under the cursor.  When a count is given, that
+                many folds deep are closed.  In Visual mode one level of folds
+                is closed for all lines in the selected area.
+                'foldenable' will be set.
+
+zM              Close all folds: set 'foldlevel' to 0.
+                'foldenable' will be set.
+
+zR              Open all folds.  This sets 'foldlevel' to highest fold level.
+```
+
 <h4>不常用命令</h4>
 
 ```
