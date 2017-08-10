@@ -72,11 +72,19 @@ module.exports = invariant;
 
 <h4><a href="https://github.com/nuysoft/Mock">Mock</a></h4>
 
-生成随机数据，拦截 Ajax 请求。用于前端独立于后端进行开发。使用手册：[https://github.com/nuysoft/Mock/wiki/Getting-Started][mock]。
+生成随机数据，拦截 Ajax 请求。用于前端独立于后端进行开发。
+
+使用手册：[https://github.com/nuysoft/Mock/wiki/Getting-Started][mock]
 
 <h4><a href="https://github.com/reactjs/prop-types">prop-types</a></h4>
 
 用于在运行时检查传递给 Components 的 props 的类型是否正确。
+
+<h4><a href="https://github.com/i18next/i18next">i18next</a></h4>
+
+国际化框架，定义一组locale的json文件，在前端进行渲染。
+
+使用手册：[https://www.i18next.com/getting-started.html](https://www.i18next.com/getting-started.html)
 
 [invariant]: https://github.com/zertosh/invariant
 [warning]: https://github.com/BerkeleyTrue/warning
