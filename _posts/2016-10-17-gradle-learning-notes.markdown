@@ -9,6 +9,16 @@ tags:
 
 [Gradle][gradle]堪称Java（JVM）世界构建技术的一个量子跃迁。本文介绍了Gradle的常用概念，并通过对Gradle项目（使用Gradle）自身构建过程的分析进一步了解Gradle。
 
+**2017-08-25 更新**
+
+剔除Jar包中包含的文件。结果可使用 `vim jarname.jar` 来查看。 
+
+```grovy
+jar {
+    exclude ('application.properties')
+}
+```
+
 **2017-07-05 更新**
 
 显示项目的依赖树：
