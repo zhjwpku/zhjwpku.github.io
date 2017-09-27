@@ -194,6 +194,107 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
 观察者模式定义了对象之间**一对多**的依赖关系，当**一**对应的对象状态有所变化，所有依赖它的对象都会被通知并自动更新。
 
+<h4>🔥 装饰者模式(The Decorator Pattern)</h4>
+
+装饰者模式的基本类图结构如下：
+
+![Common Decorator Pattern](/assets/201709/common_decorator_pattern.png)
+
+Starbuzz饮品装饰者类图结构如下：
+
+![Beverage Decorator Pattern](/assets/201709/beverage_decorator_pattern.png)
+
+**重点：** Decorator 使用继承是为了获取类型匹配（type matching），而不是行为（behavior）.
+
+**Beverage类不需变动**
+```java
+public abstract class Beverage {
+  String description = "Unknown Beverage";
+  public String getDescription() {
+    return description;
+  }
+
+  public abstract double cost();
+}
+```
+
+**调味品（Decorator）的抽象类**
+```java
+// 调味品可以跟饮品相互替换（Interchangeable），所以继承Beverage
+public abstract class CondimentDecorator extends Beverage {
+  // 所有的调味品都必须重新实现getDescription()方法
+  public abstract String getDescription();
+}
+```
+
+**两种饮品的实现**
+```java
+public class Espresso extends Beverage {  // 浓咖啡
+  public Espresso() {
+    description = "Espresso";
+  }
+
+  public double cost() {
+    return 1.99;
+  }
+}
+
+public class HouseBlend extends Beverage { // 混合咖啡
+  public HouseBlend() {
+    description = "House Blend Coffee";
+  }
+
+  public double cost() {
+    return .89;
+  }
+}
+```
+
+**一种调味品（Decorator）的实现**
+```java
+public class Mocha extends CondimentDecorator { // 摩卡是一个装饰者，所以继承 CondimentDecorator
+  Beverage beverage;    // 对被装饰的类进行包装
+
+  public Mocha(Beverage beverage) { // 构造装饰者的时候使用被装饰的类
+    this.beverage = beverage;
+  }
+
+  public String getDescription() {
+    return beverage.getDescription + ", Mocha";
+  }
+
+  public double cost() {
+    return beverage.cost() + .20;
+  }
+}
+```
+
+**测试代码**
+```java
+public class StarbuzzCoffee {
+  public static void main(String args[]) {
+    // 点一杯浓咖啡，不要任何调味品
+    Beverage beverage = new Espresso();
+    System.out.println(beverage.getDescription() + "$" + beverage.cost());
+
+    // 点一杯深焙咖啡，加双份摩卡和一份奶油
+    Beverage beverage2 = new DarkRoast();
+    beverage2 = new Mocha(beverage2);   // 第一份摩卡
+    beverage2 = new Mocha(beverage2);   // 第二份摩卡
+    beverage2 = new Whip(beverage2);    // 一份奶油
+    System.out.println(beverage2.getDescription() + "$" + beverage2.cost());
+  }
+}
+```
+
+java.io包就是一个装饰者模式的一个实例：
+
+![java.io package](/assets/201709/java_io_package.png)
+
+![java.io package 2](/assets/201709/java_io_package2.png)
+
+装饰者模式动态地附加一个对象的责任。装饰器提供了用于扩展功能的子类的灵活替换。
+
 
 <br>
 <span class="post-meta">
