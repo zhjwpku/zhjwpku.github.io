@@ -12,7 +12,7 @@ tags:
 
 ![The Strategy Pattern](/assets/201709/strategy_pattern.png)
 
-策略模式定义了一组算法，每个算法都用一个类封装，并且之间可以相互替换。策略模式使得增加或者替换算法变得简单、独立。
+策略模式定义了一组算法，每个算法都用一个类封装，并且之间可以相互替换。策略模式使得算法独立于使用它的客户端。
 
 <h4>🔥 观察者模式(The Observer Pattern)</h4>
 
@@ -108,12 +108,9 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 public class WeatherStation {
   public static void main(String[] args) {
     WeatherData weatherData = new WeatherData();
-    CurrentConditionsDisplay currentDisplay =
-                new CurrentConditionsDisplay(weatherData);
-    StatisticsDisplay statisticsDisplay =
-                new StatisticsDisplay(weatherData);
-    ForecastDisplay forecastDisplay =
-                new ForecastDisplay(weatherData);
+    CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
+    StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+    ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
 
     weatherData.setMeasurements(80, 75, 30.4f);
     weatherData.setMeasurements(82, 70, 29.2f);
@@ -121,6 +118,82 @@ public class WeatherStation {
   }
 }
 ```
+
+**Java's build-in Observer Pattern**
+
+![Java's build-in Observer Pattern](/assets/201709/java_buildin_observer_pattern.png)
+
+**使用java.util.Observable重写WeatherData**
+```java
+import java.util.Observable;
+import java.util.Observer;
+
+public class WeatherData extends Observable { // Observable 是类
+  private float temperature;
+  private float humidity;
+  private float pressure;
+
+  public void measurementsChanged() {
+    setChanged();       // 在notifyObservers前调用setChanged()指明状态发生变化
+    notifyObservers();  // 使用未带参数的notifyObservers()意味着在Observer端进行拉数据（pull model）
+  }
+
+  public void setMeasurements(float temperature, float humidity, float pressure) {
+    this.temperature = temperature;
+    this.humidity = humidity;
+    this.pressure = pressure;
+    measurementsChanged();
+  }
+
+  // 以下三个方法在之前的写法中略去了，因为现在我们要使用"pull"模式，观察者需要使用这些方法
+  public float getTemperature() {
+    return temperature;
+  }
+
+  public float getHumidity() {
+    return humidity;
+  }
+
+  public float getPressure() {
+    return pressure;
+  }
+}
+```
+
+**使用java.util.Observer重写CurrentConditionsDisplay**
+```java
+import java.util.Observable;
+import java.util.Observer;
+
+// 现在我们实现的是 java.util 中的 Observer, 它依然是一个接口
+public class CurrentConditionsDisplay implements Observer, DisplayElement {
+  Observable observable;
+  private float temperature;
+  private float humidity;
+
+  public CurrentConditionsDisplay(Observable observable) {
+    this.observable = observable;
+    observable.addObserver(this);
+  }
+
+  public void update(Observable obs, Object args) {
+    if (obs instanceof WeatherData) {
+      WeatherData weatherData = (WeatherData)obs;
+      this.temperature = weatherData.getTemperature();  // 拉取数据
+      this.humidity = weatherData.getHumidity();
+      display();
+    }
+  }
+
+  public void display() {
+    System.out.println("Current conditions: " + temperature +
+        "F degrees and " + humidity + "% humidity");
+  }
+}
+```
+
+观察者模式定义了对象之间**一对多**的依赖关系，当**一**对应的对象状态有所变化，所有依赖它的对象都会被通知并自动更新。
+
 
 <br>
 <span class="post-meta">
