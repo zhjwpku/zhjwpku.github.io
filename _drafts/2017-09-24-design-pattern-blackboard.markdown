@@ -295,6 +295,32 @@ java.io包就是一个装饰者模式的一个实例：
 
 装饰者模式动态地附加一个对象的责任。装饰器提供了用于扩展功能的子类的灵活替换。
 
+<h4>🔥 工厂模式(The Factory Pattern)</h4>
+
+工厂模式分为简单工厂模式（The Simple Factory）、工厂方法模式（The Factory Method Pattern）和抽象工厂模式（The Abstract Factory Pattern）.
+
+简单工厂模式其实算不上是一种模式，它更像是一种编程习惯（programming idiom）。本文不做介绍。
+
+工厂方法模式（The Factory Method Pattern）定义: 工厂方法模式定义了一个创建对象的接口，并让子类决定实例化对象的类型。工厂方法将实例化推迟得到子类。
+
+![The Factory Method Pattern](/assets/201709/factory_method_pattern.png)
+
+以 PizzaStore 为例:
+
+![The Pizza Factory Method Pattern](/assets/201709/pizza_factory_method_pattern.png)
+
+换个视角来看 PizzaStore 类图:
+
+![The Pizza Factory Method Pattern](/assets/201709/pizza_factory_method_pattern2.png)
+
+抽象工厂模式（The Abstract Factory Pattern）定义: 抽象工厂模式可以向客户端提供一个接口，使客户端在不必指定具体类的情况下，创建多个相关或独立的对象。
+
+![The Abstract Factory Pattern](/assets/201709/abstract_factory_pattern.png)
+
+以 PizzaStore 为例:
+
+![The Pizza Abstract Factory Pattern](/assets/201709/pizza_abstract_factory_pattern.png)
+
 
 <br>
 <span class="post-meta">
