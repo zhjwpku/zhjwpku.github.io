@@ -297,7 +297,7 @@ java.io包就是一个装饰者模式的一个实例：
 
 <h4>🔥 工厂模式(The Factory Pattern)</h4>
 
-工厂模式分为简单工厂模式（The Simple Factory）、工厂方法模式（The Factory Method Pattern）和抽象工厂模式（The Abstract Factory Pattern）.
+工厂模式分为简单工厂模式（The Simple Factory）、工厂方法模式（The Factory Method Pattern）和抽象工厂模式（The Abstract Factory Pattern）。
 
 简单工厂模式其实算不上是一种模式，它更像是一种编程习惯（programming idiom）。本文不做介绍。
 
@@ -320,6 +320,62 @@ java.io包就是一个装饰者模式的一个实例：
 以 PizzaStore 为例:
 
 ![The Pizza Abstract Factory Pattern](/assets/201709/pizza_abstract_factory_pattern.png)
+
+<h4>🔥 单例模式(The Singleton Pattern)</h4>
+
+单例模式保证了一个类只有一个实例，并提供了一个全局访问点。
+```java
+public class Singleton {
+  private static Singleton uniqueInstance;
+  // other useful instance variables here
+
+  private Singleton() {}
+
+  public static synchronized Singleton getInstance() {  // synchronized 解决多线程可能返回不同对象的问题
+    if (uniqueInstance == null) {
+      uniqueInstance = new Singleton();
+    }
+    return uniqueInstance;
+  }
+
+  // Other useful methods here
+}
+```
+
+但是同步是一种比较重的解决办法，因为当uniqueInstance被赋值以后，synchronized就不再被需要了，因此上面的写法引入了额外的开销。
+
+一种办法是将 `Lazily created one` 变为 `Eagerly created one`。这种方法依赖JVM来在装载类的时候创建一个唯一的Singleton实例。JVM保证了实例的创建早于任何线程获取实例。
+```java
+public class Singleton {
+  private static Singleton uniqueInstance = new Singleton();  // JVM创建优先于线程访问
+
+  private Singleton() {}
+
+  public static Singleton getInstance() {
+    return uniqueInstance;
+  }
+}
+```
+
+另一种办法是使用“double-checked locking”来减少getInstance()中同步的使用。
+```java
+public class Singleton {
+  private volatile static Singleton uniqueInstance; // volatile 保证了uniqueInstance在多线程之间的可见性
+
+  private Singleton() {}
+
+  public static Singleton getInstance() {
+    if (uniqueInstance == null) {   // 保证了同步机制只在第一次实例化的时候被使用
+      synchronized (Singleton.class) {
+        if (uniqueInstance == null) {
+          uniqueInstance = new Singleton();
+        }
+      }
+    }
+    return uniqueInstance;
+  }
+}
+```
 
 
 <br>
