@@ -407,6 +407,61 @@ public class Singleton {
 
 **适配器封装一个对象来改变它的接口，装饰器包装一个对象来添加新的行为和责任，而外观模式包装一组对象来进行简化。**
 
+<h4>🔥 模板方法模式(The Template Method Pattern)</h4>
+
+模板方法模式定义了方法中算法的框架，将一些步骤推送到子类。模板方法允许子类重新定义算法的某些步骤，而不改变算法的结构。
+
+![The Template Method Pattern](/assets/201709/template_method_pattern.png)
+
+```java
+abstract class AbstractClass {
+  final void templateMethod() {
+    primitiveOperation1();
+    primitiveOperation2();
+    concreteOperation();
+  }
+
+  abstract void primitiveOperation1();
+  abstract void primitiveOperation2();
+
+  void concreteOperation() {
+    // implementation here
+  }
+}
+```
+
+带钩子（hook）的模板方法模式:
+
+```java
+public abstract class CaffeineBeverageWithHook {
+  final void prepareRecipe() {
+    boilWater();
+    brew();
+    pourInCup();
+    if (customerWantsCondiments()) {
+      addCondiments();
+    }
+  }
+
+  abstract void brew();
+  abstract void addCondiments();
+
+  void boilWater() {
+    System.out.println("Boiling water");
+  }
+
+  void pourInCup() {
+    System.out.println("Pouring into cup");
+  }
+
+  boolean customerWantsCondiments() { // 子类可以Override该方法，但不是必须的
+    return true;
+  }
+}
+```
+
+*当子类必须提供算法中的方法或步骤的实现时，使用抽象方法。当算法的那部分是可选的时候使用钩子。使用钩子，一个子类可以选择实现该钩子，但它不是必须的。*
+
 
 <br>
 <br>
