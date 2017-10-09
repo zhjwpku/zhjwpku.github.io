@@ -397,6 +397,16 @@ public class Singleton {
 
 ![The Class Adapter Pattern](/assets/201709/class_adapter_pattern.png)
 
+<h4>🔥 外观模式(The Facade Pattern)</h4>
+
+外观模式为子系统中的一组接口提供统一的接口，它定义了一个高层的接口使得子系统更易于使用。
+
+![The Facade Pattern](/assets/201709/facade_pattern.png)
+
+*适配器模式和外部模式的不同之处在于：适配器模式的目的是改变接口，使其与客户端期望的接口匹配。 Facade Pattern的目的是为子系统提供一个简化的接口。*
+
+**适配器封装一个对象来改变它的接口，装饰器包装一个对象来添加新的行为和责任，而外观模式包装一组对象来进行简化。**
+
 
 <br>
 <br>
