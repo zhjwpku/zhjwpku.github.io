@@ -383,6 +383,22 @@ public class Singleton {
 
 ![The  Command Pattern](/assets/201709/command_pattern.png)
 
+<h4>🔥 适配器模式(The Adapter Pattern)</h4>
+
+适配器模式将一个类的接口转换为客户端期望的另一个接口。适配器让类协同工作，否则由于接口不兼容而无法正常工作。
+
+![The  Adapter Pattern](/assets/201709/adapter_pattern.png)
+
+**对象适配器**（Object Adapter）使用组合（Composition，Adaptee作为Adapter的一部分）来实现。
+
+![The Object Adapter Pattern](/assets/201709/object_adapter_pattern.png)
+
+**类适配器**（Class Adapter）使用多继承（multiple inheritance）来实现，在允许多继承的语言中可以使用。
+
+![The Class Adapter Pattern](/assets/201709/class_adapter_pattern.png)
+
+
+<br>
 <br>
 <span class="post-meta">
 Reference:
