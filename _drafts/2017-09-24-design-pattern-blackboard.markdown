@@ -462,6 +462,11 @@ public abstract class CaffeineBeverageWithHook {
 
 *当子类必须提供算法中的方法或步骤的实现时，使用抽象方法。当算法的那部分是可选的时候使用钩子。使用钩子，一个子类可以选择实现该钩子，但它不是必须的。*
 
+<h4>🔥 迭代器模式(The Iterator Pattern)</h4>
+
+迭代器模式提供了一种顺序访问聚合对象元素的方法，而无需公开其底层表示。
+
+![The Iterator Pattern](/assets/201709/iterator_pattern.png)
 
 <br>
 <br>
