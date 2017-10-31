@@ -278,7 +278,7 @@ MIT Licensed
     right: 10px;
     top: 6px;
     height: 45px;
-    fill: #DDD;
+    fill: #AAA;
     z-index: 0;
 
     @include media-query($on-palm) {
@@ -286,7 +286,7 @@ MIT Licensed
     }
 }
 .super-search-btn:hover {
-    fill: #BBB;
+    fill: #999;
 }
 
 .super-search {
