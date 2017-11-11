@@ -86,3 +86,37 @@ bool checkBST(Node *node) {
            checkBST(node->right, node->value, max);
 }
 ```
+
+**20171111更新**
+
+上面提到过，BST的中序遍历是排序的数组，因此可以利用这点来判断一棵树是否为BST，复杂度依然是O(n)。
+
+```
+bool checkBST(Node * root) {
+    if (root == NULL) return true;
+
+    vector<int> array;
+
+    inorderTraversal(root, array);
+
+    for (int i = 1; i < array.size(); i++) {
+        if (array[i] <= array[i-1]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+void inorderTraversal(Node * root, vector<int> &array) {
+    if (root->left != NULL) {
+        inorderTraversal(root->left, array);
+    }
+
+    array.push_back(root->data);
+
+    if (root->right != NULL) {
+        inorderTraversal(root->right, array);
+    }
+}
+```
