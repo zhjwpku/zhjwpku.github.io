@@ -5,8 +5,8 @@ email: zhjwpku@gmail.com
 d1: Trying to be an excellent programmer.
 d2:  Keep looking, don't settle.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-github_username:  zhjwpku
+url: "http://zhjwpku.com" # the base hostname & protocol for your site
+github_username: zhjwpku
 
 # Build settings
 markdown: kramdown
