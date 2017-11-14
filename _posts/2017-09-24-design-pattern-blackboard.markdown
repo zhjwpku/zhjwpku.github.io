@@ -468,6 +468,41 @@ public abstract class CaffeineBeverageWithHook {
 
 ![The Iterator Pattern](/assets/201709/iterator_pattern.png)
 
+<h4>🔥 组合模式(The Composite Pattern)</h4>
+
+组合模式允许你将对象组合到树结构中，以表示部分-整体层次结构。组合允许客户对对象和对象的组合进行一致的处理。
+
+![The Composite Pattern](/assets/201709/composite_pattern.png)
+
+<h4>🔥 状态模式(The State Pattern)</h4>
+
+状态模式允许对象在内部状态更改时更改其行为。对象会改变它的类。
+
+![The State Pattern](/assets/201709/state_pattern.png)
+
+<h4>🔥 代理模式(The Proxy Pattern)</h4>
+
+代理模式为另一个对象提供代理或占位符来控制对它的访问。值得注意的是，在实际实践中，代理模式会衍生很多变种，如:
+
+- Remote Proxy(RMI)
+- Virtual Proxy
+- Firewall Proxy
+- Smart Reference Proxy
+- Caching Proxy
+- Synchronization Proxy
+- Complexity Hiding Proxy
+- Copy-On-Write Proxy
+
+![The Proxy Pattern](/assets/201709/proxy_pattern.png)
+
+<h4>Model-View-Controller</h4>
+
+![Model View Controller](/assets/201709/mvc.png)
+
+MVC是一种组合模式，即将多种设计模式一起使用来解决一类通用的问题。从设计模式的角度看MVC模式:
+
+![MVC Patterns](/assets/201709/mvc-pattterns.png)
+
 <br>
 <br>
 <span class="post-meta">
