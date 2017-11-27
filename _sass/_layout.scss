@@ -338,6 +338,7 @@ MIT Licensed
     overflow-x: hidden;
     height: calc(100% - 110px);
     transition: 0.2s ease;
+    margin-left: 0;
     
     @include media-query($on-palm) {
         margin-left: 0px;
