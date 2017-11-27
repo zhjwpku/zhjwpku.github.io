@@ -501,7 +501,7 @@ public abstract class CaffeineBeverageWithHook {
 
 MVC是一种组合模式，即将多种设计模式一起使用来解决一类通用的问题。从设计模式的角度看MVC模式:
 
-![MVC Patterns](/assets/201709/mvc-pattterns.png)
+![MVC Patterns](/assets/201709/mvc-patterns.png)
 
 <br>
 <br>
