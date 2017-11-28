@@ -258,6 +258,15 @@ Example:
 $ git submodule update --init --recursive
 {% endhighlight %}
 
+**2017-11-28 更新**
+
+从一个远程分支check分支:
+
+```
+# 从远程分支 origin/release-1.0.0 切出一个 fix-bug 分支
+$ git checkout -b fix-bug origin/release-1.0.0
+```
+
 <br>
 <span class="post-meta">
 Reference:
