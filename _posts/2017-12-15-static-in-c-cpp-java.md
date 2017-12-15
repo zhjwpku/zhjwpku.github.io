@@ -45,6 +45,8 @@ _static方法就是没有this的方法。在static方法内部不能调用非静
     b. 只能访问静态收
     c. 不能被this或super访问
 
+**JDK8 为接口增加了一个新的特性，可以在接口中定义静态方法，在接口中定义静态方法不需要类来实现就可以直接调用。**
+
 *static 变量*
 
 静态变量被所有的对象所共享，在内存中只有一个副本，当且仅当在类初次加载时被初始化。
@@ -64,5 +66,6 @@ Reference:
 <br>
 <span class="post-meta">
 1 [C语言中的 static 详细分析](http://blog.csdn.net/keyeagle/article/details/6708077/)<br>
-2 [Java static keyword](https://www.javatpoint.com/static-keyword-in-java)
+2 [Java static keyword](https://www.javatpoint.com/static-keyword-in-java)<br>
+3 Herbert Schildt. Java The Complete Reference Ninth Edition. McGraw-Hill. 2014
 </span>
