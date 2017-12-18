@@ -59,6 +59,12 @@ Java 中的 static 还可以用来修饰 nested class，但由于 static nested 
 
 Java 中的 static 不改变成员的访问权限，且不允许用来修饰局部变量。
 
+**2017-12-18 更新**
+
+*static import*
+
+通过在 import 之后使用关键字 static，可以导入类或接口的静态成员，这称为静态导入。使用静态导入可以直接通过名称来引用静态成员，而不必使用类名来进行限定，这简化并缩短了使用静态成员所需的语法。但请不要过度使用。
+
 <br>
 <span class="post-meta">
 Reference:
