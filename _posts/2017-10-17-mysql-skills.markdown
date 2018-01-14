@@ -13,7 +13,7 @@ tags:
 有这样一组数据（通过 `select * from user where nickName like "%marz%";` 获取）:
 
 | id | age | sex | nickName
-|:-|:-|:-|:-
+|-|-|-|-
 | 1 | 20 | 0 | marzxwell
 | 2 | 30 | 0 | Marzuki Manuel
 | 3 | 40 | 1 | Marz Kimz
@@ -69,11 +69,43 @@ else
 fi
 ```
 
+**dump 除默认表之外的所有表到一个文件中**
+
+```shell
+#!/bin/bash
+
+MYSQL_USERNAME=root
+MYSQL_PASSWORD=rootpassword
+MYSQL_HOST=10.0.63.6
+MYSQL_CONN="-h${MYSQL_HOST} -u${MYSQL_USERNAME} -p${MYSQL_PASSWORD}"
+EXCLUSIVE_DBS="'mysql', 'information_schema', 'performance_schema'"
+
+#
+# Collect all database names except for EXCLUSIVE_DBS
+#
+
+SQL="SELECT schema_name FROM information_schema.schemata WHERE schema_name NOT IN (${EXCLUSIVE_DBS})"
+
+DBLIST=""
+for DB in `mysql ${MYSQL_CONN} -ANe"${SQL}"` ; do DBLIST="${DBLIST} ${DB}" ; done
+
+# --triggers option is enabled by default
+# --routines 选项会把所有的存储过程和存储函数dump到sql文件
+# --single-transaction 保证在备份的过程中得到一致性的备份
+MYSQLDUMP_OPTIONS="--routines --single-transaction"
+
+mysqldump ${MYSQL_CONN} ${MYSQLDUMP_OPTIONS} --databases ${DBLIST} > all-dbs.sql
+```
+
+*注：mysqldump默认不会dump `INFORMATION_SCHEMA`和`perfomance_schema` 数据库*
+
 <br>
 <span class="post-meta">
 Reference:
 </span>
 <br>
 <span class="post-meta">
-1 [mysql字段中带空格的值的查询方法](http://www.liyangweb.com/mysql/142.html)
+1 [mysql字段中带空格的值的查询方法](http://www.liyangweb.com/mysql/142.html)<br>
+2 [Any option for mysqldump to ignore databases for backup?](https://dba.stackexchange.com/questions/35081/any-option-for-mysqldump-to-ignore-databases-for-backup)<br>
+3 [mysqldump — A Database Backup Program](https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html)
 </span>
