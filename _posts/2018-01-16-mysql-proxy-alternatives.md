@@ -749,8 +749,8 @@ Inserting 100000 records into 'sbtest2'
 ```
 ## Atlas
 
-➜  ~ sysbench --db-driver=mysql --table-size=100000 --tables=24 --threads=4 \
- --mysql-host=10.0.63.204 --mysql-port=1234 --mysql-user=root --mysql-password=mysql_password \
+➜  ~ sysbench --db-driver=mysql --table-size=200000 --tables=24 --threads=4 --time=120 \
+--mysql-host=10.0.63.204 --mysql-port=1234 --mysql-user=root --mysql-password=mysql_password \
  oltp_read_write run
 sysbench 1.0.11 (using bundled LuaJIT 2.1.0-beta2)
 
@@ -765,35 +765,35 @@ Threads started!
 
 SQL statistics:
     queries performed:
-        read:                            7406
-        write:                           2116
-        other:                           1058
-        total:                           10580
-    transactions:                        529    (52.49 per sec.)
-    queries:                             10580  (1049.78 per sec.)
+        read:                            98840
+        write:                           28240
+        other:                           14120
+        total:                           141200
+    transactions:                        7060   (58.80 per sec.)
+    queries:                             141200 (1176.08 per sec.)
     ignored errors:                      0      (0.00 per sec.)
     reconnects:                          0      (0.00 per sec.)
 
 General statistics:
-    total time:                          10.0762s
-    total number of events:              529
+    total time:                          120.0577s
+    total number of events:              7060
 
 Latency (ms):
-         min:                                 51.58
-         avg:                                 76.02
-         max:                                275.50
-         95th percentile:                    186.54
-         sum:                              40216.91
+         min:                                 42.58
+         avg:                                 68.00
+         max:                                251.61
+         95th percentile:                    155.80
+         sum:                             480113.03
 
 Threads fairness:
-    events (avg/stddev):           132.2500/1.64
-    execution time (avg/stddev):   10.0542/0.02
+    events (avg/stddev):           1765.0000/7.18
+    execution time (avg/stddev):   120.0283/0.01
 
 
 ## MaxScale
 
-➜  ~ sysbench --db-driver=mysql --table-size=100000 --tables=24 --threads=4 \
- --mysql-host=10.0.63.204 --mysql-port=4006 --mysql-user=root --mysql-password=mysql_password \
+➜  ~ sysbench --db-driver=mysql --table-size=200000 --tables=24 --threads=4 --time=120 \
+--mysql-host=10.0.63.204 --mysql-port=4006 --mysql-user=root --mysql-password=mysql_password \
  oltp_read_write run
 sysbench 1.0.11 (using bundled LuaJIT 2.1.0-beta2)
 
@@ -808,38 +808,81 @@ Threads started!
 
 SQL statistics:
     queries performed:
-        read:                            8638
-        write:                           2468
-        other:                           1234
-        total:                           12340
-    transactions:                        617    (61.38 per sec.)
-    queries:                             12340  (1227.67 per sec.)
+        read:                            118734
+        write:                           33924
+        other:                           16962
+        total:                           169620
+    transactions:                        8481   (70.65 per sec.)
+    queries:                             169620 (1413.05 per sec.)
     ignored errors:                      0      (0.00 per sec.)
     reconnects:                          0      (0.00 per sec.)
 
 General statistics:
-    total time:                          10.0498s
-    total number of events:              617
+    total time:                          120.0358s
+    total number of events:              8481
 
 Latency (ms):
-         min:                                 49.26
-         avg:                                 65.06
-         max:                                228.82
-         95th percentile:                     84.47
-         sum:                              40139.98
+         min:                                 39.88
+         avg:                                 56.60
+         max:                                459.62
+         95th percentile:                     68.05
+         sum:                             480038.36
 
 Threads fairness:
-    events (avg/stddev):           154.2500/3.70
-    execution time (avg/stddev):   10.0350/0.01
+    events (avg/stddev):           2120.2500/15.94
+    execution time (avg/stddev):   120.0096/0.01
 
 
 ## ProxySQL
 
 # 测试遇到错误，已提交 ISSUE
 # https://github.com/sysown/proxysql/issues/1337
+
+# ---- 20180118 更新 ---- #
+# 上面的 issue 已经确认，是准备数据的时候主从库同步的时候有延迟
+
+➜  ~ sysbench --db-driver=mysql --table-size=200000 --tables=24 --threads=4 --time=120 \
+--mysql-host=10.0.63.204 --mysql-port=6033 --mysql-user=root --mysql-password=mysql_password \
+ oltp_read_write run
+sysbench 1.0.11 (using bundled LuaJIT 2.1.0-beta2)
+
+Running the test with following options:
+Number of threads: 4
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            99190
+        write:                           28340
+        other:                           14170
+        total:                           141700
+    transactions:                        7085   (59.01 per sec.)
+    queries:                             141700 (1180.18 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          120.0646s
+    total number of events:              7085
+
+Latency (ms):
+         min:                                 45.78
+         avg:                                 67.77
+         max:                                267.51
+         95th percentile:                    102.97
+         sum:                             480133.57
+
+Threads fairness:
+    events (avg/stddev):           1771.2500/11.84
+    execution time (avg/stddev):   120.0334/0.02
 ```
 
-从上面的测试结果可以看出，[MaxScale][maxscale] 在性能上的表现要优于 [Atlas][atlas]，稳定性上要优于 [ProxySQL][proxysql]，所以如果做技术选型的话笔者会首选 [MaxScale][maxscale]。
+多次测试结果显示在性能上 [MaxScale][maxscale] 要更胜一筹，且 [MaxScale][maxscale] 的可配置性介于 [Atlas][atlas] 和 [ProxySQL][proxysql] 之间，社区比较活跃，所以如果做技术选型的话笔者会首选 [MaxScale][maxscale]。
 
 <br>
 <span class="post-meta">
