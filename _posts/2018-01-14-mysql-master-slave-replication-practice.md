@@ -249,6 +249,29 @@ mysql> SHOW SLAVE STATUS \G
 
 另外，在查阅资料的过程中在 MySQL 官网上看到了 [InnoDB Cluster](https://dev.mysql.com/doc/refman/5.7/en/mysql-innodb-cluster-introduction.html) 和 [MySQL NDB Cluster](https://dev.mysql.com/doc/refman/5.7/en/mysql-cluster.html) 相关的内容。前者通过将一组 MySQL Server 配置为一个集群，在默认额单主节点模式下，集群具有一个读写主节点和多个只读副节点，客户端程序通过连接 [MySQL Router](https://dev.mysql.com/doc/mysql-router/2.1/en/)，Router 会选择一个合适的 Server 来提供服务；后者通过 NDB 存储引擎提供存储能力，SQL 层（mysqld）负责存储层之上的所有事情，如连接管理，query 优化及响应，Cache 管理等等。这些笔者还没有进行深入了解，这里列出作为后续调研的方向。
 
+**-- 20180119 更新 --**
+
+当应用连接到主库进行测试的时候，出现了如下错误：
+
+```
+SQL Error: 1418, SQLState: HY000
+This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary 
+logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)
+```
+
+原因是因为 SQL 语句中含有存储程序（stored precedures and functions/triggers/events），如：
+
+```
+SELECT distinct a.permission_value FROM auth_permission a INNER JOIN auth_role_permission b 
+    ON a.id=b.permission_id INNER JOIN auth_user_role c ON b.role_id=c.role_id 
+    WHERE a.deleted=0 and c.user_id=? AND FIND_IN_SET(a.id, getPermissionChildList(?))
+```
+
+如果该语句被路由到 Slave 节点且 `getPermissionChildList` 含有更改数据的操作，会造成主从库不一致，存在安全隐患，所以 MySQL 默认禁止这种操作。如果明确知道存储程序不会造成主从库不一致，则可以以通过以下两种方式放宽这一限制：
+
+1. 在 MySQL 控制台执行 `SET GLOBAL log_bin_trust_function_creators = 1;`
+2. 在配置文件中添加 `log_bin_trust_function_creators = 1;` 并重新启动
+
 <br>
 <span class="post-meta">
 Reference:
@@ -267,5 +290,8 @@ Reference:
 10 [Be careful with FLUSH TABLES WITH READ LOCK](http://mysqlha.blogspot.jp/2009/10/be-careful-with-flush-tables-with-read.html)<br>
 11 [What is FLUSH TABLES WITH READ LOCK in MySQL?](https://llnx.me/technical/2017/03/08/MySQL-FLUSH-TABLES-WITH-READ-LOCK.html)<br>
 12 [Improved FLUSH TABLES WITH READ LOCK handling](https://www.percona.com/doc/percona-xtrabackup/LATEST/innobackupex/improved_ftwrl.html)<br>
-13 [How fast is FLUSH TABLES WITH READ LOCK?](https://www.percona.com/blog/2010/04/24/how-fast-is-flush-tables-with-read-lock/)
+13 [How fast is FLUSH TABLES WITH READ LOCK?](https://www.percona.com/blog/2010/04/24/how-fast-is-flush-tables-with-read-lock/)<br>
+14 [DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled
+](https://stackoverflow.com/questions/26015160/deterministic-no-sql-or-reads-sql-data-in-its-declaration-and-binary-logging-i)<br>
+15 [Binary Logging of Stored Programs](https://dev.mysql.com/doc/refman/5.6/en/stored-programs-logging.html)
 </span>
