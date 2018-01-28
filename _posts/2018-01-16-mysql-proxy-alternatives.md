@@ -884,6 +884,23 @@ Threads fairness:
 
 多次测试结果显示在性能上 [MaxScale][maxscale] 要更胜一筹，且 [MaxScale][maxscale] 的可配置性介于 [Atlas][atlas] 和 [ProxySQL][proxysql] 之间，社区比较活跃，所以如果做技术选型的话笔者会首选 [MaxScale][maxscale]。
 
+
+**20180124 更新**
+
+在实际使用 MaxScale 的过程中遇到了所有的查询都路由到 master 节点的问题，原因在于 MaxScale 的一些限制：
+
+    Read queries are routed to the master server in the following situations:
+
+        if they are executed inside an open transaction
+
+        in case of prepared statement execution
+
+        statement includes a stored procedure, or an UDF call
+
+        if there are multiple statements inside one query e.g. INSERT INTO ... ; SELECT LAST_INSERT_ID();
+
+我们在使用 JPA 的时候使用的都是 `prepared statement`，因此会被 MaxScale 全部路由到 master。 笔者在 MaxScale 邮件列表中询问了此问题: [Limitations in the Read/Write Splitter](https://groups.google.com/forum/?hl=en#!topic/maxscale/W4t3dQ7de8M)，也得到了开发者的回答，在之后发布的 MaxScale 2.2 版本 `prepared statement` 会像正常查询一样被分流到不同节点。
+
 <br>
 <span class="post-meta">
 Reference:
