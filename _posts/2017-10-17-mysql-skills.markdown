@@ -8,7 +8,7 @@ tags:
 
 笔者对 MySQL 从来心存敬畏，一直期望成为一名懂一丢丢 DBA 的研发😏，在此记录开发中与 MySQL 相关的点滴。
 
-<h4>字段中带空格的值的查询方法</h4>
+<h4>1. 字段中带空格的值的查询方法</h4>
 
 有这样一组数据（通过 `select * from user where nickName like "%marz%";` 获取）:
 
@@ -29,7 +29,7 @@ select * from user where trim(replace(nickName,' ','')) like trim(replace('%Marz
 
 如此不论传进来的值中是否带有空格，都能够获取所需的结果。
 
-<h4>高效同步 MySQL 表数据</h4>
+<h4>2. 高效同步 MySQL 表数据</h4>
 
 [pt-table-sync](https://www.percona.com/doc/percona-toolkit/LATEST/pt-table-sync.html) 是 [Percona Toolkit](https://www.percona.com/doc/percona-toolkit/LATEST/index.html) 命令集中用于高效同步 MySQL 表数据的命令, 它常用于解决主从数据库之间的数据不一致。
 
@@ -69,7 +69,7 @@ else
 fi
 ```
 
-**dump 除默认表之外的所有表到一个文件中**
+<h4>3. dump 除默认表之外的所有表到一个文件中</h4>
 
 ```shell
 #!/bin/bash
@@ -98,6 +98,37 @@ mysqldump ${MYSQL_CONN} ${MYSQLDUMP_OPTIONS} --databases ${DBLIST} > all-dbs.sql
 ```
 
 *注：mysqldump默认不会dump `INFORMATION_SCHEMA`和`perfomance_schema` 数据库*
+
+<h4>4. 批量更新某字段的顺序值</h4>
+
+如图所示，将 unit_id = 1 且 country_id = 3 的所有行的 show_order 进行顺序值重排，即 (1, 3, 9, 11) -> (1, 2, 3, 4)。
+
+![MySql ReOrder 1](/assets/201710/mysql_reorder1.png)
+
+```sql
+1: 子查询
+set @rownum = 0;
+update ad_space s set s.show_order = (select @rownum := @rownum + 1 as nid)
+  where s.id in (select t.id from 
+                  (select ss.id from ad_space ss where ss.unit_id = 1 and
+                     ss.country_id =3 and ss.state = 1 and ss.deleted = false 
+                     order by ss.show_order asc) t);
+
+2: 表连接
+set @rownum = 0; 
+update (select * from ad_space as ss where ss.unit_id = 1 and ss.country_id = 3 and 
+         ss.state = 1 and ss.deleted = false order by ss.show_order asc) as t, ad_space s 
+  set s.show_order = (select @rownum := @rownum + 1 as nid) where t.id = s.id;
+```
+
+以上两条均能将上图中 (1, 3, 9, 11) 更新为 (1, 2, 3, 4)，但对于下面的数据，想要将 (1, 11, 9, 3) 更新为 (1, 4, 3, 2)，即保持 show_order 原有顺序，这两条语句就显得力不从心了，在此求教大拿指教。
+
+![MySql ReOrder 2](/assets/201710/mysql_reorder2.png)
+
+注：如果执行过程中遇到 `1175` 错误，需执行 `SET SQL_SAFE_UPDATES = 0;` 或在 MySQL Workbench 偏好中进行设置（不勾选）。
+
+![MySql Workbench safe update mode](/assets/201710/mysql_workbench_safe_update_mode.png)
+
 
 <br>
 <span class="post-meta">
