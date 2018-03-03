@@ -16,6 +16,8 @@ tags:
 
 4. [Go Web Programming Bootcamp][bootcamp] 是覆盖了 [An Introduction To Programming In Go](/assets/pdf/AnIntroductionToProgrammingInGo.pdf) 一书的为期四周的系列视频教程。资源：[video description GOLANG][resources]。
 
+5. [Go Wiki][wiki]，Golang 权威资源。
+
 持续更新...
 
 [gobyexample]: https://gobyexample.com/
@@ -23,3 +25,4 @@ tags:
 [mmcgrana]: https://twitter.com/mmcgrana
 [tour]: https://tour.golang.org/list
 [resources]: https://docs.google.com/document/d/1dfZvXsjDhq2NlrkFOikXPaBW55QJBoJd-2NFjUs5FlY/edit?usp=sharing
+[wiki]: https://github.com/golang/go/wiki
