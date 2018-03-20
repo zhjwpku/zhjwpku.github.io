@@ -197,6 +197,11 @@ filter {
     match => { "message" => "%{NGINX_ACCESS}" }
   }
 
+  # 如果 grok 解析出现错误，则将相应的消息删除
+  if "_grokparsefailure" in [tags] {
+    drop { }
+  }
+
   date {
     match => ["timestamp_string", "ISO8601"]
   }
@@ -262,5 +267,6 @@ Reference:
 3 [Installing Logstash](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html)<br>
 4 [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html)<br>
 5 [https://rzetterberg.github.io/nginx-elk-logging.html](https://rzetterberg.github.io/nginx-elk-logging.html)<br>
+6 [How to exclude bad output (lines not matching ‘grok’ pattern) from logstash?](https://discuss.elastic.co/t/how-to-exclude-bad-output-lines-not-matching-grok-pattern-from-logstash/40459)<br>
 </span>
 
