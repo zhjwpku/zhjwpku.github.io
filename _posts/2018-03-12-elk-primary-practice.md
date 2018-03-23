@@ -190,25 +190,37 @@ input {
 }
 
 filter {
-  grok {
-    patterns_dir => "/etc/logstash/patterns"
-    #match => { "message" => "%{TIMESTAMP_ISO8601:timestamp_string} %{DATA:data_from} %{IPORHOST:visitor_ip} - %{USERNAME:remote_user} \[%{HTTPDATE:timelocal}\] \"%{METHOD:method} %{URIPATHPARAM:path} HTTP/%{NUMBER:http_version}\" %{INT:status} %{INT:body_bytes_send} \"%{DATA:referer}\" \"%{DATA:http_user_agent}\" \"%{NUMBER:request_time}\" \"%{DATA:ssl_protocol}\" \"%{DATA:ssl_cipher}\" \"%{DATA:http_x_forwarded_for}\" \"%{DATA:upstream_addr}\" \"%{DATA:upstream_status}\"%{SPACE}%{GREEDYDATA:line}" }
-    # 建议使用自定义 Pattern 的方式，上面的方式需要对双引号转义，容易出错
-    match => { "message" => "%{NGINX_ACCESS}" }
-  }
+  if "orange_access" in [tags] {
+    grok {
+      patterns_dir => "/etc/logstash/patterns"
+      #match => { "message" => "%{TIMESTAMP_ISO8601:timestamp_string} %{DATA:data_from} %{IPORHOST:visitor_ip} - %{USERNAME:remote_user} \[%{HTTPDATE:timelocal}\] \"%{METHOD:method} %{URIPATHPARAM:path} HTTP/%{NUMBER:http_version}\" %{INT:status} %{INT:body_bytes_send} \"%{DATA:referer}\" \"%{DATA:http_user_agent}\" \"%{NUMBER:request_time}\" \"%{DATA:ssl_protocol}\" \"%{DATA:ssl_cipher}\" \"%{DATA:http_x_forwarded_for}\" \"%{DATA:upstream_addr}\" \"%{DATA:upstream_status}\"%{SPACE}%{GREEDYDATA:line}" }
+      match => { "message" => "%{NGINX_ACCESS}" }
+      add_field => {
+        "type" => "orange_access"
+      }
+    }
 
-  # 如果 grok 解析出现错误，则将相应的消息删除
-  if "_grokparsefailure" in [tags] {
-    drop { }
-  }
+    if "_grokparsefailure" in [tags] {
+      drop { }
+    }
 
-  date {
-    match => ["timestamp_string", "ISO8601"]
-  }
+    date {
+      match => ["timestamp_string", "ISO8601"]
+    }
 
-  mutate {
-    # 删除不需要的字段 
-    remove_field => [message, timestamp_string, host, line, tags, beat, offset]
+    geoip {
+      source => "visitor_ip"
+    }
+
+    mutate {
+      convert => {
+        "status" => "integer"
+        "upstream_status" => "integer"
+        "body_bytes_sent" => "integer"
+        "request_time" => "float"
+      }
+      remove_field => [message, timestamp_string, host, line, timelocal, beat, offset, tags]
+    }
   }
 }
 
@@ -218,6 +230,7 @@ output {
     user => elastic
     password => "elastic"
     index => "helloword-%{+YYYY.MM.dd}"
+    document_type => "%{type}"
   }
   stdout { codec => rubydebug }
 }
@@ -239,7 +252,7 @@ Filebeat 的安装和使用比较简单了，下面只列出其配置文件：
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
     - /root/orange-logs/*.log
-    #- c:\programdata\elasticsearch\logs\*
+  tags: ["orange_access"]
 
 output.logstash:
   # The Logstash hosts
@@ -268,5 +281,6 @@ Reference:
 4 [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html)<br>
 5 [https://rzetterberg.github.io/nginx-elk-logging.html](https://rzetterberg.github.io/nginx-elk-logging.html)<br>
 6 [How to exclude bad output (lines not matching ‘grok’ pattern) from logstash?](https://discuss.elastic.co/t/how-to-exclude-bad-output-lines-not-matching-grok-pattern-from-logstash/40459)<br>
+7 [I cannot mutate >> convert multiple fields](https://discuss.elastic.co/t/i-cannot-mutate-convert-multiple-fields/1227)<br>
 </span>
 
