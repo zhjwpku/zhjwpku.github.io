@@ -269,6 +269,59 @@ output.logstash:
 [root@bob filebeat]# systemctl start filebeat
 ```
 
+**2018-03-27 更新**
+
+在使用 Kibana 生成地图相关视图的时候，发现上面 geoip 生成的数据类型不是 geo_point，而是:
+
+![Geoip Location Float](/assets/201803/geoip_location_float.png)
+
+解决这一问题的方法就是修改相关 index 的 _mapping:
+
+```
+PUT _template/helloworld
+{
+  "index_patterns": "helloword-*",
+  "mappings": {
+    "orange_access": {
+      "dynamic": "true",
+      "properties": {
+        "geoip": {
+          "dynamic": true,
+          "properties": {
+            "location": {
+              "type": "geo_point"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+通过上面的操作，可以让新生成 index 的 _mapping 中 geo_location 的类型为 geo_point:
+
+![Geoip Location Geo Point](/assets/201803/geoip_location_geo_point.png)
+
+但是已经存在的 index 的 _mapping 并不能改变，我们可以将 index 删除然后重新将日志导入，但更快的方式是使用 [_reindex][reindex]:
+
+```
+// 该过程可能耗时较长，可以使用 GET 查看 reindex 是否已经完成
+POST _reindex
+{
+  "source": {
+    "index": "helloword-2018.03.23"
+  },
+  "dest": {
+    "index": "helloword-2018.03.23-new"
+  }
+}
+
+// 当 reindex 过程完成，就可以将旧的 index 删除
+DELETE helloword-2018.03.23
+```
+
+
 <br>
 <span class="post-meta">
 Reference:
@@ -282,5 +335,8 @@ Reference:
 5 [https://rzetterberg.github.io/nginx-elk-logging.html](https://rzetterberg.github.io/nginx-elk-logging.html)<br>
 6 [How to exclude bad output (lines not matching ‘grok’ pattern) from logstash?](https://discuss.elastic.co/t/how-to-exclude-bad-output-lines-not-matching-grok-pattern-from-logstash/40459)<br>
 7 [I cannot mutate >> convert multiple fields](https://discuss.elastic.co/t/i-cannot-mutate-convert-multiple-fields/1227)<br>
+8 [Can’t get location show up on the map in Kibana](https://discuss.elastic.co/t/cant-get-location-show-up-on-the-map-in-kibana/102872)<br>
+9 [[geoip.location is not of type geo_point] Index pattern does not contain any of the following field types: geo_point](https://discuss.elastic.co/t/geoip-location-is-not-of-type-geo-point-index-pattern-does-not-contain-any-of-the-following-field-types-geo-point/95536)<br>
 </span>
 
+[reindex]: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docs-reindex.html
