@@ -8,6 +8,10 @@ tags:
 
 本文记录了我自己使用Git的习惯，并列出了一些优秀的Git教程。
 
+下面这张图实在太漂亮了，我把她放在这个醒目的位置。
+
+![gitflow](https://nvie.com/img/git-model@2x.png)
+
 <h4>安装</h4>
 
 [Getting Started Installing Git][installgit]
@@ -277,8 +281,9 @@ Reference:
 2 [http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/][gitmagic]<br>
 3 [https://www.atlassian.com/git/tutorials/][atlassiangit]<br>
 4 Comparing Workflows: [https://www.atlassian.com/git/tutorials/comparing-workflows][workflow]<br>
-5 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
-6 蒋鑫. [GotGitHub](http://www.worldhello.net/gotgithub/index.html).<br> 
+5 [A successful Git branching model][gitflow]<br>
+6 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
+7 蒋鑫. [GotGitHub](http://www.worldhello.net/gotgithub/index.html).<br> 
 </span>
 
 [installgit]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -290,3 +295,4 @@ Reference:
 [atlassiangit]: https://www.atlassian.com/git/tutorials/
 [workflow]: https://www.atlassian.com/git/tutorials/comparing-workflows
 [ceph]: https://github.com/ceph/ceph
+[gitflow]: https://nvie.com/posts/a-successful-git-branching-model/
