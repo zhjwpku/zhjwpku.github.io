@@ -283,7 +283,8 @@ Reference:
 4 Comparing Workflows: [https://www.atlassian.com/git/tutorials/comparing-workflows][workflow]<br>
 5 [A successful Git branching model][gitflow]<br>
 6 蒋鑫. [Git 权威指南](/assets/pdf/GotGit.pdf). 机械工业出版社. 2011.<br>
-7 蒋鑫. [GotGitHub](http://www.worldhello.net/gotgithub/index.html).<br> 
+7 蒋鑫. [GotGitHub](http://www.worldhello.net/gotgithub/index.html).<br>
+8 [Useful tricks you might not know about Git stash][gitstash]<br>
 </span>
 
 [installgit]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -296,3 +297,4 @@ Reference:
 [workflow]: https://www.atlassian.com/git/tutorials/comparing-workflows
 [ceph]: https://github.com/ceph/ceph
 [gitflow]: https://nvie.com/posts/a-successful-git-branching-model/
+[gitstash]: https://medium.freecodecamp.org/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a
