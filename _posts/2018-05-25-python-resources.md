@@ -6,7 +6,7 @@ tags:
 - python
 ---
 
-最近在学 Python，也择取笔者看过的一些资料，希望对你有所帮助。
+最近在学 Python，也摘取笔者看过的一些资料，希望对你有所帮助。
 
 基础（建议直接学习Python3）
 
@@ -32,6 +32,10 @@ flask
 
 1. [Inside the Python GIL][inside_the_python_gil]
 
+2. [Understanding the Python GIL][understanding_the_python_gil]
+
+3. [Python Concurrency From the Ground Up][python_concurrency]
+
 
 异步编程
 
@@ -51,3 +55,5 @@ dangers
 [python3_patterns_recipes_and_idioms]: https://python-3-patterns-idioms-test.readthedocs.io/en/latest/
 [the_python_tutorial]: https://docs.python.org/3/tutorial/index.html
 [eval_dangerous]: https://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html
+[understanding_the_python_gil]: https://www.youtube.com/watch?v=Obt-vMVdM8s
+[python_concurrency]: https://www.youtube.com/watch?v=MCs5OvhV9S4
