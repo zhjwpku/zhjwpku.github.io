@@ -76,12 +76,18 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 {% highlight shell %}
 → ~ $ tmux  # 进入Tmux模式
 
+# 键入Ctrl+b后松开，c 新建一个Tab
+# 键入Ctrl+b后松开，, 重命名Tab页
+# 键入Ctrl+b后松开，n 移动到下一个Tab页
+# 键入Ctrl+b后松开，p 移动到上一个Tab页
 # 键入Ctrl+b后松开，% 将 Window 垂直切分
 # 键入Ctrl+b后松开，" 将 Window 水平切分
 # 键入Ctrl+b后松开，? 显示帮助菜单
 # 键入Ctrl+b后松开，方向键在各窗口中切换光标
 # 键入Ctrl+b后松开，空格键重新排列多窗口的布局
 # 键入Ctrl+b后松开, d 或 :detach 将当前Session分离
+
+→ ~ $ tmux ls   # 列出当前所有Session
 
 → ~ $ tmux attach -t 0 # 将Session 0恢复
 {% endhighlight %}
