@@ -86,6 +86,7 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 # 键入Ctrl+b后松开，方向键在各窗口中切换光标
 # 键入Ctrl+b后松开，空格键重新排列多窗口的布局
 # 键入Ctrl+b后松开, d 或 :detach 将当前Session分离
+# 键入Ctrl+b后松开, [ 或 Page Up 进入 翻滚模式（scroll mode），按q退出
 
 → ~ $ tmux ls   # 列出当前所有Session
 
