@@ -87,6 +87,11 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 # 键入Ctrl+b后松开，空格键重新排列多窗口的布局
 # 键入Ctrl+b后松开, d 或 :detach 将当前Session分离
 # 键入Ctrl+b后松开, [ 或 Page Up 进入 翻滚模式（scroll mode），按q退出
+# 键入Ctrl+b后松开, { 与顺时针下一个 pane 交换位置
+# 键入Ctrl+b后松开, } 与逆时针下一个 pane 交换位置
+# 键入Ctrl+b后松开, Ctrl + o 逆时针方向交换所有 pane 的位置
+# 键入Ctrl+b后松开, x 关闭一个 pane, 用于关闭无响应的应用（如vim）
+# 键入Ctrl+b后松开, & 关闭一个 window
 
 → ~ $ tmux ls   # 列出当前所有Session
 
@@ -95,7 +100,17 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 
 Tmux 跟 Screen 很相似，它们的命令对比可以参考 [tmux & screen cheat-sheet][ref2]。
 
+<br>
+<span class="post-meta">
+Reference:
+</span>
+<br>
+<span class="post-meta">
+1 [How does one swap two panes in Tmux?][ref3]<br>
+</span>
+
 [storm]: https://github.com/emre/storm
 [tmux]: https://github.com/tmux/tmux
 [ref1]: http://sourabhbajaj.com/mac-setup/
 [ref2]: http://www.dayid.org/comp/tm.html
+[ref3]: https://superuser.com/questions/879190/how-does-one-swap-two-panes-in-tmux
