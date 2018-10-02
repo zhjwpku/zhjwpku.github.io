@@ -31,6 +31,10 @@ static局部变量与普通的局部变量比起来有如下几个区别:
 
 // TODO
 
+*1. static 全局变量*
+
+在 C++ 中，全局变量的使用方法类似于 C，只是在 C++ 的标准中，不建议使用 static 全局变量这种方式，而是使用 [unnamed namespace][nostatic]。
+
 **static in Java**
 
 _static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途_ —— 引自《Java编程思想》
@@ -75,3 +79,5 @@ Reference:
 2 [Java static keyword](https://www.javatpoint.com/static-keyword-in-java)<br>
 3 Herbert Schildt. Java The Complete Reference Ninth Edition. McGraw-Hill. 2014
 </span>
+
+[nostatic]: http://www.comeaucomputing.com/techtalk/#nostatic
