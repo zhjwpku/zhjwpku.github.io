@@ -139,6 +139,49 @@ static inline void hlist_add_behind(struct hlist_node *n,
 
 由于 hlist 的这种设计，导致它不能在 O(1) 时间获取到尾节点，也不能进行反向遍历。这可能就是计算机中常见的 Trade Off 吧。
 
+<h4>Hash List with bit lock</h4>
+
+[hlist_bl][list_bl] 是 hlist 一个特殊版本。一般在使用 hlist 用作 hashtable 的时候，会给每个 hlist 定义一个 spinlock，而为了减少这种内存开销，hlist_bl 利用 hlist_bl_head->first 的地址最后一位来代替 spinlock，这种方式可行的原因是因为指针通常为4字节8字节对齐，最后一位一定为0。
+
+其关键函数如下：
+
+```
+static inline struct hlist_bl_node *hlist_bl_first(struct hlist_bl_head *h)
+{
+    return (struct hlist_bl_node *)
+        ((unsigned long)h->first & ~LIST_BL_LOCKMASK);
+}
+
+static inline void hlist_bl_set_first(struct hlist_bl_head *h,
+                    struct hlist_bl_node *n)
+{
+    LIST_BL_BUG_ON((unsigned long)n & LIST_BL_LOCKMASK);
+    LIST_BL_BUG_ON(((unsigned long)h->first & LIST_BL_LOCKMASK) !=
+                            LIST_BL_LOCKMASK);
+    h->first = (struct hlist_bl_node *)((unsigned long)n | LIST_BL_LOCKMASK);
+}
+
+static inline bool hlist_bl_empty(const struct hlist_bl_head *h)
+{
+    return !((unsigned long)READ_ONCE(h->first) & ~LIST_BL_LOCKMASK);
+}
+
+static inline void hlist_bl_lock(struct hlist_bl_head *b)
+{
+    bit_spin_lock(0, (unsigned long *)b);
+}
+
+static inline void hlist_bl_unlock(struct hlist_bl_head *b)
+{
+    __bit_spin_unlock(0, (unsigned long *)b);
+}
+
+static inline bool hlist_bl_is_locked(struct hlist_bl_head *b)
+{
+    return bit_spin_is_locked(0, (unsigned long *)b);
+}
+```
+
 <br>
 <span class="post-meta">
 Reference:
@@ -147,11 +190,16 @@ Reference:
 <span class="post-meta">
 1 [Data Structures in the Linux Kernel —— Doubly linked list][dlinkedlist]<br>
 2 [List, HList, and Hash Table][htable]<br>
-3 [Use of double pointer in linux kernel Hash list implementation][hlistdpointer]
+3 [Use of double pointer in linux kernel Hash list implementation][hlistdpointer]<br>
+4 [[01/52] kernel: add bl_list][hlist_bl_patch]<br>
+5 [[02/35] kernel: add bl_list][hlist_bl_patch_2]
 </span>
 
 [list]: https://github.com/torvalds/linux/blob/master/include/linux/list.h
+[list_bl]: https://github.com/torvalds/linux/blob/master/include/linux/list_bl.h
 [linkedlist]: http://www.roman10.net/2011/07/28/linux-kernel-programminglinked-list/
 [dlinkedlist]: https://0xax.gitbooks.io/linux-insides/content/DataStructures/linux-datastructures-1.html
 [htable]: https://danielmaker.github.io/blog/linux/list_hlist_hashtable.html
 [hlistdpointer]: https://stackoverflow.com/questions/3058592/use-of-double-pointer-in-linux-kernel-hash-list-implementation
+[hlist_bl_patch]: https://lore.kernel.org/patchwork/patch/204448/
+[hlist_bl_patch_2]: https://lore.kernel.org/patchwork/patch/220389/
