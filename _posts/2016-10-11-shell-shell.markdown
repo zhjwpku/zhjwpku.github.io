@@ -43,6 +43,18 @@ ls ./a.txt |echo "hi" >/dev/null
 echo $?
 {% endhighlight %}
 
+**set -x & set +x**
+
+```shell
+#!/bin/bash
+
+# 执行指令后，会先显示该指令及所下的参数
+set -x
+
+# 取消显示
+set +x
+```
+
 **command -v**
 
 {% highlight shell %}
