@@ -174,6 +174,9 @@ $ git reset --soft <commit> # 暂存区和工作区中的内容不作任何改�
 $ git reset --mixed <commit> # reset的默认模式。暂存区中的内容会发生变化（恢复到工作区），但工作区中的内容不变
 $ git reset --hard <commit> # 暂存区和工作区都会发生变化，还原到<commit>
 
+# git clean
+$ git clean -dfx # 删除未被 git 跟踪的文件，通常与 git reset 一起使用准备一个干净的编译环境
+
 # git revert
 $ git revert <commit> # 撤销到<commit>，且撤销会作为一次提交进行保存
 $ git revert -n master~5..master~2 # 丢弃从最近第五个commit（含）到第二个（不含），但是不自动生成commit，仅修改工作区和暂存区
