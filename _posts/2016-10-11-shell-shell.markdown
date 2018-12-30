@@ -23,6 +23,22 @@ tags:
 source ./another_shell.sh
 {% endhighlight %}
 
+**expr**
+
+```shell
+#!/bin/bash
+
+# 将 1 + 2 的算数值赋给 a
+a=$(expr 1 + 2)
+echo $a         # 输出 3
+b=$(expr $a - 1)
+echo $b         # 输出 2
+c=$(expr $a \* $b)
+echo $c         # 输出 6
+d=$(expr $c / $a)
+echo $d         # 输出 2
+```
+
 **set -e & set -o**
 
 {% highlight shell %}
