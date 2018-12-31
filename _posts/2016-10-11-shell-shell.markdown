@@ -169,3 +169,22 @@ echo ${file?my.file.txt}
 # 如果$file没有设定或为空时，则将my.file.txt输出至STDERR，同时为$file赋值
 echo ${file:?my.file.txt}
 {% endhighlight %}
+
+**获取脚本绝对路径**
+
+```shell
+#!/bin/bash
+
+# 将 pwd 的输出赋给 shell_dir
+shell_dir=$(cd $(dirname $0); pwd)
+
+# 如果是软链接，readlink 打印软链接的内容，否则不返回值
+# GNU/Linux 下的 readlink -f 获取 $0 参数解析后的全路径文件名
+# Mac 上 readlink 无 -f 选项
+# dirname 返回文件或目录所在的目录
+shell_dir=$(dirname $(readlink -f $0))
+
+# GNU/Linux 下的 realpath 返回 $0 解析后的全路径文件名
+# Mac 上无此命令
+shell_dir=$(dirname $(realpath $0))
+```
