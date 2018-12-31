@@ -188,3 +188,26 @@ shell_dir=$(dirname $(readlink -f $0))
 # Mac 上无此命令
 shell_dir=$(dirname $(realpath $0))
 ```
+
+**获取进程下的所有线程信息**
+
+```shell
+# 获取进程 pid 中创建的所有线程信息
+$ ps -T -p <pid>
+$ top -H -p <pid>
+```
+
+
+<br>
+<span class="post-meta">
+Reference:
+</span>
+<br>
+<span class="post-meta">
+1 [Is there a way to see details of all the threads that a process has in Linux?
+][ref1]<br>
+2 [How to view threads of a process on Linux][ref2]<br>
+</span>
+
+[ref1]: https://unix.stackexchange.com/questions/892/is-there-a-way-to-see-details-of-all-the-threads-that-a-process-has-in-linux
+[ref2]: http://ask.xmodulo.com/view-threads-process-linux.html
