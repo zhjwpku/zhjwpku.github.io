@@ -78,8 +78,10 @@ Reference:
 <br>
 <span class="post-meta">
 1 [C Header File Guidelines](/assets/pdf/CHeaderFileGuidelines.pdf)<br>
+2 [Headers and Includes: Why and How][cheaderandincludes]<br>
 </span>
 
 [eecs381]: http://umich.edu/~eecs381/
 [cheaderfile]: http://umich.edu/~eecs381/handouts/CHeaderFileGuidelines.pdf
 [cppheaderfile]: http://umich.edu/~eecs381/handouts/CppHeaderFileGuidelines.pdf
+[cheaderandincludes]: http://www.cplusplus.com/forum/articles/10627/
