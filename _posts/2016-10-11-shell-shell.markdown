@@ -239,6 +239,31 @@ send -- "Technology\r"
 expect eof
 ```
 
+**iostat**
+
+该命令是通过在一个时间间隔内把 /proc/diskstats 中的内容读出来进行计算，得出磁盘的当前各项性能指标。
+
+```shell
+# 每隔一秒统计一次磁盘性能，第一次结果不准确，忽略
+[vagrant@localhost ~]$ iostat -x 1
+Linux 3.10.0-693.5.2.el7.x86_64 (localhost.localdomain)     12/30/2018  _x86_64_(1 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %st    eal   %idle
+           0.00    0.00    0.04    0.00    0.00   99.95
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.01    0.15    0.06     4.14     1.76    56.92     0.00    3.42    2.25    6.38   0.77   0.02
+dm-0              0.00     0.00    0.09    0.06     3.86     1.70    74.60     0.00    4.97    3.41    7.59   1.04   0.02
+dm-1              0.00     0.00    0.00    0.00     0.06     0.00    47.40     0.00    2.27    2.27    0.00   1.89   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+          0.00    0.00    0.98    0.00    0.00   99.02
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+```
 
 <br>
 <span class="post-meta">
@@ -250,8 +275,10 @@ Reference:
 ][ref1]<br>
 2 [How to view threads of a process on Linux][ref2]<br>
 3 [Expect command and how to automate shell scripts like magic][ref3]<br>
+4 [容易被误读的IOSTAT][ref4]<br>
 </span>
 
 [ref1]: https://unix.stackexchange.com/questions/892/is-there-a-way-to-see-details-of-all-the-threads-that-a-process-has-in-linux
 [ref2]: http://ask.xmodulo.com/view-threads-process-linux.html
 [ref3]: https://likegeeks.com/expect-command/
+[ref4]: http://linuxperf.com/?p=156
