@@ -197,6 +197,48 @@ $ ps -T -p <pid>
 $ top -H -p <pid>
 ```
 
+**spawn/expect/send**
+
+questions.sh 脚本
+```shell
+#!/bin/bash
+ 
+echo "Hello, who are you?"
+
+read $REPLY
+
+echo "Can I ask you some questions?"
+
+read $REPLY
+
+echo "What is your favorite topic?"
+
+read $REPLY
+```
+
+expect 脚本
+```shell
+#!/usr/bin/expect -f
+ 
+set timeout 900  # 设置交互超时时间 6 分钟
+
+spawn ./questions.sh
+
+expect "Hello, who are you?\r"
+
+send -- "Im Adam\r"     # 发送的消息要带 \r
+
+expect "Can I ask you some questions?\r"
+
+send -- "Sure\r"
+
+expect "What is your favorite topic?\r"
+
+send -- "Technology\r"
+
+expect eof
+```
+
 
 <br>
 <span class="post-meta">
@@ -207,7 +249,9 @@ Reference:
 1 [Is there a way to see details of all the threads that a process has in Linux?
 ][ref1]<br>
 2 [How to view threads of a process on Linux][ref2]<br>
+3 [Expect command and how to automate shell scripts like magic][ref3]<br>
 </span>
 
 [ref1]: https://unix.stackexchange.com/questions/892/is-there-a-way-to-see-details-of-all-the-threads-that-a-process-has-in-linux
 [ref2]: http://ask.xmodulo.com/view-threads-process-linux.html
+[ref3]: https://likegeeks.com/expect-command/
