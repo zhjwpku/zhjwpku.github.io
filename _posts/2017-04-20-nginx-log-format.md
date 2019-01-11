@@ -145,6 +145,6 @@ Reference:
 
 [ref1]: https://www.nginx.com/resources/admin-guide/logging-and-monitoring/
 [logrotate]: https://github.com/logrotate/logrotate
-[ref2]: http://blog.lightxue.com/how-logrotate-works/
+[ref2]: http://blog.lightxue.com/how-logrotate-works
 [ref3]: http://www.thegeekstuff.com/2010/07/logrotate-examples/
 [ref4]: https://www.digitalocean.com/community/tutorials/how-to-configure-logging-and-log-rotation-in-nginx-on-an-ubuntu-vps
