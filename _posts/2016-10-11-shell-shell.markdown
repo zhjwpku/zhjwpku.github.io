@@ -197,6 +197,13 @@ $ ps -T -p <pid>
 $ top -H -p <pid>
 ```
 
+**获取进程信息的某一个字段**
+
+```shell
+#获取进程 pid 的启动时间和启动命令(mac 上是comm)
+$ ps -o lstart,cmd -p <pid>
+```
+
 **spawn/expect/send**
 
 questions.sh 脚本
