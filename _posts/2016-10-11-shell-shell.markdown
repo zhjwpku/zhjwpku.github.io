@@ -96,6 +96,13 @@ $ ls -F | grep -E '[^/@]$' | xargs
 ## 其它详见 man ls
 ```
 
+**查看ASCII码**
+
+```
+# 不用再去网上搜了，随便找台Linux就可以看了
+man ascii
+```
+
 **特殊变量**
 
 {% highlight shell %}
