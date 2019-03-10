@@ -83,6 +83,19 @@ if ! command -v http &>/dev/null ; then
 fi
 {% endhighlight %}
 
+**将目录下的某种类型的所有文件以空格分开输出**
+
+```
+# 目录类型以 / 结尾
+$ ls -F | grep -E '/$' | xargs
+# 软链接类型以 @ 结尾
+$ ls -F | grep -E '@$' | xargs
+# 文件类型
+$ ls -F | grep -E '[^/@]$' | xargs
+
+## 其它详见 man ls
+```
+
 **特殊变量**
 
 {% highlight shell %}
