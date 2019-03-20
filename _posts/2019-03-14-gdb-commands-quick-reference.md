@@ -6,7 +6,7 @@ tags:
 - "C/C++"
 ---
 
-本文是 [Summary of GDB commands for x86-64 Systems][gdbnotes-x86-64] 的人肉翻译 📝
+本文是 [Summary of GDB commands for x86-64 Systems][gdbnotes-x86-64] 的人肉翻译 📝。并在 *Reference* 处列出了一些 gdb 的在线文档。
 
 **启动**
 
@@ -130,6 +130,8 @@ Reference:
 <br>
 <span class="post-meta">
 1 A [backup](/assets/pdf/gdbnotes-x86-64.pdf) of Summary of GDB commands for x86-64 Systems.<br>
+2 [Guide to Faster, Less Frustrating Debugging](http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Debug.html) <br>
+3 [Debugging with GDB](https://sourceware.org/gdb/current/onlinedocs/gdb/index.html) and its [PDF version](/assets/pdf/debugging_with_gdb.pdf)<br>
 </span>
 
 [gdbnotes-x86-64]: http://csapp.cs.cmu.edu/3e/docs/gdbnotes-x86-64.pdf
