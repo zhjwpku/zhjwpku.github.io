@@ -133,6 +133,7 @@ Reference:
 2 [Guide to Faster, Less Frustrating Debugging](http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Debug.html) <br>
 3 [Debugging with GDB](https://sourceware.org/gdb/current/onlinedocs/gdb/index.html) and its [PDF version](/assets/pdf/debugging_with_gdb.pdf)<br>
 4 [gdb Cheatsheet](http://cs.brown.edu/courses/csci0330/docs/guides/gdb.pdf) from Brown University's [CS0330](http://cs.brown.edu/courses/csci0330/)<br>
+5 [x64 Cheat Sheet](http://cs.brown.edu/courses/csci0330/docs/guides/x64_cheatsheet.pdf) from Brown University's CS0330 <br>
 </span>
 
 [gdbnotes-x86-64]: http://csapp.cs.cmu.edu/3e/docs/gdbnotes-x86-64.pdf
