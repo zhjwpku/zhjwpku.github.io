@@ -37,6 +37,10 @@ Ctrl&Shift&-    撤销
 
 见 [Xshell alternative for Mac][tmux]
 
+<h4>Sublime Text 3</h4>
+
+见 [Sublime Text 中的常用快捷键][sublimetext]
+
 <br>
 <span class="post-meta">
 Reference:
@@ -48,3 +52,4 @@ Reference:
 
 [tmux]: /2017/03/12/xshell-alternative-for-mac.html
 [13641]: http://www.linuxdiyf.com/linux/13641.html
+[sublimetext]: /2019/03/27/shortcuts-in-sublime-text.html
