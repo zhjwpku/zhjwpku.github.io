@@ -25,6 +25,9 @@ sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t # 更改 core pattern
 gdb <executable file name> <core dump file name>
 ```
 
+**bt 看不见栈**
+
+有时候在加载了可执行文件和core文件之后，bt 看到的栈信息可能是一堆问号，很有可能是二进制依赖的动态链接库状态不对，可以使用 `info sharedlibrary` 看需的依赖库，然后把所有依赖库按照原来的路径结构放到一个目录下，比如 */fakeroot*，然后在 gdb 中用 `set sysroot /fakeroot`，之后再加载一下 core 文件（`core-file core-name`），就可以看到栈信息了。
 
 <br>
 <span class="post-meta">
