@@ -6,13 +6,11 @@ tags:
 - course
 ---
 
-学计算机从来都不缺少资料，但互联网又往往鱼龙混杂，充斥着很多劣质的学习课程。笔者业余时间学习的课程，几乎全部来自世界名校课程，列举于此，共勉。
+笔者业余时间学习的计算机课程，全部来自世界名校课程，列于此，共勉。
 
-<h4>目录</h4>
+<h4>TOC</h4>
 - [Computer System](#cs)
 - [Operating System](#os)
-
-<h4>课程</h4>
 
 #### CS
 
@@ -23,6 +21,13 @@ tags:
     - [课程视频 - 2015][cs61c-video]
     - [Labs - 2018][cs61c-labs]
     - [历届考试题][cs61c-exam]
+
+- [15-213][15213] **Introduction to Computer Systems** *CMU*
+    - ICS 能让你成为更高效的程序员，特别是在处理性能，可移植性和健壮性问题时。BTW，15213 是 CMU 的邮编。
+    - 教材: [Computer Systems: A Programmer's Perspective, 3/E (CS:APP3e)][15213-textbook]
+    - [课程主页][15213]
+    - [课程视频][15213-video]
+    - [Labs][15213-labs]
 
 #### OS
 
@@ -50,3 +55,7 @@ Reference:
 [cs61c-exam]: https://hkn.eecs.berkeley.edu/exams/course/CS/61C
 [cs61c-refbook]: /assets/pdf/ComputerOrganizationAndDesign5thEdition2014.pdf
 [wsc]: /assets/pdf/TheDatacenterAsaComputer.pdf
+[15213]: http://www.cs.cmu.edu/~213/index.html
+[15213-textbook]: http://csapp.cs.cmu.edu/
+[15213-video]: https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22b96d90ae-9871-4fae-91e2-b1627b43e25e%22&view=2
+[15213-labs]: http://csapp.cs.cmu.edu/3e/labs.html
