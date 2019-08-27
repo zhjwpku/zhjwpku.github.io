@@ -7,7 +7,7 @@ tags:
 - tianchi
 ---
 
-机缘巧合之下了解到阿里天池有个 [POLARDB数据库性能大赛](https://tianchi.aliyun.com/competition/entrance/231689/introduction)，但是今年的赛程还没开始，在官网上又看到了正在进程中[中间件性能挑战赛](https://tianchi.aliyun.com/competition/entrance/231714/introduction)，于是报名参加，了解一下比赛的流程，为后面的数据库性能大赛趟趟路。
+机缘巧合之下了解到阿里天池有个 [POLARDB数据库性能大赛](https://tianchi.aliyun.com/competition/entrance/231689/introduction)，但是今年的赛程还没开始，在官网上又看到了正在进行中的[中间件性能挑战赛](https://tianchi.aliyun.com/competition/entrance/231714/introduction)，于是报名参加，了解一下比赛的流程，为后面的数据库性能大赛趟趟路。
 
 初赛的题目是写一个 dubbo 的负载均衡算法，dubbo 本身提供了 RandomLoadBalance/RoundRobinLoadBalance/LeastActiveLoadBalance/ConsistentHashLoadBalance 四种 LB 算法，因此这个题目不算难，但是想要拿到好的成绩也不简单。
 
