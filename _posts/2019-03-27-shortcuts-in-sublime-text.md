@@ -57,7 +57,7 @@ command + y                     恢复撤销
 ```
 control + g                     跳转到哪一行
 command + r                     跳转到当前文件的某个符号
-command + shift + r             跳转到工程的摸个符号
+command + shift + r             跳转到工程的某个符号
 command + ->                    跳转到行末
 command + <-                    跳转到行首
 command + ↓                     跳转到文件末
@@ -66,8 +66,9 @@ f12                             跳转到函数定义（有 touch bar 的可以�
 shift + f12                     跳转到函数调用处
 ```
 
-My Preference:
+<h4>My Preferences:</h4>
 
+**Settings**
 ```
 {
     "color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
@@ -92,6 +93,16 @@ My Preference:
 }
 ```
 
+**Key Bindings**
+```
+[
+    { "keys": ["super+]"], "command": "goto_definition" },
+    { "keys": ["super+t"], "command": "jump_back" },
+    { "keys": ["f7"], "command": "goto_symbol_in_project" },
+    { "keys": ["super+up"], "command": "scroll_lines", "args": {"amount": 10.0} },
+    { "keys": ["super+down"], "command": "scroll_lines", "args": {"amount": -10.0} },
+]
+```
 
 先列这么多吧，后面再补充 😋
 
