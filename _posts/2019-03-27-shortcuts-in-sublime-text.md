@@ -21,6 +21,7 @@ command + shift + p             打开命令框
 command + ,                     打开 Preference 设置
 command + option + [1-4]        分 1 - 4 列
 control + [1-4]                 跳到第 1 - 4 列（Group）
+control + 0                     Reveal in Side Bar
 ```
 
 **搜索类**
@@ -71,13 +72,11 @@ shift + f12                     跳转到函数调用处
 **Settings**
 ```
 {
-    "color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
     "draw_white_space": "all",
     "font_size": 14,
     "highlight_line": true,
     "ignored_packages":
     [
-        "0_package_control_loader",
         "Vintage"
     ],
     "line_padding_bottom": 1,
@@ -103,6 +102,13 @@ shift + f12                     跳转到函数调用处
     { "keys": ["super+down"], "command": "scroll_lines", "args": {"amount": -10.0} },
 ]
 ```
+
+<h4>Plugins</h4>
+
+- **[A File Icon](https://packagecontrol.io/packages/A%20File%20Icon)**
+- **[ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8)**
+- **[Git](https://github.com/kemayo/sublime-text-git)**
+- **[Git Blame](https://packagecontrol.io/packages/Git%20blame)**
 
 先列这么多吧，后面再补充 😋
 
