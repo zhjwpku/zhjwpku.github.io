@@ -8,6 +8,20 @@ tags:
 
 哇！发现了好多不懂的Shell命令，记录一下...
 
+**awk**
+
+```
+# 以 [ 或 ] 作为分隔符
+awk -F'[][]'        # '[[]]' 不行，因为会解析成 Bracket Expression
+
+# 统计某一字段出现的频率(后面一种方法效率更高)
+awk -F'[][]' '{ if ($10 != "") print $10}' file_to_be_handled.txt | sort | uniq -c | sort -nr
+awk -F'[][]' '{ if ($10 != "") tot[$10]++} END { for (i in tot) print tot[i], i }' file_to_be_handled.txt | sort -nr
+
+# 如果使用内置的 sorting, 效率可能会更高
+# 参考 https://www.gnu.org/software/gawk/manual/html_node/Controlling-Scanning.html
+```
+
 **. command**
 
 {% highlight shell %}
@@ -83,6 +97,24 @@ if ! command -v http &>/dev/null ; then
 fi
 {% endhighlight %}
 
+**hexdump/hd**
+
+```
+root@531f5d0c9f9f:/opt/csapp3e# hexdump -x README.md
+0000000    6854    7369    6420    7269    6320    6e6f    6174    6e69
+0000010    2073    796d    7320    6c6f    7475    6f69    736e    7420
+0000020    206f    6874    2065    616c    7362    000a
+000002b
+root@531f5d0c9f9f:/opt/csapp3e# hd -x README.md
+00000000  54 68 69 73 20 64 69 72  20 63 6f 6e 74 61 69 6e  |This dir contain|
+0000000    6854    7369    6420    7269    6320    6e6f    6174    6e69
+00000010  73 20 6d 79 20 73 6f 6c  75 74 69 6f 6e 73 20 74  |s my solutions t|
+0000010    2073    796d    7320    6c6f    7475    6f69    736e    7420
+00000020  6f 20 74 68 65 20 6c 61  62 73 0a                 |o the labs.|
+0000020    206f    6874    2065    616c    7362    000a
+000002b
+```
+
 **将目录下的某种类型的所有文件以空格分开输出**
 
 ```
@@ -101,6 +133,25 @@ $ ls -F | grep -E '[^/@]$' | xargs
 ```
 # 不用再去网上搜了，随便找台Linux就可以看了
 man ascii
+```
+
+**查看 errno**
+
+```
+# not work on Mac
+man errno
+```
+
+**查看块设备 UUID**
+
+```
+blkid
+```
+
+**查看网络端口**
+
+```
+netstat -tlnp
 ```
 
 **特殊变量**
@@ -136,7 +187,7 @@ echo $?
 
 **${} / ## / %%**
 
-{% highlight shell %}
+```shell
 #!/bin/bash
 
 file = /path/to/my.file.txt
@@ -188,7 +239,7 @@ echo ${file?my.file.txt}
 
 # 如果$file没有设定或为空时，则将my.file.txt输出至STDERR，同时为$file赋值
 echo ${file:?my.file.txt}
-{% endhighlight %}
+```
 
 **获取脚本绝对路径**
 
@@ -305,9 +356,11 @@ Reference:
 2 [How to view threads of a process on Linux][ref2]<br>
 3 [Expect command and how to automate shell scripts like magic][ref3]<br>
 4 [容易被误读的IOSTAT][ref4]<br>
+5 [Using Bracket Expressions][ref5]<br>
 </span>
 
 [ref1]: https://unix.stackexchange.com/questions/892/is-there-a-way-to-see-details-of-all-the-threads-that-a-process-has-in-linux
 [ref2]: http://ask.xmodulo.com/view-threads-process-linux.html
 [ref3]: https://likegeeks.com/expect-command/
 [ref4]: http://linuxperf.com/?p=156
+[ref5]: https://www.gnu.org/software/gawk/manual/html_node/Bracket-Expressions.html#Bracket-Expressions
