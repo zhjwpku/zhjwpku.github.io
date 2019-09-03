@@ -51,6 +51,8 @@ tab                             向右缩进
 shift + tab                     向左缩进
 command + z                     撤销
 command + y                     恢复撤销
+contrl + m                      跳转到匹配的括号（包括大括号、中括号和小括号）
+contrl + shift + m              选中括号中的括号（包括大括号、中括号和小括号）
 ```
 
 **移动类**
