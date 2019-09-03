@@ -45,7 +45,9 @@ clear sum                           删除在函数 sum 入口处所有的断点
 stepi/si                            执行一条指令
 stepi 4                             执行四条指令
 nexti                               跟 stepi 相似，但是执行函数时不会停止
-step/s                              执行一条 C 语句
+step/s                              执行一条 C 语句                    // step into
+next/n                              执行一条 C 语句，遇到函数不会进入     // step over
+finish/fin                          继续执行直到当前栈返回的下一条语句    // step out
 continue                            恢复程序执行直到下一个断点
 until 3                             继续执行程序直到断点3
 finish                              恢复执行直到当前函数返回
@@ -134,6 +136,7 @@ Reference:
 3 [Debugging with GDB](https://sourceware.org/gdb/current/onlinedocs/gdb/index.html) and its [PDF version](/assets/pdf/debugging_with_gdb.pdf)<br>
 4 [gdb Cheatsheet](http://cs.brown.edu/courses/csci0330/docs/guides/gdb.pdf) from Brown University's [CS0330](http://cs.brown.edu/courses/csci0330/)<br>
 5 [x64 Cheat Sheet](http://cs.brown.edu/courses/csci0330/docs/guides/x64_cheatsheet.pdf) from Brown University's CS0330 <br>
+6 [5.2 Continuing and Stepping](https://sourceware.org/gdb/onlinedocs/gdb/Continuing-and-Stepping.html)<br>
 </span>
 
 [gdbnotes-x86-64]: http://csapp.cs.cmu.edu/3e/docs/gdbnotes-x86-64.pdf
