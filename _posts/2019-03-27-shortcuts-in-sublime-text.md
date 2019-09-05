@@ -73,6 +73,7 @@ shift + f12                     跳转到函数调用处
 
 ```
 control + option + b            显示（或关闭）当前行的 git commit 信息，须安装 git blame 插件
+subl .                          在命令行打开当前目录
 ```
 
 <h4>My Preferences:</h4>
