@@ -274,6 +274,15 @@ $ git submodule update --init --recursive
 $ git checkout -b fix-bug origin/release-1.0.0
 ```
 
+**git 奇技淫巧**
+
+```
+# 显示一个commit更改的文件列表
+git show --name-only <commitid>
+# 反向显示提交记录
+git log --reverse
+```
+
 <br>
 <span class="post-meta">
 Reference:
