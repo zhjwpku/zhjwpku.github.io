@@ -1,17 +1,17 @@
 #title: 各个击破
 title: 赵四方的技术博客
 author: 赵军旺
-email: zhjwpku@gmail.com
+email: zhjwpku AT gmail DOT com
 d1: Trying to be an excellent programmer.
 d2:  Keep looking, don't settle.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://zhjwpku.com" # the base hostname & protocol for your site
+url: "https://zhjwpku.com" # the base hostname & protocol for your site
 github_username: zhjwpku
 
 # Build settings
 markdown: kramdown
 
-url: http://zhjwpku.com
+url: https://zhjwpku.com
 
 timezone: Asia/Shanghai
 
