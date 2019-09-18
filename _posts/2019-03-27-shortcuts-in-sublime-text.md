@@ -118,6 +118,8 @@ subl .                          在命令行打开当前目录
 - **[ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8)**
 - **[Git](https://github.com/kemayo/sublime-text-git)**
 - **[Git Blame](https://packagecontrol.io/packages/Git%20blame)**
+- **[Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended)**
+- **[MarkdownLivePreview](https://packagecontrol.io/packages/MarkdownLivePreview)**
 
 先列这么多吧，后面再补充 😋
 
