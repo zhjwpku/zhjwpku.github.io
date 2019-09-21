@@ -318,4 +318,5 @@ Reference:
 <br>
 <span class="post-meta">
 1 [How does the vim “write with sudo” trick work?](https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work)<br>
+2 [The Ultimate vimrc](https://github.com/amix/vimrc)<br>
 </span>
