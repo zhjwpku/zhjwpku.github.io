@@ -43,9 +43,11 @@ Reference:
 <br>
 <span class="post-meta">
 1 [Awesome CS Courses][ref0]<br>
+2 [Bilibili 公开课目录][biliopen]<br>
 </span>
 
 [ref0]: https://github.com/prakhar1989/awesome-courses
+[biliopen]: https://github.com/wenhan-wu/OpenCourseCatalog#%E8%AE%A1%E7%AE%97%E6%9C%BA--computer-science
 [ostep]: http://pages.cs.wisc.edu/~remzi/OSTEP/
 [ostep-projects]: https://github.com/remzi-arpacidusseau/ostep-projects
 [ostep-homework]: http://pages.cs.wisc.edu/~remzi/OSTEP/Homework/homework.html
