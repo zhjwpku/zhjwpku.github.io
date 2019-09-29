@@ -40,6 +40,8 @@ tags:
 
 <br>
 
+<em style="color: red">每个 commit 对应某一时刻 git 文件系统的快照，而 blog 则为某一文件特定时刻的快照。</em>
+
 **2. Three States**
 
 Git 中几乎所有操作都是在本地完成，然后再与远端仓库同步，这使得 Git 可以在没有网络的情况下使用，这样的设计逻辑能延长程序员的寿命 🦍。
@@ -57,7 +59,7 @@ Git 本地由三个部分组成，官方解释如下:
 用普通话解释:
 
 - 工作区(Working Directory)：是项目的一个版本，它所显示的文件由 .git 目录中的数据生成并存放到本地供用户使用或修改。
-  - <em style="color: orangered">实验1 - 将 .git 拷贝到一个新目录</em>
+  - <em style="color: orangered">实验1 - 从 .git 目录恢复工作区</em>
 - 暂存区(Staging Area)：是一个二进制文件 `.git/index`，保存了按文件路径排序的文件列表，`git ls-files --stage` 可以查看其内容，其中 SHA1 值对应文件的 blob 对象。将一个文件从工作区 `add` 到暂存区主要体现在对该文件的修改。
 ```
 [root@centos hadoop]# git ls-files --stage | head -n5
@@ -71,7 +73,7 @@ Git 本地由三个部分组成，官方解释如下:
 - .git 目录：Git 保存元数据和对象数据路的地方。
   - <em style="color: orangered">实验3 - 承接实验2，查看 commit 前后 index 文件及 refs/heads/master 的变化</em>
 
-*Git 管理的文件在三种状态之间变换：`Modified` 表示修改过但还未添加到暂存区的文件，`Staged` 表示修改过且已经添加到暂存区的文件，`Committed` 表示这个文件被安全保存到了 Git 仓库*。
+*Git 管理的文件在三种状态之间变换：`Modified` 表示修改过但还未添加到暂存区的文件，`Staged` 表示修改过且已经添加到暂存区的文件，`Committed` 表示这个文件被安全保存到了 Git 仓库。当然，新增的文件由于还未被 git 接管，其状态为 `Untracked`。*
 
 因此 Git 的基本工作流程可以总结如下：
 
@@ -81,7 +83,7 @@ Git 本地由三个部分组成，官方解释如下:
 
 **3. Branch**
 
-Git 的分支模型是它的 "Killer feature"，因为对于其它VCS，分支可能意味着一份新的源码拷贝，这是一个昂贵的操作，而 Git 的分支模型是非常轻量的。得益于`快照`的概念，我们可以把分支看做一个指向某个快照版本的指针，切换分支就像是指针在不同的快照上移动。
+Git 的分支模型是它的 "Killer feature"，因为对于其它VCS，分支可能意味着一份新的源码拷贝，这是一个昂贵的操作，而 Git 的分支模型非常轻量。得益于`快照`的概念，我们可以把分支看做一个指向某个快照版本的指针，切换分支就像是指针在不同的快照上移动。
 
 ![branch](https://git-scm.com/book/en/v2/images/branch-and-history.png){: width="600px"}
 
@@ -118,7 +120,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCquijUKukfBTWYF9X9m/01CzC1Zhi3hDg9KCtcDqXA
 
 **场景2. 正常工作流程**
 
-我们开发基本上都是基于 master 拉分支，然后开发自测，提交代码，push 分支，然后再网页上提 Merge Request，门禁跑过，commmitter review 通过，就可以被 Merge 了，假设这一套流程非常顺利，那么在本地仓库需要用到的 git 命令大致如下：
+我们使用 git 的方式属于 [Feature Branch Workflow][fbw]，基本上都是基于 master 拉分支，然后开发自测，提交代码，push 分支，然后再网页上提 Merge Request，门禁跑过，commmitter review 通过，就可以被 Merge 了，假设这一套流程非常顺利，那么在本地仓库需要用到的 git 命令大致如下：
 
 *首先要有一个干净的与远端仓库一致的 master 分支*
 ```
@@ -145,7 +147,7 @@ git checkout -b your_feature_branch origin/master
 
 *提交代码*
 ```
-# 将需要提交的改动添加到暂存区
+# 将需要提交的改动添加到暂存区，git status 会提示应该用哪些命令来实现
 git add added_or_changed_file
 git add added_or_changed_dir
 git rm deleted_file
@@ -167,7 +169,7 @@ git push origin your_feature_branch
 
 有些程序员可能不习惯使用 beyond compare 来同步本地和编译机的代码（比如我更信任 git 的 commit id），那想要在`本地（编辑）`、`CodeClub（Center Repo）`、`Ubuntu（编译验证）`三个仓库上同步代码，一般的做法是将本地分支 `push` 到 CodeClub，然后在编译机上将分支从 CodeClub `pull` 下来，再编译验证。
 
-*注：可以通过 `git remote add` 命令将编译环境的 git 仓库作为远端仓库添加到本地 config，然后将本地的分支 push 到该仓库，本文不讨论*
+*注：可以通过 `git remote add` 命令将编译环境的 git 仓库作为远端仓库添加到本地 config，然后将本地的分支 push 到该仓库，见场景 14*
 
 如果编译验证不通过，本地就会存在一个不可编译的 commit。一些对代码管理较严格的开源社区，会要求所有的 commit 是可编译的，这对后期使用 `git bisect` 定位问题更加友好。`git commit --amend`可以将后来的修改与前一个 commit 合并到一起。
 
@@ -177,7 +179,7 @@ git push origin your_feature_branch
 
 **场景4. 将已存在的多个 commit 合为一个**
 
-在进开发的一个比较棘手的特性时，改一点提一点验一下，因为每次改动可能并没有实际的意义，因此会使用之前的 commit message 作为本次的 commit message，这就会造成分支上有很多相同类型的 commit，这时候 `git commit --amend` 就解决不了这个问题了，需要用到 git 的 soft reset。
+在进开发的一个比较棘手的特性时，改一点提一点验一下，因为每次改动可能并没有实际的意义，因此会使用之前的 commit message 作为本次的 commit message，这就会造成分支上有很多相同类型的 commit，这时候 `git commit --amend` 就解决不了这个问题了，需要用到 git reset 的  mixed 模式，这也是 reset 的默认模式。
 
 <em style="color: orangered">实验5 - 演示 git reset</em>
 ```
@@ -288,6 +290,8 @@ git blame filename.txt
 git show <commit_id>
 # 查看对应 commit_id 的时候那个文件是什么样的
 git show <commit_id>:filename.txt
+# 查看这个 commit 提交之前 filename.txt 是什么样的
+git show <commit_id>~:filename.txt
 # 查看这个 commit_id 改了哪些文件
 git show --name-only <commitid>
 ```
@@ -331,7 +335,7 @@ git branch --merged     // 在 master 分支上执行该命令也能查看 merge
 # 删除本地分支
 git branch -d branch_name
 
-# 删除远端分支，可以在界面上操作，也可以使用如下命令
+# 删除远端分支，可以在界面上操作，也可以用如下命令
 git push --delete origin branch_name
 git push origin :branch_name
 ```
@@ -350,6 +354,17 @@ git diff --cached
 git diff mybranch master -- filename
 ```
 
+**场景14. 每次都要经过 CodeClub 同步本地跟编译机的代码，很烦**
+
+可以使用 git remote add 直接将编译机的仓库设置为本地仓库的远程仓库。
+
+<em style="color: orangered">实验8 - 演示 git remote add</em>
+
+```
+git remote add ubuntu /path/to/git/repo
+git config --bool core.bare true
+```
+
 <h4>与项目管理相关的命令</h4>
 
 git 还有些命令与项目管理息息相关，我们现在还没有用到，列举出来，可先行了解，将来可能会用到。
@@ -362,9 +377,9 @@ git tag -a 1.0.0 -m "Release 1.0.0"
 git describe
 ```
 
-<h4>快捷键</h4>
+<h4>快捷命令</h4>
 
-git 可以设置快捷键，根据个人习惯设置，推荐几个与 git log 相关的。
+git 可以设置命令别名，根据个人习惯设置，推荐几个与 git log 相关的。
 
 ```
 git config --global alias.lg "log --graph --format='%C(auto)%h%C(reset) %C(dim white)%an%C(reset) %C(green)%ai%C(reset) %C(auto)%d%C(reset)%n   %s'"
@@ -419,8 +434,12 @@ Reference:
 5 [View a file in a different Git branch without changing branches](https://stackoverflow.com/questions/7856416/view-a-file-in-a-different-git-branch-without-changing-branches)<br>
 6 [How to compare files from two different branches?](https://stackoverflow.com/questions/4099742/how-to-compare-files-from-two-different-branches)<br>
 7 [Why is a 3-way merge advantageous over a 2-way merge?](https://stackoverflow.com/questions/4129049/why-is-a-3-way-merge-advantageous-over-a-2-way-merge)<br>
+8 [git remote add with other SSH port](https://stackoverflow.com/questions/3596260/git-remote-add-with-other-ssh-port)<br>
+9 [How can I reset or revert a file to a specific revision?](https://stackoverflow.com/questions/215718/how-can-i-reset-or-revert-a-file-to-a-specific-revision)<br>
+10 [Practical uses of git reset --soft?](https://stackoverflow.com/questions/5203535/practical-uses-of-git-reset-soft)<br>
 </span>
 
 [git-easy-tutorial]: https://zhjwpku.com/2016/10/30/git-easy-tutorial.html
 [what_is_git]: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F
 [what-does-the-git-index-contain-exactly]: https://stackoverflow.com/questions/4084921/what-does-the-git-index-contain-exactly
+[fbw]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
