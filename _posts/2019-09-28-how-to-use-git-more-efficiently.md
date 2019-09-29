@@ -418,6 +418,7 @@ Reference:
 4 [What does the git index contain EXACTLY?][what-does-the-git-index-contain-exactly]<br>
 5 [View a file in a different Git branch without changing branches](https://stackoverflow.com/questions/7856416/view-a-file-in-a-different-git-branch-without-changing-branches)<br>
 6 [How to compare files from two different branches?](https://stackoverflow.com/questions/4099742/how-to-compare-files-from-two-different-branches)<br>
+7 [Why is a 3-way merge advantageous over a 2-way merge?](https://stackoverflow.com/questions/4129049/why-is-a-3-way-merge-advantageous-over-a-2-way-merge)<br>
 </span>
 
 [git-easy-tutorial]: https://zhjwpku.com/2016/10/30/git-easy-tutorial.html
