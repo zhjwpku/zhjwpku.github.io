@@ -10,6 +10,7 @@ tags:
 
 <h4>TOC</h4>
 - [Computer System](#cs)
+- [Language](#language)
 - [Operating System](#os)
 
 #### CS
@@ -28,6 +29,18 @@ tags:
     - [课程主页][15213]
     - [课程视频][15213-video]
     - [Labs][15213-labs]
+
+#### Language
+
+- [CS 106A][cs106a] **Programming Methodology, Spring 2017** *Stanford*
+    - 编程方法论是编程入门课程中最大的课程，也是斯坦福大学最大的课程之一。该课程使用 **Java** 语言着重介绍了现代软件工程原理：面向对象的设计，分解，封装，继承，多态等。课程相对简单，为了衔接之后的 [CS 106B][cs106b]，笔者把所有的课程视频浏览了一遍。
+    - [课程主页][cs106a]
+    - [课程视频][cs106a-video]
+
+- [CS 106B][cs106b] **Programming Abstractions, Winter 2018** *Stanford*
+    - 该课程是[编程方法论][cs106a]的自然继承，使用 **C++** 语言教学，涵盖了递归，算法分析和数据抽象等高级编程主题。
+    - [课程主页][cs106b]
+    - [课程视频][cs106b-video]
 
 #### OS
 
@@ -61,3 +74,8 @@ Reference:
 [15213-textbook]: http://csapp.cs.cmu.edu/
 [15213-video]: https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22b96d90ae-9871-4fae-91e2-b1627b43e25e%22&view=2
 [15213-labs]: http://csapp.cs.cmu.edu/3e/labs.html
+[cs106a]: http://web.stanford.edu/class/archive/cs/cs106a/cs106a.1176/index.shtml
+[cs106a-video]: https://www.youtube.com/watch?v=tgEq4e9nQ5E&list=PLAe8LJLmXkN1348vyNZ87L_t_KlbMFIYr
+[cs106b]: http://stanford.edu/class/archive/cs/cs106b/cs106b.1184/index.shtml
+[cs106b-video]: https://www.youtube.com/watch?v=IeVLwMS1nu8&list=PLT0wqqmbAFnfdRRCnzqY943MDyaNa3KSy
+[cs193a-video]: https://www.youtube.com/watch?v=iBBOUzGS8QU&list=PLBx6OgewIjRoF1eh017uRiPuV42piY_iP&index=2
