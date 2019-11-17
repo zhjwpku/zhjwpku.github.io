@@ -38,8 +38,13 @@ tags:
     - [课程视频][cs106a-video]
 - [CS 106B][cs106b] **Programming Abstractions, Winter 2018** *Stanford*
     - 该课程是[编程方法论][cs106a]的自然继承，使用 **C++** 语言教学，涵盖了递归，算法分析和数据抽象等高级编程主题。
+    - 教材: [Programming Abstractions in C++][cs106b-textbook]
     - [课程主页][cs106b]
     - [课程视频][cs106b-video]
+- [CS 106X][cs106x] **Programming Abstractions (Accelerated)** *Stanford*
+    - 课程 106X 覆盖的内容与 106B 相同，使用 **C++**，但教授的速度更快，层次更深。
+    - [课程主页][cs106x]
+    - [课程视频][cs106x-video]
 
 #### OS
 
@@ -77,5 +82,7 @@ Reference:
 [cs106a-video]: https://www.bilibili.com/video/av21133071
 [cs106b]: http://stanford.edu/class/archive/cs/cs106b/cs106b.1184/index.shtml
 [cs106b-video]: https://www.bilibili.com/video/av21620553
+[cs106b-textbook]: /assets/pdf/books/Programming.Abstractions.in.CPP.pdf
 [cs193a-video]: https://www.youtube.com/watch?v=iBBOUzGS8QU&list=PLBx6OgewIjRoF1eh017uRiPuV42piY_iP&index=2
+[cs106x]: http://web.stanford.edu/class/archive/cs/cs106x/cs106x.1182/index.shtml
 [cs106x-video]: https://www.bilibili.com/video/av21619854
