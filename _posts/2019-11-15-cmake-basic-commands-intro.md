@@ -191,8 +191,8 @@ add_custom_target(cleangcov @echo cleaning for gcov)
 
 add_custom_command(
     COMMENT "clean .gcda files"
-    COMMAD find
-    ARGS   . -name "*.gcda" -type f -delete
+    COMMAND find
+    ARGS    . -name "*.gcda" -type f -delete
     TARGET cleangcov
     )
 ```
