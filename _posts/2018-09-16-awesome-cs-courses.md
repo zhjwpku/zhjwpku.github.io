@@ -6,7 +6,7 @@ tags:
 - course
 ---
 
-笔者业余时间学习的计算机课程，全部来自世界名校课程，列于此，共勉。
+笔者业余时间学习的计算机课程，全部来自世界名校，列于此，共勉。
 
 <h4>TOC</h4>
 - [Computer System](#cs)
@@ -45,6 +45,10 @@ tags:
     - 课程 106X 覆盖的内容与 106B 相同，使用 **C++**，但教授的速度更快，层次更深。
     - [课程主页][cs106x]
     - [课程视频][cs106x-video]
+- [CS 106L][cs106l] **Standard C++ Programming, Autumn 2019** *Stanford*
+    - 教材: [CS106L Course Reader][cs106l-textbook] by Keith Schwarz
+    - [课程主页](http://web.stanford.edu/class/cs106l/lectures.html)
+    - [课程视频][cs106l-video]
 
 #### OS
 
@@ -86,3 +90,7 @@ Reference:
 [cs193a-video]: https://www.youtube.com/watch?v=iBBOUzGS8QU&list=PLBx6OgewIjRoF1eh017uRiPuV42piY_iP&index=2
 [cs106x]: http://web.stanford.edu/class/archive/cs/cs106x/cs106x.1182/index.shtml
 [cs106x-video]: https://www.bilibili.com/video/av21619854
+[cs106l]: http://web.stanford.edu/class/cs106l/index.html
+[cs106l-video]: https://www.youtube.com/playlist?list=PLCgD3ws8aVdolCexlz8f3U-RROA0s5jWA
+[cs106l-video-bilibili]: https://www.bilibili.com/video/av76247001
+[cs106l-textbook]: /assets/pdf/books/cs106l_course_reader.pdf
