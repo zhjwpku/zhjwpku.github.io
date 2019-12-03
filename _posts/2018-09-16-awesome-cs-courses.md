@@ -64,10 +64,12 @@ Reference:
 <br>
 <span class="post-meta">
 1 [Awesome CS Courses][ref0]<br>
-2 [Bilibili 公开课目录][biliopen]<br>
+2 [MIT EECS Courses][ref1]<br>
+3 [Bilibili 公开课目录][biliopen]<br>
 </span>
 
 [ref0]: https://github.com/prakhar1989/awesome-courses
+[ref1]: http://catalog.mit.edu/subjects/6/
 [biliopen]: https://github.com/wenhan-wu/OpenCourseCatalog#%E8%AE%A1%E7%AE%97%E6%9C%BA--computer-science
 [ostep]: http://pages.cs.wisc.edu/~remzi/OSTEP/
 [ostep-projects]: https://github.com/remzi-arpacidusseau/ostep-projects
