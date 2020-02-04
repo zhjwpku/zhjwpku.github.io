@@ -4,6 +4,7 @@ title: 常用快捷键汇总
 date: 2018-10-12 00:00:00 +0800
 tags:
 - shortcut
+- hotkey
 ---
 
 在工作中，不同时间点（切换项目或部门或公司）不可避免地会用到不同的工作平台或不同的工具，这期间肯定会有不少提高工作效率的快捷键，为了不同项目之间无缝衔接，记录一个常用快捷键列表也许是一个不错的选择。
@@ -41,6 +42,10 @@ Ctrl&Shift&-    撤销
 
 见 [Sublime Text 中的常用快捷键][sublimetext]
 
+<h4>VS Code</h4>
+
+见 [VS Code 常用快捷键][vscode]
+
 <br>
 <span class="post-meta">
 Reference:
@@ -53,3 +58,4 @@ Reference:
 [tmux]: /2017/03/12/xshell-alternative-for-mac.html
 [13641]: http://www.linuxdiyf.com/linux/13641.html
 [sublimetext]: /2019/03/27/shortcuts-in-sublime-text.html
+[vscode]: /2019/12/27/vscode-shortcuts.html
