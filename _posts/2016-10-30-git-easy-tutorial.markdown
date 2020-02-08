@@ -274,6 +274,17 @@ $ git submodule update --init --recursive
 $ git checkout -b fix-bug origin/release-1.0.0
 ```
 
+**2020-02-08 更新**
+
+Configuring ignored files for all repositories on your computer:
+
+```
+# use the exclude file ~/.gitignore_global for all Git repositories
+git config --global core.excludesfile ~/.gitignore_global
+# 往 ~/.gitignore_global 中添加需要忽略的文件或目录
+echo ".vscode" >> ~/.gitignore_global
+```
+
 **git 奇技淫巧**
 
 ```
