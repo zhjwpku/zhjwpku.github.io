@@ -35,6 +35,11 @@ tags:
 跳转到行号                          control+G             Ctrl+G
 跳转到当前文件的的符号                ⌘ + shift + O         Ctrl+shift+O
 根据分类跳转到当前文件的符号           ⌘ + shift + O 并输入:  Ctrl+shift+O 并输入:
+Go Back                           ⌘ + left              Ctrl+left
+Go Forward                        ⌘ + right             Ctrl+right
+Go to Definition                  F12                   F12
+Go to Implementations             ⌘F12                  Ctrl+F12
+Go to References                  shift + F12           Shift+F12
 
 
 ## 其它
@@ -115,12 +120,22 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
         "command": "cursorBottom",
         "when": "textInputFocus"
     },
+    {
+        "key": "cmd+left",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "cmd+right",
+        "command": "workbench.action.navigateForward"
+    },
 ]
 ```
 
 **Tips**
 
 - 如果无法直接在vscode安装插件，可以获取相应的 vsix 文件，并使用 `Install from VSIX` 的方式安装插接件。
+
+- 打开一个新文件会被另一个新打开的文件替换，是因为前一个文件是一个不固定的 Editor（可以通过 Editor 上的字体来判断，斜体表示没有固定，正体表示固定），可以使用`双击 Editor `或者`双击 sidebar 中文件`的方式使文件固定在 Editor 区域，`编辑一个文件`也会将其 Editor 固定。
 
 <h4>Videos</h4>
 
