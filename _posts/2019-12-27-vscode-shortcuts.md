@@ -10,16 +10,15 @@ tags:
 
 <h4>Shortcuts</h4>
 
-
 ```
                                     Mac                     Windows
 
 ## 通用
 
-打开 shortcuts 网页文档             ⌘K + ⌘R               Ctrl+K Ctrl+R
-在 vscode 显示 shortcuts           ⌘K + ⌘S               Ctrl+K Ctrl+S
-显示命令面板                        ⌘ + shift + P         Ctrl+Shift+P, F1
-跳转到文件及一些其他操作              ⌘P                    Ctrl+P
+打开 shortcuts 网页文档           cmd K + cmd R            Ctrl+K Ctrl+R
+在 vscode 显示 shortcuts         cmd K + cmd S            Ctrl+K Ctrl+S
+显示命令面板                      cmd + shift + P          Ctrl+Shift+P, F1
+跳转到文件及一些其他操作            cmd P                    Ctrl+P
     - 直接输入文件名，跳转到文件
     - ?  列出当前可执行的动作
     - !  显示 Errors或 Warnings
@@ -27,24 +26,25 @@ tags:
     - @  跳转到当前文件的 symbol（搜索变量或者函数）
     - @: 根据分类跳转到当前文件的 symbol（搜索变量或者函数）
     - #  根据名字查找 symbol
-切换 sidebar 显示                   ⌘B                    Ctrl+B
+切换 sidebar 显示                cmd B                    Ctrl+B
 
 ## 跳转命令
 
-跳转到文件                          ⌘P                    Ctrl+P
-跳转到行号                          control+G             Ctrl+G
-跳转到当前文件的的符号                ⌘ + shift + O         Ctrl+shift+O
-根据分类跳转到当前文件的符号           ⌘ + shift + O 并输入:  Ctrl+shift+O 并输入:
-Go Back                           ⌘ + left              Ctrl+left
-Go Forward                        ⌘ + right             Ctrl+right
-Go to Definition                  F12                   F12
-Go to Implementations             ⌘F12                  Ctrl+F12
-Go to References                  shift + F12           Shift+F12
+跳转到文件                        cmd P                    Ctrl+P
+跳转到行号                        control+G                Ctrl+G
+跳转到当前文件的的符号              cmd + shift + O          Ctrl+shift+O
+根据分类跳转到当前文件的符号         cmd + shift + O 并输入:   Ctrl+shift+O 并输入:
+Go Back                         cmd + left               Ctrl+left
+Go Forward                      cmd + right              Ctrl+right
+Go to Definition                F12                      F12
+Go to Implementations           cmd F12                  Ctrl+F12
+Go to References                shift + F12              Shift+F12
 
 
 ## 其它
 
-打开当前文件所在的目录                ⌘K + R                Ctrl K + R
+预览 markdown 文档                 cmd + shift + V
+打开当前文件所在的目录               cmd K + R                Ctrl K + R
 
 ```
 
