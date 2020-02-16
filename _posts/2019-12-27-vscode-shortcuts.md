@@ -86,7 +86,8 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
     "window.zoomLevel": 0,
     "scrollkey.line1": 1,
     "scrollkey.line2": 10,
-    "scrollkey.line3": 20
+    "scrollkey.line3": 20,
+    "files.autoGuessEncoding": true
 }
 ```
 
