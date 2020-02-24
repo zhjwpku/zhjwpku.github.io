@@ -27,6 +27,7 @@ tags:
     - @: 根据分类跳转到当前文件的 symbol（搜索变量或者函数）
     - #  根据名字查找 symbol
 切换 sidebar 显示                cmd B                    Ctrl+B
+切换 Zen Mode 模式               cmd + K + Z
 
 ## 跳转命令
 
@@ -39,7 +40,12 @@ Go Forward                      cmd + right              Ctrl+right
 Go to Definition                F12                      F12
 Go to Implementations           cmd F12                  Ctrl+F12
 Go to References                shift + F12              Shift+F12
+Go to Bracket                   cmd + shift + \
 
+## Bookmarks
+Mark/Unmark                     cmd + option + K
+Jump to Next                    cmd + option + L
+Jump to Previous                cmd + option + J
 
 ## 其它
 
@@ -59,6 +65,8 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 - [VSCode Great Icons][vscode-great-icons]
 - [scrollkey][scrollkey]
 - [Remote - SSH][remote-ssh]
+- [Bookmarks][bookmarks]
+- [Bracket Pair Colorizer 2][bracket-pair-colorizer]
 
 **C/C++**
 
@@ -87,7 +95,12 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
     "scrollkey.line1": 1,
     "scrollkey.line2": 10,
     "scrollkey.line3": 20,
-    "files.autoGuessEncoding": true
+    "files.autoGuessEncoding": true,
+    "C_Cpp.default.cppStandard": "c++11",
+    "editor.minimap.enabled": false,
+    "zenMode.hideLineNumbers": false,
+    "explorer.openEditors.visible": 0,
+    "files.autoSave": "afterDelay"
 }
 ```
 
@@ -141,6 +154,8 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 <h4>Videos</h4>
 
 - [VS Code Top-Ten Pro Tips][u21W_tfPVrY]
+- [My Favorite VS Code Extensions][rH1RTwaAeGc]
+- [VS Code Can Do That?! VS Code Tips and Tricks][x5GzCohd4eo]
 
 <br>
 <span class="post-meta">
@@ -161,3 +176,7 @@ Reference:
 [scrollkey]: https://marketplace.visualstudio.com/items?itemName=74th.scrollkey
 [remote-ssh]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh
 [ssh-with-vscode-without-internet]: https://stackoverflow.com/questions/56718453/ssh-with-vscode-without-internet
+[bookmarks]: https://github.com/alefragnani/vscode-bookmarks
+[bracket-pair-colorizer]: https://github.com/CoenraadS/Bracket-Pair-Colorizer-2
+[rH1RTwaAeGc]: https://www.youtube.com/watch?v=rH1RTwaAeGc
+[x5GzCohd4eo]: https://www.youtube.com/watch?v=x5GzCohd4eo
