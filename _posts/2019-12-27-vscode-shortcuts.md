@@ -27,7 +27,10 @@ tags:
     - @: 根据分类跳转到当前文件的 symbol（搜索变量或者函数）
     - #  根据名字查找 symbol
 切换 sidebar 显示                cmd B                    Ctrl+B
-切换 Zen Mode 模式               cmd + K + Z
+切换 Zen Mode 模式               cmd + K + Z              Control+K+Z
+显示/隐藏 Panel                  cmd + J                  Control+J
+Split Editor                    cmd + \                  Control+\
+Focus on 1st Editor Group       cmd + 1                  Contrpl+1
 
 ## 跳转命令
 
@@ -46,6 +49,10 @@ Go to Bracket                   cmd + shift + \
 Mark/Unmark                     cmd + option + K
 Jump to Next                    cmd + option + L
 Jump to Previous                cmd + option + J
+
+## Build && RUN
+Build                           cmd + shift + B
+Run Test Task                   cmd + control + T
 
 ## 其它
 
@@ -67,10 +74,17 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 - [Remote - SSH][remote-ssh]
 - [Bookmarks][bookmarks]
 - [Bracket Pair Colorizer 2][bracket-pair-colorizer]
+- [indent-rainbow][indent-rainbow]
 
 **C/C++**
 
 - [C/C++][ccpp]
+- [CMake Tools][cmake-tool]
+
+**Front-End**
+
+- [Live Server][live-server]
+- [REST Client][rest-client]
 
 <h4>Settings</h4>
 
@@ -96,11 +110,23 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
     "scrollkey.line2": 10,
     "scrollkey.line3": 20,
     "files.autoGuessEncoding": true,
+    "files.trimTrailingWhitespace": true,
+    "files.autoSave": "afterDelay",
     "C_Cpp.default.cppStandard": "c++11",
     "editor.minimap.enabled": false,
     "zenMode.hideLineNumbers": false,
-    "explorer.openEditors.visible": 0,
-    "files.autoSave": "afterDelay"
+    "explorer.openEditors.visible": 0
+}
+```
+
+**也可在每个 workspace 设置 settings.json**
+
+*.vscode/settings.json*
+
+```
+{
+    // 暗淡不活跃的代码区，如 #if 0/#endif 之间的代码
+    "C_Cpp.dimInactiveRegions": false
 }
 ```
 
@@ -142,7 +168,77 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
         "key": "cmd+right",
         "command": "workbench.action.navigateForward"
     },
+    {
+        "key": "ctrl+cmd+t",
+        "command": "workbench.action.tasks.test"
+    },
 ]
+```
+
+**Sample tasks.json**
+
+```
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build",
+            "options": {
+                "env": {
+                    "CPLUS_INCLUDE_PATH": "/usr/local/include",
+                    "LIBRARY_PATH": "/usr/local/lib"
+                }
+            },
+            "command": "rm -rf build && mkdir build && cd build; cmake ..; make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "run",
+            "command": "build/unit_tests",
+            "dependsOn":["build"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
+
+```
+
+**Sample launch.json**
+
+```
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/build/unit_tests",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        }
+    ]
+}
 ```
 
 **Tips**
@@ -156,6 +252,10 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 - [VS Code Top-Ten Pro Tips][u21W_tfPVrY]
 - [My Favorite VS Code Extensions][rH1RTwaAeGc]
 - [VS Code Can Do That?! VS Code Tips and Tricks][x5GzCohd4eo]
+- [Configuring Visual Studio Code For C++ Projects][3Tc6f3nhCxo]
+- [CppCon 2017: Rong Lu “C++ Development with Visual Studio Code”][rFdJ68WbkdQ]
+- [C++Now 2018: Rong Lu “C++ Development with Visual Studio Code”][erXR6k9TeE]
+- [CppCon 2018: Rong Lu “What's new in Visual Studio Code for C++ development”][JME1i3vCRR8]
 
 <br>
 <span class="post-meta">
@@ -165,6 +265,9 @@ Reference:
 <span class="post-meta">
 1 [VS Code Top-Ten Pro Tips][u21W_tfPVrY]<br>
 2 [SSH with VSCode without internet][ssh-with-vscode-without-internet]<br>
+3 [VS Code Tips and Tricks][vscode-tips-and-tricks]<br>
+4 [VS Code can do that?!][vscodecandothat]<br>
+5 [A curated list of delightful VS Code packages and resources.][awesome-vscode]<br>
 </span>
 
 [u21W_tfPVrY]: https://www.youtube.com/watch?v=u21W_tfPVrY
@@ -180,3 +283,14 @@ Reference:
 [bracket-pair-colorizer]: https://github.com/CoenraadS/Bracket-Pair-Colorizer-2
 [rH1RTwaAeGc]: https://www.youtube.com/watch?v=rH1RTwaAeGc
 [x5GzCohd4eo]: https://www.youtube.com/watch?v=x5GzCohd4eo
+[live-server]: https://github.com/ritwickdey/vscode-live-server
+[indent-rainbow]: https://github.com/oderwat/vscode-indent-rainbow
+[rest-client]: https://github.com/Huachao/vscode-restclient
+[vscode-tips-and-tricks]: https://github.com/microsoft/vscode-tips-and-tricks
+[3Tc6f3nhCxo]: https://www.youtube.com/watch?v=3Tc6f3nhCxo
+[rFdJ68WbkdQ]: https://www.youtube.com/watch?v=rFdJ68WbkdQ
+[cmake-tool]: https://github.com/microsoft/vscode-cmake-tools
+[erXR6k9TeE]: https://www.youtube.com/watch?v=-erXR6k9TeE
+[JME1i3vCRR8]: https://www.youtube.com/watch?v=JME1i3vCRR8
+[vscodecandothat]: https://vscodecandothat.com/
+[awesome-vscode]: https://github.com/viatsko/awesome-vscode
