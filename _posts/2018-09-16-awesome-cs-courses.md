@@ -56,6 +56,26 @@ tags:
     - [Homework][ostep-homework]
     - [Projects][ostep-projects]
 
+#### Web Development
+
+- **[Web Programming, Technologies, and Applications][webapp] from Ideas to Systems to Real Impact** *National Tsing Hua University*
+    - 台湾国立清华大学开设的一门网络编程课程。
+    - Part I  : 介绍 HTTP，HTML，CSS 和 Javascript等网络基础知识
+        - [SS-01: Web Development and HTML][ss-01] *[Slides][ss-01-slides]*
+        - [SS-02: CSS][ss-02] *[Slides][ss-02-slides]*
+            - Assigned Reading: [CSS tutorial][css-tutorial]
+        - [SS-03: Landing Page & Bootstrap & CSS3][ss-03] *[Slides][ss-03-slides]*
+        - [SS-04: Javascript - the Basics][ss-04] *[Slides][ss-04-slides]*
+            - Assigned Reading: [A re-introduction to JavaScript][reintro-js]
+    - Part II : 介绍现代Web开发技术，如响应式设计，Bootstrap，ES6/7，React/Redux
+        - [SS-05: Modern Javascript][ss-05] *[Slides][ss-05-slides]*
+        - [SS-06: React][ss-06] *[Slides][ss-06-slides]*
+        - [SS-07: Redux][ss-07] *[Slides][ss-07-slides]*
+    - Part III: 介绍 Node.js，PostgreSQL数据库系统等后端技术，及 AWS 和 React Native
+        - [SS-08: Backend Development & Node.js & AWS][ss-08] *[Slides][ss-08-slides]*
+        - [SS-09: Database Systems & AWS RDS][ss-09]
+        - [SS-10: Mobile Development & React Native][ss-10]
+
 
 <br>
 <span class="post-meta">
@@ -96,3 +116,24 @@ Reference:
 [cs106l-video]: https://www.youtube.com/playlist?list=PLCgD3ws8aVdolCexlz8f3U-RROA0s5jWA
 [cs106l-video-bilibili]: https://www.bilibili.com/video/av76247001
 [cs106l-textbook]: /assets/pdf/books/cs106l_course_reader.pdf
+[webapp]: https://nthu-datalab.github.io/webapp/index.html
+[ss-01]: https://www.youtube.com/playlist?list=PLlPcwHqLqJDlD86V7FNTP8d7JBvQmITrP
+[ss-01-slides]: https://nthu-datalab.github.io/webapp/slides/web/01_Web_HTML.pdf
+[ss-02]: https://www.youtube.com/playlist?list=PLlPcwHqLqJDkGpN5725ZP7jR2vTHayk4E
+[ss-02-slides]: https://nthu-datalab.github.io/webapp/slides/web/02_CSS.pdf
+[css-tutorial]: https://www.w3schools.com/css/
+[ss-03]: https://www.youtube.com/watch?v=JGTk_7kaIQQ&list=PLlPcwHqLqJDlwNSyaBRQ3yao5UyhhxQuf
+[ss-03-slides]: https://nthu-datalab.github.io/webapp/slides/web/03_Bootstrap.pdf
+[ss-04]: https://www.youtube.com/watch?v=OuDZRFugiSQ&list=PLlPcwHqLqJDlKxQfaWR1apRR9EPLz2-yG
+[ss-04-slides]: https://nthu-datalab.github.io/webapp/slides/web/04_Javascript.pdf
+[reintro-js]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+[ss-05]: https://www.youtube.com/watch?v=O0tVDwTAI3E&list=PLlPcwHqLqJDkPXpTPlMh8NtCUC-LWYb-f
+[ss-05-slides]: https://nthu-datalab.github.io/webapp/slides/web/05_Modern-Javascript.pdf
+[ss-06]: https://www.youtube.com/watch?v=9H1oAOeldNI&list=PLlPcwHqLqJDm9ZW6n7f6JGwLXO9ctuW3R
+[ss-06-slides]: https://nthu-datalab.github.io/webapp/slides/react/01_React.pdf
+[ss-07]: https://www.youtube.com/watch?v=xaTjMXGw_PA&list=PLlPcwHqLqJDndwtjgYp0mYtllK83Eco1U
+[ss-07-slides]: https://nthu-datalab.github.io/webapp/slides/react/02_Redux.pdf
+[ss-08]: https://www.youtube.com/watch?v=laTipMRN31k&list=PLlPcwHqLqJDkxqZqqAfElde6eESUCz0YO
+[ss-08-slides]: https://nthu-datalab.github.io/webapp/slides/backend/01_Node_Backend.pdf
+[ss-09]: https://www.youtube.com/watch?v=7EI1wPfNko4&list=PLlPcwHqLqJDkLsH0P-TiAP_83XQaBWnAS
+[ss-10]: https://www.youtube.com/watch?v=umH1M5v2Aqc&list=PLlPcwHqLqJDnhXHlgF4tiKYN-K39zYMtR
