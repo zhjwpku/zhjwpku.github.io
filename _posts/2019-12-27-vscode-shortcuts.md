@@ -75,6 +75,7 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 - [Bookmarks][bookmarks]
 - [Bracket Pair Colorizer 2][bracket-pair-colorizer]
 - [indent-rainbow][indent-rainbow]
+- [shellcheck][shellcheck]
 
 **C/C++**
 
@@ -294,3 +295,4 @@ Reference:
 [JME1i3vCRR8]: https://www.youtube.com/watch?v=JME1i3vCRR8
 [vscodecandothat]: https://vscodecandothat.com/
 [awesome-vscode]: https://github.com/viatsko/awesome-vscode
+[shellcheck]: https://github.com/timonwong/vscode-shellcheck
