@@ -30,6 +30,10 @@ tags:
     - [课程视频][15213-video]
     - [Labs][15213-labs]
 
+- [The Missing Semester of Your CS Education][missing-semester] *MIT*
+    - [课程主页][missing-semester]
+    - [课程视频][missing-semester-video]
+
 #### Language
 
 - [CS 106A][cs106a] **Programming Methodology, Spring 2017** *Stanford*
@@ -137,3 +141,5 @@ Reference:
 [ss-08-slides]: https://nthu-datalab.github.io/webapp/slides/backend/01_Node_Backend.pdf
 [ss-09]: https://www.youtube.com/watch?v=7EI1wPfNko4&list=PLlPcwHqLqJDkLsH0P-TiAP_83XQaBWnAS
 [ss-10]: https://www.youtube.com/watch?v=umH1M5v2Aqc&list=PLlPcwHqLqJDnhXHlgF4tiKYN-K39zYMtR
+[missing-semester]: https://missing.csail.mit.edu/
+[missing-semester-video]: https://www.youtube.com/watch?v=Z56Jmr9Z34Q&list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J
