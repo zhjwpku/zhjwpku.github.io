@@ -236,7 +236,7 @@ shift + n 搜索上一个
 /\<\d\d\d\d\>    搜索四位数字， "\d" 匹配 0-9 间任一数字，"\D" 匹配非数字
 /\<\d\{4}\>      同上，"\{4}" 表示重复4次
 /\<[1-9]\d\d\d\> 搜索1000-9999之间的数字
-/\<\d\{4}\>      
+/\<\d\{4}\>
 
 # 搜索/替换
 :s/search_word/replace_word                         将当前行匹配的第一个search_word替换为replace_word
@@ -319,4 +319,5 @@ Reference:
 <span class="post-meta">
 1 [How does the vim “write with sudo” trick work?](https://stackoverflow.com/questions/2600783/how-does-the-vim-write-with-sudo-trick-work)<br>
 2 [The Ultimate vimrc](https://github.com/amix/vimrc)<br>
+3 [Editors (Vim) from Missing semester](https://missing.csail.mit.edu/2020/editors/)<br>
 </span>
