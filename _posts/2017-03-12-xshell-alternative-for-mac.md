@@ -80,8 +80,8 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 # 键入Ctrl+b后松开，, 重命名Tab页
 # 键入Ctrl+b后松开，n 移动到下一个Tab页
 # 键入Ctrl+b后松开，p 移动到上一个Tab页
-# 键入Ctrl+b后松开，% 将 Window 垂直切分
-# 键入Ctrl+b后松开，" 将 Window 水平切分
+# 键入Ctrl+b后松开，| 将 Window 垂直切分
+# 键入Ctrl+b后松开，- 将 Window 水平切分
 # 键入Ctrl+b后松开，? 显示帮助菜单
 # 键入Ctrl+b后松开，方向键在各窗口中切换光标
 # 键入Ctrl+b后松开，空格键重新排列多窗口的布局
@@ -98,6 +98,28 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 → ~ $ tmux attach -t 0 # 将Session 0恢复
 {% endhighlight %}
 
+```
+Ctrl-B :
+setw synchronize-panes on   /// 打开所有 panel 输入
+
+Ctrl-B :
+setw synchronize-panes off  // 关闭向所有 panel 输入
+```
+
+*~/.tmux.conf*
+
+```
+bind C-Y set-window-option synchronize-panes
+
+# split panes using | and -
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+set-window-option -g mode-keys vi
+```
+
 Tmux 跟 Screen 很相似，它们的命令对比可以参考 [tmux & screen cheat-sheet][ref2]。
 
 <br>
@@ -107,6 +129,9 @@ Reference:
 <br>
 <span class="post-meta">
 1 [How does one swap two panes in Tmux?][ref3]<br>
+2 [A Quick and Easy Guide to tmux][ref4]<br>
+3 [Making tmux Pretty and Usable - A Guide to Customizing your tmux.conf][ref5]<br>
+4 [Vi mode in tmux][ref6]<br>
 </span>
 
 [storm]: https://github.com/emre/storm
@@ -114,3 +139,6 @@ Reference:
 [ref1]: http://sourabhbajaj.com/mac-setup/
 [ref2]: http://www.dayid.org/comp/tm.html
 [ref3]: https://superuser.com/questions/879190/how-does-one-swap-two-panes-in-tmux
+[ref4]: https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+[ref5]: https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/
+[ref6]: https://sanctum.geek.nz/arabesque/vi-mode-in-tmux/
