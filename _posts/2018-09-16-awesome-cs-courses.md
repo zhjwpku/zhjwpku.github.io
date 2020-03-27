@@ -31,8 +31,17 @@ tags:
     - [Labs][15213-labs]
 
 - [The Missing Semester of Your CS Education][missing-semester] *MIT*
-    - [课程主页][missing-semester]
     - [课程视频][missing-semester-video]
+    - [Shell Tools and Scripting][ms-shell-tools] find/ripgrep/fd/broot/nnn/ranger
+    - [Editors (Vim)][ms-editors] ctrlp.vim/ack.vim/nerdtree
+    - [Data Wrangling][ms-data-wrangling] sed/regex/sort/paste/awk/R/gnuplot
+    - [Command-line Environment][ms-command-line] tmux/dotfiles/ssh
+    - [Version Control (Git)][ms-version-control] git add -p/git diff --cached/Gblame
+    - [Debugging and Profiling][ms-debugging-profiling] flame grame/perf/ncdu/lsof/hyperfine/linter
+    - [Metaprogramming][ms-metaprogramming] make/symver/ci
+    - [Security and Cryptography][ms-security]
+    - [Potpourri][ms-potpourri] FUSE/Hammerspoon/UNetbootin/Jupyter
+    - [Q&A][ms-qa]
 
 #### Language
 
@@ -143,3 +152,13 @@ Reference:
 [ss-10]: https://www.youtube.com/watch?v=umH1M5v2Aqc&list=PLlPcwHqLqJDnhXHlgF4tiKYN-K39zYMtR
 [missing-semester]: https://missing.csail.mit.edu/
 [missing-semester-video]: https://www.youtube.com/watch?v=Z56Jmr9Z34Q&list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J
+[ms-shell-tools]: https://missing.csail.mit.edu/2020/shell-tools/
+[ms-editors]: https://missing.csail.mit.edu/2020/editors/
+[ms-data-wrangling]: https://missing.csail.mit.edu/2020/data-wrangling/
+[ms-command-line]: https://missing.csail.mit.edu/2020/command-line/
+[ms-version-control]: https://missing.csail.mit.edu/2020/version-control/
+[ms-debugging-profiling]: https://missing.csail.mit.edu/2020/debugging-profiling/
+[ms-metaprogramming]: https://missing.csail.mit.edu/2020/metaprogramming/
+[ms-security]: https://missing.csail.mit.edu/2020/security/
+[ms-potpourri]: https://missing.csail.mit.edu/2020/potpourri/
+[ms-qa]: https://missing.csail.mit.edu/2020/qa/
