@@ -8,7 +8,11 @@ tags:
 
 C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教程*、*视频*。
 
+**[Compiler Explorer](https://godbolt.org/)** 一个在线实时编译工具。
+
 <h4>Articles</h4>
+
+- [C++ Rvalue References Explained][rvalue_references] by Thomas Becker
 
 <h4>Books</h4>
 
@@ -49,3 +53,4 @@ Reference:
 [free-programming-books]: https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#c-1
 [awesome-cpp]: https://github.com/fffaraz/awesome-cpp
 [cpp_primer_plus_6ed]: /assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf
+[rvalue_references]: http://thbecker.net/articles/rvalue_references/section_01.html
