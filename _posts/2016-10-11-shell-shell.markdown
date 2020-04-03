@@ -59,7 +59,7 @@ echo $d         # 输出 2
 #!/bin/bash
 
 # 一旦脚本中有命令的返回值为非0，脚本立即退出
-set -e 
+set -e
 
 # Same as -e
 set -o errexit
@@ -133,6 +133,12 @@ $ ls -F | grep -E '[^/@]$' | xargs
 ```
 # 不用再去网上搜了，随便找台Linux就可以看了
 man ascii
+```
+
+**查看 shell 的条件语句写法**
+
+```
+man test
 ```
 
 **查看 errno**
@@ -282,7 +288,7 @@ $ ps -o lstart,pid -C bash
 questions.sh 脚本
 ```shell
 #!/bin/bash
- 
+
 echo "Hello, who are you?"
 
 read $REPLY
@@ -299,7 +305,7 @@ read $REPLY
 expect 脚本
 ```shell
 #!/usr/bin/expect -f
- 
+
 set timeout 900  # 设置交互超时时间 6 分钟
 
 spawn ./questions.sh
@@ -317,6 +323,20 @@ expect "What is your favorite topic?\r"
 send -- "Technology\r"
 
 expect eof
+```
+
+**查看当前使用的shell类型及如何更换**
+
+```
+# 当前使用的 shell 类型
+echo $0
+echo $SHELL
+
+# 查看系统支持的 shell 类型
+cat /etc/shells
+
+# 更换 shell
+chsh -s /bin/zsh
 ```
 
 **iostat**
@@ -344,6 +364,9 @@ sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0
 dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
 dm-1              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
 ```
+<h4>Tips</h4>
+
+- shell 命令前加反斜线可以避免使用 alias 命令，如 `\ls`
 
 <br>
 <span class="post-meta">
@@ -351,12 +374,12 @@ Reference:
 </span>
 <br>
 <span class="post-meta">
-1 [Is there a way to see details of all the threads that a process has in Linux?
-][ref1]<br>
+1 [Is there a way to see details of all the threads that a process has in Linux?][ref1]<br>
 2 [How to view threads of a process on Linux][ref2]<br>
 3 [Expect command and how to automate shell scripts like magic][ref3]<br>
 4 [容易被误读的IOSTAT][ref4]<br>
 5 [Using Bracket Expressions][ref5]<br>
+6 [backslash at the beginning of a command][ref6]<br>
 </span>
 
 [ref1]: https://unix.stackexchange.com/questions/892/is-there-a-way-to-see-details-of-all-the-threads-that-a-process-has-in-linux
@@ -364,3 +387,4 @@ Reference:
 [ref3]: https://likegeeks.com/expect-command/
 [ref4]: http://linuxperf.com/?p=156
 [ref5]: https://www.gnu.org/software/gawk/manual/html_node/Bracket-Expressions.html#Bracket-Expressions
+[ref6]: https://serverfault.com/questions/480271/backslash-at-the-beginning-of-a-command
