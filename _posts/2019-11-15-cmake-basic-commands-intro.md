@@ -7,13 +7,13 @@ tags:
 - build
 ---
 
-最近着手把部门项目从手写 makefile 改为了 [cmake][cmake] 构建，由于之前使用了不知道哪年哪个不一定在职的员工写了一个貌似通用的构建框架，每个模块内部写一个 makefile.d 并 include 公共 makefile，然后使用一个 python 脚本调用 `make -f` 来执行最终的构建，虽然也 work，但是非常 ugly。改为 cmake 之后一是构建逻辑更加清晰，二是能够指导优化代码结构。本文主要介绍一些常用的 cmake 命令，并列举一些有助于学习 cmake 的资源。
+最近着手把部门项目从手写 makefile 改为了 [cmake][cmake] 构建，由于之前使用了不知道哪年哪个不一定在职的员工写了一个貌似通用的构建框架，每个模块内部写一个 makefile.d 并 include 公共 makefile，然后使用一个 python 脚本调用 `make -f` 来执行最终的构建，虽然也 work，但是丑陋且难以维护。改为 cmake 之后一是构建逻辑更加清晰，二是能够指导优化代码结构。本文主要介绍一些常用的 cmake 命令，并列举一些有助于学习 cmake 的资源。
 
-笔者不会把本文写成一个教程，因为后面推荐的[教程](/2019/11/15/cmake-basic-commands-intro.html#tutorials)真的是超级棒。
+*本文不是 CMake 教程，但后面推荐了一些不错的[教程](/2019/11/15/cmake-basic-commands-intro.html#tutorials)*
 
 <h4>Basic Variables</h4>
 
-如下变量可以简化 CMakeLists.txt 的编写，见字如面，不多解释。
+如下变量可以简化 CMakeLists.txt 的编写，见字如面。
 
 - [CMAKE_PROJECT_NAME](https://cmake.org/cmake/help/v3.12/variable/CMAKE_PROJECT_NAME.html)
 - [PROJECT_NAME](https://cmake.org/cmake/help/v3.12/variable/PROJECT_NAME.html)
@@ -34,7 +34,7 @@ tags:
 
 <h4>Basic Commands</h4>
 
-cmake 的命令很多，本文只介绍笔者在改造部门项目时用到的命令。
+cmake 的命令很多，本文只简单介绍笔者在项目改造时用到的命令。
 
 **1. [cmake_minimum_required](https://cmake.org/cmake/help/v3.12/command/cmake_minimum_required.html)**
 
@@ -241,7 +241,8 @@ modern cmake 尽量少用如下命令，见 [Legacy CMake Commands][legacy]。
 
 <h4>Books</h4>
 
-- **[Mastering CMake](https://github.com/Akagi201/learning-cmake/blob/master/docs/mastering-cmake.pdf)** 这本书里中的 cmake 版本较低，可以看，但要批判地借鉴。反正我没看。
+- **[Mastering CMake](https://github.com/Akagi201/learning-cmake/blob/master/docs/mastering-cmake.pdf)** 这本书里中的 cmake 版本较低，没看。
+- **[Professional CMake: A Practical Guide][professional-cmake]** 推荐度很高的一本书。
 
 <h4>Talks</h4>
 
@@ -264,10 +265,6 @@ modern cmake 尽量少用如下命令，见 [Legacy CMake Commands][legacy]。
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/S4QSKLXdTtA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-<br><br>
-*BTW：CMake 除了可以生成 `make` 构建脚本，还能生成 [ninja][ninja] 构建脚本，另外一个常用的构建系统是 [meson][meson]，但由于欧拉提供的容器只默认安装了 cmake，笔者没有仔细研究，感兴趣的读者可自行学习。*
-
-
 <br>
 <span class="post-meta">
 Reference:
@@ -285,3 +282,4 @@ Reference:
 [video-2]: https://www.youtube.com/watch?v=eC9-iRN2b04
 [video-3]: https://www.youtube.com/watch?v=S4QSKLXdTtA
 [legacy]: https://youtu.be/jt3meXdP-QI?t=2254
+[professional-cmake]: https://crascit.com/professional-cmake/
