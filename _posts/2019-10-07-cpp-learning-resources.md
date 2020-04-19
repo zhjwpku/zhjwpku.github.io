@@ -37,6 +37,12 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 <h4>Video</h4>
 
+**YouTube Channel**
+
+- [**C++** from *The Cherno*][cpp_cherno] 适合初学者的一个 C++ 教学视频系列，作者会不定期更新，建议一天看完（截至 2020/04/19 共 86 集），后面跟起来比较省事。主要介绍一些 C++ 的基础知识，较新的视频有介绍 C++ 17 的新特性，如 async，optional，any 等。
+
+**Talks**
+
 - [C++Now 2018: John Lakos “C++ Modules & Large-Scale Development”](https://www.youtube.com/watch?v=EglLjioQ9x0)
 - [CppCon 2018: Jason Turner “Applied Best Practices”](https://www.youtube.com/watch?v=DHOlsEd0eDE)
 
@@ -54,3 +60,4 @@ Reference:
 [awesome-cpp]: https://github.com/fffaraz/awesome-cpp
 [cpp_primer_plus_6ed]: /assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf
 [rvalue_references]: http://thbecker.net/articles/rvalue_references/section_01.html
+[cpp_cherno]: https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb
