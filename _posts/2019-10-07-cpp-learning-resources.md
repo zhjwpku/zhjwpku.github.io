@@ -8,7 +8,7 @@ tags:
 
 C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教程*、*视频*。
 
-**[Compiler Explorer](https://godbolt.org/)** 一个在线实时编译工具。
+**[Compiler Explorer](https://godbolt.org/)**
 
 <h4>Articles</h4>
 
@@ -22,7 +22,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 - [C++ Primer Plus 6th Edition][cpp_primer_plus_6ed]
 
-- [C++ Primer]()
+- [C++ Primer 5th Edition][cpp_primer_5ed]
 
   *注：上面两本书都有必要读一读，Plus 可能更适合 0 基础入门，Primer 则是 C++ 必看之书*
 
@@ -43,8 +43,15 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 **Talks**
 
+*Matt Godbolt*
+- [CppCon 2017: “What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid”][bSkpMdDe4g4]
+
+*Jason Turner*
+- [CppCon 2018:  “Applied Best Practices”][DHOlsEd0eDE]
+
+*Others*
+
 - [C++Now 2018: John Lakos “C++ Modules & Large-Scale Development”](https://www.youtube.com/watch?v=EglLjioQ9x0)
-- [CppCon 2018: Jason Turner “Applied Best Practices”](https://www.youtube.com/watch?v=DHOlsEd0eDE)
 
 <br>
 <span class="post-meta">
@@ -59,5 +66,8 @@ Reference:
 [free-programming-books]: https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#c-1
 [awesome-cpp]: https://github.com/fffaraz/awesome-cpp
 [cpp_primer_plus_6ed]: /assets/pdf/books/C++.Primer.Plus.6th.Edition.Oct.2011.pdf
+[cpp_primer_5ed]: /assets/pdf/books/C++.Primer.5th.Edition_2013.pdf
 [rvalue_references]: http://thbecker.net/articles/rvalue_references/section_01.html
 [cpp_cherno]: https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb
+[bSkpMdDe4g4]: https://www.youtube.com/watch?v=bSkpMdDe4g4
+[DHOlsEd0eDE]: https://www.youtube.com/watch?v=DHOlsEd0eDE
