@@ -76,6 +76,7 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 - [Bracket Pair Colorizer 2][bracket-pair-colorizer]
 - [indent-rainbow][indent-rainbow]
 - [shellcheck][shellcheck]
+- [Copyright Inserter][copyright-inserter] *安装好之后修改源码可定制自己需要的 Copyright 声明*
 
 **C/C++**
 
@@ -176,6 +177,10 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 ]
 ```
 
+**Code formatting**
+
+ C/C++ 插件集成了 clang-format，默认情况下，clang-format 会在工作目录寻找 .clang-format 文件，如果找不到该文件，会使用 *Visual Studio* 的代码风格。clang-format 书写方式见 **[clang-format style options][ClangFormatStyleOptions]**。
+
 **Sample tasks.json**
 
 ```
@@ -269,6 +274,7 @@ Reference:
 3 [VS Code Tips and Tricks][vscode-tips-and-tricks]<br>
 4 [VS Code can do that?!][vscodecandothat]<br>
 5 [A curated list of delightful VS Code packages and resources.][awesome-vscode]<br>
+6 [Code Format][code-format]<br>
 </span>
 
 [u21W_tfPVrY]: https://www.youtube.com/watch?v=u21W_tfPVrY
@@ -296,3 +302,6 @@ Reference:
 [vscodecandothat]: https://vscodecandothat.com/
 [awesome-vscode]: https://github.com/viatsko/awesome-vscode
 [shellcheck]: https://github.com/timonwong/vscode-shellcheck
+[ClangFormatStyleOptions]: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+[code-format]: https://code.visualstudio.com/docs/cpp/cpp-ide#_code-formatting
+[copyright-inserter]: https://github.com/minherz/copyright-inserter
