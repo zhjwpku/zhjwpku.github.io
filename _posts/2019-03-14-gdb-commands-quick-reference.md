@@ -60,7 +60,7 @@ call sum(1, 2)                      调用 sum(1, 2) 并打印返回值
 disas                               反汇编当前函数
 disas sum                           反汇编函数 sum
 disas 0x80483b7                     反汇编地址 0x80483b7 附近的函数
-disas 0x80483b7 0x80483c7           反汇编指定地址范围内的代码
+disas 0x80483b7, 0x80483c7           反汇编指定地址范围内的代码
 
 print /x $rip                       以16进制打印程序计数器 (PC)
 print /d $rip                       以10进制打印 PC
