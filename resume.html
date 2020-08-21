@@ -45,25 +45,33 @@ permalink: /resume
 
     <div id="jobs">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-id-badge" aria-hidden="true"></i> 工作经历</h4>
-      <div><strong>华为</strong><span style="float:right">2018年4月 - 现在</span></div>
+      <div><strong>华为</strong><span style="float:right">2018年4月至今</span></div>
       <p><em>FusionStorage 项目群</em><span style="float: right;">高级工程师</span></p>
       <div><strong>四达时代</strong><span style="float:right">2016年7月 - 2018年3月</span></div>
       <p><em>研究院</em><span style="float: right;">中级工程师</span></p>
-      <div><strong>Vmware</strong><span style="float:right">2016年1月 - 2016年5月</span></div>
-      <p><em>Cloud Platform Business Unit(存储驱动相关部门)</em><span style="float: right;">实习</span></p>
+      <div><strong>Vmware</strong><span style="float:right">2016年1月 - 2016年4月</span></div>
+      <p><em>Cloud Platform Business Unit(存储驱动相关部门)</em><span style="float: right;">实习(定位iSCSI相关问题)</span></p>
     </div> <!-- end of jobs -->
 
     <div id="projects">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-code-fork" aria-hidden="true"></i> 项目经历</h4>
 
-      <div><strong>参与实现 FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2019年4月-2019年7月</span></div>
+      <div><strong>OBS Index Layer</strong><span style="float:right">2019年5月-2020年6月</span></div>
+      <p><em>MongoDB/RocksDB/RDMA</em></p>
+      <ul>
+        <li>MongoDB 底层对接 P 层</li>
+        <li>MongoDB 网络层对接 RoCE</li>
+        <li>MongoDB 可信整改</li>
+      </ul>
+
+      <div><strong>参与实现 FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2018年11月-2019年4月</span></div>
       <p><em>C/Cache/Chunk</em></p>
       <ul>
         <li>基于原有的缓存方案适配保电内存介质</li>
         <li>保电内存空间的管理，包括 chunk 的申请、释放，掉电恢复等</li>
       </ul>
 
-      <div style="margin-top: 25px"><strong>FusionStorage Persistence Layer CRB 流控方案的涉及与实现</strong><span style="float:right">2018年11月-2019年3月</span></div>
+      <div style="margin-top: 25px"><strong>FusionStorage Persistence Layer CRB 流控方案的设计与实现</strong><span style="float:right">2018年4月-2018年10月</span></div>
       <p><em>C/Qos</em></p>
       <ul>
         <li>基于原有的令牌桶流控实现了对后台任务（Catchup/Rebalance）任务的流控，做到了后台业务不影响前台业务</li>
@@ -73,28 +81,28 @@ permalink: /resume
       <p><em>Java/SpringBoot/Dubbo</em></p>
       <ul>
         <li>基于原有的 LDAP 设计实现了一套新的 RBAC 系统，作为公司不同业务线的统一入口</li>
-        <li>整合各业务线资源，以微服务插件的方式逐一将其整合到 Operation Console 中</li>
-      </ul> 
+        <li>整合各业务线资源，以微服务的方式逐一将其整合到 Operation Console 中</li>
+      </ul>
 
       <div style="margin-top: 25px"><strong><a href="https://github.com/orlabs/orange/pull/138">Port kong's ring-balancer to orange</a></strong><span style="float:right">2017年8月 - 2017年9月</span></div>
       <p><em>Lua/OpenResty</em></p>
       <ul>
         <li>将 Kong 的 Balancer 插件移植到 Orange，满足线上业务动态添加 upstream server 的需求</li>
-      </ul> 
+      </ul>
 
       <div style="margin-top: 25px"><strong>业务解耦及服务快速上云</strong><span style="float:right">2016年7月-2017年7月</span></div>
       <p><em>Java/SpringBoot/Dubbo/Jenkinsfile/Swagger</em></p>
       <ul>
         <li>制定微服务项目规范（目录结构、接口规范、构建脚本等）并提供一个模板项目供开发人员快速实现一个新的微服务</li>
         <li>搭建一套简易的 CI/CD 平台，依赖 Jenkins 的 Pipeline 模式，每个微服务都快速以<em>开发->测试->测试通过->运维->运维通过->上线</em> 的方式快速发布，极大减少了部署工作量和交流成本</li>
-      </ul> 
+      </ul>
 
       <div style="margin-top: 25px"><strong><a href="https://gist.github.com/zhjwpku/1bc4202671ed06c799f0bf4739416429">On the wire encryption-GSoC2016</a></strong><span style="float:right">2016年3月 - 2016年8月</span></div>
       <p><em>C++/Ceph</em></p>
       <ul>
         <li>阅读 Ceph 源码</li>
         <li><a href="https://github.com/zhjwpku/ceph/commit/bcf66b82113abefdc0b126c3388c8ab6b3e2c793">简单实现了 msgrv2 逻辑</a></li>
-      </ul>   
+      </ul>
 
     </div>
 
@@ -104,8 +112,9 @@ permalink: /resume
       <ul>
         <li>编程语言: C/C++/Java/Lua/Python</li>
         <li>平台: Linux</li>
+        <li>并发: 熟悉事件驱动及网络编程</li>
         <li>编程框架: Spring/Dubbo</li>
-        <li>常用工具: Git/GDB/Vim/Awk/VS Code/Gradle/Jenkins/ELK</li>
+        <li>常用工具: GDB/CMake/Gradle/Jenkins/ELK</li>
         <li>兴趣: Ceph/Docker/Kubernetes</li>
       </ul>
     </div>
