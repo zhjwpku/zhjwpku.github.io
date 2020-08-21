@@ -83,6 +83,8 @@ hbase、cassendra、leveldb 及 rocksdb 底层数据结构，看过相关论文�
 
 **epoll**
 
+[libevent 源码分析][libevent-source-code-analysis]
+
 **aio**
 
 **RDMA**
@@ -130,7 +132,9 @@ hbase、cassendra、leveldb 及 rocksdb 底层数据结构，看过相关论文�
 1. awk
 2. sed
 3. gdb
+4. perf
 
 [resume]: /resume
 [lmdb]: https://en.wikipedia.org/wiki/Lightning_Memory-Mapped_Database
 [consensus]: https://github.com/zhjwpku/papers-notebook#%E4%B8%80%E8%87%B4%E6%80%A7consensus
+[libevent-source-code-analysis]: https://zhjwpku.com/2020/08/20/libevent-source-code-analysis.html
