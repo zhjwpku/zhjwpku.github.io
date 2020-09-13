@@ -2,7 +2,6 @@
 layout: post
 title: Thread Pool
 date: 2020-09-12 12:00:00 +0800
-categories: category
 tags:
 - C/C++
 ---
@@ -183,4 +182,5 @@ Reference:
 <br>
 <span class="post-meta">
 1 [Simple thread pool](https://vorbrodt.blog/2019/02/12/simple-thread-pool/).<br>
+2 [highwayhash/highwayhash/data_parallel.h](https://github.com/google/highwayhash/blob/9099074416ebc926c9e5e6f5143db92ebd9b4c03/highwayhash/data_parallel.h)<br>
 </span>
