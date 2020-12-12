@@ -12,6 +12,8 @@ tags:
 - [Computer System](#cs)
 - [Language](#language)
 - [Operating System](#os)
+- [Parallel Programming](#parallel-programming)
+- [Web Development](#web-development)
 
 #### CS
 
@@ -68,6 +70,14 @@ tags:
 - [OSTEP][ostep] **Operating Systems: Three Easy Pieces(virtualization, concurrency, and persistence)** *University of Wisconsin*
     - [Homework][ostep-homework]
     - [Projects][ostep-projects]
+
+#### Parallel Programming
+
+- [15-418][15418] **Parallel Computer Architecture and Programming** *CMU*
+    - 课程涵盖并行体系结构（GPU / Multi-Core）、并行编程模型、缓存一致性的实现方式（Snooping-Based & Directory-Based）、同步机制、Lock-Free编程 等内容。
+    - [课程主页 - 2015][15418]
+    - [课程视频 - 2015][15418-video]
+    - 授课者 [Kayvon Fatahalian][kayvonf] 从 CMU 换到 Stanford 后开设了一门对等的课程 [cs149][cs149]，课程 Lab 在 github 上
 
 #### Web Development
 
@@ -162,3 +172,7 @@ Reference:
 [ms-security]: https://missing.csail.mit.edu/2020/security/
 [ms-potpourri]: https://missing.csail.mit.edu/2020/potpourri/
 [ms-qa]: https://missing.csail.mit.edu/2020/qa/
+[15418]: http://15418.courses.cs.cmu.edu/spring2015/
+[15418-video]: https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22a5862643-2416-49ef-b46b-13465d1b6df0%22
+[kayvonf]: http://graphics.stanford.edu/~kayvonf/
+[cs149]: http://cs149.stanford.edu/fall19/
