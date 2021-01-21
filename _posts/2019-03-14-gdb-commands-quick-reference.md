@@ -139,6 +139,10 @@ Reference:
 5 [x64 Cheat Sheet](http://cs.brown.edu/courses/csci0330/docs/guides/x64_cheatsheet.pdf) from Brown University's CS0330 <br>
 6 [5.2 Continuing and Stepping](https://sourceware.org/gdb/onlinedocs/gdb/Continuing-and-Stepping.html)<br>
 7 [The Art of Debugging with GDB, DDD, and Eclipse](/assets/pdf/books/The.Art.of.Debugging.with.GDB.DDD.and.Eclipse.pdf)<br>
+8 [GDB Tutorial: Some Cool Tips to Debug C/C++ Code](https://www.techbeamers.com/how-to-use-gdb-top-debugging-tips/)<br>
+9 [CppCon 2015: Greg Law "Give me 15 minutes & I'll change your view of GDB"](https://www.youtube.com/watch?v=PorfLSr3DDI)<br>
+10 [CppCon 2016: Greg Law "GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg)<br>
+11 [CppCon 2018: Simon Brand "How C++ Debuggers Work"](https://www.youtube.com/watch?v=0DDrseUomfU)<br>
 </span>
 
 [gdbnotes-x86-64]: http://csapp.cs.cmu.edu/3e/docs/gdbnotes-x86-64.pdf
