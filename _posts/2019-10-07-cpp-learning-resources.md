@@ -20,6 +20,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Google C++ Style Guide][cppstyleguide]
 - [C++ Core Guidelines][cppcoreguidelines]
 - [What Every Programmer Should Know About Memory][cpumemory]
+- [The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software][freelunchover]
 
 <h4>Blogs</h4>
 
@@ -103,3 +104,4 @@ Reference:
 [modern-cpp-tutorial]: https://github.com/changkun/modern-cpp-tutorial
 [cpumemory]: https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
 [cpp_weekly]: https://www.youtube.com/watch?v=EJtqHLvAIZE&list=PLs3KjaCtOwSZ2tbuV1hx8Xz-rFZTan2J1
+[freelunchover]: http://www.gotw.ca/publications/concurrency-ddj.htm
