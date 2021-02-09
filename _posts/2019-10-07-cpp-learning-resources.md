@@ -28,6 +28,8 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 <h4>Books</h4>
 
+- [Linkers & Loaders][linker_and_loaders]
+
 **C**
 
 **C++**
@@ -105,3 +107,4 @@ Reference:
 [cpumemory]: https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
 [cpp_weekly]: https://www.youtube.com/watch?v=EJtqHLvAIZE&list=PLs3KjaCtOwSZ2tbuV1hx8Xz-rFZTan2J1
 [freelunchover]: http://www.gotw.ca/publications/concurrency-ddj.htm
+[linker_and_loaders]: https://wh0rd.org/books/linkers-and-loaders/linkers_and_loaders.pdf
