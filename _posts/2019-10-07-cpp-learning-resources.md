@@ -32,6 +32,8 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 **C**
 
+- [Modern C][modernc]
+
 **C++**
 
 - [C++ Primer Plus 6th Edition][cpp_primer_plus_6ed]
@@ -109,3 +111,4 @@ Reference:
 [cpp_weekly]: https://www.youtube.com/watch?v=EJtqHLvAIZE&list=PLs3KjaCtOwSZ2tbuV1hx8Xz-rFZTan2J1
 [freelunchover]: http://www.gotw.ca/publications/concurrency-ddj.htm
 [linker_and_loaders]: https://wh0rd.org/books/linkers-and-loaders/linkers_and_loaders.pdf
+[modernc]: https://modernc.gforge.inria.fr/
