@@ -21,6 +21,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [C++ Core Guidelines][cppcoreguidelines]
 - [What Every Programmer Should Know About Memory][cpumemory]
 - [The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software][freelunchover]
+- [Why symbol visibility is good][why-symbol-visibility-is-good]
 
 <h4>Blogs</h4>
 
@@ -30,21 +31,21 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 - [Linkers & Loaders][linker_and_loaders]
 
-**C**
+- **C**
 
-- [Modern C][modernc]
+  - [Modern C][modernc]
 
-**C++**
+- **C++**
 
-- [C++ Primer Plus 6th Edition][cpp_primer_plus_6ed]
+  - [C++ Primer Plus 6th Edition][cpp_primer_plus_6ed]
 
-- [C++ Primer 5th Edition][cpp_primer_5ed]
+  - [C++ Primer 5th Edition][cpp_primer_5ed]
 
-  *Plus 适合 0 基础入门，Primer 则是学 C++ 必看书*
+    *Plus 适合 0 基础入门，Primer 则是学 C++ 必看书*
 
-- [Modern C++ Tutorial: C++11/14/17/20 On the Fly][modern-cpp-tutorial]
+  - [Modern C++ Tutorial: C++11/14/17/20 On the Fly][modern-cpp-tutorial]
 
-  *非常精炼的一本介绍 Modern C++ 的手册*
+    *非常精炼的一本介绍 Modern C++ 的手册*
 
 <h4>Libraries</h4>
 
@@ -53,34 +54,36 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 <h4>Tutorial</h4>
 
-[cppbestpractices](https://github.com/lefticus/cppbestpractices)
-[Function Interposition in Linux](https://jayconrod.com/posts/23/tutorial-function-interposition-in-linux)
+- [cppbestpractices](https://github.com/lefticus/cppbestpractices)
+- [Function Interposition in Linux](https://jayconrod.com/posts/23/tutorial-function-interposition-in-linux)
 
 <h4>Video</h4>
 
-**YouTube Channel**
+- **YouTube Channel**
 
-- [**C++** from *The Cherno*][cpp_cherno] 适合初学者的一个 C++ 教学视频系列，作者不定期更新。建议一天看完（截至 2020/04/19 共 86 集），后面跟起来比较省事。主要介绍一些 C++ 的基础知识，较新的视频有介绍 C++ 17 的新特性，如 async，optional，any 等。
+  - [**C++** from *The Cherno*][cpp_cherno]
 
-- [**C++ Weekly** from *Jason Turner*][cpp_weekly].
+    适合初学者的一个 C++ 教学视频系列，作者不定期更新。建议一天看完（截至 2020/04/19 共 86 集），后面跟起来比较省事。主要介绍一些 C++ 的基础知识，较新的视频有介绍 C++ 17 的新特性，如 async，optional，any 等。
 
-**Talks**
+  - [**C++ Weekly** from *Jason Turner*][cpp_weekly].
 
-*Scott Mayers*
-- [CppCon 2014: Scott Meyers "Type Deduction and Why You Care"][wQxj20X-tIU]
+- **Talks**
 
-*Matt Godbolt*
-- [CppCon 2017: “What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid”][bSkpMdDe4g4]
+  - *Scott Mayers*
+    - [CppCon 2014: Scott Meyers "Type Deduction and Why You Care"][wQxj20X-tIU]
 
-*Jason Turner*
-- [CppCon 2018: “Applied Best Practices”][DHOlsEd0eDE]
-- [CppCon 2019: “The Best Parts of C++"][iz5Qx18H6lg]
+  - *Matt Godbolt*
+    - [CppCon 2017: “What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid”][bSkpMdDe4g4]
 
-*Chandler Carruth*
-- [CppCon 2015: "Tuning C++: Benchmarks, and CPUs, and Compilers! Oh My!"](https://www.youtube.com/watch?v=nXaxk27zwlk)
+  - *Jason Turner*
+    - [CppCon 2018: “Applied Best Practices”][DHOlsEd0eDE]
+    - [CppCon 2019: “The Best Parts of C++"][iz5Qx18H6lg]
 
-*John Lakos*
-- [C++Now 2018: “C++ Modules & Large-Scale Development”](https://www.youtube.com/watch?v=EglLjioQ9x0)
+  - *Chandler Carruth*
+    - [CppCon 2015: "Tuning C++: Benchmarks, and CPUs, and Compilers! Oh My!"](https://www.youtube.com/watch?v=nXaxk27zwlk)
+
+  - *John Lakos*
+    - [C++Now 2018: “C++ Modules & Large-Scale Development”](https://www.youtube.com/watch?v=EglLjioQ9x0)
 
 <br>
 <span class="post-meta">
@@ -112,3 +115,4 @@ Reference:
 [freelunchover]: http://www.gotw.ca/publications/concurrency-ddj.htm
 [linker_and_loaders]: https://wh0rd.org/books/linkers-and-loaders/linkers_and_loaders.pdf
 [modernc]: https://modernc.gforge.inria.fr/
+[why-symbol-visibility-is-good]: https://www.technovelty.org/code/why-symbol-visibility-is-good.html
