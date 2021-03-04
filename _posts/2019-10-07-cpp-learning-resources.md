@@ -22,6 +22,8 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [What Every Programmer Should Know About Memory][cpumemory]
 - [The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software][freelunchover]
 - [Why symbol visibility is good][why-symbol-visibility-is-good]
+- [Executable and Linkable Format (ELF)][elf]
+- [Modern dynamic linking infrastructure for PLT][3474]
 
 <h4>Blogs</h4>
 
@@ -34,6 +36,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - **C**
 
   - [Modern C][modernc]
+  - [C 语言编程透视][cbook]
 
 - **C++**
 
@@ -116,3 +119,6 @@ Reference:
 [linker_and_loaders]: https://wh0rd.org/books/linkers-and-loaders/linkers_and_loaders.pdf
 [modernc]: https://modernc.gforge.inria.fr/
 [why-symbol-visibility-is-good]: https://www.technovelty.org/code/why-symbol-visibility-is-good.html
+[elf]: https://www.cs.stevens.edu/~jschauma/631A/elf.html
+[cbook]: https://tinylab-1.gitbook.io/cbook/
+[3474]: http://lambda-the-ultimate.org/node/3474
