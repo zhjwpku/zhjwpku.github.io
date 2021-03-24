@@ -32,7 +32,7 @@
 
 \begin{onehalfspacing}
 \datedsubsection{\textbf{四达时代}}{研究院}
-\datedsubsection{\textit{中级工程师}}{2016年7月 -- 2018年3月}
+\datedsubsection{\textit{研发工程师}}{2016年7月 -- 2018年3月}
 \end{onehalfspacing}
 
 \section{\faTasks\ 项目经历}
@@ -41,7 +41,7 @@
 \begin{onehalfspacing}
 \begin{itemize}
   \item \href{https://github.com/mysql/mysql-server/pull/314}{Use mmap for binlog}
-  \item InnoDB IO 路径性能优化 (Work In Progress)
+  \item 负责 InnoDB SCN 方案中 purge 流程的适配
 \end{itemize}
 \end{onehalfspacing}
 
@@ -49,7 +49,7 @@
 \textit{C++/MongoDB/RocksDB/RDMA}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item MongoDB 底层对接 DFV
+  \item MongoDB 持久层对接 DFV
   \item MongoDB 网络层对接 RoCE
 \end{itemize}
 \end{onehalfspacing}
@@ -60,20 +60,11 @@
 \begin{itemize}
   \item 调研 PMDK libpmemblk 相关实现
   \item 基于原有的缓存方案适配保电内存介质
-  \item 保电内存空间的管理，包括 chunk 的申请、释放，掉电恢复等
+  \item 主导保电内存空间管理的方案设计，包括数据布局，空间的申请及释放，掉电恢复等
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{Operation Console(服务中台)的设计和实现}}{2017年8月 -- 2018年3月}
-\textit{Java/SpringBoot/Dubbo}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item 基于原有的 LDAP 设计实现了一套新的 RBAC 系统，作为公司不同业务线的统一入口
-  \item 整合各业务线资源，以微服务的方式逐一将其对接到 Operation Console 中
-\end{itemize}
-\end{onehalfspacing}
-
-\datedsubsection{\textbf{业务解耦及服务快速上云}}{2016年7月 -- 2017年7月}
+\datedsubsection{\textbf{业务微服务化及CI/CD流程的制定}}{2016年7月 -- 2018年3月}
 \textit{Java/SpringBoot/Dubbo/Jenkinsfile/Swagger}
 \begin{onehalfspacing}
 \begin{itemize}
