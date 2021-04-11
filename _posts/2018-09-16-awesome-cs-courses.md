@@ -45,6 +45,12 @@ tags:
     - [Potpourri][ms-potpourri] FUSE/Hammerspoon/UNetbootin/Jupyter
     - [Q&A][ms-qa]
 
+#### Database
+
+- [Database Systems Lecture (winter term 20/21)][dbsys20] *Saarland University*
+    - [课程主页][dbsys20]
+    - [课程视频][dbsys20-video]
+
 #### Language
 
 - [CS 106A][cs106a] **Programming Methodology, Spring 2017** *Stanford*
@@ -176,3 +182,5 @@ Reference:
 [15418-video]: https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22a5862643-2416-49ef-b46b-13465d1b6df0%22
 [kayvonf]: http://graphics.stanford.edu/~kayvonf/
 [cs149]: http://cs149.stanford.edu/fall19/
+[dbsys20]: https://cms.sic.saarland/dbsys20/
+[dbsys20-video]: https://www.youtube.com/watch?v=SMLDuYrAZZs&list=PLC4UZxBVGKtd2Dg0PEyxaLK0f-jhJA3A1
