@@ -32,6 +32,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 <h4>Books</h4>
 
 - [Linkers & Loaders][linker_and_loaders]
+- [Bottom Up Computer Science][bottomupcs]
 
 - **C**
 
@@ -122,3 +123,4 @@ Reference:
 [elf]: https://www.cs.stevens.edu/~jschauma/631A/elf.html
 [cbook]: https://tinylab-1.gitbook.io/cbook/
 [3474]: http://lambda-the-ultimate.org/node/3474
+[bottomupcs]: https://github.com/ianw/bottomupcs
