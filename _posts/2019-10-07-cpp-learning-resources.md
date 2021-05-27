@@ -56,12 +56,21 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [spdlog][spdlog]: Fast C++ logging library.
 - [Abseil Common Libraries (C++)][abseil-cpp].
 
+<h4>Standards</h4>
+
+- [C - Project status and milestones](http://www.open-std.org/jtc1/sc22/wg14/www/projects)
+- [C++ - Standards](http://www.open-std.org/jtc1/sc22/wg21/docs/standards)
+
 <h4>Tutorial</h4>
 
 - [cppbestpractices](https://github.com/lefticus/cppbestpractices)
 - [Function Interposition in Linux](https://jayconrod.com/posts/23/tutorial-function-interposition-in-linux)
 
 <h4>Video</h4>
+
+- **Miscellaneous**
+
+  - [Linux basic anti-debug][UTVp4jpJoyc]
 
 - **YouTube Channel**
 
@@ -88,6 +97,9 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
   - *John Lakos*
     - [C++Now 2018: “C++ Modules & Large-Scale Development”](https://www.youtube.com/watch?v=EglLjioQ9x0)
+
+  - *Robert O'Callahan*
+    - [Record and replay debugging with "rr"](https://www.youtube.com/watch?v=ytNlefY8PIE)
 
 <br>
 <span class="post-meta">
@@ -124,3 +136,4 @@ Reference:
 [cbook]: https://tinylab-1.gitbook.io/cbook/
 [3474]: http://lambda-the-ultimate.org/node/3474
 [bottomupcs]: https://github.com/ianw/bottomupcs
+[UTVp4jpJoyc]: https://www.youtube.com/watch?v=UTVp4jpJoyc
