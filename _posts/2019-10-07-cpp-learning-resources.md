@@ -14,6 +14,8 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 **[cppinsights.io](https://cppinsights.io/)**
 
+**[Latency Numbers Every Programmer Should Know](https://colin-scott.github.io/personal_website/research/interactive_latency.html)**
+
 <h4>Articles</h4>
 
 - [C++ Rvalue References Explained][rvalue_references] by Thomas Becker
