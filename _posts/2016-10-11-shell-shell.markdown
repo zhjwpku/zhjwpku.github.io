@@ -417,10 +417,20 @@ Average:       6    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
 Average:       7    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00  100.00
 ```
 
-**查看网络中段绑核**
+**查看网络中断绑核**
 
 ```shell
 cat /proc/interrupts | grep PCI-MSI-edge | grep -E 'output|input' | awk -F':' '{print $1}'| while read n; do cat /proc/irq/$n/smp_affinity_list; done
+```
+
+**macos 查看 Listen 端口**
+
+```shell
+# netstat
+netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
+
+# lsof
+sudo lsof -PiTCP -sTCP:LISTEN
 ```
 
 <h4>Tips</h4>
