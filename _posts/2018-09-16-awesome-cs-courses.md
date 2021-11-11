@@ -9,9 +9,10 @@ tags:
 笔者业余时间学习的计算机课程，全部来自世界名校，列于此，共勉。
 
 <h4>TOC</h4>
-- [Computer System](#cs)
+- [CS](#cs)
+- [Database](#database)
 - [Language](#language)
-- [Operating System](#os)
+- [OS](#os)
 - [Parallel Programming](#parallel-programming)
 - [Web Development](#web-development)
 
@@ -31,6 +32,11 @@ tags:
     - [课程主页][15213]
     - [课程视频][15213-video]
     - [Labs][15213-labs]
+
+- [6.172][6172] **Performance Engineering of Software Systems** *MIT*
+    - Instructor(s) Charles Leiserson & Julian Shun
+    - [课程主页 - 2018][6172]
+    - [课程视频 - 2018][6172-video]
 
 - [The Missing Semester of Your CS Education][missing-semester] *MIT*
     - [课程视频][missing-semester-video]
@@ -184,3 +190,5 @@ Reference:
 [cs149]: http://cs149.stanford.edu/fall19/
 [dbsys20]: https://cms.sic.saarland/dbsys20/
 [dbsys20-video]: https://www.youtube.com/watch?v=SMLDuYrAZZs&list=PLC4UZxBVGKtd2Dg0PEyxaLK0f-jhJA3A1
+[6172]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2018/index.htm
+[6172-video]: https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf
