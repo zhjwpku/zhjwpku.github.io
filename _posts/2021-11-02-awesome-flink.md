@@ -32,6 +32,7 @@ References:
 <br>
 <span class="post-meta">
 1 [Awesome Flink](https://github.com/wuchong/awesome-flink)<br>
+2 [Readings in Streaming Systems](https://github.com/lw-lin/streaming-readings)<br>
 </span>
 
 [intro_to_flink]: https://www.oreilly.com/library/view/introduction-to-apache/9781491977132/
