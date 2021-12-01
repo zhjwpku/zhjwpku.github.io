@@ -12,6 +12,11 @@ Apache [Flink](https://flink.apache.org/) 学习资料，包括但不限于文�
 
 - [Streaming 101: The world beyond batch][stream101] by Tyler Akidau (Aug 5, 2015)
 - [Streaming 102: The world beyond batch][stream102] by Tyler Akidau (Jan 20, 2016)
+- **Exactly Once Semantics**
+  - [High-throughput, low-latency, and exactly-once stream processing with Apache Flink™][high-throughput-low-latency-and-exactly-once-stream-processing-with-apache-flink] by Kostas Tzoumas (August 5, 2015)
+  - [An Overview of End-to-End Exactly-Once Processing in Apache Flink][end-to-end-exactly-once-apache-flink] by Piotr Nowojski & Mike Wintersv (Mar 1, 2018)
+  - [Fault Tolerance via State Snapshots][fault_tolerance] from Flink docs
+  - [Stateful Stream Processing][stateful-stream-processing] from Flink docs
 
 <h4>Books</h4>
 
@@ -40,3 +45,7 @@ References:
 [stream102]: https://www.oreilly.com/radar/the-world-beyond-batch-streaming-102/
 [atguigu_flink]: https://www.bilibili.com/video/BV1qy4y1q728
 [atguigu_flink_notes]: https://ashiamd.github.io/docsify-notes/#/study/BigData/Flink/%E5%B0%9A%E7%A1%85%E8%B0%B7Flink%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0
+[high-throughput-low-latency-and-exactly-once-stream-processing-with-apache-flink]: https://www.ververica.com/blog/high-throughput-low-latency-and-exactly-once-stream-processing-with-apache-flink
+[end-to-end-exactly-once-apache-flink]: https://flink.apache.org/features/2018/03/01/end-to-end-exactly-once-apache-flink.html
+[fault_tolerance]: https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/
+[stateful-stream-processing]: https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/stateful-stream-processing/
