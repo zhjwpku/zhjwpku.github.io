@@ -6,7 +6,7 @@ tags:
 - course
 ---
 
-笔者业余时间学习的计算机课程，全部来自世界名校，列于此，共勉。
+笔者业余时间学习的计算机课程。
 
 <h4>TOC</h4>
 - [Algorithms](#algorithms)
