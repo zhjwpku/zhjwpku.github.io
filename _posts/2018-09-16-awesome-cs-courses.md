@@ -9,12 +9,20 @@ tags:
 笔者业余时间学习的计算机课程，全部来自世界名校，列于此，共勉。
 
 <h4>TOC</h4>
+- [Algorithms](#algorithms)
 - [CS](#cs)
 - [Database](#database)
 - [Language](#language)
 - [OS](#os)
 - [Parallel Programming](#parallel-programming)
 - [Web Development](#web-development)
+
+#### Algorithms
+
+- [6.046J][6046J] **Design and Analysis of Algorithms** *MIT*
+  - Instructed by Prof. Erik Demaine & Prof. Srini Devadas
+  - [课程主页 - Spring 2015][6046J]
+  - [课程视频 - Spring 2015][6046J-video]
 
 #### CS
 
@@ -192,3 +200,5 @@ Reference:
 [dbsys20-video]: https://www.youtube.com/watch?v=SMLDuYrAZZs&list=PLC4UZxBVGKtd2Dg0PEyxaLK0f-jhJA3A1
 [6172]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-172-performance-engineering-of-software-systems-fall-2018/index.htm
 [6172-video]: https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf
+[6046J]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/
+[6046J-video]: https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp
