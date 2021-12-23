@@ -17,6 +17,7 @@ Apache [Flink](https://flink.apache.org/) 学习资料，包括但不限于文�
   - [An Overview of End-to-End Exactly-Once Processing in Apache Flink][end-to-end-exactly-once-apache-flink] by Piotr Nowojski & Mike Wintersv (Mar 1, 2018)
   - [Fault Tolerance via State Snapshots][fault_tolerance] from Flink docs
   - [Stateful Stream Processing][stateful-stream-processing] from Flink docs
+  - [From Aligned to Unaligned Checkpoints - Part 1: Checkpoints, Alignment, and Backpressure][from-aligned-to-unaligned-checkpoints-part-1] by Arvid Heise & Stephan Ewen (Oct 15, 2020)
 
 <h4>Books</h4>
 
@@ -25,6 +26,7 @@ Apache [Flink](https://flink.apache.org/) 学习资料，包括但不限于文�
 <h4>Papers</h4>
 
 - [Nephele: Efficient Parallel Data Processing in the Cloud](https://paper-notes.zhjwpku.com/scheduler/nephele.html) - Nephele 是 Flink 的前身，文章主要介绍 Flink 的调度
+- [Lightweight Asynchronous Snapshots for Distributed Dataflows](https://paper-notes.zhjwpku.com/distributedsystem/abs.html) - 介绍 Flink Checkpoint 依赖的分布式快照算法
 
 <h4>Videos</h4>
 
@@ -49,3 +51,4 @@ References:
 [end-to-end-exactly-once-apache-flink]: https://flink.apache.org/features/2018/03/01/end-to-end-exactly-once-apache-flink.html
 [fault_tolerance]: https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/
 [stateful-stream-processing]: https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/stateful-stream-processing/
+[from-aligned-to-unaligned-checkpoints-part-1]: https://flink.apache.org/2020/10/15/from-aligned-to-unaligned-checkpoints-part-1.html
