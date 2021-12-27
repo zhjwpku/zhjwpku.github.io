@@ -27,6 +27,7 @@ Apache [Flink](https://flink.apache.org/) 学习资料，包括但不限于文�
 
 - [Nephele: Efficient Parallel Data Processing in the Cloud](https://paper-notes.zhjwpku.com/scheduler/nephele.html) - Nephele 是 Flink 的前身，文章主要介绍 Flink 的调度
 - [Lightweight Asynchronous Snapshots for Distributed Dataflows](https://paper-notes.zhjwpku.com/distributedsystem/abs.html) - 介绍 Flink Checkpoint 依赖的分布式快照算法
+- [The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in MassiveScale, Unbounded, OutofOrder Data Processing](https://paper-notes.zhjwpku.com/assets/pdfs/the_dataflow_model.pdf)
 
 <h4>Videos</h4>
 
