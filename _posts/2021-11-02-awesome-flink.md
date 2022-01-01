@@ -22,6 +22,7 @@ Apache [Flink](https://flink.apache.org/) 学习资料，包括但不限于文�
 <h4>Books</h4>
 
 - [Introduction to Apache Flink][intro_to_flink] by Ellen Friedman, Kostas Tzoumas (Nov, 2016)
+- [Stream Processing with Apache Flink][stream-processing-with-apache-flink] by Fabian Hueske and Vasiliki Kalavri (April, 2019)
 
 <h4>Papers</h4>
 
@@ -53,3 +54,4 @@ References:
 [fault_tolerance]: https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/
 [stateful-stream-processing]: https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/stateful-stream-processing/
 [from-aligned-to-unaligned-checkpoints-part-1]: https://flink.apache.org/2020/10/15/from-aligned-to-unaligned-checkpoints-part-1.html
+[stream-processing-with-apache-flink]: https://www.oreilly.com/library/view/stream-processing-with/9781491974285/
