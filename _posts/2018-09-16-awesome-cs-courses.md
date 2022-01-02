@@ -91,6 +91,7 @@ tags:
     - 教材: [CS106L Course Reader][cs106l-textbook] by Keith Schwarz
     - [课程主页](http://web.stanford.edu/class/cs106l/lectures.html)
     - [课程视频][cs106l-video]
+- [Effective Programming in Scala][effective-scala] by École Polytechnique Fédérale de Lausanne
 
 #### OS
 
@@ -210,3 +211,4 @@ Reference:
 [6046J]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/
 [6046J-video]: https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp
 [distributedsystemscourse-video]: https://www.youtube.com/playlist?list=PLOE1GTZ5ouRPbpTnrZ3Wqjamfwn_Q5Y9A
+[effective-scala]: https://www.coursera.org/learn/effective-scala/home/welcome
