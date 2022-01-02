@@ -12,6 +12,7 @@ tags:
 - [Algorithms](#algorithms)
 - [CS](#cs)
 - [Database](#database)
+- [Distributed Systems](#distributed-systems)
 - [Language](#language)
 - [OS](#os)
 - [Parallel Programming](#parallel-programming)
@@ -64,6 +65,12 @@ tags:
 - [Database Systems Lecture (winter term 20/21)][dbsys20] *Saarland University*
     - [课程主页][dbsys20]
     - [课程视频][dbsys20-video]
+
+#### Distributed Systems
+
+- [DISTRIBUTED SYSTEMS • A free online class](http://www.distributedsystemscourse.com/) by Chris Colohan
+  - 不定期更新一些分布式系统的概念
+  - [课程视频][distributedsystemscourse-video]
 
 #### Language
 
@@ -202,3 +209,4 @@ Reference:
 [6172-video]: https://www.youtube.com/playlist?list=PLUl4u3cNGP63VIBQVWguXxZZi0566y7Wf
 [6046J]: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015/
 [6046J-video]: https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp
+[distributedsystemscourse-video]: https://www.youtube.com/playlist?list=PLOE1GTZ5ouRPbpTnrZ3Wqjamfwn_Q5Y9A
