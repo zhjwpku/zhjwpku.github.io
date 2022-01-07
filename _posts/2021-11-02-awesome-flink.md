@@ -18,6 +18,7 @@ Apache [Flink](https://flink.apache.org/) 学习资料，包括但不限于文�
   - [Fault Tolerance via State Snapshots][fault_tolerance] from Flink docs
   - [Stateful Stream Processing][stateful-stream-processing] from Flink docs
   - [From Aligned to Unaligned Checkpoints - Part 1: Checkpoints, Alignment, and Backpressure][from-aligned-to-unaligned-checkpoints-part-1] by Arvid Heise & Stephan Ewen (Oct 15, 2020)
+- [How to debug Flink source code][how-to-debug-flink-source-code] 远程 Debug Flink 源码
 
 <h4>Books</h4>
 
@@ -55,3 +56,4 @@ References:
 [stateful-stream-processing]: https://nightlies.apache.org/flink/flink-docs-stable/docs/concepts/stateful-stream-processing/
 [from-aligned-to-unaligned-checkpoints-part-1]: https://flink.apache.org/2020/10/15/from-aligned-to-unaligned-checkpoints-part-1.html
 [stream-processing-with-apache-flink]: https://www.oreilly.com/library/view/stream-processing-with/9781491974285/
+[how-to-debug-flink-source-code]: https://developpaper.com/how-to-debug-flink-source-code/
