@@ -23,6 +23,7 @@ Apache [Flink](https://flink.apache.org/) 学习资料，包括但不限于文�
 <h4>Books</h4>
 
 - [Introduction to Apache Flink][intro_to_flink] by Ellen Friedman, Kostas Tzoumas (Nov, 2016)
+- [Learning Apache Flink][learning-apache-flink] by Tanmay Deshpande (Feb, 2017)
 - [Stream Processing with Apache Flink][stream-processing-with-apache-flink] by Fabian Hueske and Vasiliki Kalavri (April, 2019)
 
 <h4>Papers</h4>
@@ -57,3 +58,4 @@ References:
 [from-aligned-to-unaligned-checkpoints-part-1]: https://flink.apache.org/2020/10/15/from-aligned-to-unaligned-checkpoints-part-1.html
 [stream-processing-with-apache-flink]: https://www.oreilly.com/library/view/stream-processing-with/9781491974285/
 [how-to-debug-flink-source-code]: https://developpaper.com/how-to-debug-flink-source-code/
+[learning-apache-flink]: https://www.amazon.com/Learning-Apache-Flink-Tanmay-Deshpande/dp/1786466228
