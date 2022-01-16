@@ -71,6 +71,11 @@ tags:
 - [DISTRIBUTED SYSTEMS • A free online class](http://www.distributedsystemscourse.com/) by Chris Colohan
   - 不定期更新一些分布式系统的概念
   - [课程视频][distributedsystemscourse-video]
+- [CSE138][cse138] **Distributed Systems, Spring 2020** *UCSC* by Lindsey Kuper
+  - 课程介绍了分布式系统中时钟、容错、复制、一致性、共识（PAXOS）等话题。
+  - [课程主页][cse138]
+  - [课程视频][cse138-2020-video]
+  - [Notes on Lindsey Kuper's lectures on Distributed Systems][cse138-2020-notes] by [ChrisWhealy](https://github.com/ChrisWhealy)
 
 #### Language
 
@@ -212,3 +217,6 @@ Reference:
 [6046J-video]: https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp
 [distributedsystemscourse-video]: https://www.youtube.com/playlist?list=PLOE1GTZ5ouRPbpTnrZ3Wqjamfwn_Q5Y9A
 [effective-scala]: https://www.coursera.org/learn/effective-scala/home/welcome
+[cse138]: http://composition.al/CSE138-2020-03/
+[cse138-2020-video]: https://www.youtube.com/playlist?list=PLNPUF5QyWU8O0Wd8QDh9KaM1ggsxspJ31
+[cse138-2020-notes]: https://github.com/ChrisWhealy/DistributedSystemNotes
