@@ -52,7 +52,22 @@ permalink: /resume-en
 
     <div id="projects">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-tasks" aria-hidden="true"></i> Projects</h4>
-      <div><strong>MySQL Kernel Engineer</strong><span style="float:right">JUN. 2020 - MAY. 2021</span></div>
+
+      <div><strong>MySQL Kernel Engineer</strong><span style="float:right">DEC. 2021 - NOW</span></div>
+      <p>JAVA/CDC</p>
+      <ul>
+        <li>develop datastream job based on Flink CDC connectors, sync data from RDS to ADB</li>
+        <li><a href="https://github.com/ververica/flink-cdc-connectors/pull/777">add new tables to existing cdc job</a></li>
+      </ul>
+
+      <div><strong>ADB MySQL Kernel Engineer</strong><span style="float:right">MAY. 2021 - NOV. 2021</span></div>
+      <p>Java/Cstore</p>
+      <ul>
+        <li>Performance Engineering the Cstore storage engine</li>
+        <li>develop Z-order data layout to accelerate multi-dimention analysis</li>
+      </ul>
+
+      <div><strong>MySQL Kernel Engineer</strong><span style="float:right">MAY. 2020 - MAY. 2021</span></div>
       <p>C++/InnoDB</p>
       <ul>
         <li><a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a></li>
@@ -71,10 +86,11 @@ permalink: /resume-en
     <div id="opensource">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-code-fork" aria-hidden="true"></i> Open Source Experience</h4>
       <ul>
-        <li><strong><a href="https://github.com/orlabs/orange/pull/138">Port kong's ring-balancer to orange</a></strong></li>
-        <li><strong><a href="https://github.com/apache/hadoop/pull/1670/files">HDFS-14925. Rename operation should check nest snapshot</a></strong></li>
+        <li><strong><a href="https://github.com/ververica/flink-cdc-connectors/pulls?q=is%3Apr+author%3Azhjwpku+">PRs contributed to flink-cdc-connectors</a></strong></li>
         <li><strong><a href="https://github.com/mysql/mysql-server/pull/313">Bug#101450 mysqlbinlog with start-position not show right FDE pos</a></strong></li>
         <li><strong><a href="https://github.com/mysql/mysql-server/pull/311">Bug#101448 when the input of net_length_size is 251, return 3</a></strong></li>
+        <li><strong><a href="https://github.com/apache/hadoop/pull/1670/files">HDFS-14925. Rename operation should check nest snapshot</a></strong></li>
+        <li><strong><a href="https://github.com/orlabs/orange/pull/138">Port kong's ring-balancer to orange</a></strong></li>
       </ul>
     </div>
 
@@ -82,10 +98,9 @@ permalink: /resume-en
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-wrench" aria-hidden="true"></i> Skills</h4>
 
       <ul>
-        <li>C/C++ > Java > Lua > Python</li>
+        <li>C/C++ > Java > Golang > Rust > Lua > Python</li>
         <li>Familiar with Epoll and Reactor Pattern</li>
-        <li>Daily Used Tools: GDB, Perf, CMake</li>
-        <li>Currently Learning: ebpf, bcc and rust
+        <li>Daily Used Tools: GDB, Perf&FlameGraph</li>
       </ul>
     </div>
 
@@ -93,6 +108,7 @@ permalink: /resume-en
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-cogs" aria-hidden="true"></i> Other</h4>
       <ul>
         <li>Blog (in chinese): <a href="https://zhjwpku.com/">https://zhjwpku.com</a></li>
+        <li>Paper Notes (in chinese): <a href="https://paper-notes.zhjwpku.com/">https://paper-notes.zhjwpku.com/</li>
       </ul>
     </div>
   </div> <!-- end of post-content-->

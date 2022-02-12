@@ -45,43 +45,50 @@ permalink: /resume
 
     <div id="jobs">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-id-badge" aria-hidden="true"></i> 工作经历</h4>
+      <div><strong>阿里巴巴</strong><span style="float:right">阿里云数据库产品事业部 OLAP 产品部</span></div>
+      <p>技术专家(P7)<span style="float: right;">2021年5月至今</span></p>
       <div><strong>华为</strong><span style="float:right">FusionStorage 项目群 & CloudBU GaussDB for MySQL</span></div>
-      <p>高级工程师<span style="float: right;">2018年4月至今</span></p>
+      <p>高级工程师<span style="float: right;">2018年4月 - 2021年5月</span></p>
       <div><strong>四达时代</strong><span style="float:right">研究院</span></div>
       <p>研发工程师<span style="float: right;">2016年7月 - 2018年3月</span></p>
-      <div><strong>Vmware</strong><span style="float:right">Cloud Platform Business Unit(存储驱动相关部门)</span></div>
-      <p>实习<span style="float: right;">2016年1月 - 2016年4月</span></p>
     </div> <!-- end of jobs -->
 
     <div id="projects">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-tasks" aria-hidden="true"></i> 项目经历</h4>
-      <div><strong>MySQL 内核开发</strong><span style="float:right">2020年6月至今</span></div>
+
+      <div><strong>ADB CDC connectors</strong><span style="float:right">2021年12月至今</span></div>
+      <p>Java/CDC</p>
+      <ul>
+        <li>选型 Flink CDC connectors 开发 datastream job，从 RDS 向 ADB 同步数据（链路已打通，持续优化 sink 端性能中）</li>
+        <li>开发向已有任务中添加新表的特性: <a href="https://github.com/ververica/flink-cdc-connectors/pull/777">add new tables to existing cdc job</a>，已合入主线</li>
+      </ul>
+
+      <div><strong>ADB MySQL 存储引擎</strong><span style="float:right">2021年5月-2021年11月</span></div>
+      <p>Java/Cstore</p>
+      <ul>
+        <li>通过火焰图分析 POC 中遇到的性能瓶颈并进行优化</li>
+        <li>辅助开发 Z-order 数据布局，加速多维查询分析</li>
+      </ul>
+
+      <div><strong>MySQL 内核开发</strong><span style="float:right">2020年5月-2021年5月</span></div>
       <p>C++/InnoDB</p>
       <ul>
-        <li><a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a></li>
-        <li>负责 InnoDB SCN 方案中 purge 流程的适配</li>
+        <li>使用 mmap 优化 binlog 性能: <a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a></li>
+        <li>InnoDB SCN 方案中 purge 流程的适配</li>
       </ul>
 
-      <div><strong>OBS Index Layer</strong><span style="float:right">2019年9月-2020年6月</span></div>
+      <div><strong>OBS Index Layer</strong><span style="float:right">2019年9月-2020年5月</span></div>
       <p>C++/MongoDB/RocksDB/RDMA</p>
       <ul>
-        <li>MongoDB 持久层对接 DFV</li>
-        <li>MongoDB 网络层对接 RoCE</li>
+        <li>MongoDB 持久层对接 DFV（通过修改 rocksdb 的 Env 来适配 mongo-rocks 引擎）</li>
+        <li>MongoDB 网络层适配 xnet 库（RoCE）</li>
       </ul>
 
-      <div><strong>参与实现 FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2019年2月-2019年9月</span></div>
-      <p>C/Cache/Chunk</p>
+      <div><strong>FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2018年4月-2019年9月</span></div>
+      <p>C/Cache</p>
       <ul>
-        <li>调研 PMDK libpmemblk 相关实现</li>
         <li>基于原有的缓存方案适配保电内存介质</li>
-        <li>保电内存空间的管理，包括 chunk 的申请、释放，掉电恢复等</li>
-      </ul>
-
-      <div style="margin-top: 25px"><strong>业务微服务化及CI/CD流程的制定</strong><span style="float:right">2016年7月-2018年3月</span></div>
-      <p>Java/SpringBoot/Dubbo/Jenkinsfile/Swagger</p>
-      <ul>
-        <li>制定微服务项目规范（目录结构、接口规范、构建脚本等）并提供一个模板项目供开发人员快速实现一个新的微服务</li>
-        <li>搭建一套简易的 CI/CD 平台，依赖 Jenkins 的 Pipeline 模式，每个微服务都快速以<em>开发->测试->测试通过->运维->运维通过->上线</em> 的方式快速发布，极大减少了部署工作量和交流成本</li>
+        <li>Battery Backup Unit 空间的管理，包括 chunk 的申请、释放，掉电恢复等</li>
       </ul>
 
     </div>
@@ -89,10 +96,11 @@ permalink: /resume
     <div id="opensource">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-code-fork" aria-hidden="true"></i> 开源贡献</h4>
       <ul>
-        <li><strong><a href="https://github.com/orlabs/orange/pull/138">Port kong's ring-balancer to orange</a></strong></li>
-        <li><strong><a href="https://github.com/apache/hadoop/pull/1670/files">HDFS-14925. Rename operation should check nest snapshot</a></strong></li>
+        <li><strong><a href="https://github.com/ververica/flink-cdc-connectors/pulls?q=is%3Apr+author%3Azhjwpku+">PRs contributed to flink-cdc-connectors</a></strong></li>
         <li><strong><a href="https://github.com/mysql/mysql-server/pull/313">Bug#101450 mysqlbinlog with start-position not show right FDE pos</a></strong></li>
         <li><strong><a href="https://github.com/mysql/mysql-server/pull/311">Bug#101448 when the input of net_length_size is 251, return 3</a></strong></li>
+        <li><strong><a href="https://github.com/apache/hadoop/pull/1670/files">HDFS-14925. Rename operation should check nest snapshot</a></strong></li>
+        <li><strong><a href="https://github.com/orlabs/orange/pull/138">Port kong's ring-balancer to orange</a></strong></li>
       </ul>
     </div>
 
@@ -100,9 +108,9 @@ permalink: /resume
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-wrench" aria-hidden="true"></i> IT 技能</h4>
 
       <ul>
-        <li>编程语言: C/C++ > Java > Lua > Python</li>
+        <li>编程语言: C/C++ > Java > Golang > Rust > Lua > Python</li>
         <li>并发: 熟悉事件驱动及网络编程</li>
-        <li>常用工具: GDB/Perf/CMake/Gradle/Jenkins/ELK</li>
+        <li>常用工具: GDB/Perf&FlameGraph</li>
       </ul>
     </div>
 
@@ -110,8 +118,8 @@ permalink: /resume
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-cogs" aria-hidden="true"></i> 其他</h4>
       <ul>
         <li>博客: <a href="https://zhjwpku.com/">https://zhjwpku.com</a></li>
-        <li>语言: CET-6 VET/VEWT</li>
-        <li>GSoC2016(Ceph): <a href="https://gist.github.com/zhjwpku/1bc4202671ed06c799f0bf4739416429">On the wire encryption</a></li>
+        <li>外语: CET-6 & VET/VEWT</li>
+        <li>论文笔记: <a href="https://paper-notes.zhjwpku.com/">paper notes</a></li>
       </ul>
     </div>
   </div> <!-- end of post-content-->
