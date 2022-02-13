@@ -76,6 +76,11 @@ tags:
   - [课程主页][cse138]
   - [课程视频][cse138-2020-video]
   - [Notes on Lindsey Kuper's lectures on Distributed Systems][cse138-2020-notes] by [ChrisWhealy](https://github.com/ChrisWhealy)
+- [Concurrent and Distributed Systems][ConcDisSys] **2nd half: Distributed Systems** *University of Cambridge*
+  - 该课程的第二部分由《Designing data-intensive applications》的作者 Martin Kleppmann 教授，内核涵盖 clocks、raft、consistency、Two-phase commit、CRDTs、spanner 等话题。
+  - [课程主页][ConcDisSys]
+  - [课程视频](https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB)
+  - [lecture notes](https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/dist-sys-notes.pdf)
 
 #### Language
 
@@ -220,3 +225,4 @@ Reference:
 [cse138]: http://composition.al/CSE138-2020-03/
 [cse138-2020-video]: https://www.youtube.com/playlist?list=PLNPUF5QyWU8O0Wd8QDh9KaM1ggsxspJ31
 [cse138-2020-notes]: https://github.com/ChrisWhealy/DistributedSystemNotes
+[ConcDisSys]: https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/
