@@ -26,6 +26,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Why symbol visibility is good][why-symbol-visibility-is-good]
 - [Executable and Linkable Format (ELF)][elf]
 - [Modern dynamic linking infrastructure for PLT][3474]
+- [The Log: What every software engineer should know about real-time data's unifying abstraction][the-log]
 
 <h4>Blogs</h4>
 
@@ -139,3 +140,4 @@ Reference:
 [3474]: http://lambda-the-ultimate.org/node/3474
 [bottomupcs]: https://github.com/ianw/bottomupcs
 [UTVp4jpJoyc]: https://www.youtube.com/watch?v=UTVp4jpJoyc
+[the-log]: https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
