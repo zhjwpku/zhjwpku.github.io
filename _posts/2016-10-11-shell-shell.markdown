@@ -433,6 +433,13 @@ netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
 sudo lsof -PiTCP -sTCP:LISTEN
 ```
 
+**查看运营商分配的公网IP**
+
+```shell
+curl cip.cc
+curl myipip.net
+```
+
 <h4>Tips</h4>
 
 - shell 命令前加反斜线可以避免使用 alias 命令，如 `\ls`
