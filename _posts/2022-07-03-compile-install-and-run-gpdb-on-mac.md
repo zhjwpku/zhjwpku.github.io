@@ -109,6 +109,21 @@ source gpdemo-env.sh
 make clean
 ```
 
+**启停集群**
+
+在使用集群的过程中，并不需要频繁地创建或是删除集群，应该使用 gpdb 提供的工具来启停集群:
+
+```shell
+# 停止集群
+gpstop -a
+
+# 启动集群
+gpstart -a
+
+# 查看集群状态
+gpstate -s
+```
+
 **Troubleshooting**
 
 `.bashrc` 中使用 `ulimit -n 65536 65536` 设置了文件描述符的个数和文件的大小，但在集群启动的时候遇到了 *Child process was terminated by signal 25, File size limit exceeded* 的错误，改为 `ulimit -n 65536 unlimited` 后解决问题。另外在解决问题的过程中还进行了如下设置:
