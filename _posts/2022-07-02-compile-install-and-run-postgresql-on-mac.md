@@ -40,7 +40,7 @@ mkdir -p ~/pgdata
 
 3. 停止数据库
 ```shell
-usr/local/pgsql/bin/pg_ctl -D ~/pgdata/data stop
+/usr/local/pgsql/bin/pg_ctl -D ~/pgdata stop
 ```
 
 **调试**
