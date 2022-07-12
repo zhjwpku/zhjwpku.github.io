@@ -144,6 +144,7 @@ Reference:
 10 [CppCon 2016: Greg Law "GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg)<br>
 11 [CppCon 2018: Simon Brand "How C++ Debuggers Work"](https://www.youtube.com/watch?v=0DDrseUomfU)<br>
 12 [GDB to LLDB command map](https://lldb.llvm.org/use/map.html)<br>
+13 [Debugging C/C++ with LLDB Tutorial](https://www.youtube.com/watch?v=2GV0K9Y2MKA)<br>
 </span>
 
 [gdbnotes-x86-64]: http://csapp.cs.cmu.edu/3e/docs/gdbnotes-x86-64.pdf
