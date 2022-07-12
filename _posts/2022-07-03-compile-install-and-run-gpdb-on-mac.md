@@ -103,6 +103,12 @@ WITH_MIRRORS=false WITH_STANDBY=false PORT_BASE=5555 make cluster
 source gpdemo-env.sh
 ```
 
+在需要调试集群的时候，segemnts 的个数越少越方便定位问题，因此可以指定只启动一个 segement:
+
+```shell
+WITH_MIRRORS=false WITH_STANDBY=false PORT_BASE=5555 NUM_PRIMARY_MIRROR_PAIRS=1 make cluster
+```
+
 **删除 demo 集群**
 
 ```shell
