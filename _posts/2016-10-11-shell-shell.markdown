@@ -440,6 +440,14 @@ curl cip.cc
 curl myipip.net
 ```
 
+**在不知道 root 密码的情况下登录 root 账号**
+
+当然前提是你必须有一个具有 sudo 权限的账号，然后执行如下命令:
+
+```shell
+sudo bash -c bash
+```
+
 <h4>Tips</h4>
 
 - shell 命令前加反斜线可以避免使用 alias 命令，如 `\ls`
