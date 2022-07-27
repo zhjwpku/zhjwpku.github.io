@@ -132,6 +132,8 @@ gpstate -s
 
 **Troubleshooting**
 
+Problem 1:
+
 `.bashrc` 中使用 `ulimit -n 65536 65536` 设置了文件描述符的个数和文件的大小，但在集群启动的时候遇到了 *Child process was terminated by signal 25, File size limit exceeded* 的错误，改为 `ulimit -n 65536 unlimited` 后解决问题。另外在解决问题的过程中还进行了如下设置:
 
 ```shell
@@ -140,6 +142,22 @@ sudo launchctl limit maxfiles 65536 1048576
 ```
 
 但不确定是否跟问题的解决相关。
+
+Problem 2:
+
+`gpfdist` 依赖 `apr-1-config`，在 mac 上安装 apr 未创建 `apr-1-config` 的软链接导致如下报错:
+
+```shell
+configure: error: apr-1-config is required for gpfdist, unable to find binary
+```
+
+通过安装 apr/apr-util 并创建 `apr-1-config` 的软链接解决:
+
+```shell
+brew install apr
+brew install apr-util
+ln -s /usr/local/Cellar/apr/1.7.0_2/bin/apr-1-config /usr/local/bin/apr-1-config
+```
 
 <br>
 <span class="post-meta">
