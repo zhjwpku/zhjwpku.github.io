@@ -28,6 +28,8 @@ tags:
 
 - [Planet](https://planet.postgresql.org/)
 - [momjian.us](https://momjian.us/)
+- [depesz.com](https://www.depesz.com/) by Hubert Lubaczewski
+- [Robert Haas](https://rhaas.blogspot.com/)'s blogspot
 - [What PostgreSQL has over other open source SQL databases: Part I](https://www.compose.com/articles/what-postgresql-has-over-other-open-source-sql-databases/)
 - [What PostgreSQL has over other open source SQL databases: Part II](https://www.compose.com/articles/what-postgresql-has-over-other-open-source-sql-databases-part-ii/)
 - [Why use Postgres](https://www.craigkerstiens.com/2017/04/30/why-postgres-five-years-later/) by Craig Kerstiens
@@ -107,6 +109,7 @@ tags:
 - [Learning to Hack on Postgres Planner](https://www.youtube.com/watch?v=j7UPVU5UCV4) by Melanie Plageman, PGCon 2019
 - [An introduction to Memory Contexts](https://www.youtube.com/watch?v=tP2pHbKz2R0) by Chris Travers, PGCon 2019
 - [Hacking the Query Planner, Again](https://www.youtube.com/watch?v=wTg02tniO2A) by Richard Guo, PGCon 2020
+- [PostgreSQL 空闲空间管理](https://www.bilibili.com/video/BV1934y1i7pk) by Wang Xiaoran, PGConf.Asia 2021
 
 <h4>Greenplum specific</h4>
 
@@ -115,6 +118,28 @@ tags:
 - [Greenplum性能优化之路 --（三）ANALYZE](https://cloud.tencent.com/developer/article/1685910)
 - [Greenplum 分布式数据库内核揭秘(上篇)](https://cn.greenplum.org/greenplum-distributed-database-kernel-1/)
 - [Greenplum 分布式数据库内核揭秘(下篇)](https://cn.greenplum.org/greenplum-distributed-database-kernel-2/)
+- [Greenplum Storage Considerations](https://www.youtube.com/watch?v=6xRiERh-x24)
+- [新一代数据分析及实时数仓平台 Greenplum 介绍](https://www.bilibili.com/video/BV1Zr4y127Zk)
+- [Greenplum —— 一个用于分析、机器学习和AI的开源大规模并行数据库平台](https://www.bilibili.com/video/BV1v5411u7VE)
+- [Brin Index 在 Append Only Table 中的实现](https://www.bilibili.com/video/BV12V411a7A5)
+- [Brin Index 在 Greenplum 7 中的理论与实践](https://www.bilibili.com/video/BV1YU4y187ia)
+- [当谈起 Greenplum 7 时，我们在谈什么？](https://www.bilibili.com/video/BV1WV411n7Zh)
+- [Greenplum 中的多阶段聚集实现](https://www.bilibili.com/video/BV1ey4y1H7eb)
+- [Greenplum 的分布式锁及其相关的一切](https://www.bilibili.com/video/BV1vZ4y1G7fy)
+- [《深入浅出 Greenplum 内核》系列视频](https://space.bilibili.com/489184136/channel/seriesdetail?sid=888852)
+  - [新一代大数据分析平台 Greenplum 架构解读](https://www.bilibili.com/video/BV1Sf4y1U7QP)
+  - [开源分布式数据库 Greenplum 并行执行引擎揭秘](https://www.bilibili.com/video/BV1Si4y1474L)
+  - [开源大数据分析平台 Greenplum 查询优化揭秘](https://www.bilibili.com/video/BV1J5411Y7yu)
+  - [Greenplum 内核揭秘之B树索引](https://www.bilibili.com/video/BV1164y1F7XP)
+  - [Greenplum 内核揭秘之 MVCC 并发控制](https://www.bilibili.com/video/BV1yT4y1w7Fn)
+  - [Greenplum 内核揭秘之排序算法](https://www.bilibili.com/video/BV17f4y1D76h)
+  - [Greenplum 分布式事务和两阶段提交协议](https://www.bilibili.com/video/BV1et4y1e7RF)
+  - [揭秘 Greenplum 存储引擎之Heap表](https://www.bilibili.com/video/BV1fK4y1j7jJ)
+  - [Greenplum 高可用理论与实践](https://www.bilibili.com/video/BV1Sz4y167cP)
+  - [揭秘 Greenplum 恢复（Recovery）系统](https://www.bilibili.com/video/BV1Ft4y1B74e)
+- [Parallel Postgres: What's Coming in Greenplum 7](https://www.youtube.com/watch?v=-8RbbETBs4E)
+- [Greenplum 分布式数据库内核揭秘](https://www.bilibili.com/video/BV1sP4y1T7wo)
+- [Greenplum 中的资源管理策略](https://www.bilibili.com/video/BV1uZ4y167Sh)
 
 <br>
 <span class="post-meta">
