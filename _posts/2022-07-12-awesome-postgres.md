@@ -30,6 +30,7 @@ tags:
 - [momjian.us](https://momjian.us/)
 - [depesz.com](https://www.depesz.com/) by Hubert Lubaczewski
 - [Robert Haas](https://rhaas.blogspot.com/)'s blogspot
+- [PostgreSQL and Databases in general](http://amitkapila16.blogspot.com/) Amit Kapila's blogspot
 - [What PostgreSQL has over other open source SQL databases: Part I](https://www.compose.com/articles/what-postgresql-has-over-other-open-source-sql-databases/)
 - [What PostgreSQL has over other open source SQL databases: Part II](https://www.compose.com/articles/what-postgresql-has-over-other-open-source-sql-databases-part-ii/)
 - [Why use Postgres](https://www.craigkerstiens.com/2017/04/30/why-postgres-five-years-later/) by Craig Kerstiens
@@ -58,6 +59,10 @@ tags:
 - [Tuning Autovacuum in PostgreSQL and Autovacuum Internals](https://www.percona.com/blog/2018/08/10/tuning-autovacuum-in-postgresql-and-autovacuum-internals/) by Avinash Vallarapu, 2018
 - [Tuning PostgreSQL Database Parameters to Optimize Performance](https://www.percona.com/blog/2018/08/31/tuning-postgresql-database-parameters-to-optimize-performance/) by Ibrar Ahmed, 2018
 - [Tune Linux Kernel Parameters For PostgreSQL Optimization](https://www.percona.com/blog/2018/08/29/tune-linux-kernel-parameters-for-postgresql-optimization/) by Ibrar Ahmed, 2018
+- [MVCC and VACUUM](http://rhaas.blogspot.com/2017/12/mvcc-and-vacuum.html) by Robert Haas, 2017
+- [VACUUM FULL doesn't mean "VACUUM, but better"](http://rhaas.blogspot.com/2014/03/vacuum-full-doesnt-mean-vacuum-but.html) by Robert Haas, 2014
+- [DO or UNDO - there is no VACUUM](http://rhaas.blogspot.com/2018/01/do-or-undo-there-is-no-vacuum.html) by Robert Haas, 2018
+- [Different Approaches for MVCC used in well known Databases](http://amitkapila16.blogspot.com/2015/03/different-approaches-for-mvcc-used-in.html) by Amit Kapila, 2015
 
 
 <h4>Books</h4>
