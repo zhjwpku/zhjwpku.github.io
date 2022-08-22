@@ -218,6 +218,9 @@ SELECT schemaname, round(sum(pg_total_relation_size(schemaname||'.'||tablename))
 -- 查看数据库的数据量
 SELECT pg_size_pretty(pg_database_size('postgres'));
 SELECT datname, pg_size_pretty(pg_database_size(datname)) FROM pg_database;
+
+-- 查看 gp segment 和 mirror 的配置
+SELECT * FROM gp_segment_configuration \gx
 ```
 
 <h4>GUC</h4>
