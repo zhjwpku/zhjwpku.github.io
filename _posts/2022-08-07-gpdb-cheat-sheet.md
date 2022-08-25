@@ -55,6 +55,19 @@ gpstop -r
 gpstop -a
 ```
 
+**gprecoverseg**
+
+```shell
+# incremental recovery
+gprecoverseg -a
+
+# full recovery
+gprecoverseg -a -F
+
+# rebalance segments
+gprecoverseg -ar
+```
+
 **连接 segment 实例**
 
 ```shell
@@ -219,8 +232,18 @@ SELECT schemaname, round(sum(pg_total_relation_size(schemaname||'.'||tablename))
 SELECT pg_size_pretty(pg_database_size('postgres'));
 SELECT datname, pg_size_pretty(pg_database_size(datname)) FROM pg_database;
 
--- 查看 gp segment 和 mirror 的配置
+-- 查看 gp segment 和 mirror 的配置及节点状态
 SELECT * FROM gp_segment_configuration \gx
+SELECT * FROM gp_segment_configuration WHERE mode <> 's' OR status <> 'u';
+
+-- 查看节点状态变更历史
+SELECT * FROM gp_configuration_history;
+
+-- 查看 postmaster 启动时间
+SELECT pg_postmaster_start_time();
+
+-- 杀 session
+SELECT pg_terminate_backend(pid);
 ```
 
 <h4>GUC</h4>
@@ -237,8 +260,6 @@ select count(*) from pg_attribute;
 set gp_select_invisible=true;
 select count(*) from pg_attribute;
 -- 令 n 为后者与前者的比值，如果 n > 10 则认为是严重 bloat，n 在 [4, 10] 之间则认为是中等 bloat
-
-
 ```
 
 **misc**
