@@ -53,6 +53,9 @@ gpstop -r
 
 # Stop a Greenplum Database system in smart mode without prompting the user for confirmation
 gpstop -a
+
+# Stop a Greenplum Database system in fast mode
+gpstop -M fast
 ```
 
 **gprecoverseg**
