@@ -255,6 +255,9 @@ SELECT count(*) FROM pg_stat_activity;
 
 -- 查看 gpdb 各 segment 节点的连接数
 SELECT gp_execution_dbid(), datname, numbackends SELECT gp_dist_random('pg_stat_database');
+
+-- 查看 ao 表的分布情况
+SELECT get_ao_distribution('lineitem');
 ```
 
 <h4>GUC</h4>
@@ -294,5 +297,6 @@ References:
 2 [Show database bloat](https://wiki.postgresql.org/wiki/Show_database_bloat)<br>
 3 [Greenplum通过gp_dist_random('gp_id') 在所有节点调用某个函数](https://developer.aliyun.com/article/7593)<br>
 4 [Useful Greenplum SQLs](http://www.openkb.info/2014/05/useful-greenplum-sqls.html)<br>
+5 [Choosing the Table Storage Model](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-admin_guide-ddl-ddl-storage.html)<br>
 </span>
 
