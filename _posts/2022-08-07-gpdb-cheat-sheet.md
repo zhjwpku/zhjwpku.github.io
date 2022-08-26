@@ -244,6 +244,14 @@ SELECT pg_postmaster_start_time();
 
 -- 杀 session
 SELECT pg_terminate_backend(pid);
+
+-- 查看数据库的连接数
+SELECT datname, numbackends FROM pg_stat_database;
+SELECT sum(numbackends) FROM pg_stat_database;
+SELECT count(*) FROM pg_stat_activity;
+
+-- 查看 gpdb 各 segment 节点的连接数
+SELECT gp_execution_dbid(), datname, numbackends SELECT gp_dist_random('pg_stat_database');
 ```
 
 <h4>GUC</h4>
