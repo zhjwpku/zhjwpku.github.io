@@ -23,6 +23,7 @@ tags:
 - [Review of Patch Reviewing](https://www.pgcon.org/2011/schedule/events/368.en.html) by Stephen Frost, PGCon 2011
 - [Hacking the Query Planner](https://www.pgcon.org/2011/schedule/attachments/188_Planner%20talk.pdf) by Tom Lane, PGCon 2011
 - [PGXN](https://pgxn.org/)  PostgreSQL Extension Network
+- [HOT Understanding this important update optimization](https://www.slideshare.net/GrantMcAlister/hot-understanding-this-important-update-optimization)
 
 <h4>Blogs</h4>
 
