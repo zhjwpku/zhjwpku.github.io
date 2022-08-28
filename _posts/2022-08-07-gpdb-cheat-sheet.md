@@ -298,5 +298,6 @@ References:
 3 [Greenplum通过gp_dist_random('gp_id') 在所有节点调用某个函数](https://developer.aliyun.com/article/7593)<br>
 4 [Useful Greenplum SQLs](http://www.openkb.info/2014/05/useful-greenplum-sqls.html)<br>
 5 [Choosing the Table Storage Model](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-admin_guide-ddl-ddl-storage.html)<br>
+6 [Using Resource Queues](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-admin_guide-workload_mgmt.html)<br>
 </span>
 
