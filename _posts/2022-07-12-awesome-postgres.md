@@ -24,6 +24,8 @@ tags:
 - [Hacking the Query Planner](https://www.pgcon.org/2011/schedule/attachments/188_Planner%20talk.pdf) by Tom Lane, PGCon 2011
 - [PGXN](https://pgxn.org/)  PostgreSQL Extension Network
 - [HOT Understanding this important update optimization](https://www.slideshare.net/GrantMcAlister/hot-understanding-this-important-update-optimization)
+- [Packaging Related Objects into an Extension](https://www.postgresql.org/docs/current/extend-extensions.html)
+- [Background Worker Processes](https://www.postgresql.org/docs/current/bgworker.html)
 
 <h4>Blogs</h4>
 
