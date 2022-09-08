@@ -242,6 +242,9 @@ SELECT * FROM gp_segment_configuration WHERE mode <> 's' OR status <> 'u';
 -- 查看节点状态变更历史
 SELECT * FROM gp_configuration_history;
 
+-- 查看 coordinator 或 primary segment 在开启 mirror 后 wal 日志的复制状态
+SELECT * FROM gp_stat_replication;
+
 -- 查看 postmaster 启动时间
 SELECT pg_postmaster_start_time();
 
