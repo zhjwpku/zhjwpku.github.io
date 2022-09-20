@@ -235,6 +235,20 @@ SELECT schemaname, round(sum(pg_total_relation_size(schemaname||'.'||tablename))
 SELECT pg_size_pretty(pg_database_size('postgres'));
 SELECT datname, pg_size_pretty(pg_database_size(datname)) FROM pg_database;
 
+-- 查看 autovacuum 未启用的表
+SELECT relnamespace::regnamespace AS schema_name, 
+       relname AS table_name
+  FROM pg_class 
+WHERE 'autovacuum_enabled=false' = any(reloptions);
+
+-- 查看一个表的单个 reloption
+SELECT nspname, relname, reloption
+  FROM pg_class JOIN pg_namespace ON pg_class.relnamespace = pg_namespace.oid,
+       unnest(reloptions) AS reloption
+WHERE relname='lineitem' AND
+      nspname = 'public' AND
+      reloption ~ 'autovacuum_enabled=.*';
+
 -- 查看 gp segment 和 mirror 的配置及节点状态
 SELECT * FROM gp_segment_configuration \gx
 SELECT * FROM gp_segment_configuration WHERE mode <> 's' OR status <> 'u';
