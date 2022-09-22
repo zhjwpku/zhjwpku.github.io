@@ -164,6 +164,34 @@ SELECT * FROM pgstattuple('vac') \gx
 SELECT * FROM pgstatindex('vac_s') \gx
 ```
 
+**plpython3u**
+
+configure 时带上 `--with-python` 选项。
+
+```sql
+-- load plpython3u
+CREATE EXTENSION plpython3u;
+
+-- 模拟 show create table
+CREATE OR REPLACE FUNCTION show_create_table(
+  database VARCHAR,
+  schema VARCHAR,
+  tablename VARCHAR)
+RETURNS VARCHAR
+AS $$
+  import subprocess
+  import re
+  pg_dump_output = subprocess.Popen(["pg_dump", "-s", "-t", str(schema + "." + tablename), database], stdout=subprocess.PIPE).communicate()[0].decode('utf-8')
+  regex_pat = r'(^CREATE TABLE.+?\);$)'
+  matches = re.findall(regex_pat, pg_dump_output, re.DOTALL|re.MULTILINE)
+  ddl = matches[0]
+  return ddl
+$$ LANGUAGE plpython3u SECURITY DEFINER;
+
+-- 调用
+SELECT public.show_create_table('postgres', 'public', 't1');
+```
+
 <h4>SQL</h4>
 
 ```sql
