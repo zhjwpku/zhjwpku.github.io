@@ -60,6 +60,17 @@ lldb -p <postgres_pid>
 (lldb) pro hand -p true -s false SIGUSR1
 ```
 
+**building postgres with meson**
+
+社区在 2022/9/22 合入了 `meson based build system` 用于替代 Autoconf，详见 ref [2]。
+
+```
+mkdir -p build && cd build
+meson setup -Ddebug=true . ..
+meson compile
+sudo meson install
+```
+
 <br>
 <span class="post-meta">
 References:
@@ -67,5 +78,7 @@ References:
 <br>
 <span class="post-meta">
 1 [GDB to LLDB command map](https://lldb.llvm.org/use/map.html)<br>
+2 [building postgres with meson - v13](https://www.postgresql.org/message-id/20220915022626.5xx3ccgkzpkqw5mq@awork3.anarazel.de)<br>
+3 [Postgres Meson Wiki](https://wiki.postgresql.org/wiki/Meson)
 </span>
 
