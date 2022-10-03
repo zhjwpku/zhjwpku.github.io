@@ -253,6 +253,9 @@ SELECT pg_size_pretty(pg_relation_size('lineitem'));
 -- 查看表和索引的总大小
 SELECT pg_size_pretty(pg_total_relation_size('lineitem'));
 
+-- 查看 AO 表的压缩率
+SELECT get_ao_compression_ratio('lineitem');
+
 -- 查看一个 schema 中的数据量
 SELECT schemaname, round(sum(pg_total_relation_size(schemaname||'.'||tablename))/1024/1024) "Size_MB"
   FROM pg_tables 
