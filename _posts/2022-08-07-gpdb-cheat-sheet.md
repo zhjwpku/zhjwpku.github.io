@@ -296,13 +296,16 @@ SELECT pg_postmaster_start_time();
 -- 杀 session
 SELECT pg_terminate_backend(pid);
 
+-- 通过 session id 到各个节点执行 terminate 命令，保证所杀的 backend 来自同一条 sql
+SELECT gp_execution_dbid(), pg_terminate_backend(pid) FROM gp_dist_random('pg_stat_activity') WHERE sess_id=<sess_id> ORDER BY 1;
+
 -- 查看数据库的连接数
 SELECT datname, numbackends FROM pg_stat_database;
 SELECT sum(numbackends) FROM pg_stat_database;
 SELECT count(*) FROM pg_stat_activity;
 
 -- 查看 gpdb 各 segment 节点的连接数
-SELECT gp_execution_dbid(), datname, numbackends SELECT gp_dist_random('pg_stat_database');
+SELECT gp_execution_dbid(), datname, numbackends FROM gp_dist_random('pg_stat_database');
 
 -- 查看 ao 表的分布情况
 SELECT get_ao_distribution('lineitem');
