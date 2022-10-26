@@ -29,6 +29,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Executable and Linkable Format (ELF)][elf]
 - [Modern dynamic linking infrastructure for PLT][3474]
 - [The Log: What every software engineer should know about real-time data's unifying abstraction][the-log]
+- [SIMD for C++ Developers][simd]
 
 <h4>Blogs</h4>
 
@@ -143,3 +144,4 @@ Reference:
 [bottomupcs]: https://github.com/ianw/bottomupcs
 [UTVp4jpJoyc]: https://www.youtube.com/watch?v=UTVp4jpJoyc
 [the-log]: https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+[simd]: http://const.me/articles/simd/simd.pdf
