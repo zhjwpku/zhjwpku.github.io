@@ -31,6 +31,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [The Log: What every software engineer should know about real-time data's unifying abstraction][the-log]
 - [SIMD for C++ Developers][simd]
 - [x86 Intrinsics Cheat Sheet][simd-cheat-sheet]
+- [Data-Parallel Execution using SIMD Instructions](https://db.in.tum.de/teaching/ws1819/dataprocessing/chapter2.pdf)
 
 <h4>Blogs</h4>
 
