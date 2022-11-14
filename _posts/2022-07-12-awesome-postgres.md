@@ -66,6 +66,8 @@ tags:
 - [VACUUM FULL doesn't mean "VACUUM, but better"](http://rhaas.blogspot.com/2014/03/vacuum-full-doesnt-mean-vacuum-but.html) by Robert Haas, 2014
 - [DO or UNDO - there is no VACUUM](http://rhaas.blogspot.com/2018/01/do-or-undo-there-is-no-vacuum.html) by Robert Haas, 2018
 - [Different Approaches for MVCC used in well known Databases](http://amitkapila16.blogspot.com/2015/03/different-approaches-for-mvcc-used-in.html) by Amit Kapila, 2015
+- [Why Uber Engineering Switched from Postgres to MySQL](https://www.uber.com/blog/postgres-to-mysql-migration/) 2016
+- [On Uber’s Choice of Databases](https://use-the-index-luke.com/blog/2016-07-29/on-ubers-choice-of-databases) by Markus Winand, 2016
 
 
 <h4>Books</h4>
@@ -118,6 +120,8 @@ tags:
 - [An introduction to Memory Contexts](https://www.youtube.com/watch?v=tP2pHbKz2R0) by Chris Travers, PGCon 2019
 - [Hacking the Query Planner, Again](https://www.youtube.com/watch?v=wTg02tniO2A) by Richard Guo, PGCon 2020
 - [PostgreSQL 空闲空间管理](https://www.bilibili.com/video/BV1934y1i7pk) by Wang Xiaoran, PGConf.Asia 2021
+- [Why Uber Engineering Switched from Postgres to MySQL](https://www.youtube.com/watch?v=_E43l5EbNI4) by Hussein Nasser, 2020
+- [A PostgreSQL Response to Uber](https://www.youtube.com/watch?v=5dIbB5GIqAo) [slides](https://thebuild.com/presentations/uber-perconalive-2017.pdf) by Christophe Pettus, 2017
 
 <h4>Greenplum specific</h4>
 
