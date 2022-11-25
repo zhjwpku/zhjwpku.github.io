@@ -280,6 +280,16 @@ WHERE relname='lineitem' AND
       nspname = 'public' AND
       reloption ~ 'autovacuum_enabled=.*';
 
+-- 查看由插件创建的 UDF
+SELECT e.extname, ne.nspname AS extschema, p.proname, np.nspname AS proschema
+FROM pg_catalog.pg_extension AS e
+    INNER JOIN pg_catalog.pg_depend AS d ON (d.refobjid = e.oid)
+    INNER JOIN pg_catalog.pg_proc AS p ON (p.oid = d.objid)
+    INNER JOIN pg_catalog.pg_namespace AS ne ON (ne.oid = e.extnamespace)
+    INNER JOIN pg_catalog.pg_namespace AS np ON (np.oid = p.pronamespace)
+WHERE d.deptype = 'e'
+ORDER BY 1, 3;
+
 -- 查看 gp segment 和 mirror 的配置及节点状态
 SELECT * FROM gp_segment_configuration \gx
 SELECT * FROM gp_segment_configuration WHERE mode <> 's' OR status <> 'u';
@@ -289,6 +299,9 @@ SELECT * FROM gp_configuration_history;
 
 -- 查看 coordinator 或 primary segment 在开启 mirror 后 wal 日志的复制状态
 SELECT * FROM gp_stat_replication;
+
+-- 查看 replication slots
+SELECT gp_execution_dbid(), * FROM gp_dist_random('pg_replication_slots') ORDER BY 1;
 
 -- 查看 postmaster 启动时间
 SELECT pg_postmaster_start_time();
