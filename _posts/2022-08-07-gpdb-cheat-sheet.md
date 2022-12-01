@@ -237,6 +237,11 @@ SELECT current_database();
 -- 查看实例 block_size
 SELECT current_setting('block_size');
 
+-- 查看每个 session 保存查询命令所预留的内存空间，适用于 pg_stat_activity.query 字段
+SHOW track_activity_query_size;
+-- 避免查询命令被截断，设置 track_activity_query_size 为 16MB
+ALTER SYSTEM SET track_activity_query_size = 16384;
+
 -- 查看表的 oid，由于 oid 是隐藏列，所以需要显示指定要查询该列
 SELECT oid, * FROM pg_class WHERE relname = 'lineitem';
 
