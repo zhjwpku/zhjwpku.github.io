@@ -27,6 +27,7 @@ tags:
 - [Packaging Related Objects into an Extension](https://www.postgresql.org/docs/current/extend-extensions.html)
 - [Background Worker Processes](https://www.postgresql.org/docs/current/bgworker.html)
 - [Deal with Corruption](https://wiki.postgresql.org/wiki/Corruption)
+- [Slow Query Questions](https://wiki.postgresql.org/wiki/Slow_Query_Questions)
 
 <h4>Blogs</h4>
 
