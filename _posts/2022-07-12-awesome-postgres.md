@@ -28,6 +28,7 @@ tags:
 - [Background Worker Processes](https://www.postgresql.org/docs/current/bgworker.html)
 - [Deal with Corruption](https://wiki.postgresql.org/wiki/Corruption)
 - [Slow Query Questions](https://wiki.postgresql.org/wiki/Slow_Query_Questions)
+- [Using EXPLAIN](https://wiki.postgresql.org/wiki/Using_EXPLAIN)
 
 <h4>Blogs</h4>
 
