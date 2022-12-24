@@ -29,6 +29,7 @@ tags:
 - [Deal with Corruption](https://wiki.postgresql.org/wiki/Corruption)
 - [Slow Query Questions](https://wiki.postgresql.org/wiki/Slow_Query_Questions)
 - [Using EXPLAIN](https://wiki.postgresql.org/wiki/Using_EXPLAIN)
+- [Foreign data wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
 
 <h4>Blogs</h4>
 
