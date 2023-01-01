@@ -16,7 +16,7 @@ url: https://zhjwpku.com
 timezone: Asia/Shanghai
 
 years:
-- "2016-2022"
+- "2016-2023"
 
 plugins:
 - jekyll-paginate
