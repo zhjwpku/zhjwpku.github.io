@@ -32,6 +32,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [SIMD for C++ Developers][simd]
 - [x86 Intrinsics Cheat Sheet][simd-cheat-sheet]
 - [Data-Parallel Execution using SIMD Instructions](https://db.in.tum.de/teaching/ws1819/dataprocessing/chapter2.pdf)
+- [Design Docs at Google][design-docs-at-google]
 
 <h4>Blogs</h4>
 
@@ -148,3 +149,4 @@ Reference:
 [the-log]: https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
 [simd]: http://const.me/articles/simd/simd.pdf
 [simd-cheat-sheet]: assets/pdf/x86-intrin-cheatsheet-v2.1.pdf
+[design-docs-at-google]: https://www.industrialempathy.com/posts/design-docs-at-google/
