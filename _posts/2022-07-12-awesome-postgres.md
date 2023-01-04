@@ -158,6 +158,7 @@ tags:
 - [Parallel Postgres: What's Coming in Greenplum 7](https://www.youtube.com/watch?v=-8RbbETBs4E)
 - [Greenplum 分布式数据库内核揭秘](https://www.bilibili.com/video/BV1sP4y1T7wo)
 - [Greenplum 中的资源管理策略](https://www.bilibili.com/video/BV1uZ4y167Sh)
+- [Introduction To Greenplum Architecture](https://greenplum.org/introduction-to-greenplum-architecture/) by MAX YANG
 
 <br>
 <span class="post-meta">
