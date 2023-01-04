@@ -29,6 +29,7 @@ tags:
 - [Deal with Corruption](https://wiki.postgresql.org/wiki/Corruption)
 - [Slow Query Questions](https://wiki.postgresql.org/wiki/Slow_Query_Questions)
 - [Using EXPLAIN](https://wiki.postgresql.org/wiki/Using_EXPLAIN)
+- [Understanding EXPLAIN](https://public.dalibo.com/exports/conferences/_archives/_2012/201211_explain/understanding_explain.pdf)
 - [Foreign data wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
 - [Lock Monitoring](https://wiki.postgresql.org/wiki/Lock_Monitoring)
 
