@@ -251,12 +251,24 @@ SELECT * FROM gp_dist_random('lineitem') LIMIT 10;
 
 -- 查看表是否倾斜
 SELECT gp_segment_id, count(*) FROM lineitem GROUP BY gp_segment_id;
+-- diagnose if a table has uneven data distribution
+SELECT * FROM gp_toolkit.gp_skew_coefficients;
+
+-- 查看各个 segment 的磁盘 free space
+SELECT * FROM gp_toolkit.gp_disk_free;
+
+-- 查看 heap 表膨胀程度
+SELECT * FROM gp_toolkit.gp_bloat_diag;
+
+-- 查看 heap 表是否缺少统计信息
+SELECT * FROM gp_toolkit.gp_stats_missing;
 
 -- 查看表大小
 SELECT pg_size_pretty(pg_relation_size('lineitem'));
 
 -- 查看表和索引的总大小
 SELECT pg_size_pretty(pg_total_relation_size('lineitem'));
+SELECT * FROM gp_toolkit.gp_size_of_table_disk;
 
 -- 查看 AO 表的压缩率
 SELECT get_ao_compression_ratio('lineitem');
@@ -270,6 +282,7 @@ SELECT schemaname, round(sum(pg_total_relation_size(schemaname||'.'||tablename))
 -- 查看数据库的数据量
 SELECT pg_size_pretty(pg_database_size('postgres'));
 SELECT datname, pg_size_pretty(pg_database_size(datname)) FROM pg_database;
+SELECT * FROM  gp_toolkit.gp_size_of_database;
 
 -- 查看 autovacuum 未启用的表
 SELECT relnamespace::regnamespace AS schema_name, 
@@ -368,5 +381,6 @@ References:
 4 [Useful Greenplum SQLs](http://www.openkb.info/2014/05/useful-greenplum-sqls.html)<br>
 5 [Choosing the Table Storage Model](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-admin_guide-ddl-ddl-storage.html)<br>
 6 [Using Resource Queues](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-admin_guide-workload_mgmt.html)<br>
+7 [The gp_toolkit Administrative Schema](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-ref_guide-gp_toolkit.html)<br>
 </span>
 
