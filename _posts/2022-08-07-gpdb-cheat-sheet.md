@@ -249,6 +249,9 @@ SELECT oid, * FROM pg_class WHERE relname = 'lineitem';
 SELECT random() FROM gp_dist_random('gp_id');
 SELECT * FROM gp_dist_random('lineitem') LIMIT 10;
 
+-- 检查集群是否可用
+SELECT now() FROM gp_dist_random('gp_id');
+
 -- 查看表是否倾斜
 SELECT gp_segment_id, count(*) FROM lineitem GROUP BY gp_segment_id;
 -- diagnose if a table has uneven data distribution
@@ -340,6 +343,36 @@ SELECT gp_execution_dbid(), datname, numbackends FROM gp_dist_random('pg_stat_da
 
 -- 查看 ao 表的分布情况
 SELECT get_ao_distribution('lineitem');
+
+-- 查看 database 的 age
+WITH cluster AS (
+	SELECT gp_segment_id, datname, age(datfrozenxid) age FROM pg_database
+	UNION ALL
+	SELECT gp_segment_id, datname, age(datfrozenxid) age FROM gp_dist_random('pg_database')
+)
+SELECT gp_segment_id, datname, age,
+  CASE
+    WHEN age < (2^31-1 - current_setting('xid_stop_limit')::int - current_setting('xid_warn_limit')::int) THEN 'BELOW WARN LIMIT'
+    WHEN  ((2^31-1 - current_setting('xid_stop_limit')::int - current_setting('xid_warn_limit')::int) < age) AND (age <  (2^31-1 - current_setting('xid_stop_limit')::int)) THEN 'OVER WARN LIMIT and UNDER STOP LIMIT'
+    WHEN age > (2^31-1 - current_setting('xid_stop_limit')::int ) THEN 'OVER STOP LIMIT'
+    WHEN age < 0 THEN 'OVER WRAPAROUND'
+  END
+FROM cluster
+ORDER BY datname, gp_segment_id;
+
+-- 查看表的 age
+SELECT 
+  coalesce(n.nspname, ''), 
+  relname, 
+  relkind, 
+  relstorage, 
+  age(relfrozenxid)
+FROM 
+  pg_class c 
+  LEFT JOIN pg_namespace n ON c.relnamespace = n.oid
+WHERE 
+  relkind = 'r' AND relstorage NOT IN ('x')
+ORDER BY 5 DESC;
 ```
 
 <h4>GUC</h4>
@@ -382,5 +415,6 @@ References:
 5 [Choosing the Table Storage Model](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-admin_guide-ddl-ddl-storage.html)<br>
 6 [Using Resource Queues](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-admin_guide-workload_mgmt.html)<br>
 7 [The gp_toolkit Administrative Schema](https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-ref_guide-gp_toolkit.html)<br>
+8 [How to check database age in Greenplum](https://community.pivotal.io/s/article/How-to-check-database-age-in-Greenplum?language=en_US)<br>
 </span>
 
