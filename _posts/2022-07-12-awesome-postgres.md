@@ -32,6 +32,7 @@ tags:
 - [Understanding EXPLAIN](https://public.dalibo.com/exports/conferences/_archives/_2012/201211_explain/understanding_explain.pdf)
 - [Foreign data wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
 - [Lock Monitoring](https://wiki.postgresql.org/wiki/Lock_Monitoring)
+- [Extending PostgreSQL in C](https://pgconf.ru/media/2020/02/19/Extending_PostgreSQL_in_C.pdf)
 
 <h4>Blogs</h4>
 
