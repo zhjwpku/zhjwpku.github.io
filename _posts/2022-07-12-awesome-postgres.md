@@ -130,6 +130,7 @@ tags:
 - [Why Uber Engineering Switched from Postgres to MySQL](https://www.youtube.com/watch?v=_E43l5EbNI4) by Hussein Nasser, 2020
 - [A PostgreSQL Response to Uber](https://www.youtube.com/watch?v=5dIbB5GIqAo) [slides](https://thebuild.com/presentations/uber-perconalive-2017.pdf) by Christophe Pettus, 2017
 - [EXPLAIN Explained](https://www.youtube.com/watch?v=mCwwFAl1pBU) by Josh Berkus, 2016
+- [PGX: Build Postgres Extensions with Rust](https://www.youtube.com/watch?v=RORkgaURcS0) by Eric Ridge, 2021
 
 <h4>Greenplum specific</h4>
 
