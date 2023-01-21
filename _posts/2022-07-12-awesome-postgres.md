@@ -131,6 +131,7 @@ tags:
 - [A PostgreSQL Response to Uber](https://www.youtube.com/watch?v=5dIbB5GIqAo) [slides](https://thebuild.com/presentations/uber-perconalive-2017.pdf) by Christophe Pettus, 2017
 - [EXPLAIN Explained](https://www.youtube.com/watch?v=mCwwFAl1pBU) by Josh Berkus, 2016
 - [PGX: Build Postgres Extensions with Rust](https://www.youtube.com/watch?v=RORkgaURcS0) by Eric Ridge, 2021
+- [PostgreSQL Extensions: A Deeper Dive](https://www.youtube.com/watch?v=HNg-N7ZjwjE) by Jignesh Shah, 2019
 
 <h4>Greenplum specific</h4>
 
