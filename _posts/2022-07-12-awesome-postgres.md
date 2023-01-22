@@ -135,6 +135,7 @@ tags:
 - [Fascinating Reporting With Postgres psql](https://www.youtube.com/watch?v=GMiJs7YSzXM) by Christopher L. Augustus, 2019
 - [Intro To Foreign Data Wrappers In Postgres](https://www.youtube.com/watch?v=Swl0P7cP3-w) by Sam Bail, 2019
 - [Mistaken And Ignored Parameters While Optimizing A PostgreSQL Database](https://www.youtube.com/watch?v=lJ18c1hGRBM) by Avinash Vallarapu, 2019
+- [JSONB Tricks](https://www.youtube.com/watch?v=p9RItyeKbLQ) by Colton Shepard, 2019
 
 <h4>Greenplum specific</h4>
 
