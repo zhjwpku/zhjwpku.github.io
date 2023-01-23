@@ -124,6 +124,8 @@ tags:
 - [Unlocking the Postgres Lock Manager](https://www.youtube.com/watch?v=s3ee0nuDDqs) / [Slides](https://momjian.us/main/writings/pgsql/locking.pdf) by Bruce Momjian, 2012
 - [Index Internals](https://www.youtube.com/watch?v=W6B8-srOsrs) by Heikki Linnakangas, 2016
 - [PostgreSQL Partitioning](https://www.youtube.com/watch?v=yp_8QSWOcTI) by Robert Treat, PGCon 2018
+- [PostgreSQL Partitioning](https://www.youtube.com/watch?v=JWQVDKw1HVk) by Simon Riggs, PostgresOpen 2019
+- [Webinar: PostgreSQL Partitioning](https://www.youtube.com/watch?v=7VCSmuHMpfk) by Simon Riggs, 2020
 - [Learning to Hack on Postgres Planner](https://www.youtube.com/watch?v=j7UPVU5UCV4) by Melanie Plageman, PGCon 2019
 - [An introduction to Memory Contexts](https://www.youtube.com/watch?v=tP2pHbKz2R0) by Chris Travers, PGCon 2019
 - [Hacking the Query Planner, Again](https://www.youtube.com/watch?v=wTg02tniO2A) by Richard Guo, PGCon 2020
