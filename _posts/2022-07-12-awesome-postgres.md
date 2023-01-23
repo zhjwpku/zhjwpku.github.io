@@ -119,7 +119,8 @@ tags:
 - [Debugging your PL/pgSQL code](https://www.youtube.com/watch?v=pOb-7JZQoW4) by Jim Mlodgenski, 2016
 - [Zen of Postgres: How to be a happy hacker](https://www.youtube.com/watch?v=yFDyM29tB6k) by Andrew Dunstan, 2012
 - [MVCC Unmasked](https://www.youtube.com/watch?v=sq_aO34SWZc) by Bruce Momjian, OSCon 2011
-- [Understanding Advanced Datatypes in PostgreSQL](https://www.youtube.com/watch?v=wzKWMF-kWGc)
+- [Understanding Advanced Datatypes in PostgreSQL](https://www.youtube.com/watch?v=wzKWMF-kWGc) 2016
+- [Advanced Data Types In PostgreSQL](https://www.youtube.com/watch?v=lHaqPaua7nc) by Andreas Scherbaum, 2019
 - [Unlocking the Postgres Lock Manager](https://www.youtube.com/watch?v=s3ee0nuDDqs) / [Slides](https://momjian.us/main/writings/pgsql/locking.pdf) by Bruce Momjian, 2012
 - [Index Internals](https://www.youtube.com/watch?v=W6B8-srOsrs) by Heikki Linnakangas, 2016
 - [PostgreSQL Partitioning](https://www.youtube.com/watch?v=yp_8QSWOcTI) by Robert Treat, PGCon 2018
