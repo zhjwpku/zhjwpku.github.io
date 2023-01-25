@@ -76,6 +76,7 @@ tags:
 - [Different Approaches for MVCC used in well known Databases](http://amitkapila16.blogspot.com/2015/03/different-approaches-for-mvcc-used-in.html) by Amit Kapila, 2015
 - [Why Uber Engineering Switched from Postgres to MySQL](https://www.uber.com/blog/postgres-to-mysql-migration/) 2016
 - [On Uber’s Choice of Databases](https://use-the-index-luke.com/blog/2016-07-29/on-ubers-choice-of-databases) by Markus Winand, 2016
+- [Creating a Postgres Foreign Data Wrapper](https://www.dolthub.com/blog/2022-01-26-creating-a-postgres-foreign-data-wrapper/) by Aaron Son, 2022
 
 
 <h4>Books</h4>
