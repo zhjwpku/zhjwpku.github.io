@@ -33,6 +33,7 @@ tags:
 - [Foreign data wrappers](https://wiki.postgresql.org/wiki/Foreign_data_wrappers)
 - [Lock Monitoring](https://wiki.postgresql.org/wiki/Lock_Monitoring)
 - [Extending PostgreSQL in C](https://pgconf.ru/media/2020/02/19/Extending_PostgreSQL_in_C.pdf)
+- [Implementing your first PostgreSQL extension: From Coding to Distribution](https://www.postgresql.eu/events/pgconfeu2019/sessions/session/2641/slides/265/Implementing%20your%20first%20PostgreSQL%20extension.pdf)
 
 <h4>Blogs</h4>
 
