@@ -142,6 +142,7 @@ tags:
 - [Mistaken And Ignored Parameters While Optimizing A PostgreSQL Database](https://www.youtube.com/watch?v=lJ18c1hGRBM) by Avinash Vallarapu, 2019
 - [JSONB Tricks](https://www.youtube.com/watch?v=p9RItyeKbLQ) by Colton Shepard, 2019
 - [Identifying Slow Queries and Fixing Them!](https://www.youtube.com/watch?v=yhOkob2PQFQ) by Stephen Frost, Postgres Open 2016
+- [Look It Up Practical PostgreSQL Indexing](https://www.youtube.com/watch?v=Xv0NFozBIbM) by Christphe Pettus, PostgresOpen 2019
 
 <h4>Greenplum specific</h4>
 
