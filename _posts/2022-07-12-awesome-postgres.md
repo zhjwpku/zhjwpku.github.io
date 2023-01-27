@@ -143,6 +143,8 @@ tags:
 - [JSONB Tricks](https://www.youtube.com/watch?v=p9RItyeKbLQ) by Colton Shepard, 2019
 - [Identifying Slow Queries and Fixing Them!](https://www.youtube.com/watch?v=yhOkob2PQFQ) by Stephen Frost, Postgres Open 2016
 - [Look It Up Practical PostgreSQL Indexing](https://www.youtube.com/watch?v=Xv0NFozBIbM) by Christphe Pettus, PostgresOpen 2019
+- [BDR - A Multi-Master PostgreSQL Solution](https://www.youtube.com/watch?v=c1UTRLomic4) by Mark Wong, 2020
+- [Geographically distributed multi-master replication with PostgreSQL and BDR](https://www.youtube.com/watch?v=ExASIbBIDhM) by Craig Ringer, 2018
 
 <h4>Greenplum specific</h4>
 
