@@ -145,6 +145,8 @@ tags:
 - [Look It Up Practical PostgreSQL Indexing](https://www.youtube.com/watch?v=Xv0NFozBIbM) by Christphe Pettus, PostgresOpen 2019
 - [BDR - A Multi-Master PostgreSQL Solution](https://www.youtube.com/watch?v=c1UTRLomic4) by Mark Wong, 2020
 - [Geographically distributed multi-master replication with PostgreSQL and BDR](https://www.youtube.com/watch?v=ExASIbBIDhM) by Craig Ringer, 2018
+- [Logical Replication in PostgreSQL](https://www.youtube.com/watch?v=nGjLUk2RQ5U) by Kuntal Ghosh, 2019
+- [A Review of PostgreSQL Replication Approaches](https://www.youtube.com/watch?v=UBP4eNmncmk) by Boriss Mejias, 2021
 
 <h4>Greenplum specific</h4>
 
