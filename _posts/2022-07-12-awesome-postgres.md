@@ -184,6 +184,12 @@ tags:
 - [Greenplum Resource Groups](https://www.youtube.com/watch?v=NAYuyHkoPDQ) by Keaton Adams, 2019
 - [A Practical Guide to Greenplum Database Resource Group Management](https://s3.amazonaws.com/greenplum.org/wp-content/uploads/2022/08/09154511/PracticalGuidetoGreenplumDatabaseResourceGroups-v1.pdf) by Wen Wang, 2022
 
+<h4>HA related</h4>
+
+- [Full Automatic Database: PostgreSQL HA with Kubernetes](https://www.youtube.com/watch?v=iruaCgeG7qs) by Josh Berkus, KubeCon EU 2016
+- [Elephants on Automatic: HA Clustered PostgreSQL with Helm](https://www.youtube.com/watch?v=CftcVhFMGSY) by Josh Berkus & Oleksii Kliukin, 2017
+- [Why does Neon use Paxos instead of Raft, and what’s the difference?](https://neon.tech/blog/paxos) by Stas Kelvich, 2022
+
 <br>
 <span class="post-meta">
 References:
