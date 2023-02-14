@@ -184,6 +184,13 @@ tags:
 - [Greenplum Resource Groups](https://www.youtube.com/watch?v=NAYuyHkoPDQ) by Keaton Adams, 2019
 - [A Practical Guide to Greenplum Database Resource Group Management](https://s3.amazonaws.com/greenplum.org/wp-content/uploads/2022/08/09154511/PracticalGuidetoGreenplumDatabaseResourceGroups-v1.pdf) by Wen Wang, 2022
 
+<h4>YugaByteDB specific</h4>
+
+- [Distributed SQL Databases Deconstructed](https://www.youtube.com/watch?v=kqhLa41KMtY&t=1557s) by Karthik Ranganathan, 2019
+- [Extending PostgreSQL to Google Spanner architecture](https://www.youtube.com/watch?v=nh0sWEsI4SI) by Karthik Ranganathan, 2020
+- [YugabyteDB: Bringing Together the Best of Amazon Aurora and Google Spanner](https://www.youtube.com/watch?v=DAFQcYXK2-o) by Karthik Ranganathan, 2020
+- [Distributed Transactions in YugabyteDB](https://www.youtube.com/watch?v=92zS2uHuLqQ) by Karthik Ranganathan, 2021
+
 <h4>HA related</h4>
 
 - [Full Automatic Database: PostgreSQL HA with Kubernetes](https://www.youtube.com/watch?v=iruaCgeG7qs) by Josh Berkus, KubeCon EU 2016
