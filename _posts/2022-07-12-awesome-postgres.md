@@ -193,6 +193,10 @@ tags:
 - [YugabyteDB: Bringing Together the Best of Amazon Aurora and Google Spanner](https://www.youtube.com/watch?v=DAFQcYXK2-o) by Karthik Ranganathan, 2020
 - [Distributed Transactions in YugabyteDB](https://www.youtube.com/watch?v=92zS2uHuLqQ) by Karthik Ranganathan, 2021
 
+<h4>Postgres-XL</h4>
+
+- [Scale-out PostgreSQL with Postgres-XL](https://www.youtube.com/watch?v=XX-0y2Ryaic) by Mason Sharp, 2015
+
 <h4>HA related</h4>
 
 - [Full Automatic Database: PostgreSQL HA with Kubernetes](https://www.youtube.com/watch?v=iruaCgeG7qs) by Josh Berkus, KubeCon EU 2016
