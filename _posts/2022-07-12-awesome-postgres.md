@@ -153,6 +153,7 @@ tags:
 - [Database Dumps and Backups](https://www.youtube.com/watch?v=FU7eqwNCD-I) by Karen Jex, 2021
 - [Sharding and Scaling PostgreSQL: Principles and Practice](https://www.youtube.com/watch?v=mbXPbLjiYTI) by Jason Petersen, 2015
 - [How to Scale Postgres: Automation, Tuning & Sharding](https://www.youtube.com/watch?v=wk3dnP7FKq0) by Kukas Fittle, Postgres Vision 2020
+- [Citus: Distributed PostgreSQL as an Extension](https://www.youtube.com/watch?v=X-aAgXJZRqM) by Marco Slot, 2021
 
 <h4>Greenplum specific</h4>
 
