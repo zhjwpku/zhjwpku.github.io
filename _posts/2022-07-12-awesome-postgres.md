@@ -36,6 +36,7 @@ tags:
 - [Implementing your first PostgreSQL extension: From Coding to Distribution](https://www.postgresql.eu/events/pgconfeu2019/sessions/session/2641/slides/265/Implementing%20your%20first%20PostgreSQL%20extension.pdf)
 - [Plugable Table Storage in PostgreSQL](https://www.youtube.com/watch?v=mTfvA9EQIz8) by Andres Anarazel, 2019
 - [PostgreSQL GDB commands](https://github.com/tvondra/gdbpg) gdb 打印 plantree
+- [Unofficial documentation for PostgreSQL hooks](https://github.com/taminomara/psql-hooks)
 
 <h4>Blogs</h4>
 
