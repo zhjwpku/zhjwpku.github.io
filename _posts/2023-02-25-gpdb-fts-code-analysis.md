@@ -318,7 +318,7 @@ extern FTSReplicationStatusCtlData *FTSRepStatusCtl;
 
 #### Summary
 
-FTS 机制极大提高了 GPDB 集群的可用性，实现简单且容易理解。但它不能用于 Coordinator 的故障检测，且不能将节点自动拉起，在主备切换之后，即使原来的主恢复了，依然不能自动恢复到主备同步的状态，需要手动调用 `gpsegrecover` 工具来调整集群状态。当集群处于不可用状态时，通过查看 `gp_configuration_history` 可以发现一些集群变更记录，辅助问题定位。
+FTS 机制极大提高了 GPDB 集群的可用性，实现简单且容易理解。但它不能用于 Coordinator 的故障检测，且不能将节点自动拉起，在主备切换之后，即使原来的主恢复了，依然不能自动恢复到主备同步的状态，需要手动调用 `gprecoverseg` 工具来调整集群状态。当集群处于不可用状态时，通过查看 `gp_configuration_history` 可以发现一些集群变更记录，辅助问题定位。
 
 <br>
 <span class="post-meta">
