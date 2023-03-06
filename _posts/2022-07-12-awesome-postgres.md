@@ -157,6 +157,7 @@ tags:
 
 <h4>Greenplum specific</h4>
 
+- [Greenplum Database Tutorial for Beginners](https://www.youtube.com/watch?v=i9L-RpEvhaI)
 - [Greenplum性能优化之路 --（一）分区表](https://cloud.tencent.com/developer/article/1374067)
 - [Greenplum性能优化之路 --（二）存储格式](https://cloud.tencent.com/developer/article/1393372)
 - [Greenplum性能优化之路 --（三）ANALYZE](https://cloud.tencent.com/developer/article/1685910)
