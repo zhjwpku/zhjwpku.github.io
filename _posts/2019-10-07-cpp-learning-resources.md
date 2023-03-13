@@ -33,6 +33,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [x86 Intrinsics Cheat Sheet][simd-cheat-sheet]
 - [Data-Parallel Execution using SIMD Instructions](https://db.in.tum.de/teaching/ws1819/dataprocessing/chapter2.pdf)
 - [Design Docs at Google][design-docs-at-google]
+- [PRINCIPLES OF CHAOS ENGINEERING][principlesofchaos]
 
 <h4>Blogs</h4>
 
@@ -153,3 +154,4 @@ Reference:
 [simd]: http://const.me/articles/simd/simd.pdf
 [simd-cheat-sheet]: assets/pdf/x86-intrin-cheatsheet-v2.1.pdf
 [design-docs-at-google]: https://www.industrialempathy.com/posts/design-docs-at-google/
+[principlesofchaos]: http://principlesofchaos.org/
