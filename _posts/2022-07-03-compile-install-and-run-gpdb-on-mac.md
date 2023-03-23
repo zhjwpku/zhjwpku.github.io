@@ -159,6 +159,12 @@ brew install apr-util
 ln -s /usr/local/Cellar/apr/1.7.0_2/bin/apr-1-config /usr/local/bin/apr-1-config
 ```
 
+**Plan B**
+
+毕竟在 Mac 上编译开发还是伤笔记本的，如果条件允许还是在 ECS 上编译吧。
+
+[Setup a dev enviroment for gpdb.](https://gist.github.com/zhjwpku/a8c95655d9f7c5c14a9adc538948a17d)
+
 <br>
 <span class="post-meta">
 References:
