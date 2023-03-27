@@ -252,6 +252,8 @@ SELECT * FROM gp_dist_random('lineitem') LIMIT 10;
 -- 检查集群是否可用
 SELECT now() FROM gp_dist_random('gp_id');
 
+-- 查看数据库数据倾斜
+SELECT gp_segment_id, datname, pg_size_pretty(pg_database_size(datname)) dbsize FROM gp_dist_random('pg_database') ORDER BY dbsize DESC;
 -- 查看表是否倾斜
 SELECT gp_segment_id, count(*) FROM lineitem GROUP BY gp_segment_id;
 -- diagnose if a table has uneven data distribution
