@@ -80,6 +80,7 @@ tags:
 - [Why Uber Engineering Switched from Postgres to MySQL](https://www.uber.com/blog/postgres-to-mysql-migration/) 2016
 - [On Uber’s Choice of Databases](https://use-the-index-luke.com/blog/2016-07-29/on-ubers-choice-of-databases) by Markus Winand, 2016
 - [Creating a Postgres Foreign Data Wrapper](https://www.dolthub.com/blog/2022-01-26-creating-a-postgres-foreign-data-wrapper/) by Aaron Son, 2022
+- [PostgreSQL vs. MySQL: A 360-degree Comparison](https://www.enterprisedb.com/blog/postgresql-vs-mysql-360-degree-comparison-syntax-performance-scalability-and-features) by EDB Team, 2019
 
 
 <h4>Books</h4>
