@@ -121,6 +121,7 @@ subl .                          在命令行打开当前目录
 - **[Markdown Extended](https://github.com/jonschlinkert/sublime-markdown-extended)**
 - **[MarkdownLivePreview](https://packagecontrol.io/packages/MarkdownLivePreview)**
 - **[CMake](https://packagecontrol.io/packages/CMake)**
+- **[Text Marker](https://github.com/Kronuz/TextMarker)** 我现在使用 Mac + VSCode 进行编码，Sublime 和这个插件替代 Notepad++ 用于问题定位记录
 
 先列这么多吧，后面再补充 😋
 
