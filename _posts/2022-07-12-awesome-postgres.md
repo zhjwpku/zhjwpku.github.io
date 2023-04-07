@@ -197,6 +197,12 @@ tags:
 - [YugabyteDB: Bringing Together the Best of Amazon Aurora and Google Spanner](https://www.youtube.com/watch?v=DAFQcYXK2-o) by Karthik Ranganathan, 2020
 - [Distributed Transactions in YugabyteDB](https://www.youtube.com/watch?v=92zS2uHuLqQ) by Karthik Ranganathan, 2021
 
+<h4>Neon: Serverless Postgres</h4>
+
+- [SELECT ’Hello, World’](https://neon.tech/blog/hello-world) by Nikita Shamgunov, 2022
+- [Architecture decisions in Neon](https://neon.tech/blog/architecture-decisions-in-neon) by Heikki Linnakangas, 2022
+- [Neon: Serverless PostgreSQL!](https://www.youtube.com/watch?v=rES0yzeERns) Presentation on storage system by Heikki Linnakangas in the CMU Database Group seminar series
+
 <h4>Postgres-XL</h4>
 
 - [Scale-out PostgreSQL with Postgres-XL](https://www.youtube.com/watch?v=XX-0y2Ryaic) by Mason Sharp, 2015
