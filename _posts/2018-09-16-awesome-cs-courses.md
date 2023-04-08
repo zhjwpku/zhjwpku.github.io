@@ -68,6 +68,8 @@ tags:
 - [15-445/645][15445] **Intro to Database Systems** *CMU*
   - [课程主页 - Fall 2019](https://15445.courses.cs.cmu.edu/fall2019/)
   - [课程视频 - Fall 2019](https://www.youtube.com/playlist?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi)
+  - [课程主页 - FALL 2022](https://15445.courses.cs.cmu.edu/fall2022/)
+  - [课程视频 - FALL 2022](https://www.youtube.com/playlist?list=PLSE8ODhjZXjaKScG3l0nuOiDTTqpfnWFf)
 
 #### Distributed Systems
 
