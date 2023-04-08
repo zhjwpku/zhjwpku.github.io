@@ -70,6 +70,8 @@ tags:
   - [课程视频 - Fall 2019](https://www.youtube.com/playlist?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi)
   - [课程主页 - FALL 2022](https://15445.courses.cs.cmu.edu/fall2022/)
   - [课程视频 - FALL 2022](https://www.youtube.com/playlist?list=PLSE8ODhjZXjaKScG3l0nuOiDTTqpfnWFf)
+- Database textbook recommendations
+  - [Database System Concepts 6th Edition](https://www.amazon.com/dp/0073523321) by Silberschatz, Korth and Sudarshan, 2010
 
 #### Distributed Systems
 
