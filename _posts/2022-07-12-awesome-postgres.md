@@ -176,7 +176,7 @@ tags:
 - [当谈起 Greenplum 7 时，我们在谈什么？](https://www.bilibili.com/video/BV1WV411n7Zh)
 - [Greenplum 中的多阶段聚集实现](https://www.bilibili.com/video/BV1ey4y1H7eb)
 - [Greenplum 的分布式锁及其相关的一切](https://www.bilibili.com/video/BV1vZ4y1G7fy)
-- [《深入浅出 Greenplum 内核》系列视频](https://space.bilibili.com/489184136/channel/seriesdetail?sid=888852)
+- [《深入浅出 Greenplum 内核》系列视频](https://space.bilibili.com/489184136/channel/seriesdetail?sid=888852) [课程合集主页](https://cn.greenplum.org/greenplum_kernal_open_classes/)
   - [新一代大数据分析平台 Greenplum 架构解读](https://www.bilibili.com/video/BV1Sf4y1U7QP)
   - [开源分布式数据库 Greenplum 并行执行引擎揭秘](https://www.bilibili.com/video/BV1Si4y1474L)
   - [开源大数据分析平台 Greenplum 查询优化揭秘](https://www.bilibili.com/video/BV1J5411Y7yu)
