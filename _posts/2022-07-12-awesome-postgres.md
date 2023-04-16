@@ -224,6 +224,7 @@ References:
 <br>
 <span class="post-meta">
 [1] [Awesome Postgres](https://github.com/dhamaniasad/awesome-postgres)<br>
+[2] [PostgreSQL Related Slides and Presentations](https://wiki.postgresql.org/wiki/PostgreSQL_Related_Slides_and_Presentations)<br>
 </span>
 
 [postgres_up_and_running_3rd]: https://www.oreilly.com/library/view/postgresql-up-and/9781491963401/
