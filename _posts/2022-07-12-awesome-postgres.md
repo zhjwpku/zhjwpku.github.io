@@ -17,6 +17,7 @@ tags:
 - [PostgreSQL Backend Flowchart](https://www.postgresql.org/developer/backend/)
 - [Introduction to Hacking PostgreSQL](http://www.neilconway.org/talks/hacking/)
 - [A Tour of PostgreSQL Internals](https://www.postgresql.org/files/developer/tour.pdf) by Tom Lane, 2000
+- [Pgsrcstructure](https://wiki.postgresql.org/wiki/Pgsrcstructure) by 石井達夫, 2005
 - [SQL-92](http://www.contrib.andrew.cmu.edu/~shadow/sql/sql1992.txt)
 - [SQL-99 Complete, Really](https://crate.io/docs/sql-99/en/latest/)
 - [Submitting a Patch](https://wiki.postgresql.org/wiki/Submitting_a_Patch)
