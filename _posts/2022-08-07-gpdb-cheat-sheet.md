@@ -375,6 +375,9 @@ FROM
 WHERE 
   relkind = 'r' AND relstorage NOT IN ('x')
 ORDER BY 5 DESC;
+
+-- 查看所有未提交的两阶段事务（2PC）
+SELECT gp_execution_segment(), * FROM gp_dist_random('pg_prepared_xacts');
 ```
 
 <h4>GUC</h4>
