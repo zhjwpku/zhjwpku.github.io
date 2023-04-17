@@ -83,6 +83,7 @@ tags:
 - [On Uber’s Choice of Databases](https://use-the-index-luke.com/blog/2016-07-29/on-ubers-choice-of-databases) by Markus Winand, 2016
 - [Creating a Postgres Foreign Data Wrapper](https://www.dolthub.com/blog/2022-01-26-creating-a-postgres-foreign-data-wrapper/) by Aaron Son, 2022
 - [PostgreSQL vs. MySQL: A 360-degree Comparison](https://www.enterprisedb.com/blog/postgresql-vs-mysql-360-degree-comparison-syntax-performance-scalability-and-features) by EDB Team, 2019
+- [Understanding Prepared Transactions and Handling the Orphans](https://www.highgo.ca/2020/01/28/understanding-prepared-transactions-and-handling-the-orphans/) by Hamid Akhtar, 2020
 
 
 <h4>Books</h4>
