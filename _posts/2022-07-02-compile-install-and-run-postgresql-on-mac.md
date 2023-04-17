@@ -20,7 +20,7 @@ cd postgres
 在 mac 上通常是要定位一些代码问题，因此把 debug 打开，默认将程序安装到 /usr/local/pgsql，可通过 `./configure --prefix=<path>` 修改安装路径。
 
 ```shell
-./configure --enable-debug
+CFLAGS="-O2 -fno-inline-functions" ./configure --enable-debug
 make -j8
 sudo make install
 ```
