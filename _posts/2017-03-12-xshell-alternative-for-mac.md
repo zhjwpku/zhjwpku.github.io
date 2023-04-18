@@ -92,6 +92,7 @@ success  ubuntu added to your ssh config. you can connect it by typing "ssh ubun
 # 键入Ctrl+b后松开, Ctrl + o 逆时针方向交换所有 pane 的位置
 # 键入Ctrl+b后松开, x 关闭一个 pane, 用于关闭无响应的应用（如vim）
 # 键入Ctrl+b后松开, & 关闭一个 window
+# 键入Ctrl+b后松开, z Zoom the active pane, 方便复制当前 pane 的内容
 
 → ~ $ tmux ls   # 列出当前所有Session
 
