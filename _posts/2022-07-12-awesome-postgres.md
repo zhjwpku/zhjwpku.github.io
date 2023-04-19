@@ -39,6 +39,7 @@ tags:
 - [Plugable Table Storage in PostgreSQL](https://www.youtube.com/watch?v=mTfvA9EQIz8) by Andres Anarazel, 2019
 - [PostgreSQL GDB commands](https://github.com/tvondra/gdbpg) gdb 打印 plantree
 - [Unofficial documentation for PostgreSQL hooks](https://github.com/taminomara/psql-hooks)
+- [Incremental backup](https://wiki.postgresql.org/wiki/Incremental_backup)
 
 <h4>Blogs</h4>
 
