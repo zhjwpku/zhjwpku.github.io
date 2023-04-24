@@ -240,7 +240,7 @@ typedef struct XLogRecord
 } XLogRecord;
 ```
 
-XLogRecord 总是以 `MAXALIGN` (64位机器上为 8 字节) 边界对齐，但其内部字段没有这样的限制。`xl_info` 的低四位被用于标记特殊修改方式（XLR_SPECIAL_REL_UPDATE）或一致性检测（XLR_CHECK_CONSISTENCY），高四位被 resource manager 用于标记不同的记录类型。`xl_rmid` 则记录了生成该记录的 resource manager，该字段 8 字节，因此最多支持 128 个 resource manager，**src/include/access/rmgrlist.h** 中罗列了所有的 RM。在故障恢复的时候，根据 xl_rmid 和 xl_info 中的信息找到对应的操作来回放操作。
+XLogRecord 总是以 `MAXALIGN` (64位机器上为 8 字节) 边界对齐，但其内部字段没有这样的限制。`xl_info` 的低四位被用于标记特殊修改方式（XLR_SPECIAL_REL_UPDATE）或一致性检测（XLR_CHECK_CONSISTENCY），高四位被 resource manager 用于标记不同的记录类型。`xl_rmid` 则记录了生成该记录的 resource manager，该字段 8 比特，因此最多支持 128 个 resource manager，**src/include/access/rmgrlist.h** 中罗列了所有的 RM。在故障恢复的时候，根据 xl_rmid 和 xl_info 中的信息找到对应的操作来回放操作。
 
 > Postgres 最初只支持内置的 Resource Manager，Citus 在开发基于 [Table Access Method API](https://www.postgresql.org/docs/current/tableam.html) 的 [Citus Columnar](https://github.com/citusdata/citus/tree/main/src/backend/columnar) 时，为了支持逻辑 insert/update/delete WAL 记录，向社区贡献了 [Custom WAL Resource Manager](https://wiki.postgresql.org/wiki/CustomWALResourceManagers) 特性，使得 table AM 支持自定义的 redo、decode、WAL format、crash recovery 等能力。详细讨论见 [Extensible Rmgr for Table AMs](https://www.postgresql.org/message-id/ed1fb2e22d15d3563ae0eb610f7b61bb15999c0a.camel%40j-davis.com)。
 
