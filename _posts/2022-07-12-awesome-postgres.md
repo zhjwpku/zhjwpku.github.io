@@ -40,6 +40,7 @@ tags:
 - [PostgreSQL GDB commands](https://github.com/tvondra/gdbpg) gdb 打印 plantree
 - [Unofficial documentation for PostgreSQL hooks](https://github.com/taminomara/psql-hooks)
 - [Incremental backup](https://wiki.postgresql.org/wiki/Incremental_backup)
+- [Pgsrcstructure](https://wiki.postgresql.org/wiki/Pgsrcstructure)
 
 <h4>Blogs</h4>
 
