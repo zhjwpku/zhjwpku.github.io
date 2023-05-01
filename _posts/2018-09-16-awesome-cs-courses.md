@@ -10,6 +10,7 @@ tags:
 
 <h4>TOC</h4>
 - [Algorithms](#algorithms)
+- [Artificial Intelligence](#artificial-intelligence)
 - [CS](#cs)
 - [Database](#database)
 - [Distributed Systems](#distributed-systems)
@@ -24,6 +25,13 @@ tags:
   - Instructed by Prof. Erik Demaine & Prof. Srini Devadas
   - [课程主页 - Spring 2015][6046J]
   - [课程视频 - Spring 2015][6046J-video]
+
+#### Artificial Intelligence
+
+- [ChatGPT Prompt Engineering for Developers](chatgpt-prompt-engineering-for-developers)
+  - Instructed by Isa Fulford and Andrew Ng
+  - [课程主页][chatgpt-prompt-engineering-for-developers]
+  - [more courses from DeepLearning.AI](https://www.deeplearning.ai/courses/)
 
 #### CS
 
@@ -236,3 +244,4 @@ Reference:
 [ConcDisSys]: https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/
 [cse138-2021-video]: https://www.youtube.com/playlist?list=PLNPUF5QyWU8PydLG2cIJrCvnn5I_exhYx
 [15445]: https://15445.courses.cs.cmu.edu/
+[chatgpt-prompt-engineering-for-developers]: https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction
