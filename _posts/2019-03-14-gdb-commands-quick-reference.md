@@ -124,6 +124,14 @@ undisplay                           关闭 display 模式
 help                                获取 gdb 的帮助信息
 ```
 
+**batch 模式**
+
+当不想进入交互模式去执行 GDB 命令并在执行完后退出时，比如打印进程全局变量，可以使用 batch 模式。
+
+```
+gdb -batch -ex "set pagination 0" -ex "p *WalRcv" -p 11551
+gdb -batch -ex "set pagination 0" -ex "set variable WalRcv->reserveLSN = 939524096" -p 39395
+```
 
 <br>
 <span class="post-meta">
