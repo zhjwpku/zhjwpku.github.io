@@ -153,6 +153,12 @@ base                 pg_dynshmem          pg_multixact         pg_snapshots     
 000000010000000000000013 archive_status
 ```
 
+**pg_basebackup 一个使用的前提是需要在 primary 节点打开 `full_page_writes` 选项**，因为备份数据时可能会 dump 到一个不完整的数据页，需要 WAL 记录的 full page 去修复数据页。
+
+> We must do full-page WAL writes during an on-line backup even if not doing so at other times, because it's quite possible for the backup dump to obtain a "torn" (partially written) copy of a database page if it reads the page concurrently with our write to the same page.
+>
+> This can be fixed as long as the first write to the page in the WAL sequence is a full-page write.
+
 #### 小结
 
 本文对 pg_basebackup 的代码逻辑进行了粗略的解析，读者可以通过本文的分析了解 pg_basebackup 基本的工作原理。其它参数的含义需要读者自行阅读源码去了解。另外 C/S 两端 copy stream 数据传输的过程笔者也并未深入，感兴趣的读者请自行阅读代码。🧐
