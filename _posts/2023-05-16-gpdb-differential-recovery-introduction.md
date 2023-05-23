@@ -200,6 +200,221 @@ def run(self):
 
 <br>
 
+#### ☆ 性能测试
+
+测试使用的实例是阿里云 ECS，规格为 ecs.c5.2xlarge。
+
+| 参数 | 配置
+|-|-
+| CPU | Intel(R) Xeon(R) Platinum 8163 CPU @ 2.50GHz, 8 vCPU
+| Cache Size | 33792 KB
+| Memory | 16 GiB
+| OS | Ubuntu 20.04 64bit UEFI
+| Disk | ESSD PL0 500GiB (7800 IOPS)
+
+<br>
+测试步骤（部分操作详见附录）:
+
+1. 部署 gpdb demo 集群，2 primary & 2 mirror
+2. 生成 tpch SF = 100 数据
+3. 建表（这里使用行存表）并导入数据，导入后每个 datadir 数据量约 65G
+4. 停掉其中一个 mirror 节点并等待 fts 将其标记 down
+5. truncate supplier 后重新导入，模拟写入数据
+6. 分别执行 gprecoverseg -a/gprecoverseg -aF/gprecoverseg -a --differential 并计时
+
+各个命令使用时长:
+
+| 恢复命令 | 恢复时长
+|-|-
+| incremental | 0.32s user 0.07s system 5% cpu 6.507 total
+| differential | 6.76s user 3.04s system 1% cpu 12:56.93 total
+| full | 5.52s user 2.57s system 1% cpu 12:20.77 total
+
+<br>
+
+出乎意料的是，差异化修复在 65G 数据量的场景下性能略逊于全量修复，分析主要有以下几点原因:
+
+1. rsync 接收 incremental file list 占用了很长时间
+2. 单机部署多节点数据传输走的 LOOPBACK 网络，平均传输速度 750Mb/s（iftop），峰值 1.4Gb/s，而磁盘吞吐 160MB/s，瓶颈为磁盘而非网络
+3. 差异化存储虽然减少了写IO，但相较于全量修复，多了 checksum 计算和搜索的开销
+
 #### ☆ 使用场景
 
-增量修复失败可使用差异化修复，相较于全量修复速度更快，且差异化修复可多次运行。全量修复则用于新增节点或在另一台机器上重搭。
+通过上述的实验发现，当网络非瓶颈时，差异化修复和全量修复性能相当，差异化修复更适合在网络较差的场景下使用。
+
+#### 附录
+
+生成 tpch100G 数据
+
+```shell
+git clone https://github.com/electrum/tpch-dbgen.git
+cd tpch-dbgen
+echo "#define EOL_HANDLING 1" >> config.h # 行末不加 '|'
+make -j8
+for i in {1..8}; do ./dbgen -s 100 -S $i -C 8 -f &; done
+mv *.tbl.* /home/gpdb/tpch100G
+mv *.tbl /home/gpdb/tpch100G
+```
+
+启动 gpfdist
+
+```
+gpfdist -d /home/gpdb/tpch100G -p 8081 -l /home/gpdb/gpAdminLogs/gpfdist.log &
+```
+
+建表&导入数据命令
+```sql
+create schema IF NOT EXISTS tpch100g;
+set search_path = tpch100g;
+
+CREATE TABLE customer (
+    c_custkey integer NOT NULL,
+    c_name character varying(25) NOT NULL,
+    c_address character varying(40) NOT NULL,
+    c_nationkey integer NOT NULL,
+    c_phone character(15) NOT NULL,
+    c_acctbal numeric(15,2) NOT NULL,
+    c_mktsegment character(10) NOT NULL,
+    c_comment character varying(117) NOT NULL
+)
+distributed by (c_custkey);
+
+CREATE TABLE lineitem (
+    l_orderkey bigint NOT NULL,
+    l_partkey integer NOT NULL,
+    l_suppkey integer NOT NULL,
+    l_linenumber integer NOT NULL,
+    l_quantity numeric(15,2) NOT NULL,
+    l_extendedprice numeric(15,2) NOT NULL,
+    l_discount numeric(15,2) NOT NULL,
+    l_tax numeric(15,2) NOT NULL,
+    l_returnflag character(1) NOT NULL,
+    l_linestatus character(1) NOT NULL,
+    l_shipdate date NOT NULL,
+    l_commitdate date NOT NULL,
+    l_receiptdate date NOT NULL,
+    l_shipinstruct character(25) NOT NULL,
+    l_shipmode char(10) NOT NULL,
+    l_comment varchar(44) NOT NULL
+)
+distributed by (l_orderkey);
+
+CREATE TABLE nation (
+    n_nationkey integer NOT NULL,
+    n_name character(25) NOT NULL,
+    n_regionkey integer NOT NULL,
+    n_comment character varying(152)
+)
+distributed by (n_nationkey);
+
+CREATE TABLE orders (
+    o_orderkey bigint NOT NULL,
+    o_custkey integer NOT NULL,
+    o_orderstatus character(1) NOT NULL,
+    o_totalprice numeric(15,2) NOT NULL,
+    o_orderdate date NOT NULL,
+    o_orderpriority character(15) NOT NULL,
+    o_clerk character(15) NOT NULL,
+    o_shippriority integer NOT NULL,
+    o_comment character varying(79) NOT NULL
+)
+distributed by (o_orderkey);
+
+CREATE TABLE part (
+    p_partkey integer NOT NULL,
+    p_name character varying(55) NOT NULL,
+    p_mfgr character(25) NOT NULL,
+    p_brand character(10) NOT NULL,
+    p_type character varying(25) NOT NULL,
+    p_size integer NOT NULL,
+    p_container character(10) NOT NULL,
+    p_retailprice numeric(15,2) NOT NULL,
+    p_comment character varying(23) NOT NULL
+)
+distributed by (p_partkey);
+
+CREATE TABLE partsupp (
+    ps_partkey integer NOT NULL,
+    ps_suppkey integer NOT NULL,
+    ps_availqty integer NOT NULL,
+    ps_supplycost numeric(15,2) NOT NULL,
+    ps_comment character varying(199) NOT NULL
+)
+distributed by (ps_partkey);
+
+CREATE TABLE region (
+    r_regionkey integer NOT NULL,
+    r_name character(25) NOT NULL,
+    r_comment character varying(152)
+)
+distributed by (r_regionkey);
+
+CREATE TABLE supplier (
+    s_suppkey integer NOT NULL,
+    s_name character(25) NOT NULL,
+    s_address character varying(40) NOT NULL,
+    s_nationkey integer NOT NULL,
+    s_phone character(15) NOT NULL,
+    s_acctbal numeric(15,2) NOT NULL,
+    s_comment character varying(101) NOT NULL
+)
+distributed by (s_suppkey);
+
+CREATE EXTERNAL TABLE customer_ext (like customer)
+    LOCATION ('gpfdist://localhost:8081/customer.tbl.*')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+CREATE EXTERNAL TABLE lineitem_ext (like lineitem)
+    LOCATION ('gpfdist://localhost:8081/lineitem.tbl.*')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+CREATE EXTERNAL table nation_ext(like nation)
+    LOCATION ('gpfdist://localhost:8081/nation.tbl')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+CREATE EXTERNAL TABLE orders_ext(like orders)
+    LOCATION ('gpfdist://localhost:8081/orders.tbl.*')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+CREATE EXTERNAL TABLE part_ext (like part)
+    LOCATION ('gpfdist://localhost:8081/part.tbl.*')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+CREATE EXTERNAL TABLE partsupp_ext (like partsupp)
+    LOCATION ('gpfdist://localhost:8081/partsupp.tbl.*')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+CREATE EXTERNAL TABLE region_ext (like region)
+    LOCATION ('gpfdist://localhost:8081/region.tbl')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+CREATE EXTERNAL TABLE supplier_ext (like supplier)
+    LOCATION ('gpfdist://localhost:8081/supplier.tbl.*')
+    FORMAT 'TEXT' (DELIMITER '|')
+    LOG ERRORS SEGMENT REJECT LIMIT 10;
+
+insert into customer select * from customer_ext;
+insert into lineitem select * from lineitem_ext;
+insert into nation select * from nation_ext;
+insert into orders select * from orders_ext;
+insert into part select * from part_ext;
+insert into partsupp select * from partsupp_ext;
+insert into region select * from region_ext;
+insert into supplier select * from supplier_ext;
+
+analyze customer;
+analyze lineitem;
+analyze nation;
+analyze orders;
+analyze part;
+analyze partsupp;
+analyze region;
+analyze supplier;
+```
