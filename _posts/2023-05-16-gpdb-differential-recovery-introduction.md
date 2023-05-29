@@ -110,6 +110,14 @@ gpdb 作为分析型数据库通常实例的数据量较大，在宕机之后如
 
 ![rsync algorithm](/assets/2023/rsync_algorithm.jpg)
 
+简述一下上图中对一个文件进行传输的过程，Server A 为 source，Server b 为 target，即算法完成后 Server b 上的文件 B 变为 Server a 的文件 A:
+
+1. 对文件 B 以 block 级别分别计算一个较弱的 rolling checksum 和一个强的 MD4 checksum 传输到 source 端
+2. Server a 在收到这些 checksum 之后，按 rolling checksum 的高 16 位创建一个 2^16 个 bucket 的 hash table，checksum 的低 16 位 按照链表的方式存储在对应的 bucket 中
+3. 对文件 A 按照每次偏移一个字节的方式去计算一个 block 的 rolling checksum，然后上述的 hash table 查找是否有 match 的 block，如果匹配，则进一步搜索 MD4 checksum
+4. 如果强 checksum 也能找到匹配，认为这个 block 在 target 端存在，此时把上次匹配 block 的 end 和本次匹配 block 的 offset 以及 target 端对应的 block index 发送到 target，target 根据这些信息将该内容写入文件 B 对应的位置
+5. 对于匹配的 block，下次计算直接从 block 的结尾开始计算，这可以在两个文件几乎相同的情况下节省大量的计算
+
 **差异化修复算法**
 
 差异化修复的逻辑和 pg_basebackup 非常相似，其算法步骤:
