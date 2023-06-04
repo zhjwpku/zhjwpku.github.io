@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+    margin-bottom: calc($spacing-unit / 2);
 }
 
 h2 {
@@ -109,7 +109,7 @@ a {
 blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
+    padding-left: calc($spacing-unit / 2);
     font-size: 18px;
     letter-spacing: -1px;
     font-style: italic;
@@ -164,8 +164,8 @@ pre {
     @include media-query($on-laptop) {
         max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
         max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
+        padding-right: calc($spacing-unit / 2);
+        padding-left: calc($spacing-unit / 2);
     }
 }
 
@@ -231,13 +231,13 @@ td {
 .tags {
     list-style: none;
     margin: 0;
-    overflow: hidden; 
+    overflow: hidden;
     padding: 0;
     margin-bottom: 5px;
 }
 
 .tags li {
-    //float: left; 
+    //float: left;
 }
 
 .tag {
@@ -283,7 +283,7 @@ td {
 }
 
 .tag:hover::after {
-    border-left-color: crimson; 
+    border-left-color: crimson;
 }
 
 /**
@@ -303,7 +303,7 @@ td {
     opacity: 0.8;
     padding: 10px 0 9px;
     width: 135px;
-    text-align: center; 
+    text-align: center;
     webkit-backface-visibility: hidden;
     webkit-transition: background .2s ease;
     border-radius: 16px;
