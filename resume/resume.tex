@@ -18,7 +18,7 @@
   \phone{(+86) 132-6996-5827} \textperiodcentered\
   \github[zhjwpku]{https://github.com/zhjwpku}}
 
-\section{\faGraduationCap\  教育背景}
+\section{\faGraduationCap\ 教育背景}
 \datedsubsection{\textbf{北京大学}}{2013年9月 -- 2016年7月}
 \textit{硕士}\ 系统结构
 \datedsubsection{\textbf{南京理工大学}}{2009年9月 -- 2013年7月}
@@ -27,7 +27,7 @@
 \section{\faOpenid\ 工作经历}
 \begin{onehalfspacing}
 \datedsubsection{\textbf{阿里巴巴}}{阿里云数据库产品事业部 OLAP 产品部}
-\datedsubsection{\textit{技术专家(P7)}}{2021年5月至今}
+\datedsubsection{\textit{技术专家}}{2021年5月 -- 2023年6月}
 \end{onehalfspacing}
 
 \begin{onehalfspacing}
@@ -42,68 +42,135 @@
 
 \section{\faTasks\ 项目经历}
 
-\datedsubsection{\textbf{ADB CDC connectors}}{2021年12月至今}
-\textit{Java/Cstore}
+\datedsubsection{\textbf{AnalyticDB PostgreSQL 高可用及同城容灾}}{2023年3月 -- 2023年6月}
+\textit{同城容灾是专有云项目常见的企业级特性，针对 GPDB 只支持单副本和两副本的架构进行扩展。}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 选型 Flink CDC connectors 开发 datastream job，从 RDS 向 ADB 同步数据（链路已打通，持续优化 sink 端性能中）
-  \item 开发向已有任务中添加新表的特性: \href{https://github.com/ververica/flink-cdc-connectors/pull/777}{add new tables to existing cdc job}，已合入主线
+  \item 主要工作: 修改 FTS 逻辑适配多副本架构，其中一个备升主之后其它备要去和新主建立 replication
+  \item 适用场景: 需要高可用的部署场景，常见于同城容灾专有云局点
+  \item 其它: 差异化修复（基于 rsync 进行主备数据同步）
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{ADB MySQL 存储引擎}}{2021年5月-2021年11月}
-\textit{Java/Cstore}
+\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg table}}{2022年9月 -- 2023年3月}
+\textit{Apache Iceberg 是一个开源的大数据表格式，旨在为数据湖提供一个高效的元数据管理系统。ADB PG 希望借助 Iceberg 的通用表格式来更好地融入大数据生态。}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 通过火焰图分析 POC 中遇到的性能瓶颈并进行优化
-  \item 辅助开发 Z-order 数据布局，加速多维查询分析
+  \item 主要工作: 实现 iceberg-c sdk，供 iceberg-fdw 模块调用（fdw 由另一个同学实现）
+  \item 适用场景: 查询由其它大数据工具生成的数据，将 gpdb 接入大数据生态
+  \item 未来规划: 像 snowflake 一样将 iceberg 视为本地表进行查询写入
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{MySQL 内核开发}}{2020年5月-2021年5月}
-\textit{C++/InnoDB}
+\datedsubsection{\textbf{AnalyticDB PostgreSQL 差异化存储}}{2022年6月 -- 2022年9月}
+\textit{AnalyticDB PostgreSQL 云原生 Serverless 版支持秒级付费、按需启停、存算分离、分时弹性等能力，数据存储在 OSS 上，实例运行环境部署 Dadi 缓存系统，增加了存储成本。差异化存储企业级特性充分利用 OSS 不同存储类型的价格为用户进一步节省成本。}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 使用 mmap 优化 binlog 性能: \href{https://github.com/mysql/mysql-server/pull/314}{Use mmap for binlog}
-  \item 负责 InnoDB SCN 方案中 purge 流程的适配
+  \item 工作1: 提供转冷语法，利用 background worker 异步将 oss 对象转为对应的低频访问存储类型
+  \item 工作2: 提供建冷表语法，创建表时指定对应的 oss 存储类型，写入链路直接将文件存储为相应的类型
+  \item 工作3: 计费，读写低频访问存储的数据量写入 log，管控采集日志完成计费收集
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{OBS Index Layer}}{2019年9月 -- 2020年5月}
-\textit{C++/MongoDB/RocksDB/RDMA}
+\datedsubsection{\textbf{ADB Pipeline Service}}{2021年12月 --2022年5月}
+\textit{APS 在 DTS 之外提供了一种低成本数据同步链路，同时提供将 Kafka/SLS 等消息队列中的数据写入 hudi table 的能力，供 ADB 查询分析。}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item MongoDB 持久层对接 DFV（通过修改 rocksdb 的 Env 来适配 mongo-rocks 引擎）
-  \item MongoDB 网络层适配 xnet 库（RoCE）
+  \item 选型 Flink CDC connectors 开发 datastream job，从 RDS 向 ADB 同步数据
+  \item 从 SLS 中并行读取数据并写入 hudi table，作为 ADB 湖仓数据入口
+  \item 向 Flink CDC 社区贡献动态增删表特性: \href{https://github.com/ververica/flink-cdc-connectors/pull/777}{add new tables to existing cdc job}
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{AnalyticDB MySQL 存储引擎}}{2021年5月 -- 2021年11月}
+\textit{AnalyticDB MySQL 是阿里巴巴自主研发的海量数据实时高并发在线分析云计算服务，可以在毫秒级针对千亿级数据进行即时的多维分析透视和业务探索。}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item 分析 POC 过程中遇到的性能瓶颈并优化
+  \item 开发 Z-order 索引特性，加速多维查询分析
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{TaurusDB 内核研发}}{2020年5月 -- 2021年5月}
+\textit{TaurusDB for MySQL 是华为的一款分布式 MySQL 数据库解决方案，SCN (System Change Number) 用于确保数据库中的数据一致性。}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item 上手工作: 使用 mmap 优化 binlog 性能， \href{https://github.com/mysql/mysql-server/pull/314}{Use mmap for binlog}
+  \item SCN 项目相关工作: 适配 purge 流程
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{FusionStorage OBS Index Layer 网络适配 RDMA}}{2019年9月 -- 2020年5月}
+\textit{OBS Index Layer 用于存储对象存储的元数据，基于 MongoDB，存储引擎使用 mongo-rocks，并通过实现 plog ENV 来对接持久层。}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item 主要工作: MongoDB transport layer 适配 xnet 库 (RoCE)，提高吞吐减少延时 (bypass kernel)
+  \item 适用场景: 当返回大量数据到客户端时对性能提升效果明显，例如 OBS 用户查看一个 bucket 中的所有文件名时
 \end{itemize}
 \end{onehalfspacing}
 
 \datedsubsection{\textbf{FusionStorage Persistence Layer 保电内存缓存方案}}{2018年4月 -- 2019年9月}
-\textit{C/Cache}
+\textit{FusionStorage 是华为推出的一款分布式存储系统，支持文件、块、对象等多种存储访问协议。其中 Persistence Layer——存储系统的持久化层——作为存储系统的底层引擎，负责将数据持久化到存储介质中，同时提供数据保护和数据管理等功能，向上提供 plog 接口。}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 基于原有的缓存方案适配保电内存介质
-  \item Battery Backup Unit 空间的管理，包括 chunk 的申请、释放，掉电恢复等
+  \item 主要工作: 增加了一种新的缓存类型，基于原有的缓存方案适配保电内存介质
+  \item 模块功能: Battery Backup Unit 空间的管理，包括 chunk 的申请、释放，掉电恢复等
+  \item 适用场景: 存储数据量较小的元数据，能加快写入速度
 \end{itemize}
 \end{onehalfspacing}
 
 \section{\faCodeFork\ 开源贡献}
 \begin{onehalfspacing}
   \begin{itemize}
-    \item \href{https://github.com/ververica/flink-cdc-connectors/pulls?q=is%3Apr+author%3Azhjwpku+}{PRs contributed to flink-cdc-connectors}
-    \item \href{https://github.com/mysql/mysql-server/pull/313}{Bug\#101450 mysqlbinlog with start-position not show right FDE pos}
-    \item \href{https://github.com/mysql/mysql-server/pull/311}{Bug\#101448 when the input of net\_length\_size is 251\, return 3}
-    \item \href{https://github.com/apache/hadoop/pull/1670/files}{HDFS-14925. Rename operation should check nest snapshot}
-    \item \href{https://github.com/orlabs/orange/pull/138}{Port kong's ring-balancer to orange}
+    \item Greenplum
+      \begin{itemize}
+        \item \href{hhttps://github.com/greenplum-db/gpdb/pulls?q=is%3Apr+author%3A%40me+}{PRs contributed to gpdb}
+      \end{itemize}
+    \item pg\_cron
+      \begin{itemize}
+        \item \href{https://github.com/citusdata/pg_cron/pulls?q=is%3Apr+author%3A%40me+}{PRs contributed to pg\_cron}
+      \end{itemize}
+    \item cron
+      \begin{itemize}
+        \item \href{https://github.com/vixie/cron/pull/20}{allow '\$' to indicate last day-of-month}
+      \end{itemize}
+    \item PostgreSQL
+      \begin{itemize}
+        \item \href{https://github.com/postgres/postgres/commit/08237056f}{Fix overridden callbacks in pg\_rewind}
+        \item \href{https://github.com/postgres/postgres/commit/57bab33302}{meson: catch up to a few configure changes}
+        \item \href{https://github.com/postgres/postgres/commit/1360943d1a}{meson: Add prefix=/usr/local/pgsql to default\_options}
+        \item \href{https://github.com/postgres/postgres/commit/6710e83a67}{Remove useless pstrdups in untransformRelOption}
+      \end{itemize}
+    \item Apache ORC
+      \begin{itemize}
+        \item \href{https://github.com/apache/orc/pulls?q=is%3Apr+author%3A%40me+}{PRs contributed to Apache ORC}
+      \end{itemize}
+    \item Flink CDC
+      \begin{itemize}
+        \item \href{https://github.com/ververica/flink-cdc-connectors/pulls?q=is%3Apr+author%3Azhjwpku+}{PRs contributed to flink-cdc-connectors}
+      \end{itemize}
+    \item MySQL
+      \begin{itemize}
+        \item \href{https://github.com/mysql/mysql-server/pull/313}{Bug\#101450 mysqlbinlog with start-position not show right FDE pos}
+        \item \href{https://github.com/mysql/mysql-server/pull/311}{Bug\#101448 when the input of net\_length\_size is 251\, return 3}
+      \end{itemize}
+    \item HDFS
+      \begin{itemize}
+        \item \href{https://github.com/apache/hadoop/pull/1670/files}{HDFS-14925. Rename operation should check nest snapshot}
+      \end{itemize}
+    \item Kong
+      \begin{itemize}
+        \item \href{https://github.com/orlabs/orange/pull/138}{Port kong's ring-balancer to orange}
+      \end{itemize}
   \end{itemize}
   \end{onehalfspacing}
 
-\section{\faWrench\ IT 技能}
+\section{\faWrench\ 技能栈}
 % increase linespacing [parsep=0.5ex]
 \begin{itemize}[parsep=0.5ex]
-  \item 编程语言:  C/C++ > Java > Golang > Rust > Lua > Python
-  \item 并发编程: 熟悉事件驱动及网络编程
-  \item 常用工具: GDB/Perf/FlameGraph
+  \item 编程语言:  C/C++ > Java > Python > Rust > Lua
+  \item 并发编程: 熟悉事件驱动模型及网络编程
+  \item 常用工具: GDB/Perf/FlameGraph/tmux
 \end{itemize}
 
 \section{\faCogs\ 其他}
@@ -112,6 +179,7 @@
   \item 博客: https://zhjwpku.com
   \item 语言: CET-6 VET/VEWT
   \item 论文笔记: \href{https://paper-notes.zhjwpku.com/}{paper notes}
+  \item GSoC: 两次 Google Summer of Code (X.Org, Ceph) 项目经历
 \end{itemize}
 
 \end{document}
