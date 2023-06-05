@@ -11,32 +11,35 @@ permalink: /resume
     <h2 itemprop="name headline" style="text-align: center;">
       简历
     </h2>
-    <span style="float:right"><a class="page-link" href="{{ site.baseurl }}/assets/resume.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</a></span>
+    <span style="float:right"><a class="page-link" href="{{ site.baseurl }}/assets/resume.pdf"><i
+          class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</a></span>
   </header>
 
   <div class="post-content" itemprop="articleBody">
     <div id="basic_info">
-        <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-info-circle" aria-hidden="true"></i> 基本信息</h4>
-        <div style="margin-bottom: 7px;">
-          <span style="padding-right: 240px;">
-            <i class="fa fa-id-badge" aria-hidden="true"></i> 赵军旺
-          </span>
-          <span>
-            <i class="fa fa-phone" aria-hidden="true"></i> echo KCs4NikxMzI2OTk2NTgyNwo= | base64 -D
-          </span>
-        </div>
-        <div style="margin-bottom: 15px;">
-          <span style="padding-right:228px;">
-            <a href="https://github.com/zhjwpku"><i class="fa fa-github" aria-hidden="true"></i> zhjwpku</a>
-          </span>
-          <span>
-            <i class="fa fa-envelope-o" aria-hidden="true"></i> {{ site.email }}
-          </span>
-        </div>
+      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-info-circle"
+          aria-hidden="true"></i> 基本信息</h4>
+      <div style="margin-bottom: 7px;">
+        <span style="padding-right: 240px;">
+          <i class="fa fa-id-badge" aria-hidden="true"></i> 赵军旺
+        </span>
+        <span>
+          <i class="fa fa-phone" aria-hidden="true"></i> echo KCs4NikxMzI2OTk2NTgyNwo= | base64 -D
+        </span>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <span style="padding-right:228px;">
+          <a href="https://github.com/zhjwpku"><i class="fa fa-github" aria-hidden="true"></i> zhjwpku</a>
+        </span>
+        <span>
+          <i class="fa fa-envelope-o" aria-hidden="true"></i> {{ site.email }}
+        </span>
+      </div>
     </div> <!-- end of basic_info -->
 
     <div id="education">
-      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> 教育背景</h4>
+      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i
+          class="fa fa-graduation-cap" aria-hidden="true"></i> 教育背景</h4>
       <div><strong>北京大学</strong><span style="float:right">2013年9月 - 2016年7月</span></div>
       <p>硕士 系统结构</p>
       <div><strong>南京理工大学</strong><span style="float:right">2009年9月 - 2013年7月</span></div>
@@ -44,9 +47,10 @@ permalink: /resume
     </div> <!-- end of education -->
 
     <div id="jobs">
-      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-id-badge" aria-hidden="true"></i> 工作经历</h4>
+      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-id-badge"
+          aria-hidden="true"></i> 工作经历</h4>
       <div><strong>阿里巴巴</strong><span style="float:right">阿里云数据库产品事业部 OLAP 产品部</span></div>
-      <p>技术专家(P7)<span style="float: right;">2021年5月至今</span></p>
+      <p>技术专家<span style="float: right;">2021年5月 - 2023年6月</span></p>
       <div><strong>华为</strong><span style="float:right">FusionStorage 项目群 & CloudBU GaussDB for MySQL</span></div>
       <p>高级工程师<span style="float: right;">2018年4月 - 2021年5月</span></p>
       <div><strong>四达时代</strong><span style="float:right">研究院</span></div>
@@ -54,72 +58,172 @@ permalink: /resume
     </div> <!-- end of jobs -->
 
     <div id="projects">
-      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-tasks" aria-hidden="true"></i> 项目经历</h4>
+      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-tasks"
+          aria-hidden="true"></i> 项目经历</h4>
 
-      <div><strong>ADB CDC connectors</strong><span style="float:right">2021年12月至今</span></div>
-      <p>Java/CDC</p>
+      <div><strong>AnalyticDB PostgreSQL 高可用及同城容灾</strong><span style="float:right">2023年3月-2023年6月</span></div>
+      <p style="margin-top: 5px;">同城容灾是专有云项目常见的企业级特性，针对 GPDB 只支持单副本和两副本的架构进行扩展。</p>
       <ul>
-        <li>选型 Flink CDC connectors 开发 datastream job，从 RDS 向 ADB 同步数据（链路已打通，持续优化 sink 端性能中）</li>
-        <li>开发向已有任务中添加新表的特性: <a href="https://github.com/ververica/flink-cdc-connectors/pull/777">add new tables to existing cdc job</a>，已合入主线</li>
+        <li>主要工作: 修改 FTS 逻辑适配多副本架构，其中一个备升主之后其它备要去和新主建立 replication</li>
+        <li>适用场景: 需要高可用的部署场景，常见于同城容灾专有云局点</li>
+        <li>其它: 差异化修复（基于 rsync 进行主备数据同步）</li>
       </ul>
 
-      <div><strong>ADB MySQL 存储引擎</strong><span style="float:right">2021年5月-2021年11月</span></div>
-      <p>Java/Cstore</p>
+      <div><strong>AnalyticDB PostgreSQL Iceberg table</strong><span style="float:right">2022年9月-2023年3月</span></div>
+      <p style="margin-top: 5px;">Apache Iceberg 是一个开源的大数据表格式，旨在为数据湖提供一个高效的元数据管理系统。ADB PG 希望借助 Iceberg
+        的通用表格式来更好地融入大数据生态。</p>
       <ul>
-        <li>通过火焰图分析 POC 中遇到的性能瓶颈并进行优化</li>
-        <li>辅助开发 Z-order 数据布局，加速多维查询分析</li>
+        <li>主要工作: 实现 iceberg-c sdk，供 iceberg_fdw 模块调用（fdw 由另一个同学实现）</li>
+        <li>适用场景: 查询由其它大数据工具生成的数据，将 gpdb 接入大数据生态</li>
+        <li>未来规划: 像 snowflake 一样将 iceberg 视为本地表进行查询写入</li>
       </ul>
 
-      <div><strong>MySQL 内核开发</strong><span style="float:right">2020年5月-2021年5月</span></div>
-      <p>C++/InnoDB</p>
+      <div><strong>AnalyticDB PostgreSQL 差异化存储</strong><span style="float:right">2022年6月-2022年9月</span></div>
+      <p style="margin-top: 5px;">AnalyticDB PostgreSQL 云原生 Serverless 版支持秒级付费、按需启停、存算分离、分时弹性等能力，数据存储在 OSS 上，实例运行环境部署
+        Dadi 缓存系统，增加了存储成本。<strong>差异化存储企业级特性</strong>充分利用 OSS 不同存储类型的价格为用户进一步节省成本。</p>
       <ul>
-        <li>使用 mmap 优化 binlog 性能: <a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a></li>
-        <li>InnoDB SCN 方案中 purge 流程的适配</li>
+        <li>工作1: 提供转冷语法，利用 background worker 异步将 oss 对象转为对应的低频访问存储类型</li>
+        <li>工作2: 提供建冷表语法，创建表时指定对应的 oss 存储类型，写入链路直接将文件存储为相应的类型</li>
+        <li>工作3: 计费，读写低频访问存储的数据量写入 log，管控采集日志完成计费收集</li>
       </ul>
 
-      <div><strong>OBS Index Layer</strong><span style="float:right">2019年9月-2020年5月</span></div>
-      <p>C++/MongoDB/RocksDB/RDMA</p>
+      <div><strong>ADB Pipeline Service</strong><span style="float:right">2021年12月-2022年5月</span></div>
+      <p style="margin-top: 5px;">APS 在 DTS 之外提供了一种低成本数据同步链路，同时提供将 Kafka/SLS 等消息队列中的数据写入 hudi table 的能力，供 ADB 查询分析。</p>
       <ul>
-        <li>MongoDB 持久层对接 DFV（通过修改 rocksdb 的 Env 来适配 mongo-rocks 引擎）</li>
-        <li>MongoDB 网络层适配 xnet 库（RoCE）</li>
+        <li>选型 Flink CDC connectors 开发 datastream job，从 RDS 向 ADB 同步数据</li>
+        <li>从 SLS 中并行读取数据并写入 hudi table，作为 ADB 湖仓数据入口</li>
+        <li>向 Flink CDC 社区贡献动态增删表特性: <a href="https://github.com/ververica/flink-cdc-connectors/pull/777">add new tables
+            to existing cdc job</a></li>
       </ul>
 
-      <div><strong>FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2018年4月-2019年9月</span></div>
-      <p>C/Cache</p>
+      <div><strong>AnalyticDB MySQL 存储引擎</strong><span style="float:right">2021年5月-2021年11月</span></div>
+      <p style="margin-top: 5px;">AnalyticDB MySQL 是阿里巴巴自主研发的海量数据实时高并发在线分析云计算服务，可以在毫秒级针对千亿级数据进行即时的多维分析透视和业务探索。</p>
       <ul>
-        <li>基于原有的缓存方案适配保电内存介质</li>
-        <li>Battery Backup Unit 空间的管理，包括 chunk 的申请、释放，掉电恢复等</li>
+        <li>分析 POC 过程中遇到的性能瓶颈并优化</li>
+        <li>开发 Z-order 索引特性，加速多维查询分析</li>
+      </ul>
+
+      <div><strong>TaurusDB 内核研发</strong><span style="float:right">2020年5月-2021年5月</span></div>
+      <p style="margin-top: 5px;">TaurusDB for MySQL 是华为的一款分布式 MySQL 数据库解决方案，SCN (System Change Number) 用于确保数据库中的数据一致性。
+      </p>
+      <ul>
+        <li>上手工作: 使用 mmap 优化 binlog 性能，<a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a>
+        </li>
+        <li>SCN 项目相关工作: 适配 purge 流程</li>
+      </ul>
+
+      <div><strong>FusionStorage OBS Index Layer 网络适配 RDMA</strong><span style="float:right">2019年9月-2020年5月</span>
+      </div>
+      <p style="margin-top: 5px;">OBS Index Layer 用于存储对象存储的元数据，基于 MongoDB，存储引擎使用 mongo-rocks，并通过实现 plog ENV 来对接持久层。</p>
+      <ul>
+        <li>主要工作: MongoDB transport layer 适配 xnet 库 (RoCE)，提高吞吐减少延时 (bypass kernel)</li>
+        <li>适用场景: 当返回大量数据到客户端时对性能提升效果明显，例如 OBS 用户查看一个 bucket 中的所有文件名时</li>
+      </ul>
+
+      <div><strong>FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2018年4月-2019年8月</span>
+      </div>
+      <p style="margin-top: 5px;">FusionStorage 是华为推出的一款分布式存储系统，支持文件、块、对象等多种存储访问协议。其中 <strong>Persistence
+          Layer</strong>——存储系统的持久化层——作为存储系统的底层引擎，负责将数据持久化到存储介质中，同时提供数据保护和数据管理等功能，向上提供 plog 接口。</p>
+      <ul>
+        <li>主要工作: 增加了一种新的缓存类型，基于原有的缓存方案适配保电内存介质</li>
+        <li>模块功能: Battery Backup Unit 空间的管理，包括 chunk 的申请、释放，掉电恢复等</li>
+        <li>适用场景: 存储数据量较小的元数据</li>
       </ul>
 
     </div>
 
     <div id="opensource">
-      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-code-fork" aria-hidden="true"></i> 开源贡献</h4>
+      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-code-fork"
+          aria-hidden="true"></i> 开源贡献</h4>
       <ul>
-        <li><strong><a href="https://github.com/ververica/flink-cdc-connectors/pulls?q=is%3Apr+author%3Azhjwpku+">PRs contributed to flink-cdc-connectors</a></strong></li>
-        <li><strong><a href="https://github.com/mysql/mysql-server/pull/313">Bug#101450 mysqlbinlog with start-position not show right FDE pos</a></strong></li>
-        <li><strong><a href="https://github.com/mysql/mysql-server/pull/311">Bug#101448 when the input of net_length_size is 251, return 3</a></strong></li>
-        <li><strong><a href="https://github.com/apache/hadoop/pull/1670/files">HDFS-14925. Rename operation should check nest snapshot</a></strong></li>
-        <li><strong><a href="https://github.com/orlabs/orange/pull/138">Port kong's ring-balancer to orange</a></strong></li>
+        <li>Greenplum
+          <ul>
+            <li><strong><a href="https://github.com/greenplum-db/gpdb/pulls?q=is%3Apr+author%3A%40me+">PRs
+                  contributed to gpdb</a></strong></li>
+          </ul>
+        </li>
+        <li>pg_cron
+          <ul>
+            <li><strong><a href="https://github.com/citusdata/pg_cron/pulls?q=is%3Apr+author%3A%40me+">PRs
+                  contributed to pg_cron</a></strong></li>
+          </ul>
+        </li>
+        <li>cron
+          <ul>
+            <li><strong><a href="https://github.com/vixie/cron/pull/20">allow '$' to indicate last
+                  day-of-month</a></strong></li>
+          </ul>
+        </li>
+        <li>PostgreSQL
+          <ul>
+            <li><strong><a href="https://github.com/postgres/postgres/commit/08237056f">Fix overridden callbacks in
+                  pg_rewind</a></strong></li>
+            <li><strong><a href="https://github.com/postgres/postgres/commit/57bab33302">meson: catch up to a few
+                  configure changes</a></strong></li>
+            <li><strong><a href="https://github.com/postgres/postgres/commit/1360943d1a">meson: Add
+                  prefix=/usr/local/pgsql to default_options</a></strong></li>
+            <li><strong><a href="https://github.com/postgres/postgres/commit/6710e83a67">Remove useless pstrdups in
+                  untransformRelOption</a></strong></li>
+          </ul>
+        </li>
+        <li>Apache ORC
+          <ul>
+            <li><strong><a href="https://github.com/apache/orc/pulls?q=is%3Apr+author%3A%40me+">PRs contributed to
+                  Apache ORC</a></strong></li>
+          </ul>
+        </li>
+        <li>Flink CDC
+          <ul>
+            <li><strong><a
+                  href="https://github.com/ververica/flink-cdc-connectors/pulls?q=is%3Apr+author%3Azhjwpku+">PRs
+                  contributed to flink-cdc-connectors</a></strong></li>
+          </ul>
+        </li>
+        <li>MySQL
+          <ul>
+            <li><strong><a href="https://github.com/mysql/mysql-server/pull/313">Bug#101450 mysqlbinlog with
+                  start-position
+                  not show right FDE pos</a></strong></li>
+            <li><strong><a href="https://github.com/mysql/mysql-server/pull/311">Bug#101448 when the input of
+                  net_length_size is 251, return 3</a></strong></li>
+          </ul>
+        </li>
+        <li>HDFS
+          <ul>
+            <li><strong><a href="https://github.com/apache/hadoop/pull/1670/files">HDFS-14925. Rename operation should
+                  check nest snapshot</a></strong></li>
+          </ul>
+        </li>
+        <li>Kong
+          <ul>
+            <li><strong><a href="https://github.com/orlabs/orange/pull/138">Port kong's ring-balancer to
+                  orange</a></strong>
+            </li>
+          </ul>
+        </li>
+
       </ul>
     </div>
 
     <div id="skills">
-      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-wrench" aria-hidden="true"></i> IT 技能</h4>
+      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-wrench"
+          aria-hidden="true"></i> 技能栈</h4>
 
       <ul>
-        <li>编程语言: C/C++ > Java > Golang > Rust > Lua > Python</li>
-        <li>并发: 熟悉事件驱动及网络编程</li>
-        <li>常用工具: GDB/Perf&FlameGraph</li>
+        <li>编程语言: C/C++ > Java > Python > Rust > Lua </li>
+        <li>并发: 熟悉事件驱动模型及网络编程</li>
+        <li>常用工具: GDB/Perf&FlameGraph/tmux</li>
       </ul>
     </div>
 
     <div id="others">
-      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-cogs" aria-hidden="true"></i> 其他</h4>
+      <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-cogs"
+          aria-hidden="true"></i> 其它</h4>
       <ul>
         <li>博客: <a href="https://zhjwpku.com/">https://zhjwpku.com</a></li>
         <li>外语: CET-6 & VET/VEWT</li>
         <li>论文笔记: <a href="https://paper-notes.zhjwpku.com/">paper notes</a></li>
+        <li>GSoC: 两次 Google Summer of Code (X.Org, Ceph) 项目经历</li>
       </ul>
     </div>
   </div> <!-- end of post-content-->
