@@ -65,6 +65,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 - [spdlog][spdlog]: Fast C++ logging library.
 - [Abseil Common Libraries (C++)][abseil-cpp].
+- [cloudwu/coroutine](https://github.com/cloudwu/coroutine): 基于 getcontext、makecontext、swapcontext 实现的协程库.
 
 <h4>Standards</h4>
 
