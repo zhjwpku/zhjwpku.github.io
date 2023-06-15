@@ -66,6 +66,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [spdlog][spdlog]: Fast C++ logging library.
 - [Abseil Common Libraries (C++)][abseil-cpp].
 - [cloudwu/coroutine](https://github.com/cloudwu/coroutine): 基于 getcontext、makecontext、swapcontext 实现的协程库.
+- [LevelDB][leveldb]: a fast key-value storage library, under the hood is a LSM tree.
 
 <h4>Standards</h4>
 
@@ -156,3 +157,4 @@ Reference:
 [simd-cheat-sheet]: assets/pdf/x86-intrin-cheatsheet-v2.1.pdf
 [design-docs-at-google]: https://www.industrialempathy.com/posts/design-docs-at-google/
 [principlesofchaos]: http://principlesofchaos.org/
+[leveldb]: https://github.com/google/leveldb
