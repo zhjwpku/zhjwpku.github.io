@@ -198,6 +198,7 @@ tags:
 - [Introduction To Greenplum Architecture](https://greenplum.org/introduction-to-greenplum-architecture/) by MAX YANG
 - [Greenplum Resource Groups](https://www.youtube.com/watch?v=NAYuyHkoPDQ) by Keaton Adams, 2019
 - [A Practical Guide to Greenplum Database Resource Group Management](https://s3.amazonaws.com/greenplum.org/wp-content/uploads/2022/08/09154511/PracticalGuidetoGreenplumDatabaseResourceGroups-v1.pdf) by Wen Wang, 2022
+- [Append Optimized (AO) Table Design](https://www.youtube.com/watch?v=inaA1tbOT5A) by Ashwin Agrawal, 2022
 
 <h4>YugaByteDB specific</h4>
 
