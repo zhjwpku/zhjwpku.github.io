@@ -164,6 +164,7 @@ tags:
 - [Citus: Distributed PostgreSQL as an Extension](https://www.youtube.com/watch?v=X-aAgXJZRqM) by Marco Slot, 2021
 - [PostgreSQL Optimizer Methodology](https://www.youtube.com/watch?v=XA3SBgcZwtE) by Robert Haas, CMU Database Group - Vaccination Database Tech Talks (2021)
 - [Explaining the Postgres Query Optimizer](https://www.youtube.com/watch?v=RNDTO33hVtY) by Bruce Momjian, 2023
+- [IPC in PostgreSQL](https://www.youtube.com/watch?v=hZvkvfYgHIg) by Thomas Munro, PGCon 2023
 
 <h4>Greenplum specific</h4>
 
