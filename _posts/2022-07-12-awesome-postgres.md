@@ -167,6 +167,7 @@ tags:
 - [IPC in PostgreSQL](https://www.youtube.com/watch?v=hZvkvfYgHIg) by Thomas Munro, PGCon 2023
 - [Writing a Foreign Data Wrapper](https://www.youtube.com/watch?v=7wuDJxpU7Fo) by Christophe Pettus, PGCon 2023
 - [Logical Replication of DDLs](https://www.youtube.com/watch?v=D6OE-TIfyUU) by  Peter Smith & Zheng Li (Zane), PGCon 2023
+- [PostgreSQL 16 and beyond](https://www.youtube.com/watch?v=EMwjyjJjvE0) by Amit Kapila, PGCon 2023
 
 <h4>Greenplum specific</h4>
 
