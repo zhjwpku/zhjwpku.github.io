@@ -35,6 +35,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Design Docs at Google][design-docs-at-google]
 - [PRINCIPLES OF CHAOS ENGINEERING][principlesofchaos]
 - [Boost application performance using asynchronous I/O - Learn when and how to use the POSIX AIO API](https://developer.ibm.com/articles/l-async/)
+- [Linux Asynchronous I/O Explained](https://www.fsl.cs.sunysb.edu/~vass/linux-aio.txt)
 
 <h4>Blogs</h4>
 
