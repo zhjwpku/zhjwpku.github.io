@@ -34,6 +34,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Data-Parallel Execution using SIMD Instructions](https://db.in.tum.de/teaching/ws1819/dataprocessing/chapter2.pdf)
 - [Design Docs at Google][design-docs-at-google]
 - [PRINCIPLES OF CHAOS ENGINEERING][principlesofchaos]
+- [Boost application performance using asynchronous I/O - Learn when and how to use the POSIX AIO API](https://developer.ibm.com/articles/l-async/)
 
 <h4>Blogs</h4>
 
@@ -67,6 +68,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Abseil Common Libraries (C++)][abseil-cpp].
 - [cloudwu/coroutine](https://github.com/cloudwu/coroutine): 基于 getcontext、makecontext、swapcontext 实现的协程库.
 - [LevelDB][leveldb]: a fast key-value storage library, under the hood is a LSM tree.
+- 
 
 <h4>Standards</h4>
 
