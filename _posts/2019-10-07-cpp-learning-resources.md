@@ -36,6 +36,9 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [PRINCIPLES OF CHAOS ENGINEERING][principlesofchaos]
 - [Boost application performance using asynchronous I/O - Learn when and how to use the POSIX AIO API](https://developer.ibm.com/articles/l-async/)
 - [Linux Asynchronous I/O Explained](https://www.fsl.cs.sunysb.edu/~vass/linux-aio.txt)
+- [How to use the Linux AIO feature](https://github.com/littledan/linux-aio)
+- [A new kernel polling interface](https://lwn.net/Articles/743714/)
+- [io_submit: The epoll alternative you've never heard about](https://blog.cloudflare.com/io_submit-the-epoll-alternative-youve-never-heard-about/)
 
 <h4>Blogs</h4>
 
