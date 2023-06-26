@@ -39,6 +39,10 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [How to use the Linux AIO feature](https://github.com/littledan/linux-aio)
 - [A new kernel polling interface](https://lwn.net/Articles/743714/)
 - [io_submit: The epoll alternative you've never heard about](https://blog.cloudflare.com/io_submit-the-epoll-alternative-youve-never-heard-about/)
+- [Ringing in a new asynchronous I/O API](https://lwn.net/Articles/776703/)
+- [Efficient IO with io_uring](https://kernel.dk/io_uring.pdf)
+- [The rapid growth of io_uring](https://lwn.net/Articles/810414/)
+- [An Introduction to the io_uring Asynchronous I/O Framework](https://blogs.oracle.com/linux/post/an-introduction-to-the-io-uring-asynchronous-io-framework)
 
 <h4>Blogs</h4>
 
@@ -89,6 +93,8 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - **Miscellaneous**
 
   - [Linux basic anti-debug][UTVp4jpJoyc]
+  - [Faster IO through io_uring](https://www.youtube.com/watch?v=-5T4Cjw46ys) by Jens Axboe, Kernel Recipes 2019
+  - [What’s new with io_uring](https://www.youtube.com/watch?v=ToSRCSijRuE) by Jens Axboe, Kernel Recipes 2022 [Slides](https://kernel.dk/axboe-kr2022.pdf)
 
 - **YouTube Channel**
 
