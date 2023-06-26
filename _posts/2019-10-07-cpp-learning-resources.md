@@ -43,6 +43,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Efficient IO with io_uring](https://kernel.dk/io_uring.pdf)
 - [The rapid growth of io_uring](https://lwn.net/Articles/810414/)
 - [An Introduction to the io_uring Asynchronous I/O Framework](https://blogs.oracle.com/linux/post/an-introduction-to-the-io-uring-asynchronous-io-framework)
+- [io_uring and networking in 2023](https://github.com/axboe/liburing/wiki/io_uring-and-networking-in-2023)
 
 <h4>Blogs</h4>
 
@@ -76,7 +77,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Abseil Common Libraries (C++)][abseil-cpp].
 - [cloudwu/coroutine](https://github.com/cloudwu/coroutine): 基于 getcontext、makecontext、swapcontext 实现的协程库.
 - [LevelDB][leveldb]: a fast key-value storage library, under the hood is a LSM tree.
-- 
+- [liburing][liburing]: a library that provides an efficient and convenient way to use the io_uring interface.
 
 <h4>Standards</h4>
 
@@ -170,3 +171,4 @@ Reference:
 [design-docs-at-google]: https://www.industrialempathy.com/posts/design-docs-at-google/
 [principlesofchaos]: http://principlesofchaos.org/
 [leveldb]: https://github.com/google/leveldb
+[liburing]: https://github.com/axboe/liburing
