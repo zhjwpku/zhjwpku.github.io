@@ -142,6 +142,7 @@ tags:
 - [Learning to Hack on Postgres Planner](https://www.youtube.com/watch?v=j7UPVU5UCV4) by Melanie Plageman, PGCon 2019
 - [An introduction to Memory Contexts](https://www.youtube.com/watch?v=tP2pHbKz2R0) by Chris Travers, PGCon 2019
 - [Hacking the Query Planner, Again](https://www.youtube.com/watch?v=wTg02tniO2A) by Richard Guo, PGCon 2020
+- [Asynchronous IO for PostgreSQL](https://www.youtube.com/watch?v=CD0w3gWBF7s) by Andres Freund, PGCon 2020
 - [PostgreSQL 空闲空间管理](https://www.bilibili.com/video/BV1934y1i7pk) by Wang Xiaoran, PGConf.Asia 2021
 - [Why Uber Engineering Switched from Postgres to MySQL](https://www.youtube.com/watch?v=_E43l5EbNI4) by Hussein Nasser, 2020
 - [A PostgreSQL Response to Uber](https://www.youtube.com/watch?v=5dIbB5GIqAo) [slides](https://thebuild.com/presentations/uber-perconalive-2017.pdf) by Christophe Pettus, 2017
