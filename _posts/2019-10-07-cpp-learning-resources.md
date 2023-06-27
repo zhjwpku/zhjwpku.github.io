@@ -73,11 +73,12 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 <h4>Libraries</h4>
 
-- [spdlog][spdlog]: Fast C++ logging library.
 - [Abseil Common Libraries (C++)][abseil-cpp].
+- [Arrow][arrow]: a multi-language toolbox for accelerated data interchange and in-memory processing.
 - [cloudwu/coroutine](https://github.com/cloudwu/coroutine): 基于 getcontext、makecontext、swapcontext 实现的协程库.
 - [LevelDB][leveldb]: a fast key-value storage library, under the hood is a LSM tree.
 - [liburing][liburing]: a library that provides an efficient and convenient way to use the io_uring interface.
+- [spdlog][spdlog]: Fast C++ logging library.
 
 <h4>Standards</h4>
 
@@ -172,3 +173,4 @@ Reference:
 [principlesofchaos]: http://principlesofchaos.org/
 [leveldb]: https://github.com/google/leveldb
 [liburing]: https://github.com/axboe/liburing
+[arrow]: https://github.com/apache/arrow
