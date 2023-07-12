@@ -73,6 +73,9 @@ tags:
 - [Database Systems Lecture (winter term 20/21)][dbsys20] *Saarland University*
     - [课程主页][dbsys20]
     - [课程视频][dbsys20-video]
+- [CS 186][cs186] **Introduction to Database Systems** *UC Berkeley*
+  - [课程主页][cs186]
+  - [课程视频][CS186Berkeley]
 - [15-445/645][15445] **Intro to Database Systems** *CMU*
   - [课程主页 - Fall 2019](https://15445.courses.cs.cmu.edu/fall2019/)
   - [课程视频 - Fall 2019](https://www.youtube.com/playlist?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi)
@@ -251,3 +254,5 @@ Reference:
 [15445]: https://15445.courses.cs.cmu.edu/
 [chatgpt-prompt-engineering-for-developers]: https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction
 [15721]: https://15721.courses.cs.cmu.edu/
+[cs186]: https://cs186berkeley.net/
+[CS186Berkeley]: https://www.youtube.com/@CS186Berkeley/playlists
