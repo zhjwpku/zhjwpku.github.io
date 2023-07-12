@@ -105,6 +105,9 @@ tags:
   - [课程主页][ConcDisSys]
   - [课程视频](https://www.youtube.com/playlist?list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB)
   - [lecture notes](https://www.cl.cam.ac.uk/teaching/2122/ConcDisSys/dist-sys-notes.pdf)
+- [CS 598XU][cs598xu] **Reliability of Cloud-Scale Systems** *UIUC*
+  - [课程主页][cs598xu]
+  - [Reading List][cs598xu-reading-list]
 
 #### Language
 
@@ -256,3 +259,5 @@ Reference:
 [15721]: https://15721.courses.cs.cmu.edu/
 [cs186]: https://cs186berkeley.net/
 [CS186Berkeley]: https://www.youtube.com/@CS186Berkeley/playlists
+[cs598xu]: https://cs598txu-uiuc.github.io/spring22/index.html
+[cs598xu-reading-list]: https://cs598txu-uiuc.github.io/spring22/readings.html
