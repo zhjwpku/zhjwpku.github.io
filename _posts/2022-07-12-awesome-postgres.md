@@ -48,6 +48,7 @@ tags:
 - [momjian.us](https://momjian.us/)
 - [depesz.com](https://www.depesz.com/) by Hubert Lubaczewski
 - [Robert Haas](https://rhaas.blogspot.com/)'s blogspot
+- [Michael Paquier](https://paquier.xyz/)'s blog
 - [PostgreSQL and Databases in general](http://amitkapila16.blogspot.com/) Amit Kapila's blogspot
 - [What PostgreSQL has over other open source SQL databases: Part I](https://www.compose.com/articles/what-postgresql-has-over-other-open-source-sql-databases/)
 - [What PostgreSQL has over other open source SQL databases: Part II](https://www.compose.com/articles/what-postgresql-has-over-other-open-source-sql-databases-part-ii/)
