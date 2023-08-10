@@ -378,6 +378,12 @@ ORDER BY 5 DESC;
 
 -- 查看所有未提交的两阶段事务（2PC）
 SELECT gp_execution_segment(), * FROM gp_dist_random('pg_prepared_xacts');
+
+-- 查看最常做 seq scan 的表，进而决定是否应该建索引
+SELECT schemaname, relname, seq_scan, seq_tup_read, seq_tup_read / seq_scan AS avg, idx_scan
+FROM pg_stat_user_tables
+WHERE seq_scan > 0
+ORDER BY seq_tup_read DESC LIMIT 25;
 ```
 
 <h4>GUC</h4>
