@@ -384,6 +384,13 @@ SELECT schemaname, relname, seq_scan, seq_tup_read, seq_tup_read / seq_scan AS a
 FROM pg_stat_user_tables
 WHERE seq_scan > 0
 ORDER BY seq_tup_read DESC LIMIT 25;
+
+-- 查看 index 的适用频率及其占用空间大小
+SELECT schemaname, relname, indexrelname, idx_scan,
+       pg_size_pretty(pg_relation_size(indexrelid)) as idx_size,
+       pg_size_pretty(sum(pg_relation_size(indexrelid)) OVER (ORDER BY idx_scan, indexrelid)) AS total
+FROM pg_stat_user_indexes
+ORDER BY 6;
 ```
 
 <h4>GUC</h4>
