@@ -130,6 +130,9 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
   - *Vince Bridgers*
     - [Using Clang-tidy for Customized Checkers and Large Scale Source Tree Refactoring](https://www.youtube.com/watch?v=UfLH7dORav8)
 
+  - *CppNow 2023*
+    - [From Templates to Concepts: Metaprogramming in C++](https://www.youtube.com/watch?v=x6_o-jz_Q-8) by Alex Dathskovsky
+
 <br>
 <span class="post-meta">
 Reference:
