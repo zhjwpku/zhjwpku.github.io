@@ -95,6 +95,7 @@ tags:
 - [PostgreSQL: Introduction and Concepts](https://momjian.us/main/writings/pgsql/aw_pgsql_book/0.html) by Bruce Momjian, 2001, 介绍 PG 基本用法及一些概念
 - [PostgreSQL: Up and Running, 3rd Edition][postgres_up_and_running_3rd] by Regina O. Obe, Leo S. Hsu (Nov, 2017), 介绍 PG 基本使用方法
 - [Mastering PostgreSQL 11 Expert techniques to build scalable, reliable, and fault-tolerant database applications][mastering_pg_11] by Hans-Jurgen Schonig, 2018
+- [Mastering PostgreSQL 12 Advanced techniques to build and administer scalable and reliable PostgreSQL database][mastering_pg_12] by Hans-Jürgen Schönig, 2019
 - [The Internals of PostgreSQL][postgres_internals] by Hironobu SUZUKI
   - [Chapter 1. Database Cluster, Databases and Tables](http://www.interdb.jp/pg/pgsql01.html)
   - [Chapter 2. Process and Memory Architecture](http://www.interdb.jp/pg/pgsql02.html)
@@ -244,3 +245,4 @@ References:
 [postgres_up_and_running_3rd]: https://www.oreilly.com/library/view/postgresql-up-and/9781491963401/
 [postgres_internals]: http://www.interdb.jp/pg/
 [mastering_pg_11]: https://www.amazon.com/Mastering-PostgreSQL-techniques-fault-tolerant-applications/dp/1789537819
+[mastering_pg_12]: https://www.amazon.com/Mastering-PostgreSQL-techniques-administer-applications-ebook/dp/B0822GCCDT
