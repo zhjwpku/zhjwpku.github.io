@@ -108,6 +108,7 @@ tags:
   - [Chapter 9. Write Ahead Logging (WAL)](http://www.interdb.jp/pg/pgsql09.html)
   - [Chapter 10. Base Backup and Point-In-Time Recovery (PITR)](https://www.interdb.jp/pg/pgsql10.html)
   - [Chapter 11. Streaming Replication](https://www.interdb.jp/pg/pgsql11.html)
+- [Mastering PostGIS](https://www.amazon.com/Mastering-PostGIS-analyze-implement-spatial/dp/1784391646) by Dominik Mikiewicz, 2017
 
 <h4>Papers</h4>
 
