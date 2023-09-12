@@ -122,6 +122,7 @@ tags:
 <h4>Tutorials</h4>
 
 - [2-Day Introduction to PostgreSQL 11](https://postgrespro.com/education/courses/2dINTRO)
+- [Introduction to PostGIS](https://postgis.net/workshops/postgis-intro/)
 
 <h4>Videos</h4>
 
