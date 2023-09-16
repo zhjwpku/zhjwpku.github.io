@@ -175,6 +175,7 @@ tags:
 - [PostgreSQL 16 and beyond](https://www.youtube.com/watch?v=EMwjyjJjvE0) by Amit Kapila, PGCon 2023
 - [BRIN improvements and new opclasses](https://www.youtube.com/watch?v=PDXhnhIq2WY) by Tomas Vondra, PGCon 2023
 - [Sorting Out glibc Collation Challenges](https://www.youtube.com/watch?v=0E6O-V8Jato) by Joe Conway, PGCon 2023
+- [IO in PostgreSQL: Past, Present, Future](https://www.youtube.com/watch?v=3Oj7fBAqVTw) by Andres Freund, 2022
 
 <h4>Greenplum specific</h4>
 
