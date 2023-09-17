@@ -14,6 +14,7 @@ tags:
 - [CS](#cs)
 - [Database](#database)
 - [Distributed Systems](#distributed-systems)
+- [Hardware](#hardware)
 - [Language](#language)
 - [OS](#os)
 - [Parallel Programming](#parallel-programming)
@@ -110,6 +111,11 @@ tags:
   - [课程主页][cs598xu]
   - [Reading List][cs598xu-reading-list]
 
+#### Hardware
+
+- [Logic Design](https://www.youtube.com/watch?v=4729f01Fw2U&list=PLiwt1iVUib9vXV5xqD_QCTU5SVMjDN5U_) by 
+David Black-Schaffer
+
 #### Language
 
 - [CS 106A][cs106a] **Programming Methodology, Spring 2017** *Stanford*
@@ -136,6 +142,8 @@ tags:
 - [OSTEP][ostep] **Operating Systems: Three Easy Pieces(virtualization, concurrency, and persistence)** *University of Wisconsin*
     - [Homework][ostep-homework]
     - [Projects][ostep-projects]
+- [Virtual Memory](https://www.youtube.com/watch?v=qcBIvnQt0Bw&list=PLiwt1iVUib9s2Uo5BeYmwkDFUh70fJPxX) by 
+David Black-Schaffer
 
 #### Parallel Programming
 
