@@ -73,6 +73,14 @@ tags:
   - [6. Vacuum](https://habr.com/en/company/postgrespro/blog/484106/)
   - [7. Autovacuum](https://habr.com/en/company/postgrespro/blog/486104/)
   - [8. Freezing](https://habr.com/en/company/postgrespro/blog/487590/)
+- [Queries in PostgreSQL](https://postgrespro.com/blog/pgsql/5969262) by Egor Rogov, 2022
+  - [1. Query execution stages](https://postgrespro.com/blog/pgsql/5969262)
+  - [2. Statistics](https://postgrespro.com/blog/pgsql/5969296)
+  - [3. Sequential scan](https://postgrespro.com/blog/pgsql/5969403)
+  - [4. Index scan](https://postgrespro.com/blog/pgsql/5969493)
+  - [5. Nested loop](https://postgrespro.com/blog/pgsql/5969618)
+  - [6. Hashing](https://postgrespro.com/blog/pgsql/5969673)
+  - [7. Sort and merge](https://postgrespro.com/blog/pgsql/5969770)
 - [Tuple internals: exposing, exploring and explaining](https://pgconf.ru/media/2016/05/13/tuple-internals.pdf) by Nikolay Shaplov, 2016
 - [Understanding of Bloat and VACUUM in PostgreSQL](https://www.percona.com/blog/2018/08/06/basic-understanding-bloat-vacuum-postgresql-mvcc/) by Avinash Vallarapu, 2018
 - [Tuning Autovacuum in PostgreSQL and Autovacuum Internals](https://www.percona.com/blog/2018/08/10/tuning-autovacuum-in-postgresql-and-autovacuum-internals/) by Avinash Vallarapu, 2018
