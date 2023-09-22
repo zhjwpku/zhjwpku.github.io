@@ -131,6 +131,7 @@ tags:
 
 - [2-Day Introduction to PostgreSQL 11](https://postgrespro.com/education/courses/2dINTRO)
 - [Introduction to PostGIS](https://postgis.net/workshops/postgis-intro/)
+- [Kartones/postgres-cheatsheet.md](https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546)
 
 <h4>Videos</h4>
 
