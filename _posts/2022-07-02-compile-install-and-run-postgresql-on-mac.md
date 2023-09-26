@@ -20,7 +20,7 @@ cd postgres
 在 mac 上通常是要定位一些代码问题，因此把 debug 打开，默认将程序安装到 /usr/local/pgsql，可通过 `./configure --prefix=<path>` 修改安装路径。
 
 ```shell
-CFLAGS="-O2 -fno-inline-functions" ./configure --enable-debug --without-icu
+CFLAGS="-Og -fno-inline-functions" ./configure --enable-debug --without-icu --enable-tap-tests
 make -j8
 sudo make install
 ```
@@ -79,6 +79,7 @@ References:
 <span class="post-meta">
 1 [GDB to LLDB command map](https://lldb.llvm.org/use/map.html)<br>
 2 [building postgres with meson - v13](https://www.postgresql.org/message-id/20220915022626.5xx3ccgkzpkqw5mq@awork3.anarazel.de)<br>
-3 [Postgres Meson Wiki](https://wiki.postgresql.org/wiki/Meson)
+3 [Postgres Meson Wiki](https://wiki.postgresql.org/wiki/Meson)<br>
+4 [GCC command options for debugging – -Og and -g3](http://kristerw.blogspot.com/2018/02/gcc-command-options-for-debugging-og.html)
 </span>
 
