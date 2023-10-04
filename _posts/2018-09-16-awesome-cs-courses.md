@@ -173,6 +173,11 @@ David Black-Schaffer
         - [SS-09: Database Systems & AWS RDS][ss-09]
         - [SS-10: Mobile Development & React Native][ss-10]
 
+#### Not really related to CS
+
+- [MIT 16.687][16687] **Private Pilot Ground School, IAP 2019**
+  - Instructor: Philip Greenspun, Tina Srivastava
+
 
 <br>
 <span class="post-meta">
@@ -270,3 +275,4 @@ Reference:
 [CS186Berkeley]: https://www.youtube.com/@CS186Berkeley/playlists
 [cs598xu]: https://cs598txu-uiuc.github.io/spring22/index.html
 [cs598xu-reading-list]: https://cs598txu-uiuc.github.io/spring22/readings.html
+[16687]: https://www.youtube.com/playlist?list=PLUl4u3cNGP63cUdAG3v311Vl72ozOiK25
