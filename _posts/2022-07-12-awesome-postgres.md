@@ -97,6 +97,14 @@ tags:
 - [Understanding Prepared Transactions and Handling the Orphans](https://www.highgo.ca/2020/01/28/understanding-prepared-transactions-and-handling-the-orphans/) by Hamid Akhtar, 2020
 - [OIDs demoted to normal columns: a glance at the past](https://postgresql.verite.pro/blog/2019/04/24/oid-column.html) by Daniel Verite, 2019
 
+**Locking related**
+
+- [PostgreSQL locking, Part 1: Row Locks](https://www.percona.com/blog/postgresql-locking-part-1-row-locks/)
+- [PostgreSQL locking, part 2: heavyweight locks](https://www.percona.com/blog/postgresql-locking-part-2-heavyweight-locks/)
+- [PostgreSQL locking, part 3: lightweight locks](https://www.percona.com/blog/postgresql-locking-part-3-lightweight-locks/)
+- [PostgreSQL rocks, except when it blocks: Understanding locks](https://www.citusdata.com/blog/2018/02/15/when-postgresql-blocks/)
+- [When Postgres blocks: 7 tips for dealing with locks](https://www.citusdata.com/blog/2018/02/22/seven-tips-for-dealing-with-postgres-locks/)
+- [Postgres Locking Revealed](https://engineering.nordeus.com/postgres-locking-revealed/)
 
 <h4>Books</h4>
 
