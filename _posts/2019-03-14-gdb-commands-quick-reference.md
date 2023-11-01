@@ -133,6 +133,12 @@ gdb -batch -ex "set pagination 0" -ex "p *WalRcv" -p 11551
 gdb -batch -ex "set pagination 0" -ex "set variable WalRcv->reserveLSN = 939524096" -p 39395
 ```
 
+**trace into child process when fork**
+
+```
+set follow-fork-mode child
+```
+
 <br>
 <span class="post-meta">
 Reference:

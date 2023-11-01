@@ -417,6 +417,10 @@ Average:       6    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
 Average:       7    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00  100.00
 ```
 
+**smem**
+
+[smem](https://www.selenic.com/smem/) is a tool that can give numerous reports on memory usage on Linux systems.
+
 **查看网络中断绑核**
 
 ```shell
