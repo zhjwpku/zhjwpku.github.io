@@ -421,6 +421,15 @@ Average:       7    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00
 
 [smem](https://www.selenic.com/smem/) is a tool that can give numerous reports on memory usage on Linux systems.
 
+**查看哪些进程使用了 swap**
+
+```
+for file in /proc/*/status
+do 
+  awk '/VmSwap|Name/{printf $2 " " $3}END{ print ""}' $file 
+done
+```
+
 **查看网络中断绑核**
 
 ```shell
