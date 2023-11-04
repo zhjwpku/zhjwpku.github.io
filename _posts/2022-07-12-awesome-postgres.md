@@ -96,6 +96,11 @@ tags:
 - [PostgreSQL vs. MySQL: A 360-degree Comparison](https://www.enterprisedb.com/blog/postgresql-vs-mysql-360-degree-comparison-syntax-performance-scalability-and-features) by EDB Team, 2019
 - [Understanding Prepared Transactions and Handling the Orphans](https://www.highgo.ca/2020/01/28/understanding-prepared-transactions-and-handling-the-orphans/) by Hamid Akhtar, 2020
 - [OIDs demoted to normal columns: a glance at the past](https://postgresql.verite.pro/blog/2019/04/24/oid-column.html) by Daniel Verite, 2019
+- [How Postgres Makes Transactions Atomic](https://brandur.org/postgres-atomicity)
+- [How to Manage Connections Efficiently in Postgres, or Any Database](https://brandur.org/postgres-connections)
+- [Measuring the Memory Overhead of a Postgres Connection](https://blog.anarazel.de/2020/10/07/measuring-the-memory-overhead-of-a-postgres-connection/) by Andres Freund, Oct 2020
+- [Analyzing the Limits of Connection Scalability in Postgres](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/analyzing-the-limits-of-connection-scalability-in-postgres/ba-p/1757266)
+- [Improving Postgres Connection Scalability: Snapshots](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/improving-postgres-connection-scalability-snapshots/ba-p/1806462)
 
 **Locking related**
 
