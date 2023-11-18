@@ -41,6 +41,7 @@ tags:
 - [Unofficial documentation for PostgreSQL hooks](https://github.com/taminomara/psql-hooks)
 - [Incremental backup](https://wiki.postgresql.org/wiki/Incremental_backup)
 - [Pgsrcstructure](https://wiki.postgresql.org/wiki/Pgsrcstructure)
+- [Profiling with perf](https://wiki.postgresql.org/wiki/Profiling_with_perf)
 
 <h4>Blogs</h4>
 
