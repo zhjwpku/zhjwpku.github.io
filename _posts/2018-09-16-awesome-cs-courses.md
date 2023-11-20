@@ -87,6 +87,8 @@ tags:
   - [课程视频 - Spring 2017](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYgTIlqf4Dy9KQpQ7kn1Tl0)
   - [课程主页 - Spring 2020](https://15721.courses.cs.cmu.edu/spring2020/schedule.html)
   - [课程视频 - Spring 2020](https://www.youtube.com/playlist?list=PLSE8ODhjZXjasmrEd2_Yi1deeE360zv5O)
+  - [课程主页 - Spring 2023](https://15721.courses.cs.cmu.edu/spring2023/schedule.html)
+  - [课程视频 - Spring 2023](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYzlLMbX3cR0sxWnRM7CLFn)
 - Database textbook recommendations
   - [Database Management Systems 3rd Edition](https://www.amazon.com/Database-Management-Systems-Raghu-Ramakrishnan/dp/0072465638) by Raghu Ramakrishnan and Johannes Gehrke, 2002
   - [Database System Concepts 6th Edition](https://www.amazon.com/dp/0073523321) by Silberschatz, Korth and Sudarshan, 2010
