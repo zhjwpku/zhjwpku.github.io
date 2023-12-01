@@ -81,6 +81,7 @@ References:
 2 [building postgres with meson - v13](https://www.postgresql.org/message-id/20220915022626.5xx3ccgkzpkqw5mq@awork3.anarazel.de)<br>
 3 [Postgres Meson Wiki](https://wiki.postgresql.org/wiki/Meson)<br>
 4 [GCC command options for debugging – -Og and -g3](http://kristerw.blogspot.com/2018/02/gcc-command-options-for-debugging-og.html)<br>
-5 [Unlock Your Arsenals: GDB Debugging Essentials with PostgreSQL](https://www.techbuddies.io/2023/10/30/unlock-your-arsenals-gdb-debugging-essentials-with-postgresql/)
+5 [Unlock Your Arsenals: GDB Debugging Essentials with PostgreSQL](https://www.techbuddies.io/2023/10/30/unlock-your-arsenals-gdb-debugging-essentials-with-postgresql/)<br>
+6 [17.4. Building and Installation with Meson](https://www.postgresql.org/docs/current/install-meson.html)
 </span>
 
