@@ -82,6 +82,7 @@ References:
 3 [Postgres Meson Wiki](https://wiki.postgresql.org/wiki/Meson)<br>
 4 [GCC command options for debugging – -Og and -g3](http://kristerw.blogspot.com/2018/02/gcc-command-options-for-debugging-og.html)<br>
 5 [Unlock Your Arsenals: GDB Debugging Essentials with PostgreSQL](https://www.techbuddies.io/2023/10/30/unlock-your-arsenals-gdb-debugging-essentials-with-postgresql/)<br>
-6 [17.4. Building and Installation with Meson](https://www.postgresql.org/docs/current/install-meson.html)
+6 [17.4. Building and Installation with Meson](https://www.postgresql.org/docs/current/install-meson.html)<br>
+7 [PGCon 2022 Unconference streaming about meson](https://www.youtube.com/watch?v=ei7nGHgW5Ao)
 </span>
 
