@@ -102,6 +102,7 @@ tags:
 - [Measuring the Memory Overhead of a Postgres Connection](https://blog.anarazel.de/2020/10/07/measuring-the-memory-overhead-of-a-postgres-connection/) by Andres Freund, Oct 2020
 - [Analyzing the Limits of Connection Scalability in Postgres](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/analyzing-the-limits-of-connection-scalability-in-postgres/ba-p/1757266)
 - [Improving Postgres Connection Scalability: Snapshots](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/improving-postgres-connection-scalability-snapshots/ba-p/1806462)
+- [THOUGHTS ON POSTGRESQL IN 2024](https://jkatz05.com/post/postgres/postgresql-2024/) by JONATHAN KATZ
 
 **Locking related**
 
