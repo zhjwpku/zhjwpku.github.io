@@ -26,6 +26,11 @@
 
 \section{\faOpenid\ 工作经历}
 \begin{onehalfspacing}
+  \datedsubsection{\textbf{星环科技}}{基础架构产品部}
+  \datedsubsection{\textit{资深数据库内核研发}}{2023年7月至今}
+  \end{onehalfspacing}
+
+\begin{onehalfspacing}
 \datedsubsection{\textbf{阿里巴巴}}{阿里云数据库产品事业部 OLAP 产品部}
 \datedsubsection{\textit{技术专家}}{2021年5月 -- 2023年6月}
 \end{onehalfspacing}
@@ -42,6 +47,16 @@
 
 \section{\faTasks\ 项目经历}
 
+\datedsubsection{\textbf{Spacture 时空库}}{2023年7月 -- 至今}
+\textit{Spacture 时空库产品化及 项目POC。}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item 工作1: HA、备份工具及插件的选型
+  \item 工作2: 探索如何通过 Operator 支持 RDS 及基于 PG 的 MPP 分布式数据库的统一部署
+  \item 工作3: POC 测案编写及实施
+\end{itemize}
+\end{onehalfspacing}
+
 \datedsubsection{\textbf{AnalyticDB PostgreSQL 高可用及同城容灾}}{2023年3月 -- 2023年6月}
 \textit{同城容灾是专有云项目常见的企业级特性，针对 GPDB 只支持单副本和两副本的架构进行扩展。}
 \begin{onehalfspacing}
@@ -56,7 +71,7 @@
 \textit{Apache Iceberg 是一个开源的大数据表格式，旨在为数据湖提供一个高效的元数据管理系统。ADB PG 希望借助 Iceberg 的通用表格式来更好地融入大数据生态。}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 主要工作: 实现 iceberg-c sdk，供 iceberg-fdw 模块调用（fdw 由另一个同学实现）
+  \item 主要工作: 实现 iceberg-c sdk 及 iceberg-fdw
   \item 适用场景: 查询由其它大数据工具生成的数据，将 gpdb 接入大数据生态
   \item 未来规划: 像 snowflake 一样将 iceberg 视为本地表进行查询写入
 \end{itemize}
@@ -95,7 +110,7 @@
 \textit{TaurusDB for MySQL 是华为的一款分布式 MySQL 数据库解决方案，SCN (System Change Number) 用于确保数据库中的数据一致性。}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item 上手工作: 使用 mmap 优化 binlog 性能， \href{https://github.com/mysql/mysql-server/pull/314}{Use mmap for binlog}
+  \item 使用 mmap 优化 binlog 性能， \href{https://github.com/mysql/mysql-server/pull/314}{Use mmap for binlog}
   \item SCN 项目相关工作: 适配 purge 流程
 \end{itemize}
 \end{onehalfspacing}
@@ -122,9 +137,13 @@
 \section{\faCodeFork\ 开源贡献}
 \begin{onehalfspacing}
   \begin{itemize}
+    \item Patroni
+      \begin{itemize}
+        \item \href{https://github.com/zalando/patroni/pull/2960}{Abstract MPP handler and decouple it from DCS}
+      \end{itemize}
     \item Greenplum
       \begin{itemize}
-        \item \href{hhttps://github.com/greenplum-db/gpdb/pulls?q=is%3Apr+author%3A%40me+}{PRs contributed to gpdb}
+        \item \href{https://github.com/greenplum-db/gpdb/pulls?q=is%3Apr+author%3A%40me+}{PRs contributed to gpdb}
       \end{itemize}
     \item pg\_cron
       \begin{itemize}
@@ -133,13 +152,6 @@
     \item cron
       \begin{itemize}
         \item \href{https://github.com/vixie/cron/pull/20}{allow '\$' to indicate last day-of-month}
-      \end{itemize}
-    \item PostgreSQL
-      \begin{itemize}
-        \item \href{https://github.com/postgres/postgres/commit/08237056f}{Fix overridden callbacks in pg\_rewind}
-        \item \href{https://github.com/postgres/postgres/commit/57bab33302}{meson: catch up to a few configure changes}
-        \item \href{https://github.com/postgres/postgres/commit/1360943d1a}{meson: Add prefix=/usr/local/pgsql to default\_options}
-        \item \href{https://github.com/postgres/postgres/commit/6710e83a67}{Remove useless pstrdups in untransformRelOption}
       \end{itemize}
     \item Apache ORC
       \begin{itemize}
