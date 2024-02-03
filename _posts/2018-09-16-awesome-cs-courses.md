@@ -33,6 +33,12 @@ tags:
   - Instructed by Isa Fulford and Andrew Ng
   - [课程主页][chatgpt-prompt-engineering-for-developers]
   - [more courses from DeepLearning.AI](https://www.deeplearning.ai/courses/)
+- [Building Applications with Vector Databases](https://learn.deeplearning.ai/building-applications-vector-databases/)
+  - DeepLearning.AI & Pinecone
+  - [课程主页](https://learn.deeplearning.ai/building-applications-vector-databases/)
+- [Vector Databases: from Embeddings to Applications](https://learn.deeplearning.ai/vector-databases-embeddings-applications/)
+  - DeepLearning.AI & Weaviate
+  - [课程主页](https://learn.deeplearning.ai/vector-databases-embeddings-applications/)
 
 #### CS
 
