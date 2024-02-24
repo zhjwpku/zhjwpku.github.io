@@ -24,6 +24,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Google C++ Style Guide][cppstyleguide]
 - [C++ Core Guidelines][cppcoreguidelines]
 - [What Every Programmer Should Know About Memory][cpumemory]
+- [Understanding the Linux Virtual Memory Manager](https://www.kernel.org/doc/gorman/html/understand/) by Mel Gorman
 - [The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software][freelunchover]
 - [Why symbol visibility is good][why-symbol-visibility-is-good]
 - [Executable and Linkable Format (ELF)][elf]
