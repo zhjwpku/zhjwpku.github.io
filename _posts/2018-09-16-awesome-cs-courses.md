@@ -39,6 +39,8 @@ tags:
 - [Vector Databases: from Embeddings to Applications](https://learn.deeplearning.ai/vector-databases-embeddings-applications/)
   - DeepLearning.AI & Weaviate
   - [课程主页](https://learn.deeplearning.ai/vector-databases-embeddings-applications/)
+- [Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
+  - Andrej Karpathy
 
 #### CS
 
