@@ -127,6 +127,9 @@ tags:
 - [CS 598XU][cs598xu] **Reliability of Cloud-Scale Systems** *UIUC*
   - [课程主页][cs598xu]
   - [Reading List][cs598xu-reading-list]
+- [6.824: Distributed Systems][6284]
+  - [课程主页](http://nil.lcs.mit.edu/6.824/2020/schedule.html)
+  - [课程视频](https://www.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB)
 
 #### Hardware
 
@@ -293,3 +296,4 @@ Reference:
 [cs598xu]: https://cs598txu-uiuc.github.io/spring22/index.html
 [cs598xu-reading-list]: https://cs598txu-uiuc.github.io/spring22/readings.html
 [16687]: https://www.youtube.com/playlist?list=PLUl4u3cNGP63cUdAG3v311Vl72ozOiK25
+[6284]: http://nil.lcs.mit.edu/6.824/2020/index.html
