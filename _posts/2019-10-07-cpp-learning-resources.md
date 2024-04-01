@@ -52,6 +52,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [The rapid growth of io_uring](https://lwn.net/Articles/810414/)
 - [An Introduction to the io_uring Asynchronous I/O Framework](https://blogs.oracle.com/linux/post/an-introduction-to-the-io-uring-asynchronous-io-framework)
 - [io_uring and networking in 2023](https://github.com/axboe/liburing/wiki/io_uring-and-networking-in-2023)
+- [AN INTRODUCTION TO C++ TRAITS](https://accu.org/journals/overload/9/43/frogley_442/)
 
 <h4>Blogs</h4>
 
