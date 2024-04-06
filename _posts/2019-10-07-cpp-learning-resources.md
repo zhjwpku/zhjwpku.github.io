@@ -25,6 +25,10 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [A Fast General Purpose Lock-Free Queue for C++](https://moodycamel.com/blog/2014/a-fast-general-purpose-lock-free-queue-for-c++)
 - [Detailed Design of a Lock-Free Queue](https://moodycamel.com/blog/2014/detailed-design-of-a-lock-free-queue)
 
+<h4>Metaprogramming</h4>
+
+- [Modern Template Metaprogramming: A Compendium, Part I](https://www.youtube.com/watch?v=Am2is2QCvxY) by Walter E. Brown, CppCon 2014
+
 <h4>Articles</h4>
 
 - [C++ Rvalue References Explained][rvalue_references] by Thomas Becker
@@ -88,6 +92,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [LevelDB][leveldb]: a fast key-value storage library, under the hood is a LSM tree.
 - [liburing][liburing]: a library that provides an efficient and convenient way to use the io_uring interface.
 - [spdlog][spdlog]: Fast C++ logging library.
+- [concurrentqueue](https://github.com/cameron314/concurrentqueue): A fast multi-producer, multi-consumer lock-free concurrent queue for C++11.
 
 <h4>Standards</h4>
 
