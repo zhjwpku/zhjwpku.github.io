@@ -28,6 +28,7 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 <h4>Metaprogramming</h4>
 
 - [Modern Template Metaprogramming: A Compendium, Part I](https://www.youtube.com/watch?v=Am2is2QCvxY) by Walter E. Brown, CppCon 2014
+- [Modern Template Metaprogramming: A Compendium, Part II](https://www.youtube.com/watch?v=a0FliKwcwXE) by Walter E. Brown, CppCon 2014
 
 <h4>Articles</h4>
 
