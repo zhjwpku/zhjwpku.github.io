@@ -51,9 +51,9 @@ permalink: /resume
           aria-hidden="true"></i> 工作经历</h4>
       <div><strong>星环科技</strong><span style="float:right">基础架构产品部</span></div>
       <p>资深数据库内核研发<span style="float: right;">2023年7月至今</span></p>
-      <div><strong>阿里巴巴</strong><span style="float:right">阿里云数据库产品事业部 OLAP 产品部</span></div>
+      <div><strong>阿里巴巴</strong><span style="float:right">阿里云数据库 OLAP 产品部</span></div>
       <p>技术专家<span style="float: right;">2021年5月 - 2023年6月</span></p>
-      <div><strong>华为</strong><span style="float:right">FusionStorage 项目群 & CloudBU GaussDB for MySQL</span></div>
+      <div><strong>华为</strong><span style="float:right">IT 产品线 FusionStorage 项目群</span></div>
       <p>高级工程师<span style="float: right;">2018年4月 - 2021年5月</span></p>
       <div><strong>四达时代</strong><span style="float:right">研究院</span></div>
       <p>研发工程师<span style="float: right;">2016年7月 - 2018年3月</span></p>
@@ -63,12 +63,14 @@ permalink: /resume
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-tasks"
           aria-hidden="true"></i> 项目经历</h4>
 
-      <div><strong>Spacture 时空库</strong><span style="float:right">2023年7月-至今</span></div>
-      <p style="margin-top: 5px;">Spacture 时空库产品化及项目POC。</p>
+      <div><strong>Spacture & Hippo</strong><span style="float:right">2023年7月-至今</span></div>
+      <p style="margin-top: 5px;">负责 Spacture 时空库及 Hippo 向量库内核研发。</p>
       <ul>
         <li>工作1: HA、备份工具及插件的选型</li>
-        <li>工作2: 探索如何通过 Operator 支持 RDS 及基于 PG 的 MPP 分布式数据库的统一部署</li>
-        <li>工作3: POC 测案编写及实施</li>
+        <li>工作2: 探索通过 Operator 支持 RDS 及基于 PG 的 MPP 分布式数据库的统一部署</li>
+        <li>工作3: Hippo 支持 DiskANN 索引，基于原生 DiskANN 进行优化，性能提升 30%</li>
+        <li>工作4: Hippo 引入 HNSWlib 代替 Faiss::HNSW，在此基础上设计了稠密稀疏联合索引</li>
+        <li>工作5: 工作5: 开发 HippoBench，支持多种开源数据集，统一了 POC 调优、性能优化等场景使用的工具，显著提升了团队工作效率</li>
       </ul>
 
       <div><strong>AnalyticDB PostgreSQL 高可用及同城容灾</strong><span style="float:right">2023年3月-2023年6月</span></div>
@@ -76,7 +78,7 @@ permalink: /resume
       <ul>
         <li>主要工作: 修改 FTS 逻辑适配多副本架构，其中一个备升主之后其它备要去和新主建立 replication</li>
         <li>适用场景: 需要高可用的部署场景，常见于同城容灾专有云局点</li>
-        <li>其它: 差异化修复（基于 rsync 进行主备数据同步）</li>
+        <li>其它: 设计基于实例节点独立 agent 的 HA 解决方案</li>
       </ul>
 
       <div><strong>AnalyticDB PostgreSQL Iceberg table</strong><span style="float:right">2022年9月-2023年3月</span></div>
@@ -85,7 +87,7 @@ permalink: /resume
       <ul>
         <li>主要工作: 实现 iceberg-c sdk 及 iceberg_fdw</li>
         <li>适用场景: 查询由其它大数据工具生成的数据，将 gpdb 接入大数据生态</li>
-        <li>未来规划: 像 snowflake 一样将 iceberg 视为本地表进行查询写入</li>
+        <li>未来规划: 像 snowflake 一样将 iceberg 视为本地表进行查询写入（适配 table access method）</li>
       </ul>
 
       <div><strong>AnalyticDB PostgreSQL 差异化存储</strong><span style="float:right">2022年6月-2022年9月</span></div>
@@ -106,11 +108,12 @@ permalink: /resume
             to existing cdc job</a></li>
       </ul>
 
-      <div><strong>AnalyticDB MySQL 存储引擎</strong><span style="float:right">2021年5月-2021年11月</span></div>
+      <div><strong>AnalyticDB MySQL 存储引擎支持 Z-order 排序</strong><span style="float:right">2021年5月-2021年11月</span></div>
       <p style="margin-top: 5px;">AnalyticDB MySQL 是阿里巴巴自主研发的海量数据实时高并发在线分析云计算服务，可以在毫秒级针对千亿级数据进行即时的多维分析透视和业务探索。</p>
       <ul>
-        <li>分析 POC 过程中遇到的性能瓶颈并优化</li>
-        <li>开发 Z-order 索引特性，加速多维查询分析</li>
+        <li>主要工作: 设计开发 Z-order 索引，build 过程中根据 z-value 对数据进行排序并写入 PartitionEngine</li>
+        <li>模块功能: 根据统计信息将不同列在多维查询分析时，通过过滤不必要的数据块来提升查询分析速度</li>
+        <li>适用场景: 查询条件不带 leading column 时，性能优于 cluster index</li>
       </ul>
 
       <div><strong>TaurusDB 内核研发</strong><span style="float:right">2020年5月-2021年5月</span></div>
@@ -130,7 +133,7 @@ permalink: /resume
         <li>适用场景: 当返回大量数据到客户端时对性能提升效果明显，例如 OBS 用户查看一个 bucket 中的所有文件名时</li>
       </ul>
 
-      <div><strong>FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2018年4月-2019年8月</span>
+      <div><strong>FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2018年9月-2019年8月</span>
       </div>
       <p style="margin-top: 5px;">FusionStorage 是华为推出的一款分布式存储系统，支持文件、块、对象等多种存储访问协议。其中 <strong>Persistence
           Layer</strong>——存储系统的持久化层——作为存储系统的底层引擎，负责将数据持久化到存储介质中，同时提供数据保护和数据管理等功能，向上提供 plog 接口。</p>
@@ -150,6 +153,11 @@ permalink: /resume
           <ul>
             <li><strong><a href="https://github.com/zalando/patroni/pull/2960">PRs
                   Abstract MPP handler and decouple it from DCS</a></strong></li>
+          </ul>
+        </li>
+        <li>pgvectorBench
+          <ul>
+            <li><strong><a href="https://github.com/zhjwpku/pgvectorBench">A lightweight, fast, flexible, and easy-to-use benchmarking tool dedicated to pgvector</a></strong></li>
           </ul>
         </li>
         <li>Greenplum
