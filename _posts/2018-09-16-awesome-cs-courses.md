@@ -155,6 +155,10 @@ David Black-Schaffer
     - 教材: [CS106L Course Reader][cs106l-textbook] by Keith Schwarz
     - [课程主页](http://web.stanford.edu/class/cs106l/lectures.html)
     - [课程视频][cs106l-video]
+- [CS 107][cs107] **Programming Paradigms** *Stanford*
+  - 课程介绍了包括 C 语言、汇编语言、C++、并发编程、Scheme 和 Python 在内的多种编程语言，旨在教授学生理解这些语言背后的编程范式。
+  - [课程主页][cs107]
+  - [课程视频][cs107-video]
 - [Effective Programming in Scala][effective-scala] by École Polytechnique Fédérale de Lausanne
 
 #### OS
@@ -297,3 +301,5 @@ Reference:
 [cs598xu-reading-list]: https://cs598txu-uiuc.github.io/spring22/readings.html
 [16687]: https://www.youtube.com/playlist?list=PLUl4u3cNGP63cUdAG3v311Vl72ozOiK25
 [6284]: http://nil.lcs.mit.edu/6.824/2020/index.html
+[cs107]: https://see.stanford.edu/Course/CS107
+[cs107-video]: https://www.youtube.com/playlist?list=PL9D558D49CA734A02
