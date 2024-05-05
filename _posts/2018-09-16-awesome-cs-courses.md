@@ -71,6 +71,10 @@ tags:
     - [课程主页 - 2018][6172]
     - [课程视频 - 2018][6172-video]
 
+- [CS107](https://web.stanford.edu/class/cs107/) **Computer Organization & Systems** *Stanford*
+  - [课程主页](https://web.stanford.edu/class/cs107/)
+  - [课程视频](https://www.youtube.com/playlist?list=PLoCMsyE1cvdWivlV-39KKsBKUX-4DvraN)
+
 - [The Missing Semester of Your CS Education][missing-semester] *MIT*
     - [课程视频][missing-semester-video]
     - [Shell Tools and Scripting][ms-shell-tools] find/ripgrep/fd/broot/nnn/ranger
