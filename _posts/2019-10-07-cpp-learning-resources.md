@@ -30,6 +30,8 @@ C/C++ 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 - [Modern Template Metaprogramming: A Compendium, Part I](https://www.youtube.com/watch?v=Am2is2QCvxY) by Walter E. Brown, CppCon 2014
 - [Modern Template Metaprogramming: A Compendium, Part II](https://www.youtube.com/watch?v=a0FliKwcwXE) by Walter E. Brown, CppCon 2014
 - [Guest Lecture: Template Metaprogramming](https://www.youtube.com/watch?v=Ct3QF2qENGM) by Avery Wang, CS 106L Fall 2020, [Slides](https://stanford.edu/class/cs106l/lectures/16_tmp.pdf)
+- [Template Normal Programming (part 1 of 2)](https://www.youtube.com/watch?v=vwrXHznaYLA) by Arthur O'Dwyer, CppCon 2016
+- [Template Normal Programming (part 2 of 2)](https://www.youtube.com/watch?v=VIz6xBvwYd8) by Arthur O'Dwyer, CppCon 2016
 
 <h4>Articles</h4>
 
