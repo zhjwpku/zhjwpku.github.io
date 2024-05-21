@@ -168,3 +168,70 @@ int main() {
 
 ```
 
+<h4>删除链表中相邻重复的元素</h4>
+
+比如: 3 -> 3 -> 3 -> 5 -> 1 -> 1 -> 4 删除之后结果为: 5 -> 4
+
+```C++
+#include <iostream>
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int val_) : val(val_), next(nullptr) {}
+    ListNode(int val_, ListNode *next_) : val(val_), next(next_) {}
+};
+
+ListNode* removeDuplicates(ListNode* head) {
+    if (head == nullptr || head->next == nullptr) {
+        return head;
+    }
+
+    ListNode dummy(0, head);
+    ListNode *pre = &dummy;
+    ListNode *cur = head;
+
+    while (cur && cur->next) {
+        bool hasDup = false;
+        while (cur->next && cur->val == cur->next->val) {
+            hasDup = true;
+            cur = cur->next;
+        }
+
+        if (hasDup) {
+            pre->next = cur->next;
+        } else {
+            // or pre = pre->next;
+            pre = cur;
+        }
+
+        cur = cur->next;
+    }
+
+    return dummy.next;
+}
+
+void printList(ListNode* head) {
+    while (head != nullptr) {
+        std::cout << head->val << " ";
+        head = head->next;
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    // 3 3 3 5 1 1 4
+    ListNode n1(4);
+    ListNode n2(1, &n1);
+    ListNode n3(1, &n2);
+    ListNode n4(5, &n3);
+    ListNode n5(3, &n4);
+    ListNode n6(3, &n5);
+    ListNode n7(3, &n6);
+
+
+    printList(&n7);
+    printList(removeDuplicates(&n7));
+}
+
+```
