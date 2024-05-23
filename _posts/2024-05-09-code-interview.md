@@ -235,3 +235,68 @@ int main() {
 }
 
 ```
+
+<h4>实现 LRUCache 类</h4>
+
+题目描述:
+- LRUCache(int capacity) 以正整数作为容量 capacity 初始化 LRU 缓存
+- int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1。
+- void put(int key, int value) 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字-值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。
+
+```C++
+#include <iostream>
+#include <list>
+#include <unordered_map>
+#include <utility>
+
+class LRUCache {
+public:
+    LRUCache(int capacity) : capacity_(capacity) {}
+
+    int get(int key) {
+        auto it = cache_.find(key);
+        if (it == cache_.end()) {
+            return -1;
+        } else {
+            items_.splice(items_.begin(), items_, it->second.second);
+            return it->second.first;
+        }
+    }
+
+    void put(int key, int value) {
+        auto it = cache_.find(key);
+        if (it != cache_.end()) {
+            it->second.first = value;
+            items_.splice(items_.begin(), items_, it->second.second);
+        } else {
+            if (cache_.size() == capacity_) {
+                int temp = items_.back();
+                items_.pop_back();
+                cache_.erase(temp);
+            }
+            items_.push_front(key);
+            cache_[key] = {value, items_.begin()};
+        }
+    }
+
+private:
+    int capacity_;
+    std::list<int> items_;
+    std::unordered_map<int, std::pair<int, std::list<int>::iterator>> cache_;
+};
+
+int main() {
+    LRUCache lru(3);
+    lru.put(1, 2);
+    std::cout << lru.get(1) << std::endl; // expect 2
+    lru.put(2, 3);
+    lru.put(3, 4);
+    lru.put(4, 5);
+    std::cout << lru.get(1) << std::endl; // expect -1
+    std::cout << lru.get(2) << std::endl; // expect 3
+    lru.put(5, 6);
+    std::cout << lru.get(3) << std::endl; // expect -1
+
+    return 0;
+}
+```
