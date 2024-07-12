@@ -101,6 +101,8 @@ tags:
   - [课程视频 - Fall 2019](https://www.youtube.com/playlist?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi)
   - [课程主页 - FALL 2022](https://15445.courses.cs.cmu.edu/fall2022/)
   - [课程视频 - FALL 2022](https://www.youtube.com/playlist?list=PLSE8ODhjZXjaKScG3l0nuOiDTTqpfnWFf)
+  - [课程主页 - FALL 2023](https://15445.courses.cs.cmu.edu/fall2023/)
+  - [课程视频 - FALL 2023](https://www.youtube.com/playlist?list=PLSE8ODhjZXjbj8BMuIrRcacnQh20hmY9g)
 - [15-721][15721] **Advanced Database Systems** *CMU*
   - [课程主页 - Spring 2017](https://15721.courses.cs.cmu.edu/spring2017/schedule.html)
   - [课程视频 - Spring 2017](https://www.youtube.com/playlist?list=PLSE8ODhjZXjYgTIlqf4Dy9KQpQ7kn1Tl0)
