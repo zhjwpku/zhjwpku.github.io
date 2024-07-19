@@ -116,6 +116,7 @@ info functions                      打印程序中的函数
 info stack                          打印函数调用栈
 info frame                          打印当前栈帧的信息
 info registers                      打印寄存器及其内容
+info all-registers                  get all of the registers on the particular CPU you are using
 info breakpoints                    打印用户可设置的断点的状态
 
 display /FMT EXPR                   每次 GDB 停止的时候，以 FMT 格式打印 EXPR
