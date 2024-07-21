@@ -66,24 +66,21 @@ permalink: /resume
       <div><strong>Spacture & Hippo</strong><span style="float:right">2023年7月-至今</span></div>
       <p style="margin-top: 5px;">负责 Spacture 时空库及 Hippo 向量库内核研发。</p>
       <ul>
-        <li>工作1: HA、备份工具及插件的选型</li>
-        <li>工作2: 探索通过 Operator 支持 RDS 及基于 PG 的 MPP 分布式数据库的统一部署</li>
-        <li>工作3: Hippo 支持 DiskANN 索引，基于原生 DiskANN 进行优化，性能提升 30%</li>
-        <li>工作4: Hippo 引入 HNSWlib 代替 Faiss::HNSW，在此基础上设计了稠密稀疏联合索引</li>
-        <li>工作5: 工作5: 开发 HippoBench，支持多种开源数据集，统一了 POC 调优、性能优化等场景使用的工具，显著提升了团队工作效率</li>
+        <li>Spacture 选型 HA、备份工具及插件，支持单机版和 MPP 分布式数据库的统一部署</li>
+        <li>Hippo 支持 DiskANN 索引并优化性能，性能提升 30%</li>
+        <li>Hippo 支持 JSON 类型</li>
+        <li>开发 HippoBench，支持多种开源数据集，统一了 POC 调优、性能优化等场景使用的工具，显著提升了团队工作效率</li>
       </ul>
 
       <div><strong>AnalyticDB PostgreSQL 高可用及同城容灾</strong><span style="float:right">2023年3月-2023年6月</span></div>
-      <p style="margin-top: 5px;">同城容灾是专有云项目常见的企业级特性，针对 GPDB 只支持单副本和两副本的架构进行扩展。</p>
+      <p style="margin-top: 5px;">改进 GPDB 的 FTS 逻辑，适配多副本架构，确保高可用部署。</p>
       <ul>
-        <li>主要工作: 修改 FTS 逻辑适配多副本架构，其中一个备升主之后其它备要去和新主建立 replication</li>
-        <li>适用场景: 需要高可用的部署场景，常见于同城容灾专有云局点</li>
-        <li>其它: 设计基于实例节点独立 agent 的 HA 解决方案</li>
+        <li>修改 FTS 逻辑适配多副本架构，其中一个备升主后其它备要去和新主建立 replication</li>
+        <li>设计基于实例节点独立 agent 的 HA 解决方案（类似 Patroni）</li>
       </ul>
 
       <div><strong>AnalyticDB PostgreSQL Iceberg table</strong><span style="float:right">2022年9月-2023年3月</span></div>
-      <p style="margin-top: 5px;">Apache Iceberg 是一个开源的大数据表格式，旨在为数据湖提供一个高效的元数据管理系统。ADB PG 希望借助 Iceberg
-        的通用表格式来更好地融入大数据生态。</p>
+      <p style="margin-top: 5px;">Apache Iceberg 是一个开源大数据表格式，旨在为数据湖提供一个高效的元数据管理框架。ADBPG 通 过 Iceberg 通用表格式融入大数据生态。</p>
       <ul>
         <li>主要工作: 实现 iceberg-c sdk 及 iceberg_fdw</li>
         <li>适用场景: 查询由其它大数据工具生成的数据，将 gpdb 接入大数据生态</li>
@@ -233,6 +230,7 @@ permalink: /resume
           aria-hidden="true"></i> 其它</h4>
       <ul>
         <li>博客: <a href="https://zhjwpku.com/">https://zhjwpku.com</a></li>
+        <li>公众号: <a href="https://pg-x.github.io/images/wechat_qrcode.jpg">PostgreSQL 开源生态</a></li>
         <li>外语: CET-6 & VET/VEWT</li>
         <li>论文笔记: <a href="https://paper-notes.zhjwpku.com/">paper notes</a></li>
         <li>GSoC: 两次 Google Summer of Code (X.Org, Ceph) 项目经历</li>
