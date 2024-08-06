@@ -14,6 +14,8 @@ Rust 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 <h4>Books</h4>
 
 [The Rust Programming Language][trpl]
+[The Rust Programming Language, brown version][trplbv]
+[The Rustonomicon][nomicon]
 
 <h4>Library</h4>
 
@@ -42,3 +44,5 @@ Reference:
 [rust_explorer]: https://rust.godbolt.org/
 [trpl]: https://doc.rust-lang.org/book/
 [Sn3JklPAVLk]: https://www.youtube.com/watch?v=Sn3JklPAVLk
+[nomicon]: https://doc.rust-lang.org/nomicon/intro.html
+[trplbv]: https://rust-book.cs.brown.edu/
