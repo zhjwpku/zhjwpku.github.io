@@ -461,6 +461,17 @@ curl myipip.net
 sudo bash -c bash
 ```
 
+**yt-dlp && ffmpeg**
+
+```shell
+# download bestvideo and bestaudio
+yt-dlp -f 'bv,ba' <videid>
+
+# https://www.reddit.com/r/ffmpeg/comments/100nhxj/how_to_merge_audio_file_m4a_with_video_file_mp4/
+# merge audio file (M4a) with video file (MP4) using ffmpeg
+ffmpeg -i video_file -i audio_file -c:v copy -c:a aac out_file.mp4
+```
+
 <h4>Tips</h4>
 
 - shell 命令前加反斜线可以避免使用 alias 命令，如 `\ls`
