@@ -19,6 +19,8 @@ Rust 学习资料，包括但不限于*文章*、*书籍*、*代码库*、*教�
 
 <h4>Tutorial</h4>
 
+[Learning Rust](https://learning-rust.github.io/): Rust Programming Language Tutorials
+
 <h4>Tools</h4>
 
 [Rust Compiler Explorer][rust_explorer]
