@@ -114,11 +114,11 @@ permalink: /resume
       </ul>
 
       <div><strong>TaurusDB 内核研发</strong><span style="float:right">2020年5月-2021年5月</span></div>
-      <p style="margin-top: 5px;">TaurusDB for MySQL 是华为的一款分布式 MySQL 数据库解决方案，SCN (System Change Number) 用于确保数据库中的数据一致性。
+      <p style="margin-top: 5px;">TaurusDB for MySQL 是一款遵循 LOG IS THE DATABASE 的云原生数据库解决方案。
       </p>
       <ul>
-        <li>使用 mmap 优化 binlog 性能，<a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a>
-        </li>
+        <li>使用 mmap 优化 binlog 性能，<a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a></li>
+        <li>参与 TaurusDB for MySQL 的 Storage Abstraction Layer/Log Store 模块开发，日志通过 PLOG 写入 FusionStorage</li>
         <li>SCN 项目相关工作: 适配 purge 流程</li>
       </ul>
 
