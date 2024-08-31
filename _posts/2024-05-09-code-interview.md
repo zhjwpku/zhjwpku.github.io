@@ -300,3 +300,149 @@ int main() {
     return 0;
 }
 ```
+
+<h4>实现 shared_ptr</h4>
+
+references:
+
+- [C++: shared_ptr and how to write your own](https://medium.com/analytics-vidhya/c-shared-ptr-and-how-to-write-your-own-d0d385c118ad)
+- [Unique Pointer and implementation in C++](https://blog.devgenius.io/unique-pointer-and-implementation-in-c-ec6599a518e5)
+
+```C++
+#include <iostream>
+
+template <typename T>
+class my_shared_ptr {
+private:
+    T * ptr = nullptr;
+    int * refCnt = nullptr;
+
+public:
+    // default construtor
+    my_shared_ptr() : ptr(nullptr), refCnt(new int(0)) {}
+
+    // constructor
+    my_shared_ptr(T *ptr) : ptr(ptr), refCnt(new int(1)) {
+        std::cout << "constructor called" << std::endl;
+    }
+
+    // copy constructor
+    my_shared_ptr(const my_shared_ptr &obj) {
+        std::cout << "copy constructor called" << std::endl;
+        this->ptr = obj.ptr;
+        this->refCnt = obj.refCnt;
+        if (obj.ptr != nullptr) {
+            (*this->refCnt)++;
+        }
+    }
+
+    // copy assignment
+    my_shared_ptr& operator=(const my_shared_ptr& obj) {
+        std::cout << "copy assignment called" << std::endl;
+        __cleanup__();
+        this->ptr = obj.ptr;
+        this->refCnt = obj.refCnt;
+        if (obj.ptr != nullptr) {
+            (*this->refCnt)++;
+        }
+    }
+
+    // move constructor
+    my_shared_ptr(my_shared_ptr && dyingObj) {
+        this->ptr = dyingObj.ptr;
+        this->refCnt = dyingObj.refCnt;
+
+        dyingObj.ptr = nullptr;
+        dyingObj.refCnt = nullptr;
+    }
+
+    // move assignment
+    my_shared_ptr& operator=(my_shared_ptr && dyingObj) {
+        __cleanup__();
+
+        this->ptr = dyingObj.ptr;
+        this->refCnt = dyingObj.refCnt;
+
+        dyingObj.ptr = nullptr;
+        dyingObj.refCnt = nullptr;
+    }
+
+    // destructor
+    ~my_shared_ptr() {
+        __cleanup__();
+    }
+
+    int get_count() const {
+        return (*this->refCnt);
+    }
+
+    T* get() const {
+        return this->ptr;
+    }
+
+    T* operator->() const {
+		return this->ptr;
+	}
+
+    T& operator*() const {
+        return *(this->ptr);
+    }
+
+private:
+
+    void __cleanup__() {
+        (*refCnt)--;
+        if (*refCnt == 0) {
+            if (ptr != nullptr) {
+                delete ptr;
+            }
+            delete refCnt;
+        }
+    }
+};
+
+template <typename T>
+class my_unique_ptr {
+private:
+    T * ptr;
+
+public:
+    // constructor
+    explicit my_unique_ptr(T* ptr = nullptr) : ptr(ptr) {}
+
+    // destructor
+    ~my_unique_ptr() {
+        delete ptr;
+    }
+
+    // copy constructor
+    my_unique_ptr(const my_unique_ptr&) = delete;
+
+    // copy assignment
+    my_unique_ptr& operator=(const my_unique_ptr&) = delete;
+
+    // move constructor
+    my_unique_ptr(my_unique_ptr && other) noexcept : ptr(other.ptr) {
+        other.ptr = nullptr;
+    }
+
+    // move assignment
+    my_unique_ptr& operator=(const my_unique_ptr&& other) {
+        if (this != &other) {
+            delete ptr;
+            ptr = other.ptr;
+            other.ptr = nullptr;
+        }
+        return *this;
+    }
+};
+
+int main()
+{
+    my_shared_ptr<int> p(new int(10));
+    std::cout << *p << ' ' << p.get_count() << std::endl;
+
+    my_shared_ptr<int> pp = p;
+    std::cout << *pp << ' ' << pp.get_count() << std::endl;
+}
+```
