@@ -1,0 +1,145 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+
+\begin{document}
+\pagenumbering{gobble} % suppress displaying page number
+
+\name{Junwang Zhao}
+
+\basicInfo{
+  \email{zhjwpku@gmail.com} \textperiodcentered\
+  \phone{(+86) 132-6996-5827} \textperiodcentered\
+  \github[zhjwpku]{https://github.com/zhjwpku}}
+
+\section{\faGraduationCap\ Education}
+\datedsubsection{\textbf{Peking University}}{Sep, 2013 -- Jul, 2016}
+\textit{Master of Computer Architecture}\
+\datedsubsection{\textbf{Nanjing University of Sicence and Technology}}{Sep, 2009 -- Jul, 2013}
+\textit{Bachelor of Computer Sicence}\
+
+\section{\faOpenid\ Career}\
+\begin{onehalfspacing}
+  \datedsubsection{\textbf{Transwarp Technology}}{Infrastructure Department}
+  \datedsubsection{\textit{Senior Database Core developer}}{Jul, 2023 - now}
+  \end{onehalfspacing}
+
+\begin{onehalfspacing}
+\datedsubsection{\textbf{Alibaba Cloud}}{Database OLAP Department}
+\datedsubsection{\textit{Senior Database Core developer}}{May, 2021 -- June, 2023}
+\end{onehalfspacing}
+
+\begin{onehalfspacing}
+\datedsubsection{\textbf{Huawei}}{IT Product Line}
+\datedsubsection{\textit{Senior developer}}{Apr, 2018 -- May, 2021}
+\end{onehalfspacing}
+
+\begin{onehalfspacing}
+\datedsubsection{\textbf{Startimes}}{Research Institute}
+\datedsubsection{\textit{Junior developer}}{Jul, 2016 -- Mar, 2018}
+\end{onehalfspacing}
+
+\section{\faTasks\ Projects}
+
+\datedsubsection{\textbf{Spacture \& Hippo}}{Jul, 2023 -- now}
+\textit{Spacture(Spatial Database) \& Hippo(Vector Database) Kernel Development.}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item Select HA, backup tools, and extensions for Spacture.
+  \item Integrate DiskANN index to Hippo and optimizes performance, increasing performance by 30\%.
+  \item Add JSON type support to Hippo.
+  \item Design and implement HippoBench, which supports a variety of opensource datasets, standardizing tools used for POC tuning and performance optimization scenarios.
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{AnalyticDB PostgreSQL High Avaliability}}{Jun, 2022 -- Jun, 2023}
+\textit{Improve the FTS (Fault Tolerance System) logic of ADBPG to adapt to multi-replica architecture}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item Modify the FTS state machine to adapt to multi-replica architecture, when one of the replicas is promoted to the primary, the other replicas need to establish replication with the new primary.
+  \item Designed an HA solution based on independently deployed agents per instance node, similar to Patroni.
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg table}}{Jan, 2022 -- Jun, 2022}
+\textit{Apache Iceberg is an opensource big data table format designed to provide an efficient metadata management framework for data lakes.}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item Develop the Iceberg-C libary and Iceberg-FDW (Foreign Data Wrapper).
+  \item Query the Iceberg Table on OSS (Object Storage Service) directly, seamlessly connecting data lakes with data warehouses.
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{AnalyticDB MySQL Storage Engine Support Z-order Sort}}{May, 2021 -- Jan, 2022}
+\textit{AnalyticDB MySQL is a massively scalable real-time high-concurrency online analytical cloud computing service developed by Alibaba.}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item Design and implement Z-order sort, during the build process sort the data according to the z-value and write it into the Storage Engine.
+  \item Based on statistical information, column metadata can be used to increase the probability of data skipping in multi-dimensional query, thereby filtering out unnecessary data blocks and improving query speed.
+  \item Achieved result: When the query condition does not include the leading column, the performance is better than that of a cluster index sort.
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{TaurusDB for MySQL}}{May, 2020 -- May, 2021}
+\textit{TaurusDB for MySQL is a cloud-native database solution that adheres to the principle "LOG IS THE DATABASE."}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item \href{https://github.com/mysql/mysql-server/pull/314}{Use mmap for binlog}
+  \item Participated in the development of the Storage Abstraction Layer/Log Store module for TaurusDB for MySQL, where logs are written to FusionStorage through PLOG.
+\end{itemize}
+\end{onehalfspacing}
+
+\datedsubsection{\textbf{FusionStorage OBS Index Layer}}{Apr, 2018 -- May, 2020}
+\textit{OBS Index Layer based on MongoDB, and utilizes the mongo-rocks storage engine to persist data to FusionStorage.}
+\begin{onehalfspacing}
+\begin{itemize}
+  \item Adapt MongoDB transport layer to use libxnet(a wrapper lib for ibverbs, RoCE, bypass kernel)
+  \item Integrate the mongo-rocks storage engine with FusionStorage's PLOG interface.
+  \item Hot spot analysis, improve write, query, and Compaction performance through reasonable batch processing, index optimization, and parameter tuning measures.
+\end{itemize}
+\end{onehalfspacing}
+
+\section{\faCodeFork\ Open Source Contribution}
+\begin{onehalfspacing}
+  \begin{itemize}
+    \item Patroni
+      \begin{itemize}
+        \item \href{https://github.com/zalando/patroni/pull/2960}{Abstract MPP handler and decouple it from DCS}
+      \end{itemize}
+    \item pgvectorBench
+      \begin{itemize}
+        \item \href{https://github.com/zhjwpku/pgvectorBench}{A lightweight, fast, flexible, and easy-to-use benchmarking tool dedicated to pgvector}
+      \end{itemize}
+    \item pg\_cron
+      \begin{itemize}
+        \item \href{https://github.com/citusdata/pg_cron/pull/273}{add possibility to schedule jobs on the last day of month}
+        \item \href{https://github.com/citusdata/pg_cron/pulls?q=is%3Apr+author%3A%40me+}{PRs contributed to pg\_cron}
+      \end{itemize}
+  \end{itemize}
+  \end{onehalfspacing}
+
+\section{\faWrench\ Skills}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item C/C++ > Rust > Python > Java
+  \item Familiar with Epoll and Reactor Pattern
+  \item Daily Used Tools: GDB/Perf/Valgrind/gperftools
+\end{itemize}
+
+\section{\faCogs\ Others}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item Blog: https://zhjwpku.com
+  \item Wechat Official Account: \href{https://pg-x.github.io/images/wechat_qrcode.jpg}{PostgreSQL Opensource Ecosystem}
+  \item English: CET-6 VET/VEWT
+  \item Paper Notes(Chinese): \href{https://paper-notes.zhjwpku.com/}{paper notes}
+  \item GSoC: Google Summer of Code (X.Org, Ceph)
+\end{itemize}
+
+\end{document}
