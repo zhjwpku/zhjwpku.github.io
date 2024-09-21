@@ -23,7 +23,7 @@ tags:
 - [Submitting a Patch](https://wiki.postgresql.org/wiki/Submitting_a_Patch)
 - [Reviewing a Patch](https://wiki.postgresql.org/wiki/Reviewing_a_Patch)
 - [Review of Patch Reviewing](https://www.pgcon.org/2011/schedule/events/368.en.html) by Stephen Frost, PGCon 2011
-- [Hacking the Query Planner](https://www.pgcon.org/2011/schedule/attachments/188_Planner%20talk.pdf) by Tom Lane, PGCon 2011
+- [Hacking the Query Planner](https://www.pgcon.org/2011/schedule/attachments/188_Planner%20talk.pdf) by Tom Lane, PGCon 2011 [📹](https://www.youtube.com/watch?v=zmRObA9jw8A)
 - [PGXN](https://pgxn.org/)  PostgreSQL Extension Network
 - [HOT Understanding this important update optimization](https://www.slideshare.net/GrantMcAlister/hot-understanding-this-important-update-optimization)
 - [Packaging Related Objects into an Extension](https://www.postgresql.org/docs/current/extend-extensions.html)
@@ -202,6 +202,7 @@ tags:
 - [Sorting Out glibc Collation Challenges](https://www.youtube.com/watch?v=0E6O-V8Jato) by Joe Conway, PGCon 2023
 - [IO in PostgreSQL: Past, Present, Future](https://www.youtube.com/watch?v=3Oj7fBAqVTw) by Andres Freund, 2022
 - [Understanding and Fixing Autovacuum](https://www.youtube.com/watch?v=NbKiISvQfJc) by Robert Haas, PGConf India 2023
+- [How to use the Postgres query planner to debug bad plans and speed up queries](https://www.youtube.com/watch?v=nVhLTwVefCA) by Lukas Fittl, 2023
 
 <h4>Greenplum specific</h4>
 
