@@ -204,6 +204,7 @@ tags:
 - [Understanding and Fixing Autovacuum](https://www.youtube.com/watch?v=NbKiISvQfJc) by Robert Haas, PGConf India 2023
 - [How to use the Postgres query planner to debug bad plans and speed up queries](https://www.youtube.com/watch?v=nVhLTwVefCA) by Lukas Fittl, 2023
 - [Deeper Understanding of PostgreSQL Execution Plan](https://www.youtube.com/watch?v=cUUKuC0vsQI) by Jobin Augustine, PGConf India 2020
+- [Toward full ACID distributed transaction support with FDW](https://www.youtube.com/watch?v=kHQ0kzkpzuY) by Nikhil, PGConf India 2020
 
 <h4>Greenplum specific</h4>
 
