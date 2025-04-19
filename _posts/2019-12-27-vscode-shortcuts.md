@@ -96,13 +96,9 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 {
     "workbench.iconTheme": "vscode-icons",
     "vsicons.dontShowNewVersionMessage": true,
-    "terminal.integrated.shell.osx": "/bin/zsh",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "C_Cpp.updateChannel": "Insiders",
     "editor.fontSize": 14,
     "editor.rulers": [80, 100, 120],
-    "cmake.configureOnOpen": false,
     "terminal.integrated.fontSize": 14,
     "debug.console.fontSize": 14,
     "git.ignoreLegacyWarning": true,
@@ -114,10 +110,9 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
     "files.autoGuessEncoding": true,
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
-    "C_Cpp.default.cppStandard": "c++11",
     "editor.minimap.enabled": false,
     "zenMode.hideLineNumbers": false,
-    "explorer.openEditors.visible": 0
+    "explorer.openEditors.visible": 7,
 }
 ```
 
