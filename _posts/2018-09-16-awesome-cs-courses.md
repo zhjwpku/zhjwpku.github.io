@@ -11,6 +11,7 @@ tags:
 <h4>TOC</h4>
 - [Algorithms](#algorithms)
 - [Artificial Intelligence](#artificial-intelligence)
+- [Compiler](#compiler)
 - [CS](#cs)
 - [Database](#database)
 - [Distributed Systems](#distributed-systems)
@@ -50,6 +51,11 @@ tags:
   - Andrej Karpathy
 - [生成式AI導論 2024](https://www.youtube.com/playlist?list=PLJV_el3uVTsPz6CTopeRp2L2t4aL_KgiI)
   - 李宏毅
+
+#### Compiler
+
+- [Introduction to Compilers and Language Design](https://dthain.github.io/books/compiler/)
+  - This is a textbook developed Prof. Douglas Thain as part of the [CSE 40243 compilers class](https://dthain.github.io/compilers-fa23/) at the University of Notre Dame.
 
 #### CS
 
