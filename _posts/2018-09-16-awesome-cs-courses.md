@@ -55,7 +55,10 @@ tags:
 #### Compiler
 
 - [Introduction to Compilers and Language Design](https://dthain.github.io/books/compiler/)
-  - This is a textbook developed Prof. Douglas Thain as part of the [CSE 40243 compilers class](https://dthain.github.io/compilers-fa23/) at the University of Notre Dame.
+  - This is a textbook developed by Prof. Douglas Thain as part of the [CSE 40243 compilers class](https://dthain.github.io/compilers-fa23/) at the University of Notre Dame.
+- [KAIST CS420: Compiler Design](https://www.youtube.com/playlist?list=PL5aMzERQ_OZ8RWqn-XiZLXm1IJuaQbXp0)
+  - Instructor: Jeehoon Kang
+  - https://github.com/kaist-cp/cs420
 
 #### CS
 
