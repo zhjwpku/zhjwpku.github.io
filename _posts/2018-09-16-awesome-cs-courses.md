@@ -56,6 +56,9 @@ tags:
 
 - [Introduction to Compilers and Language Design](https://dthain.github.io/books/compiler/)
   - This is a textbook developed by Prof. Douglas Thain as part of the [CSE 40243 compilers class](https://dthain.github.io/compilers-fa23/) at the University of Notre Dame.
+- [CS 6120](https://www.cs.cornell.edu/courses/cs6120/2025fa/) **Advanced Compilers** *Cornell*
+  - Instructor: Adrian Sampson
+  - https://www.cs.cornell.edu/courses/cs6120/2025fa/schedule/
 - [KAIST CS420: Compiler Design](https://www.youtube.com/playlist?list=PL5aMzERQ_OZ8RWqn-XiZLXm1IJuaQbXp0)
   - Instructor: Jeehoon Kang
   - https://github.com/kaist-cp/cs420
