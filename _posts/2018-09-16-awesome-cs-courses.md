@@ -127,6 +127,9 @@ tags:
 - Database textbook recommendations
   - [Database Management Systems 3rd Edition](https://www.amazon.com/Database-Management-Systems-Raghu-Ramakrishnan/dp/0072465638) by Raghu Ramakrishnan and Johannes Gehrke, 2002
   - [Database System Concepts 6th Edition](https://www.amazon.com/dp/0073523321) by Silberschatz, Korth and Sudarshan, 2010
+- CMU Database Seminar Series
+  - [SQL or Death? Seminar Series — Spring 2025](https://db.cs.cmu.edu/seminars/spring2025/), [videos](https://www.youtube.com/playlist?list=PLSE8ODhjZXjbpOIrZheFWxkYG8HD87xW1)
+  - [Future Data Systems Seminar Series — Fall 2025](https://db.cs.cmu.edu/seminars/fall2025/), [videos](https://www.youtube.com/playlist?list=PLSE8ODhjZXjbEeW_bOCZ8c_nx_Jhoz-GW)
 
 #### Distributed Systems
 
