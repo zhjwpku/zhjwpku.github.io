@@ -229,6 +229,8 @@ David Black-Schaffer
 
 - [MIT 16.687][16687] **Private Pilot Ground School, IAP 2019**
   - Instructor: Philip Greenspun, Tina Srivastava
+- [How to Start a Startup](https://www.youtube.com/playlist?list=PL5q_lef6zVkaTY_cT1k7qFNF2TidHCe-1)
+  - Learn how to start a startup with this lecture series from Paul Graham, Sam Altman, Peter Thiel, Marc  Andreessen, YC founders, and more.
 
 
 <br>
