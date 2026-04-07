@@ -49,8 +49,10 @@ permalink: /resume
     <div id="jobs">
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-id-badge"
           aria-hidden="true"></i> 工作经历</h4>
+      <div><strong>蚂蚁集团</strong><span style="float:right">平台事业技术群</span></div>
+      <p>技术专家<span style="float: right;">2024年10月至今</span></p>
       <div><strong>星环科技</strong><span style="float:right">基础架构产品部</span></div>
-      <p>资深数据库内核研发<span style="float: right;">2023年7月至今</span></p>
+      <p>资深数据库内核研发<span style="float: right;">2023年7月 - 2024年9月</span></p>
       <div><strong>阿里巴巴</strong><span style="float:right">阿里云数据库 OLAP 产品部</span></div>
       <p>技术专家<span style="float: right;">2021年5月 - 2023年6月</span></p>
       <div><strong>华为</strong><span style="float:right">IT 产品线 FusionStorage 项目群</span></div>
@@ -63,81 +65,51 @@ permalink: /resume
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-tasks"
           aria-hidden="true"></i> 项目经历</h4>
 
-      <div><strong>Spacture & Hippo</strong><span style="float:right">2023年7月-至今</span></div>
-      <p style="margin-top: 5px;">负责 Spacture 时空库及 Hippo 向量库内核研发。</p>
+      <div><strong>GraphUniverse 图数据库</strong><span style="float:right">2024年10月 - 至今</span></div>
+      <p style="margin-top: 5px;">负责 GraphUniverse 图数据库优化器与向量索引内核研发，提升复杂图查询性能与可扩展性。</p>
       <ul>
-        <li>Spacture 选型 HA、备份工具及插件，支持单机版和 MPP 分布式数据库的统一部署</li>
-        <li>Hippo 支持 DiskANN 索引并优化性能，性能提升 30%</li>
-        <li>Hippo 支持 JSON 类型</li>
-        <li>开发 HippoBench，支持多种开源数据集，统一了 POC 调优、性能优化等场景使用的工具，显著提升了团队工作效率</li>
+        <li>设计并实现图查询/图执行优化框架（基于MLIR），覆盖复杂图查询关键路径</li>
+        <li>设计向量索引抽象层，支持多种向量索引库的统一接入与能力扩展</li>
+        <li>推进 Full Text Search 能力建设，支持图数据场景下的全文检索需求</li>
+        <li>完成多类型节点与不定跳查询优化，提升复杂图语句可执行性与稳定性</li>
       </ul>
 
-      <div><strong>AnalyticDB PostgreSQL 高可用及同城容灾</strong><span style="float:right">2023年3月-2023年6月</span></div>
-      <p style="margin-top: 5px;">改进 GPDB 的 FTS 逻辑，适配多副本架构，确保高可用部署。</p>
+      <div><strong>Hippo 向量数据库</strong><span style="float:right">2023年7月 - 2024年9月</span></div>
+      <p style="margin-top: 5px;">负责 Hippo 向量数据库内核研发，聚焦索引架构抽象、性能优化与工程化工具建设。</p>
       <ul>
-        <li>修改 FTS 逻辑适配多副本架构，其中一个备升主后其它备要去和新主建立 replication</li>
-        <li>设计基于实例节点独立 agent 的 HA 解决方案（类似 Patroni）</li>
+        <li>抽象向量索引接口，将索引数据结构统一建模为一层 LSM Tree，便于扩展索引类型并集成多类向量索引库</li>
+        <li>支持 DiskANN 索引并完成关键链路优化，整体性能提升 30%</li>
+        <li>开发 HippoBench，支持多种开源数据集，统一 POC 调优与性能压测工具链，显著提升团队效率</li>
       </ul>
 
-      <div><strong>AnalyticDB PostgreSQL Iceberg table</strong><span style="float:right">2022年9月-2023年3月</span></div>
-      <p style="margin-top: 5px;">Apache Iceberg 是一个开源大数据表格式，旨在为数据湖提供一个高效的元数据管理框架。ADBPG 通 过 Iceberg 通用表格式融入大数据生态。</p>
+      <div><strong>AnalyticDB PostgreSQL 高可用及同城容灾</strong><span style="float:right">2022年6月 - 2023年6月</span></div>
+      <p style="margin-top: 5px;">负责 ADBPG 高可用与同城容灾能力建设，支撑多副本架构稳定运行。</p>
       <ul>
-        <li>主要工作: 实现 iceberg-c sdk 及 iceberg_fdw</li>
-        <li>适用场景: 查询由其它大数据工具生成的数据，将 gpdb 接入大数据生态</li>
-        <li>未来规划: 像 snowflake 一样将 iceberg 视为本地表进行查询写入（适配 table access method）</li>
+        <li>重构 FTS 逻辑以适配多副本架构，支持备节点升主后其余备节点与新主自动重建 replication 链路</li>
+        <li>设计基于实例独立 Agent 的 HA 方案（类似 Patroni），提升故障切换自动化能力</li>
       </ul>
 
-      <div><strong>AnalyticDB PostgreSQL 差异化存储</strong><span style="float:right">2022年6月-2022年9月</span></div>
-      <p style="margin-top: 5px;">AnalyticDB PostgreSQL 云原生 Serverless 版支持秒级付费、按需启停、存算分离、分时弹性等能力，数据存储在 OSS 上，实例运行环境部署
-        Dadi 缓存系统，增加了存储成本。<strong>差异化存储企业级特性</strong>充分利用 OSS 不同存储类型的价格为用户进一步节省成本。</p>
+      <div><strong>AnalyticDB PostgreSQL Iceberg table</strong><span style="float:right">2021年5月 - 2022年6月</span></div>
+      <p style="margin-top: 5px;">负责 ADBPG 与 Apache Iceberg 生态集成，打通数据湖与数仓协同分析链路。</p>
       <ul>
-        <li>工作1: 提供转冷语法，利用 background worker 异步将 oss 对象转为对应的低频访问存储类型</li>
-        <li>工作2: 提供建冷表语法，创建表时指定对应的 oss 存储类型，写入链路直接将文件存储为相应的类型</li>
-        <li>工作3: 计费，读写低频访问存储的数据量写入 log，管控采集日志完成计费收集</li>
+        <li>实现 iceberg-c SDK 与 iceberg-fdw</li>
+        <li>打通 OSS 上 Iceberg Table 查询链路，减少数据孤岛，连接数据湖与数据仓库</li>
+        <li>规划将 Iceberg 以本地表方式进行读写（基于 table access method 适配）</li>
       </ul>
 
-      <div><strong>ADB Pipeline Service</strong><span style="float:right">2021年12月-2022年5月</span></div>
-      <p style="margin-top: 5px;">APS 在 DTS 之外提供了一种低成本数据同步链路，同时提供将 Kafka/SLS 等消息队列中的数据写入 hudi table 的能力，供 ADB 查询分析。</p>
+      <div><strong>TaurusDB 内核研发</strong><span style="float:right">2020年5月 - 2021年5月</span></div>
+      <p style="margin-top: 5px;">参与 TaurusDB for MySQL 内核研发，负责日志链路关键模块设计与性能优化。</p>
       <ul>
-        <li>选型 Flink CDC connectors 开发 datastream job，从 RDS 向 ADB 同步数据</li>
-        <li>从 SLS 中并行读取数据并写入 hudi table，作为 ADB 湖仓数据入口</li>
-        <li>向 Flink CDC 社区贡献动态增删表特性: <a href="https://github.com/ververica/flink-cdc-connectors/pull/777">add new tables
-            to existing cdc job</a></li>
+        <li>使用 mmap 优化 binlog 写入路径并提升写入性能，<a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a></li>
+        <li>参与 Storage Abstraction Layer 与 Log Store 模块开发，实现日志通过 PLOG 写入 FusionStorage</li>
       </ul>
 
-      <div><strong>AnalyticDB MySQL 存储引擎支持 Z-order 排序</strong><span style="float:right">2021年5月-2021年11月</span></div>
-      <p style="margin-top: 5px;">AnalyticDB MySQL 是阿里巴巴自主研发的海量数据实时高并发在线分析云计算服务，可以在毫秒级针对千亿级数据进行即时的多维分析透视和业务探索。</p>
+      <div><strong>FusionStorage OBS Index Layer</strong><span style="float:right">2018年4月 - 2020年5月</span></div>
+      <p style="margin-top: 5px;">负责 OBS Index Layer 内核能力建设，聚焦网络栈改造、存储对接与热点性能优化。</p>
       <ul>
-        <li>主要工作: 设计开发 Z-order 索引，build 过程中根据 z-value 对数据进行排序并写入 PartitionEngine</li>
-        <li>模块功能: 根据统计信息将不同列在多维查询分析时，通过过滤不必要的数据块来提升查询分析速度</li>
-        <li>适用场景: 查询条件不带 leading column 时，性能优于 cluster index</li>
-      </ul>
-
-      <div><strong>TaurusDB 内核研发</strong><span style="float:right">2020年5月-2021年5月</span></div>
-      <p style="margin-top: 5px;">TaurusDB for MySQL 是一款遵循 LOG IS THE DATABASE 的云原生数据库解决方案。
-      </p>
-      <ul>
-        <li>使用 mmap 优化 binlog 性能，<a href="https://github.com/mysql/mysql-server/pull/314">Use mmap for binlog</a></li>
-        <li>参与 TaurusDB for MySQL 的 Storage Abstraction Layer/Log Store 模块开发，日志通过 PLOG 写入 FusionStorage</li>
-        <li>SCN 项目相关工作: 适配 purge 流程</li>
-      </ul>
-
-      <div><strong>FusionStorage OBS Index Layer 网络适配 RDMA</strong><span style="float:right">2019年9月-2020年5月</span>
-      </div>
-      <p style="margin-top: 5px;">OBS Index Layer 用于存储对象存储的元数据，基于 MongoDB，存储引擎使用 mongo-rocks，并通过实现 plog ENV 来对接持久层。</p>
-      <ul>
-        <li>主要工作: MongoDB transport layer 适配 xnet 库 (RoCE)，提高吞吐减少延时 (bypass kernel)</li>
-        <li>适用场景: 当返回大量数据到客户端时对性能提升效果明显，例如 OBS 用户查看一个 bucket 中的所有文件名时</li>
-      </ul>
-
-      <div><strong>FusionStorage Persistence Layer 保电内存缓存方案</strong><span style="float:right">2018年9月-2019年8月</span>
-      </div>
-      <p style="margin-top: 5px;">FusionStorage 是华为推出的一款分布式存储系统，支持文件、块、对象等多种存储访问协议。其中 <strong>Persistence
-          Layer</strong>——存储系统的持久化层——作为存储系统的底层引擎，负责将数据持久化到存储介质中，同时提供数据保护和数据管理等功能，向上提供 plog 接口。</p>
-      <ul>
-        <li>主要工作: 增加了一种新的缓存类型，基于原有的缓存方案适配保电内存介质</li>
-        <li>模块功能: Battery Backup Unit 空间的管理，包括 chunk 的申请、释放，掉电恢复等</li>
-        <li>适用场景: 存储数据量较小的元数据</li>
+        <li>将 MongoDB transport layer 适配到 xnet（RoCE），通过 bypass kernel 提升吞吐并降低时延</li>
+        <li>将 mongo-rocks 存储引擎对接到 FusionStorage 的 PLOG 接口</li>
+        <li>基于热点分析实施批处理、索引和参数优化，提升写入、查询及 Compaction 性能</li>
       </ul>
 
     </div>
@@ -146,6 +118,18 @@ permalink: /resume
       <h4 style="margin-bottom:10px; padding-bottom:3px; border-bottom: 1px solid #777777;"><i class="fa fa-code-fork"
           aria-hidden="true"></i> 开源贡献</h4>
       <ul>
+        <li>PostgreSQL（Significant Contributor）
+          <ul>
+            <li><strong><a href="https://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=2da86c1ef9b5446e0e22c0b6a5846293e58d98e3">Add fast path for foreign key constraint checks</a></strong> - Author - PG19</li>
+            <li><strong><a href="https://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=2f094e7ac691abc9d2fe0f4dcf0feac4a6ce1d9c">SQL Property Graph Queries (SQL/PGQ)</a></strong> - Main Reviewer - PG19</li>
+            <li><strong><a href="https://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=6c12ae09f5a5d6c153eaea7901542591dc28fb9e">Introduce a SQL-callable function array_sort(anyarray)</a></strong> - Author - PG18</li>
+          </ul>
+        </li>
+        <li>Apache Iceberg C++（Co-creator）
+          <ul>
+            <li><strong><a href="https://github.com/apache/iceberg-cpp">Apache Iceberg C++</a></strong></li>
+          </ul>
+        </li>
         <li>Patroni
           <ul>
             <li><strong><a href="https://github.com/zalando/patroni/pull/2960">PRs
@@ -219,9 +203,9 @@ permalink: /resume
           aria-hidden="true"></i> 技能栈</h4>
 
       <ul>
-        <li>编程语言: C/C++ > Java > Python > Rust > Lua </li>
-        <li>并发: 熟悉事件驱动模型及网络编程</li>
-        <li>常用工具: GDB/Perf&FlameGraph/tmux</li>
+        <li>编程语言: C/C++ > Rust > Python > Java</li>
+        <li>并发编程: 熟悉事件驱动模型及网络编程</li>
+        <li>常用工具: GDB/Perf/Valgrind/gperftools</li>
       </ul>
     </div>
 
@@ -230,8 +214,8 @@ permalink: /resume
           aria-hidden="true"></i> 其它</h4>
       <ul>
         <li>博客: <a href="https://zhjwpku.com/">https://zhjwpku.com</a></li>
-        <li>公众号: <a href="https://pg-x.github.io/images/wechat_qrcode.jpg">PostgreSQL 开源生态</a></li>
-        <li>外语: CET-6 & VET/VEWT</li>
+        <li>公众号: <a href="https://pg-x.github.io/images/wechat_qrcode.jpg">PostgreSQL Hacking</a></li>
+        <li>语言: CET-6 VET/VEWT</li>
         <li>论文笔记: <a href="https://paper-notes.zhjwpku.com/">paper notes</a></li>
         <li>GSoC: 两次 Google Summer of Code (X.Org, Ceph) 项目经历</li>
       </ul>

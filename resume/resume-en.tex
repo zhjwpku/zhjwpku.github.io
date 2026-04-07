@@ -26,8 +26,13 @@
 
 \section{\faOpenid\ Career}\
 \begin{onehalfspacing}
+  \datedsubsection{\textbf{Ant Group}}{Platform Technology Group}
+  \datedsubsection{\textit{Senior Database Core developer}}{Oct, 2024 -- now}
+  \end{onehalfspacing}
+
+\begin{onehalfspacing}
   \datedsubsection{\textbf{Transwarp Technology}}{Infrastructure Department}
-  \datedsubsection{\textit{Senior Database Core developer}}{Jul, 2023 - now}
+  \datedsubsection{\textit{Senior Database Core developer}}{Jul, 2023 -- Sep, 2024}
   \end{onehalfspacing}
 
 \begin{onehalfspacing}
@@ -40,49 +45,45 @@
 \datedsubsection{\textit{Senior developer}}{Apr, 2018 -- May, 2021}
 \end{onehalfspacing}
 
-\begin{onehalfspacing}
-\datedsubsection{\textbf{Startimes}}{Research Institute}
-\datedsubsection{\textit{Junior developer}}{Jul, 2016 -- Mar, 2018}
-\end{onehalfspacing}
-
 \section{\faTasks\ Projects}
 
-\datedsubsection{\textbf{Spacture \& Hippo}}{Jul, 2023 -- now}
-\textit{Spacture(Spatial Database) \& Hippo(Vector Database) Kernel Development.}
+\datedsubsection{\textbf{GraphUniverse Graph Database}}{Oct, 2024 -- now}
+\textit{Own optimizer and vector index kernel development for GraphUniverse, improving complex graph query performance and extensibility.}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item Select HA, backup tools, and extensions for Spacture.
-  \item Integrate DiskANN index to Hippo and optimizes performance, increasing performance by 30\%.
-  \item Add JSON type support to Hippo.
-  \item Design and implement HippoBench, which supports a variety of opensource datasets, standardizing tools used for POC tuning and performance optimization scenarios.
+  \item Designed and implemented a graph query/execution optimization framework (MLIR-based) for critical complex query paths.
+  \item Built a vector index abstraction layer to support unified integration and extension across multiple vector index libraries.
+  \item Advanced Full Text Search support for graph data scenarios.
+  \item Optimized multi-type node and variable-length path queries, improving executability and stability of complex graph statements.
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{AnalyticDB PostgreSQL High Avaliability}}{Jun, 2022 -- Jun, 2023}
-\textit{Improve the FTS (Fault Tolerance System) logic of ADBPG to adapt to multi-replica architecture}
+\datedsubsection{\textbf{Hippo Vector Database}}{Jul, 2023 -- Sep, 2024}
+\textit{Led Hippo vector database kernel development, focusing on index architecture abstraction, performance optimization, and engineering toolchain improvements.}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item Modify the FTS state machine to adapt to multi-replica architecture, when one of the replicas is promoted to the primary, the other replicas need to establish replication with the new primary.
-  \item Designed an HA solution based on independently deployed agents per instance node, similar to Patroni.
+  \item Abstracted vector index interfaces by modeling index data structures as a one-level LSM Tree, enabling extensibility and easier integration of diverse vector index libraries.
+  \item Integrated DiskANN and optimized key paths, delivering a 30\% overall performance improvement.
+  \item Designed and implemented HippoBench with multiple open-source datasets, unifying tooling for POC tuning and performance benchmarking.
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg table}}{Jan, 2022 -- Jun, 2022}
-\textit{Apache Iceberg is an opensource big data table format designed to provide an efficient metadata management framework for data lakes.}
+\datedsubsection{\textbf{AnalyticDB PostgreSQL High Availability}}{Jun, 2022 -- Jun, 2023}
+\textit{Built high availability and metro disaster recovery capabilities for ADBPG to ensure stable multi-replica operations.}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item Develop the Iceberg-C libary and Iceberg-FDW (Foreign Data Wrapper).
-  \item Query the Iceberg Table on OSS (Object Storage Service) directly, seamlessly connecting data lakes with data warehouses.
+  \item Refactored FTS logic for multi-replica architecture, supporting automatic replication re-linking to the new primary after failover.
+  \item Designed an HA solution with per-instance independent agents (Patroni-like), improving failover automation.
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{AnalyticDB MySQL Storage Engine Support Z-order Sort}}{May, 2021 -- Jan, 2022}
-\textit{AnalyticDB MySQL is a massively scalable real-time high-concurrency online analytical cloud computing service developed by Alibaba.}
+\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg Table}}{May, 2021 -- Jun, 2022}
+\textit{Led ADBPG integration with Apache Iceberg to connect data lake and data warehouse analytics workflows.}
 \begin{onehalfspacing}
 \begin{itemize}
-  \item Design and implement Z-order sort, during the build process sort the data according to the z-value and write it into the Storage Engine.
-  \item Based on statistical information, column metadata can be used to increase the probability of data skipping in multi-dimensional query, thereby filtering out unnecessary data blocks and improving query speed.
-  \item Achieved result: When the query condition does not include the leading column, the performance is better than that of a cluster index sort.
+  \item Implemented iceberg-c SDK and iceberg-fdw.
+  \item Enabled querying Iceberg tables on OSS to reduce data silos and connect lake/warehouse data.
+  \item Planned local-table-like Iceberg read/write support via table access method adaptation.
 \end{itemize}
 \end{onehalfspacing}
 
@@ -108,6 +109,16 @@
 \section{\faCodeFork\ Open Source Contribution}
 \begin{onehalfspacing}
   \begin{itemize}
+    \item PostgreSQL (Significant Contributor)
+      \begin{itemize}
+        \item \href{https://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=2da86c1ef9b5446e0e22c0b6a5846293e58d98e3}{Add fast path for foreign key constraint checks} - Author - PG19
+        \item \href{https://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=2f094e7ac691abc9d2fe0f4dcf0feac4a6ce1d9c}{SQL Property Graph Queries (SQL/PGQ)} - Main Reviewer - PG19
+        \item \href{https://git.postgresql.org/gitweb/?p=postgresql.git;a=commitdiff;h=6c12ae09f5a5d6c153eaea7901542591dc28fb9e}{Introduce a SQL-callable function array\_sort(anyarray)} - Author - PG18
+      \end{itemize}
+    \item Apache Iceberg C++ (Co-creator)
+      \begin{itemize}
+        \item \href{https://github.com/apache/iceberg-cpp}{Apache Iceberg C++}
+      \end{itemize}
     \item Patroni
       \begin{itemize}
         \item \href{https://github.com/zalando/patroni/pull/2960}{Abstract MPP handler and decouple it from DCS}
