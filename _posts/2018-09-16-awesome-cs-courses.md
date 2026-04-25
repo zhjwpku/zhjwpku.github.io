@@ -233,7 +233,8 @@ David Black-Schaffer
   - Learn how to start a startup with this lecture series from Paul Graham, Sam Altman, Peter Thiel, Marc  Andreessen, YC founders, and more.
 - [MIT 15.393][15393] **Nuts and Bolts of New Ventures, IAP 2025**
   - Instructor: Joe Hadzima
-
+- [MIT 21H.151](https://www.youtube.com/playlist?list=PLUl4u3cNGP60g8vnEsLGuA4Kt-d5vNqy9) **Dynastic China, Fall 2024 (Selected Lectures)**
+  - Instructor: Tristan G. Brown
 
 <br>
 <span class="post-meta">
