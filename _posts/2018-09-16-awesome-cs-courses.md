@@ -231,6 +231,8 @@ David Black-Schaffer
   - Instructor: Philip Greenspun, Tina Srivastava
 - [How to Start a Startup](https://www.youtube.com/playlist?list=PL5q_lef6zVkaTY_cT1k7qFNF2TidHCe-1)
   - Learn how to start a startup with this lecture series from Paul Graham, Sam Altman, Peter Thiel, Marc  Andreessen, YC founders, and more.
+- [MIT 15.393][15393] **Nuts and Bolts of New Ventures, IAP 2025**
+  - Instructor: Joe Hadzima
 
 
 <br>
@@ -334,3 +336,4 @@ Reference:
 [cs107]: https://see.stanford.edu/Course/CS107
 [cs107-video]: https://www.youtube.com/playlist?list=PL9D558D49CA734A02
 [15799]: https://15799.courses.cs.cmu.edu/
+[15393]: https://www.youtube.com/playlist?list=PLUl4u3cNGP63EUNfnwrkgO2xxwYxNwRdI
