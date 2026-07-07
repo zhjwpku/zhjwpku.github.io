@@ -69,22 +69,14 @@
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{AnalyticDB PostgreSQL 高可用及同城容灾}}{2022年6月 -- 2023年6月}
-\textit{负责 ADBPG 高可用与同城容灾能力建设，支撑多副本架构稳定运行。}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item 重构 FTS 逻辑以适配多副本架构，支持备节点升主后其余备节点与新主自动重建 replication 链路
-  \item 设计基于实例独立 Agent 的 HA 方案（类似 Patroni），提升故障切换自动化能力
-\end{itemize}
-\end{onehalfspacing}
-
-\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg table}}{2021年5月 -- 2022年6月}
+\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg table}}{2021年5月 -- 2023年6月}
 \textit{负责 ADBPG 与 Apache Iceberg 生态集成，打通数据湖与数仓协同分析链路。}
 \begin{onehalfspacing}
 \begin{itemize}
   \item 实现 iceberg-c SDK 与 iceberg-fdw
   \item 打通 OSS 上 Iceberg Table 查询链路，减少数据孤岛，连接数据湖与数据仓库
-  \item 规划将 Iceberg 以本地表方式进行读写（基于 table access method 适配）
+  \item 推进 Iceberg 作为本地表读写的架构设计与原型验证（基于 table access method 适配）
+  \item 探索基于 logical replication 将 PostgreSQL 变更写入 Iceberg Table，验证实时同步与湖仓写入链路
 \end{itemize}
 \end{onehalfspacing}
 
@@ -111,9 +103,9 @@
       \begin{itemize}
         \item \href{https://github.com/apache/iceberg-cpp}{Apache Iceberg C++}
       \end{itemize}
-    \item Patroni
+    \item pgiceberg
       \begin{itemize}
-        \item \href{https://github.com/patroni/patroni/commit/bcfd8438a50a1f36b65be76ee2d17d1da3b903e3}{Abstract MPP handler and decouple it from DCS}
+        \item \href{https://github.com/pgiceberg/pgiceberg}{Brings Apache Iceberg to Postgres and vice versa}
       \end{itemize}
     \item pgvectorBench
       \begin{itemize}

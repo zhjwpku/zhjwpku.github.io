@@ -21,23 +21,23 @@
 \section{\faGraduationCap\ Education}
 \datedsubsection{\textbf{Peking University}}{Sep, 2013 -- Jul, 2016}
 \textit{Master of Computer Architecture}\
-\datedsubsection{\textbf{Nanjing University of Sicence and Technology}}{Sep, 2009 -- Jul, 2013}
-\textit{Bachelor of Computer Sicence}\
+\datedsubsection{\textbf{Nanjing University of Science and Technology}}{Sep, 2009 -- Jul, 2013}
+\textit{Bachelor of Computer Science}\
 
 \section{\faOpenid\ Career}\
 \begin{onehalfspacing}
   \datedsubsection{\textbf{Ant Group}}{Platform Technology Group}
-  \datedsubsection{\textit{Senior Database Core developer}}{Oct, 2024 -- now}
+  \datedsubsection{\textit{Senior Database Kernel Developer}}{Oct, 2024 -- now}
   \end{onehalfspacing}
 
 \begin{onehalfspacing}
   \datedsubsection{\textbf{Transwarp Technology}}{Infrastructure Department}
-  \datedsubsection{\textit{Senior Database Core developer}}{Jul, 2023 -- Sep, 2024}
+  \datedsubsection{\textit{Senior Database Kernel Developer}}{Jul, 2023 -- Sep, 2024}
   \end{onehalfspacing}
 
 \begin{onehalfspacing}
 \datedsubsection{\textbf{Alibaba Cloud}}{Database OLAP Department}
-\datedsubsection{\textit{Senior Database Core developer}}{May, 2021 -- June, 2023}
+\datedsubsection{\textit{Senior Database Kernel Developer}}{May, 2021 -- June, 2023}
 \end{onehalfspacing}
 
 \begin{onehalfspacing}
@@ -68,22 +68,14 @@
 \end{itemize}
 \end{onehalfspacing}
 
-\datedsubsection{\textbf{AnalyticDB PostgreSQL High Availability}}{Jun, 2022 -- Jun, 2023}
-\textit{Built high availability and metro disaster recovery capabilities for ADBPG to ensure stable multi-replica operations.}
-\begin{onehalfspacing}
-\begin{itemize}
-  \item Refactored FTS logic for multi-replica architecture, supporting automatic replication re-linking to the new primary after failover.
-  \item Designed an HA solution with per-instance independent agents (Patroni-like), improving failover automation.
-\end{itemize}
-\end{onehalfspacing}
-
-\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg Table}}{May, 2021 -- Jun, 2022}
+\datedsubsection{\textbf{AnalyticDB PostgreSQL Iceberg Table}}{May, 2021 -- Jun, 2023}
 \textit{Led ADBPG integration with Apache Iceberg to connect data lake and data warehouse analytics workflows.}
 \begin{onehalfspacing}
 \begin{itemize}
   \item Implemented iceberg-c SDK and iceberg-fdw.
   \item Enabled querying Iceberg tables on OSS to reduce data silos and connect lake/warehouse data.
-  \item Planned local-table-like Iceberg read/write support via table access method adaptation.
+  \item Drove architecture design and prototype validation for native-table-style Iceberg read/write support via table access method adaptation.
+  \item Explored writing PostgreSQL logical replication changes into Iceberg tables, validating real-time sync and lakehouse ingestion paths.
 \end{itemize}
 \end{onehalfspacing}
 
@@ -110,9 +102,9 @@
       \begin{itemize}
         \item \href{https://github.com/apache/iceberg-cpp}{Apache Iceberg C++}
       \end{itemize}
-    \item Patroni
+    \item pgiceberg
       \begin{itemize}
-        \item \href{https://github.com/patroni/patroni/commit/bcfd8438a50a1f36b65be76ee2d17d1da3b903e3}{Abstract MPP handler and decouple it from DCS}
+        \item \href{https://github.com/pgiceberg/pgiceberg}{Brings Apache Iceberg to Postgres and vice versa}
       \end{itemize}
     \item pgvectorBench
       \begin{itemize}

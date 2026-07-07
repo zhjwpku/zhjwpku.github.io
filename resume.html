@@ -82,19 +82,13 @@ permalink: /resume
         <li>开发 HippoBench，支持多种开源数据集，统一 POC 调优与性能压测工具链，显著提升团队效率</li>
       </ul>
 
-      <div><strong>AnalyticDB PostgreSQL 高可用及同城容灾</strong><span style="float:right">2022年6月 - 2023年6月</span></div>
-      <p style="margin-top: 5px;">负责 ADBPG 高可用与同城容灾能力建设，支撑多副本架构稳定运行。</p>
-      <ul>
-        <li>重构 FTS 逻辑以适配多副本架构，支持备节点升主后其余备节点与新主自动重建 replication 链路</li>
-        <li>设计基于实例独立 Agent 的 HA 方案（类似 Patroni），提升故障切换自动化能力</li>
-      </ul>
-
-      <div><strong>AnalyticDB PostgreSQL Iceberg table</strong><span style="float:right">2021年5月 - 2022年6月</span></div>
+      <div><strong>AnalyticDB PostgreSQL Iceberg table</strong><span style="float:right">2021年5月 - 2023年6月</span></div>
       <p style="margin-top: 5px;">负责 ADBPG 与 Apache Iceberg 生态集成，打通数据湖与数仓协同分析链路。</p>
       <ul>
         <li>实现 iceberg-c SDK 与 iceberg-fdw</li>
         <li>打通 OSS 上 Iceberg Table 查询链路，减少数据孤岛，连接数据湖与数据仓库</li>
-        <li>规划将 Iceberg 以本地表方式进行读写（基于 table access method 适配）</li>
+        <li>推进 Iceberg 作为本地表读写的架构设计与原型验证（基于 table access method 适配）</li>
+        <li>探索基于 logical replication 将 PostgreSQL 变更写入 Iceberg Table，验证实时同步与湖仓写入链路</li>
       </ul>
 
       <div><strong>FusionStorage OBS Index Layer</strong><span style="float:right">2018年4月 - 2021年5月</span></div>
@@ -121,6 +115,11 @@ permalink: /resume
         <li>Apache Iceberg C++（Co-creator）
           <ul>
             <li><strong><a href="https://github.com/apache/iceberg-cpp">Apache Iceberg C++</a></strong></li>
+          </ul>
+        </li>
+        <li>pgiceberg
+          <ul>
+            <li><strong><a href="https://github.com/pgiceberg/pgiceberg">Brings Apache Iceberg to Postgres and vice versa</a></strong></li>
           </ul>
         </li>
         <li>Patroni
