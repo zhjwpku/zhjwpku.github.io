@@ -70,7 +70,6 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
 - [GitLens — Git supercharged][gitlens]
 - [vscode-icons][vscode-icons]
 - [VSCode Great Icons][vscode-great-icons]
-- [scrollkey][scrollkey]
 - [Remote - SSH][remote-ssh]
 - [Bookmarks][bookmarks]
 - [Bracket Pair Colorizer 2][bracket-pair-colorizer]
@@ -104,9 +103,6 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
     "git.ignoreLegacyWarning": true,
     "editor.renderWhitespace": "all",
     "window.zoomLevel": 0,
-    "scrollkey.line1": 1,
-    "scrollkey.line2": 10,
-    "scrollkey.line3": 20,
     "files.autoGuessEncoding": true,
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
@@ -139,12 +135,12 @@ VS Code 提供了一个[插件市场][marketplace]，这里有很多强大的各
     },
     {
         "key": "cmd+up",
-        "command": "scrollkey.up2",
+        "command": "scrollPageUp",
         "when": "editorTextFocus"
     },
     {
         "key": "cmd+down",
-        "command": "scrollkey.down2",
+        "command": "scrollPageDown",
         "when": "editorTextFocus"
     },
     {
@@ -278,7 +274,6 @@ Reference:
 [vscode-icons]: https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons
 [vscode-great-icons]: https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons
 [ccpp]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
-[scrollkey]: https://marketplace.visualstudio.com/items?itemName=74th.scrollkey
 [remote-ssh]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh
 [ssh-with-vscode-without-internet]: https://stackoverflow.com/questions/56718453/ssh-with-vscode-without-internet
 [bookmarks]: https://github.com/alefragnani/vscode-bookmarks
